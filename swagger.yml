@@ -152,6 +152,7 @@ definitions:
         type: string
         description:
   new_category:
+    type: object
     required:
       - name
       - color
