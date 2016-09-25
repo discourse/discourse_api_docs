@@ -1,0 +1,85 @@
+{
+	"id": "d90435b9-1ee3-bca3-9290-b79212556d53",
+	"name": "discourse",
+	"description": "",
+	"order": [
+		"af7a1430-0fbb-b86e-ac47-5c38e0a1497e",
+		"d22940f9-5508-3630-b99d-0960bb447a92"
+	],
+	"folders": [],
+	"timestamp": 1474808348982,
+	"owner": "",
+	"public": false,
+	"published": false,
+	"requests": [
+		{
+			"id": "af7a1430-0fbb-b86e-ac47-5c38e0a1497e",
+			"headers": "",
+			"url": "{{base_url}}/categories.json?api_key={{api_key}}&api_username={{api_username}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1474811835986,
+			"name": "Categories",
+			"description": "",
+			"collectionId": "d90435b9-1ee3-bca3-9290-b79212556d53",
+			"responses": []
+		},
+		{
+			"id": "d22940f9-5508-3630-b99d-0960bb447a92",
+			"headers": "",
+			"url": "{{base_url}}/categories",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "api_key",
+					"value": "{{api_key}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "api_username",
+					"value": "{{api_username}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "{{$guid}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "color",
+					"value": "49d9e9",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "text_color",
+					"value": "f0fcfd",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1474811771564,
+			"name": "Categories",
+			"description": "",
+			"collectionId": "d90435b9-1ee3-bca3-9290-b79212556d53",
+			"responses": []
+		}
+	]
+}
