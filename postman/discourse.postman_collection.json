@@ -4,11 +4,12 @@
 	"description": "",
 	"order": [
 		"af7a1430-0fbb-b86e-ac47-5c38e0a1497e",
-		"d22940f9-5508-3630-b99d-0960bb447a92"
+		"d22940f9-5508-3630-b99d-0960bb447a92",
+		"b05dc286-c237-20c7-2e98-478bea6bd5aa"
 	],
 	"folders": [],
 	"timestamp": 1474808348982,
-	"owner": "",
+	"owner": 0,
 	"public": false,
 	"published": false,
 	"requests": [
@@ -27,6 +28,25 @@
 			"helperAttributes": {},
 			"time": 1474811835986,
 			"name": "Categories",
+			"description": "",
+			"collectionId": "d90435b9-1ee3-bca3-9290-b79212556d53",
+			"responses": []
+		},
+		{
+			"id": "b05dc286-c237-20c7-2e98-478bea6bd5aa",
+			"headers": "",
+			"url": "{{base_url}}/c/8.json?api_key={{api_key}}&api_username={{api_username}}",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1474895623945,
+			"name": "Category",
 			"description": "",
 			"collectionId": "d90435b9-1ee3-bca3-9290-b79212556d53",
 			"responses": []
