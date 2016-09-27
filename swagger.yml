@@ -60,6 +60,23 @@ paths:
           description: category response
           schema:
             $ref: '#/definitions/category_response'
+  /posts:
+    post:
+      description: |
+        Creates a new topic
+      tags:
+        - Topics
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/new_topic'
+      responses:
+        '200':
+          description: new topic response
+          schema:
+            $ref: '#/definitions/new_topic_response'
 definitions:
   categories:
     type: object
@@ -349,6 +366,41 @@ definitions:
                         type: string
                       user_id:
                         type: integer
+  new_topic:
+    type: object
+    required:
+      - title
+      - raw
+    properties:
+      title:
+        type: string
+      raw:
+        type: string
+  new_topic_response:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      username:
+        type: string
+      avatar_template:
+        type: string
+      created_at:
+        type: string
+      cooked:
+        type: string
+      post_number:
+        type: integer
+      post_type:
+        type: integer
+      updated_at:
+        type: string
+      reply_count:
+        type: integer
+      reply_to_post_number:
+        type: null
   Error:
     type: object
     properties:
