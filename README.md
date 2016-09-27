@@ -45,3 +45,20 @@ node tojson.js
 
 Then you can commit your changes and create a PR. This is because we are using
 github pages to host the static doc website.
+
+### Schema Generator
+
+To aid in writing the yml responses in the swagger.yml file use this command:
+
+```
+node toschema.js
+```
+
+This will convert a json response into json schema and then convert the schema
+to yml.
+
+### Resources
+
+These are some helpful resources:
+
+- http://azimi.me/2015/07/16/split-swagger-into-smaller-files.html
