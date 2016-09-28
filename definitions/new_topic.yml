@@ -1,0 +1,9 @@
+type: object
+required:
+  - title
+  - raw
+properties:
+  title:
+    type: string
+  raw:
+    type: string

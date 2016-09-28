@@ -367,15 +367,7 @@ definitions:
                       user_id:
                         type: integer
   new_topic:
-    type: object
-    required:
-      - title
-      - raw
-    properties:
-      title:
-        type: string
-      raw:
-        type: string
+    "$ref": definitions/new_topic.yml
   new_topic_response:
     type: object
     properties:

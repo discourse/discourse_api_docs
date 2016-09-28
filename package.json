@@ -20,6 +20,7 @@
   "dependencies": {
     "express": "^4.14.0",
     "json-schema-generator": "^2.0.3",
+    "json-schema-ref-parser": "^3.1.2",
     "yamljs": "^0.2.8"
   }
 }
