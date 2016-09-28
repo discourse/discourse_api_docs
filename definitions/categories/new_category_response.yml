@@ -1,0 +1,71 @@
+# new_category_response
+type: object
+properties:
+  category:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: "The id for the category"
+      name:
+        type: string
+        description:
+      color:
+        type: string
+        description:
+      text_color:
+        type: string
+        description:
+      slug:
+        type: string
+      topic_count:
+        type: integer
+      post_count:
+        type: integer
+      position:
+        type: integer
+      description:
+        type: string
+      description_text:
+        type: string
+      topic_url:
+        type: string
+      logo_url:
+        type: string
+      background_url:
+        type: string
+      read_restricted:
+        type: boolean
+      permission:
+        type: string
+      notification_level:
+        type: string
+      can_edit:
+        type: boolean
+      topic_template:
+        type: string
+      has_children:
+        type: boolean
+      available_groups:
+        type: array
+      auto_close_hours:
+        type: integer
+      auto_close_based_on_last_post:
+        type: boolean
+      group_permissions:
+        type: array
+      email_in:
+        type: boolean
+      email_in_allow_strangers:
+        type: boolean
+      suppress_from_homepage:
+        type: boolean
+      can_delete:
+        type: boolean
+      cannot_delete_reason:
+        type: string
+      allow_badges:
+        type: boolean
+      custom_fields:
+        type: object
+

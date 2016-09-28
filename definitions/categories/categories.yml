@@ -1,0 +1,20 @@
+# categories
+type: object
+properties:
+  category_list:
+    type: object
+    properties:
+      can_create_category:
+        type: boolean
+      can_create_topic:
+        type: boolean
+      draft:
+        type: boolean
+      draft_key:
+        type: string
+      draft_sequence:
+        type: integer
+      categories:
+        type: array
+        items:
+          $ref: 'category.yml'

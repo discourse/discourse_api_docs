@@ -1,3 +1,4 @@
+# new_topic
 type: object
 required:
   - title

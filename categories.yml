@@ -1,0 +1,105 @@
+  categories:
+    type: object
+    properties:
+      category_list:
+        type: object
+        properties:
+          can_create_category:
+            type: boolean
+            description:
+          can_create_topic:
+            type: boolean
+            description:
+          draft:
+            type: boolean
+            description:
+          draft_key:
+            type: string
+            description:
+          draft_sequence:
+            type: integer
+            description:
+          categories:
+            type: array
+            description:
+            items:
+              $ref: '#/definitions/category'
+  category:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: "The id for the category"
+      name:
+        type: string
+        description:
+      color:
+        type: string
+        description:
+      text_color:
+        type: string
+        description:
+      slug:
+        type: string
+        description:
+      topic_count:
+        type: integer
+        description:
+      post_count:
+        type: integer
+        description:
+      position:
+        type: integer
+        description:
+      description:
+        type: string
+        description:
+      description_text:
+        type: string
+        description:
+      topic_url:
+        type: string
+        description:
+      logo_url:
+        type: string
+        description:
+      background_url:
+        type: string
+        description:
+      read_restricted:
+        type: boolean
+        description:
+      permission:
+        type: integer
+        description:
+      notification_level:
+        type: string
+        description:
+      can_edit:
+        type: boolean
+        description:
+      topic_template:
+        type: string
+        description:
+      has_children:
+        type: boolean
+        description:
+      topics_day:
+        type: integer
+        description:
+      topics_week:
+        type: integer
+        description:
+      topics_month:
+        type: integer
+        description:
+      topics_year:
+        type: integer
+        description:
+      topics_all_time:
+        type: integer
+        description:
+      description_excerpt:
+        type: string
+        description:
+

@@ -23,11 +23,7 @@ paths:
         '200':
           description: A category_list object that contains an array of categories
           schema:
-            $ref: '#/definitions/categories'
-        default:
-          description: 'Unexpected error'
-          schema:
-            $ref: '#/definitions/Error'
+            $ref: 'definitions/categories/categories.yml'
     post:
       description: Creats a new category
       parameters:
@@ -36,14 +32,14 @@ paths:
           description:
           required: true
           schema:
-            $ref: '#/definitions/new_category'
+            $ref: 'definitions/categories/new_category.yml'
       tags:
         - Categories
       responses:
         '200':
           description: category response
           schema:
-            $ref: '#/definitions/new_category_response'
+            $ref: 'definitions/categories/new_category_response.yml'
   /c/{id}.json:
     get:
       description: |
@@ -59,7 +55,7 @@ paths:
         '200':
           description: category response
           schema:
-            $ref: '#/definitions/category_response'
+            $ref: 'definitions/categories/category_response.yml'
   /posts:
     post:
       description: |
@@ -71,335 +67,9 @@ paths:
           in: body
           required: true
           schema:
-            $ref: '#/definitions/new_topic'
+            $ref: 'definitions/topics/new_topic.yml'
       responses:
         '200':
           description: new topic response
           schema:
-            $ref: '#/definitions/new_topic_response'
-definitions:
-  categories:
-    type: object
-    properties:
-      category_list:
-        $ref: '#/definitions/category_list'
-  category_list:
-    type: object
-    properties:
-      can_create_category:
-        type: boolean
-        description:
-      can_create_topic:
-        type: boolean
-        description:
-      draft:
-        type: boolean
-        description:
-      draft_key:
-        type: string
-        description:
-      draft_sequence:
-        type: integer
-        description:
-      categories:
-        type: array
-        description:
-        items:
-          $ref: '#/definitions/category'
-  category:
-    type: object
-    properties:
-      id:
-        type: integer
-        description: "The id for the category"
-      name:
-        type: string
-        description:
-      color:
-        type: string
-        description:
-      text_color:
-        type: string
-        description:
-      slug:
-        type: string
-        description:
-      topic_count:
-        type: integer
-        description:
-      post_count:
-        type: integer
-        description:
-      position:
-        type: integer
-        description:
-      description:
-        type: string
-        description:
-      description_text:
-        type: string
-        description:
-      topic_url:
-        type: string
-        description:
-      logo_url:
-        type: string
-        description:
-      background_url:
-        type: string
-        description:
-      read_restricted:
-        type: boolean
-        description:
-      permission:
-        type: integer
-        description:
-      notification_level:
-        type: string
-        description:
-      can_edit:
-        type: boolean
-        description:
-      topic_template:
-        type: string
-        description:
-      has_children:
-        type: boolean
-        description:
-      topics_day:
-        type: integer
-        description:
-      topics_week:
-        type: integer
-        description:
-      topics_month:
-        type: integer
-        description:
-      topics_year:
-        type: integer
-        description:
-      topics_all_time:
-        type: integer
-        description:
-      description_excerpt:
-        type: string
-        description:
-  new_category:
-    type: object
-    required:
-      - name
-      - color
-      - text_color
-    properties:
-      name:
-        type: string
-      color:
-        type: string
-      text_color:
-        type: string
-  new_category_response:
-    type: object
-    properties:
-      category:
-        type: object
-        properties:
-          id:
-            type: integer
-            description: "The id for the category"
-          name:
-            type: string
-            description:
-          color:
-            type: string
-            description:
-          text_color:
-            type: string
-            description:
-          slug:
-            type: string
-          topic_count:
-            type: integer
-          post_count:
-            type: integer
-          position:
-            type: integer
-          description:
-            type: string
-          description_text:
-            type: string
-          topic_url:
-            type: string
-          logo_url:
-            type: string
-          background_url:
-            type: string
-          read_restricted:
-            type: boolean
-          permission:
-            type: string
-          notification_level:
-            type: string
-          can_edit:
-            type: boolean
-          topic_template:
-            type: string
-          has_children:
-            type: boolean
-          available_groups:
-            type: array
-          auto_close_hours:
-            type: integer
-          auto_close_based_on_last_post:
-            type: boolean
-          group_permissions:
-            type: array
-          email_in:
-            type: boolean
-          email_in_allow_strangers:
-            type: boolean
-          suppress_from_homepage:
-            type: boolean
-          can_delete:
-            type: boolean
-          cannot_delete_reason:
-            type: string
-          allow_badges:
-            type: boolean
-          custom_fields:
-            type: object
-  category_response:
-    type: object
-    properties:
-      users:
-        type: array
-        items:
-          type: object
-          properties:
-            id:
-              type: integer
-            username:
-              type: string
-            avatar_template:
-              type: string
-      topic_list:
-        type: object
-        properties:
-          can_create_topic:
-            type: boolean
-          draft:
-            type: boolean
-          draft_key:
-            type: string
-          draft_sequence:
-            type: integer
-          per_page:
-            type: integer
-          topics:
-            type: array
-            items:
-              type: object
-              properties:
-                id:
-                  type: integer
-                title:
-                  type: string
-                fancy_title:
-                  type: string
-                slug:
-                  type: string
-                posts_count:
-                  type: integer
-                reply_count:
-                  type: integer
-                highest_post_number:
-                  type: integer
-                image_url:
-                  type: string
-                created_at:
-                  type: string
-                last_posted_at:
-                  type: string
-                bumped:
-                  type: boolean
-                bumped_at:
-                  type: string
-                unseen:
-                  type: boolean
-                pinned:
-                  type: boolean
-                unpinned:
-                  type: boolean
-                excerpt:
-                  type: string
-                visible:
-                  type: boolean
-                closed:
-                  type: boolean
-                archived:
-                  type: boolean
-                bookmarked:
-                  type: object
-                liked:
-                  type: object
-                views:
-                  type: integer
-                like_count:
-                  type: integer
-                has_summary:
-                  type: boolean
-                archetype:
-                  type: string
-                last_poster_username:
-                  type: string
-                category_id:
-                  type: integer
-                pinned_globally:
-                  type: boolean
-                posters:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      extras:
-                        type: string
-                      description:
-                        type: string
-                      user_id:
-                        type: integer
-  new_topic:
-    "$ref": definitions/new_topic.yml
-  new_topic_response:
-    type: object
-    properties:
-      id:
-        type: integer
-      name:
-        type: string
-      username:
-        type: string
-      avatar_template:
-        type: string
-      created_at:
-        type: string
-      cooked:
-        type: string
-      post_number:
-        type: integer
-      post_type:
-        type: integer
-      updated_at:
-        type: string
-      reply_count:
-        type: integer
-      reply_to_post_number:
-        type: null
-  Error:
-    type: object
-    properties:
-      code:
-        type: integer
-        format: int32
-      message:
-        type: string
-      fields:
-        type: string
+            $ref: 'definitions/topics/new_topic_response.yml'
