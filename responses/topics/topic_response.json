@@ -1,0 +1,215 @@
+{
+  "post_stream": {
+    "posts": [
+      {
+        "id": 16,
+        "name": "",
+        "username": "discourse1",
+        "avatar_template": "/user_avatar/colloquy.blakeerickson.com/discourse1/{size}/2_1.png",
+        "created_at": "2016-10-01T13:51:26.235Z",
+        "cooked": "<p>(Replace this first paragraph with a brief description of your new category. This guidance will appear in the category selection area, so try to keep it below 200 characters. <strong>Until you edit this description or create topics, this category won't appear on the categories page.</strong>)</p>\n\n<p>Use the following paragraphs for a longer description, or to establish category guidelines or rules:</p>\n\n<ul>\n<li><p>Why should people use this category? What is it for?</p></li>\n<li><p>How exactly is this different than the other categories we already have?</p></li>\n<li><p>What should topics in this category generally contain?</p></li>\n<li><p>Do we need this category? Can we merge with another category, or subcategory?</p></li>\n</ul>",
+        "post_number": 1,
+        "post_type": 1,
+        "updated_at": "2016-10-01T13:51:26.235Z",
+        "reply_count": 0,
+        "reply_to_post_number": null,
+        "quote_count": 0,
+        "avg_time": null,
+        "incoming_link_count": 0,
+        "reads": 0,
+        "score": 0,
+        "yours": false,
+        "topic_id": 13,
+        "topic_slug": "about-the-9bf05639-c1d6-95e0-b5b1-24c75db096e5-category",
+        "display_username": "",
+        "primary_group_name": null,
+        "primary_group_flair_url": null,
+        "primary_group_flair_bg_color": null,
+        "primary_group_flair_color": null,
+        "version": 1,
+        "can_edit": false,
+        "can_delete": false,
+        "can_recover": false,
+        "can_wiki": false,
+        "read": true,
+        "user_title": null,
+        "actions_summary": [],
+        "moderator": false,
+        "admin": true,
+        "staff": true,
+        "user_id": 1,
+        "hidden": false,
+        "hidden_reason_id": null,
+        "trust_level": 0,
+        "deleted_at": null,
+        "user_deleted": false,
+        "edit_reason": null,
+        "can_view_edit_history": true,
+        "wiki": false
+      }
+    ],
+    "stream": [
+      16
+    ]
+  },
+  "timeline_lookup": [
+    [
+      1,
+      0
+    ]
+  ],
+  "id": 13,
+  "title": "About the 9bf05639-c1d6-95e0-b5b1-24c75db096e5 category",
+  "fancy_title": "About the 9bf05639-c1d6-95e0-b5b1-24c75db096e5 category",
+  "posts_count": 1,
+  "created_at": "2016-10-01T13:51:26.097Z",
+  "views": 1,
+  "reply_count": 0,
+  "participant_count": 1,
+  "like_count": 0,
+  "last_posted_at": null,
+  "visible": true,
+  "closed": false,
+  "archived": false,
+  "has_summary": false,
+  "archetype": "regular",
+  "slug": "about-the-9bf05639-c1d6-95e0-b5b1-24c75db096e5-category",
+  "category_id": 5,
+  "word_count": null,
+  "deleted_at": null,
+  "user_id": 1,
+  "draft": null,
+  "draft_key": "topic_13",
+  "draft_sequence": null,
+  "unpinned": null,
+  "pinned_globally": false,
+  "pinned": true,
+  "pinned_at": "2016-10-01T13:51:26.093Z",
+  "pinned_until": null,
+  "details": {
+    "auto_close_at": null,
+    "auto_close_hours": null,
+    "auto_close_based_on_last_post": false,
+    "created_by": {
+      "id": 1,
+      "username": "discourse1",
+      "avatar_template": "/user_avatar/colloquy.blakeerickson.com/discourse1/{size}/2_1.png"
+    },
+    "last_poster": {
+      "id": 1,
+      "username": "discourse1",
+      "avatar_template": "/user_avatar/colloquy.blakeerickson.com/discourse1/{size}/2_1.png"
+    },
+    "participants": [
+      {
+        "id": 1,
+        "username": "discourse1",
+        "avatar_template": "/user_avatar/colloquy.blakeerickson.com/discourse1/{size}/2_1.png",
+        "post_count": 1
+      }
+    ],
+    "suggested_topics": [
+      {
+        "id": 8,
+        "title": "Welcome to Discourse",
+        "fancy_title": "Welcome to Discourse",
+        "slug": "welcome-to-discourse",
+        "posts_count": 1,
+        "reply_count": 0,
+        "highest_post_number": 1,
+        "image_url": "/images/welcome/discourse-edit-post-animated.gif",
+        "created_at": "2016-10-01T13:23:38.057Z",
+        "last_posted_at": "2016-10-01T13:23:38.110Z",
+        "bumped": true,
+        "bumped_at": "2016-10-01T13:23:38.110Z",
+        "unseen": false,
+        "pinned": true,
+        "unpinned": null,
+        "excerpt": "The first paragraph of this pinned topic will be visible as a welcome message to all new visitors on your homepage. It&#39;s important! \n\nEdit this into a brief description of your community: \n\n\nWho is it for?\nWhat can they &hellip;",
+        "visible": true,
+        "closed": false,
+        "archived": false,
+        "bookmarked": null,
+        "liked": null,
+        "archetype": "regular",
+        "like_count": 0,
+        "views": 0,
+        "category_id": 1,
+        "posters": [
+          {
+            "extras": "latest single",
+            "description": "Original Poster, Most Recent Poster",
+            "user": {
+              "id": -1,
+              "username": "system",
+              "avatar_template": "/user_avatar/colloquy.blakeerickson.com/system/{size}/1_1.png"
+            }
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "title": "B8f88e76-0aeb-072e-6ec0-76e005a46d6f",
+        "fancy_title": "B8f88e76-0aeb-072e-6ec0-76e005a46d6f",
+        "slug": "b8f88e76-0aeb-072e-6ec0-76e005a46d6f",
+        "posts_count": 1,
+        "reply_count": 0,
+        "highest_post_number": 1,
+        "image_url": null,
+        "created_at": "2016-10-01T13:51:18.067Z",
+        "last_posted_at": "2016-10-01T13:51:18.293Z",
+        "bumped": true,
+        "bumped_at": "2016-10-01T13:51:18.293Z",
+        "unseen": false,
+        "pinned": false,
+        "unpinned": null,
+        "visible": true,
+        "closed": false,
+        "archived": false,
+        "bookmarked": null,
+        "liked": null,
+        "archetype": "regular",
+        "like_count": 0,
+        "views": 0,
+        "category_id": 1,
+        "posters": [
+          {
+            "extras": "latest single",
+            "description": "Original Poster, Most Recent Poster",
+            "user": {
+              "id": 1,
+              "username": "discourse1",
+              "avatar_template": "/user_avatar/colloquy.blakeerickson.com/discourse1/{size}/2_1.png"
+            }
+          }
+        ]
+      }
+    ],
+    "notification_level": 1,
+    "can_flag_topic": false
+  },
+  "highest_post_number": 1,
+  "deleted_by": null,
+  "actions_summary": [
+    {
+      "id": 4,
+      "count": 0,
+      "hidden": false,
+      "can_act": false
+    },
+    {
+      "id": 7,
+      "count": 0,
+      "hidden": false,
+      "can_act": false
+    },
+    {
+      "id": 8,
+      "count": 0,
+      "hidden": false,
+      "can_act": false
+    }
+  ],
+  "chunk_size": 20,
+  "bookmarked": null
+}

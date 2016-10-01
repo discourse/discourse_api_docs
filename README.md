@@ -48,10 +48,17 @@ github pages to host the static doc website.
 
 ### Schema Generator
 
-To aid in writing the yml responses in the swagger.yml file use this command:
+To aid in writing the yml responses in the swagger.yml file use this command to
+convert actual json responses to a yml schema file:
 
 ```
-node toschema.js
+node toschema.js <input file> <output file>
+```
+
+Example:
+
+```
+node toschema.js responses/topics/topic_respones.json definitions/topics/topic_response.yml
 ```
 
 This will convert a json response into json schema and then convert the schema

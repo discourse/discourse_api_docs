@@ -73,3 +73,19 @@ paths:
           description: new topic response
           schema:
             $ref: 'definitions/topics/new_topic_response.yml'
+  /t/{id}.json:
+    get:
+      description: |
+        Get a single topic
+      tags:
+        - Topics
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: topic response
+          schema:
+            $ref: 'definitions/topics/topic_response.yml'
