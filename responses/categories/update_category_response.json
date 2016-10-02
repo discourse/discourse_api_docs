@@ -1,0 +1,50 @@
+{
+  "success": "OK",
+  "category": {
+    "id": 5,
+    "name": "68a61467-6e1f-11af-c329-f0f574cfed43",
+    "color": "49d9e9",
+    "text_color": "f0fcfd",
+    "slug": "224f8a66-485e-3d6d-53f7-45029234a7e3",
+    "topic_count": 0,
+    "post_count": 0,
+    "position": 4,
+    "description": null,
+    "description_text": null,
+    "topic_url": "/t/about-the-224f8a66-485e-3d6d-53f7-45029234a7e3-category/16",
+    "logo_url": "",
+    "background_url": "",
+    "read_restricted": false,
+    "permission": null,
+    "notification_level": null,
+    "can_edit": true,
+    "topic_template": "",
+    "has_children": null,
+    "available_groups": [
+      "admins",
+      "everyone",
+      "moderators",
+      "staff",
+      "trust_level_0",
+      "trust_level_1",
+      "trust_level_2",
+      "trust_level_3",
+      "trust_level_4"
+    ],
+    "auto_close_hours": null,
+    "auto_close_based_on_last_post": false,
+    "group_permissions": [
+      {
+        "permission_type": 1,
+        "group_name": "everyone"
+      }
+    ],
+    "email_in": null,
+    "email_in_allow_strangers": false,
+    "suppress_from_homepage": false,
+    "can_delete": true,
+    "cannot_delete_reason": null,
+    "allow_badges": true,
+    "custom_fields": {}
+  }
+}

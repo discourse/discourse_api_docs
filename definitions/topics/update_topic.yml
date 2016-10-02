@@ -1,0 +1,7 @@
+# update_topic
+type: object
+properties:
+  title:
+    type: string
+  category_id:
+    type: integer

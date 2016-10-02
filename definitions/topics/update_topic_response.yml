@@ -1,0 +1,26 @@
+$schema: 'http://json-schema.org/draft-04/schema#'
+description: ""
+type: object
+properties:
+  basic_topic:
+    type: object
+    properties:
+      id:
+        type: number
+      title:
+        type: string
+        minLength: 1
+      fancy_title:
+        type: string
+        minLength: 1
+      slug:
+        type: string
+        minLength: 1
+      posts_count:
+        type: number
+    required:
+      - id
+      - title
+      - fancy_title
+      - slug
+      - posts_count

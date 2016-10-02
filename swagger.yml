@@ -25,11 +25,10 @@ paths:
           schema:
             $ref: 'definitions/categories/categories.yml'
     post:
-      description: Creats a new category
+      description: Create a new category
       parameters:
         - name: name
           in: body
-          description:
           required: true
           schema:
             $ref: 'definitions/categories/new_category.yml'
@@ -56,10 +55,27 @@ paths:
           description: category response
           schema:
             $ref: 'definitions/categories/category_response.yml'
+  /categories/{id}:
+    put:
+      description: |
+        Update a single category
+      tags:
+        - Categories
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: 'definitions/categories/update_category.yml'
+      responses:
+        '200':
+          description: update category response
+          schema:
+            $ref: 'definitions/categories/update_category_response.yml'
   /posts:
     post:
       description: |
-        Creates a new topic
+        Create a new topic
       tags:
         - Topics
       parameters:
@@ -89,3 +105,42 @@ paths:
           description: topic response
           schema:
             $ref: 'definitions/topics/topic_response.yml'
+    delete:
+      description: |
+        Remove a single topic
+      tags:
+        - Topics
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: |
+            delete topic response is empty, just a status code
+  /t/{slug}/{id}.json:
+    put:
+      description: |
+        Update a single topic
+      tags:
+        - Topics
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          type: string
+        - name: id
+          in: path
+          required: true
+          type: integer
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: 'definitions/topics/update_topic.yml'
+      responses:
+        '200':
+          description: update topic response
+          schema:
+            $ref: 'definitions/topics/update_topic_response.yml'

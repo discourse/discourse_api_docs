@@ -1,0 +1,94 @@
+$schema: 'http://json-schema.org/draft-04/schema#'
+description: ""
+type: object
+properties:
+  success:
+    type: string
+    minLength: 1
+  category:
+    type: object
+    properties:
+      id:
+        type: number
+      name:
+        type: string
+        minLength: 1
+      color:
+        type: string
+        minLength: 1
+      text_color:
+        type: string
+        minLength: 1
+      slug:
+        type: string
+        minLength: 1
+      topic_count:
+        type: number
+      post_count:
+        type: number
+      position:
+        type: number
+      description:
+        type: null
+      description_text:
+        type: null
+      topic_url:
+        type: string
+        minLength: 1
+      logo_url:
+        type: string
+      background_url:
+        type: string
+      read_restricted:
+        type: boolean
+      permission:
+        type: null
+      notification_level:
+        type: null
+      can_edit:
+        type: boolean
+      topic_template:
+        type: string
+      has_children:
+        type: null
+      available_groups:
+        type: array
+        uniqueItems: null
+        minItems: null
+        items:
+          required:
+            type: null
+          properties:
+            type: null
+      auto_close_hours:
+        type: null
+      auto_close_based_on_last_post:
+        type: boolean
+      group_permissions:
+        type: array
+        uniqueItems: true
+        minItems: 1
+        items:
+          required:
+            - permission_type
+            - group_name
+          properties:
+            permission_type:
+              type: number
+            group_name:
+              type: string
+              minLength: 1
+      email_in:
+        type: null
+      email_in_allow_strangers:
+        type: boolean
+      suppress_from_homepage:
+        type: boolean
+      can_delete:
+        type: boolean
+      cannot_delete_reason:
+        type: null
+      allow_badges:
+        type: boolean
+      custom_fields:
+        type: object
