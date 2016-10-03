@@ -88,7 +88,7 @@ properties:
         type: boolean
       cannot_delete_reason:
         type: null
-      allow_badges:
+      algow_badges:
         type: boolean
       custom_fields:
         type: object

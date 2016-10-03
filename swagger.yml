@@ -75,20 +75,70 @@ paths:
   /posts:
     post:
       description: |
-        Create a new topic
+        Create a new topic or a new post on an existing topic.
       tags:
         - Topics
+        - Posts
       parameters:
         - name: body
           in: body
-          required: true
+          required: false
           schema:
-            $ref: 'definitions/topics/new_topic.yml'
+            type: object
+            required:
+              - raw
+            properties:
+              title:
+                type: string
+                description: required if creating a new topic
+              topic_id:
+                type: integer
+                description: required if creating a new post
+              raw:
+                type: string
       responses:
         '200':
           description: new topic response
           schema:
             $ref: 'definitions/topics/new_topic_response.yml'
+  /posts/{id}:
+    get:
+      description: |
+        Get a single post
+      tags:
+        - Posts
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: post response
+          schema:
+            $ref: 'definitions/posts/get_post_response.yml'
+    put:
+      description: |
+        Update a single post
+      tags:
+        - Posts
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - post
+            properties:
+              post:
+                type: object
+                properties:
+                  raw:
+                    type: string
   /t/{id}.json:
     get:
       description: |
