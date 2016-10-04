@@ -4,8 +4,17 @@
 	"description": "",
 	"order": [
 		"af7a1430-0fbb-b86e-ac47-5c38e0a1497e",
+		"b05dc286-c237-20c7-2e98-478bea6bd5aa",
 		"d22940f9-5508-3630-b99d-0960bb447a92",
-		"b05dc286-c237-20c7-2e98-478bea6bd5aa"
+		"95f9fc02-e29a-31b6-68f5-21c95bde32af",
+		"6c1a91bc-0172-0c97-2d9e-998ff8a3abfa",
+		"1667fb5c-95a5-1f09-6f65-3fc5a86985f9",
+		"35b47806-2cda-258d-9b8a-b4ea09ef5da4",
+		"ca523469-38a3-57ba-c372-da121a193283",
+		"5925ed03-c105-1e48-7014-990b7ef15dfc",
+		"94355281-1cff-98ea-2b32-752544ec77dd",
+		"c2d844df-6ace-40e0-12cc-e6b28b744a6a",
+		"058f22c8-14c2-ed05-928e-710e1369bdaa"
 	],
 	"folders": [],
 	"timestamp": 1474808348982,
@@ -13,6 +22,302 @@
 	"public": false,
 	"published": false,
 	"requests": [
+		{
+			"id": "058f22c8-14c2-ed05-928e-710e1369bdaa",
+			"headers": "",
+			"url": "{{base_url}}/posts/16",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "api_key",
+					"value": "{{api_key}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "api_username",
+					"value": "{{api_username}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "post[raw]",
+					"value": "{{$guid}} {{$guid}} {{$guid}} {{$guid}} {{$guid}} {{$guid}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "post[edit_reason]",
+					"value": "{{$guid}} {{$guid}} {{$guid}}",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1475588811369,
+			"name": "Post",
+			"description": "",
+			"collectionId": "d90435b9-1ee3-bca3-9290-b79212556d53",
+			"responses": []
+		},
+		{
+			"id": "1667fb5c-95a5-1f09-6f65-3fc5a86985f9",
+			"headers": "",
+			"url": "{{base_url}}/t/-/13.json",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "api_key",
+					"value": "{{api_key}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "api_username",
+					"value": "{{api_username}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "title",
+					"value": "{{$guid}}",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1475417857779,
+			"name": "Topic - title",
+			"description": "",
+			"collectionId": "d90435b9-1ee3-bca3-9290-b79212556d53",
+			"responses": []
+		},
+		{
+			"id": "35b47806-2cda-258d-9b8a-b4ea09ef5da4",
+			"headers": "",
+			"url": "{{base_url}}/t/-/17.json",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "api_key",
+					"value": "{{api_key}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "api_username",
+					"value": "{{api_username}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "category_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1475417865796,
+			"name": "Topic - category_id",
+			"description": "",
+			"collectionId": "d90435b9-1ee3-bca3-9290-b79212556d53",
+			"responses": []
+		},
+		{
+			"id": "5925ed03-c105-1e48-7014-990b7ef15dfc",
+			"headers": "",
+			"url": "{{base_url}}/t/13.json",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [
+				{
+					"key": "api_key",
+					"value": "{{api_key}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "api_username",
+					"value": "{{api_username}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "title",
+					"value": "{{$guid}}",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1475416158635,
+			"name": "Topic",
+			"description": "",
+			"collectionId": "d90435b9-1ee3-bca3-9290-b79212556d53",
+			"responses": []
+		},
+		{
+			"id": "6c1a91bc-0172-0c97-2d9e-998ff8a3abfa",
+			"headers": "",
+			"url": "{{base_url}}/posts",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "api_key",
+					"value": "{{api_key}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "api_username",
+					"value": "{{api_username}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "title",
+					"value": "{{$guid}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "raw",
+					"value": "{{$guid}}{{$guid}} {{$guid}} {{$guid}} {{$guid}}{{$guid}} {{$guid}}{{$guid}} ",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1474975257049,
+			"name": "Topic",
+			"description": "",
+			"collectionId": "d90435b9-1ee3-bca3-9290-b79212556d53",
+			"responses": []
+		},
+		{
+			"id": "94355281-1cff-98ea-2b32-752544ec77dd",
+			"headers": "",
+			"url": "{{base_url}}/posts",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "api_key",
+					"value": "{{api_key}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "api_username",
+					"value": "{{api_username}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "topic_id",
+					"value": "12",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "raw",
+					"value": "{{$guid}} {{$guid}} {{$guid}} {{$guid}} {{$guid}} {{$guid}} {{$guid}} {{$guid}}",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1475585866334,
+			"name": "Post",
+			"description": "",
+			"collectionId": "d90435b9-1ee3-bca3-9290-b79212556d53",
+			"responses": []
+		},
+		{
+			"id": "95f9fc02-e29a-31b6-68f5-21c95bde32af",
+			"headers": "",
+			"url": "{{base_url}}/categories",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "api_key",
+					"value": "{{api_key}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "api_username",
+					"value": "{{api_username}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "{{$guid}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "color",
+					"value": "49d9e9",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "text_color",
+					"value": "f0fcfd",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1475419689625,
+			"name": "Category",
+			"description": "",
+			"collectionId": "d90435b9-1ee3-bca3-9290-b79212556d53",
+			"responses": []
+		},
 		{
 			"id": "af7a1430-0fbb-b86e-ac47-5c38e0a1497e",
 			"headers": "",
@@ -47,6 +352,88 @@
 			"helperAttributes": {},
 			"time": 1474895623945,
 			"name": "Category",
+			"description": "",
+			"collectionId": "d90435b9-1ee3-bca3-9290-b79212556d53",
+			"responses": []
+		},
+		{
+			"id": "c2d844df-6ace-40e0-12cc-e6b28b744a6a",
+			"headers": "",
+			"url": "{{base_url}}/posts/33.json",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "api_key",
+					"value": "{{api_key}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "api_username",
+					"value": "{{api_username}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "topic_id",
+					"value": "8",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "raw",
+					"value": "{{$guid}} {{$guid}} {{$guid}} {{$guid}} {{$guid}} {{$guid}} {{$guid}} {{$guid}}",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1475502324521,
+			"name": "Post",
+			"description": "",
+			"collectionId": "d90435b9-1ee3-bca3-9290-b79212556d53",
+			"responses": []
+		},
+		{
+			"id": "ca523469-38a3-57ba-c372-da121a193283",
+			"headers": "",
+			"url": "{{base_url}}/t/13.json",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "api_key",
+					"value": "{{api_key}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "api_username",
+					"value": "{{api_username}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "title",
+					"value": "{{$guid}}",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1474978325825,
+			"name": "Topic",
 			"description": "",
 			"collectionId": "d90435b9-1ee3-bca3-9290-b79212556d53",
 			"responses": []
@@ -96,7 +483,7 @@
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"time": 1474811771564,
-			"name": "Categories",
+			"name": "Category",
 			"description": "",
 			"collectionId": "d90435b9-1ee3-bca3-9290-b79212556d53",
 			"responses": []

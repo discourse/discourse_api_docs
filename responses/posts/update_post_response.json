@@ -1,0 +1,70 @@
+{
+  "post": {
+    "id": 25,
+    "name": "",
+    "username": "discourse1",
+    "avatar_template": "/user_avatar/colloquy.blakeerickson.com/discourse1/{size}/2_1.png",
+    "created_at": "2016-10-04T12:44:14.372Z",
+    "cooked": "<p>07c585ab-b775-f0b8-5d9e-0d9b1aaf94c5 07c585ab-b775-f0b8-5d9e-0d9b1aaf94c5 07c585ab-b775-f0b8-5d9e-0d9b1aaf94c5 07c585ab-b775-f0b8-5d9e-0d9b1aaf94c5 07c585ab-b775-f0b8-5d9e-0d9b1aaf94c5 07c585ab-b775-f0b8-5d9e-0d9b1aaf94c5</p>",
+    "post_number": 11,
+    "post_type": 1,
+    "updated_at": "2016-10-04T13:02:15.146Z",
+    "reply_count": 0,
+    "reply_to_post_number": null,
+    "quote_count": 0,
+    "avg_time": null,
+    "incoming_link_count": 0,
+    "reads": 1,
+    "score": 0.2,
+    "yours": true,
+    "topic_id": 12,
+    "topic_slug": "55113baf-3b00-aa2c-f020-643fd8fcebf3",
+    "display_username": "",
+    "primary_group_name": null,
+    "primary_group_flair_url": null,
+    "primary_group_flair_bg_color": null,
+    "primary_group_flair_color": null,
+    "version": 3,
+    "can_edit": true,
+    "can_delete": true,
+    "can_recover": true,
+    "can_wiki": true,
+    "user_title": null,
+    "actions_summary": [
+      {
+        "id": 3,
+        "can_act": true
+      },
+      {
+        "id": 4,
+        "can_act": true
+      },
+      {
+        "id": 5,
+        "hidden": true,
+        "can_act": true
+      },
+      {
+        "id": 7,
+        "can_act": true
+      },
+      {
+        "id": 8,
+        "can_act": true
+      }
+    ],
+    "moderator": false,
+    "admin": true,
+    "staff": true,
+    "user_id": 1,
+    "draft_sequence": 22,
+    "hidden": false,
+    "hidden_reason_id": null,
+    "trust_level": 0,
+    "deleted_at": null,
+    "user_deleted": false,
+    "edit_reason": null,
+    "can_view_edit_history": true,
+    "wiki": false
+  }
+}

@@ -21,7 +21,8 @@ paths:
         - Categories
       responses:
         '200':
-          description: A category_list object that contains an array of categories
+          description: |
+            A category_list object that contains an array of categories
           schema:
             $ref: 'definitions/categories/categories.yml'
     post:
@@ -131,14 +132,14 @@ paths:
           in: body
           schema:
             type: object
-            required:
-              - post
             properties:
-              post:
-                type: object
-                properties:
-                  raw:
-                    type: string
+              post[raw]:
+                type: string
+      responses:
+        '200':
+          description: update post response
+          schema:
+            $ref: 'definitions/posts/update_post_response.yml'
   /t/{id}.json:
     get:
       description: |
