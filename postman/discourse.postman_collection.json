@@ -14,7 +14,8 @@
 		"5925ed03-c105-1e48-7014-990b7ef15dfc",
 		"94355281-1cff-98ea-2b32-752544ec77dd",
 		"c2d844df-6ace-40e0-12cc-e6b28b744a6a",
-		"058f22c8-14c2-ed05-928e-710e1369bdaa"
+		"058f22c8-14c2-ed05-928e-710e1369bdaa",
+		"17c2cd87-f0d8-4a84-51f8-09b302634a0b"
 	],
 	"folders": [],
 	"timestamp": 1474808348982,
@@ -61,7 +62,7 @@
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"time": 1475588811369,
-			"name": "Post",
+			"name": "posts",
 			"description": "",
 			"collectionId": "d90435b9-1ee3-bca3-9290-b79212556d53",
 			"responses": []
@@ -99,10 +100,240 @@
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"time": 1475417857779,
-			"name": "Topic - title",
+			"name": "topics - title",
 			"description": "",
 			"collectionId": "d90435b9-1ee3-bca3-9290-b79212556d53",
 			"responses": []
+		},
+		{
+			"id": "17c2cd87-f0d8-4a84-51f8-09b302634a0b",
+			"headers": "",
+			"url": "{{base_url}}/users",
+			"preRequestScript": "postman.setEnvironmentVariable(\"str\", Math.random().toString(36).slice(1, 16).replace(/\\W/g, ''));",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "api_key",
+					"value": "{{api_key}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "api_username",
+					"value": "{{api_username}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "{{str}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "email",
+					"value": "{{str}}@example.com",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "{{$guid}}",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "username",
+					"value": "{{str}}",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1475672594493,
+			"name": "users",
+			"description": "",
+			"collectionId": "d90435b9-1ee3-bca3-9290-b79212556d53",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 708,
+					"headers": [
+						{
+							"name": "Cache-Control",
+							"key": "Cache-Control",
+							"value": "no-store, must-revalidate, private, max-age=0",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "Content-Encoding",
+							"key": "Content-Encoding",
+							"value": "gzip",
+							"description": "The type of encoding used on the data."
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Wed, 05 Oct 2016 13:04:19 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "nginx",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Accept-Encoding",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-Discourse-Route",
+							"key": "X-Discourse-Route",
+							"value": "users/create",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Discourse-Username",
+							"key": "X-Discourse-Username",
+							"value": "discourse1",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"name": "X-MiniProfiler-Ids",
+							"key": "X-MiniProfiler-Ids",
+							"value": "[\"nnsjhllyukotyo6ep2sw\",\"edvp8cnhbwdoqf8msk26\",\"ax2w2y80me5juf29s0tp\",\"23ly6jqqpck1yd7rekxh\",\"dqeogp2e74uuknb88nl3\",\"oxraml5hx72s85u0fbtt\",\"edcd7q1nvrjz75x2awhb\",\"2rc9azx07efc4ghr81t2\",\"hx2j0vhf1pmepvby15d2\",\"7bc7j46tbn67bt36jkhk\",\"md5nvx48gv2c1i41a3f4\",\"h31spvtsfe35lmxfmsfr\",\"y7bouokdqpro4s9emf8v\",\"18wqrou3kj1mi1zuva54\",\"7fruo9k5sce6tfkhn9r9\",\"c0gk65bk21foo6ae1qph\",\"lvjbc4zdz39dhxtr846\",\"9pe2mrkgtoap1gn9d3n2\",\"mgrjbmzh3cjsccxm1ya5\",\"lpx9k7tun0w4r672ua5c\"]",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Request-Id",
+							"key": "X-Request-Id",
+							"value": "72c14a6f-b6a2-4466-8423-e81f5cf0251f",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Runtime",
+							"key": "X-Runtime",
+							"value": "0.578698",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-UA-Compatible",
+							"key": "X-UA-Compatible",
+							"value": "IE=edge",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"success\":true,\"active\":false,\"message\":\"\\u003cp\\u003eYou're almost done! We sent an activation mail to \\u003cb\\u003eweqsl7yieqfz9w@example.com\\u003c/b\\u003e. Please follow the instructions in the email to activate your account.\\u003c/p\\u003e\\u003cp\\u003eIf it doesn't arrive, check your spam folder, or try to log in again to send another activation mail.\\u003c/p\\u003e\",\"user_id\":25}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "ff021c84-0c4d-9f47-5c5c-ed360a5c2aef",
+					"name": "create_user_response",
+					"request": {
+						"url": "{{base_url}}/users",
+						"headers": [],
+						"data": [
+							{
+								"key": "api_key",
+								"value": "{{api_key}}",
+								"type": "text",
+								"enabled": true
+							},
+							{
+								"key": "api_username",
+								"value": "{{api_username}}",
+								"type": "text",
+								"enabled": true
+							},
+							{
+								"key": "name",
+								"value": "{{str}}",
+								"type": "text",
+								"enabled": true
+							},
+							{
+								"key": "email",
+								"value": "{{str}}@example.com",
+								"type": "text",
+								"enabled": true
+							},
+							{
+								"key": "password",
+								"value": "{{$guid}}",
+								"type": "text",
+								"enabled": true
+							},
+							{
+								"key": "username",
+								"value": "{{str}}",
+								"type": "text",
+								"enabled": true
+							}
+						],
+						"method": "POST",
+						"dataMode": "params"
+					}
+				}
+			]
 		},
 		{
 			"id": "35b47806-2cda-258d-9b8a-b4ea09ef5da4",
@@ -137,7 +368,7 @@
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"time": 1475417865796,
-			"name": "Topic - category_id",
+			"name": "topics - category_id",
 			"description": "",
 			"collectionId": "d90435b9-1ee3-bca3-9290-b79212556d53",
 			"responses": []
@@ -175,7 +406,7 @@
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"time": 1475416158635,
-			"name": "Topic",
+			"name": "topics",
 			"description": "",
 			"collectionId": "d90435b9-1ee3-bca3-9290-b79212556d53",
 			"responses": []
@@ -219,7 +450,7 @@
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"time": 1474975257049,
-			"name": "Topic",
+			"name": "topics",
 			"description": "",
 			"collectionId": "d90435b9-1ee3-bca3-9290-b79212556d53",
 			"responses": []
@@ -263,7 +494,7 @@
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"time": 1475585866334,
-			"name": "Post",
+			"name": "posts",
 			"description": "",
 			"collectionId": "d90435b9-1ee3-bca3-9290-b79212556d53",
 			"responses": []
@@ -313,7 +544,7 @@
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"time": 1475419689625,
-			"name": "Category",
+			"name": "categories",
 			"description": "",
 			"collectionId": "d90435b9-1ee3-bca3-9290-b79212556d53",
 			"responses": []
@@ -332,7 +563,7 @@
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"time": 1474811835986,
-			"name": "Categories",
+			"name": "categories",
 			"description": "",
 			"collectionId": "d90435b9-1ee3-bca3-9290-b79212556d53",
 			"responses": []
@@ -351,7 +582,7 @@
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"time": 1474895623945,
-			"name": "Category",
+			"name": "categories",
 			"description": "",
 			"collectionId": "d90435b9-1ee3-bca3-9290-b79212556d53",
 			"responses": []
@@ -395,7 +626,7 @@
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"time": 1475502324521,
-			"name": "Post",
+			"name": "posts",
 			"description": "",
 			"collectionId": "d90435b9-1ee3-bca3-9290-b79212556d53",
 			"responses": []
@@ -433,7 +664,7 @@
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"time": 1474978325825,
-			"name": "Topic",
+			"name": "topics",
 			"description": "",
 			"collectionId": "d90435b9-1ee3-bca3-9290-b79212556d53",
 			"responses": []
@@ -483,7 +714,7 @@
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"time": 1474811771564,
-			"name": "Category",
+			"name": "categories",
 			"description": "",
 			"collectionId": "d90435b9-1ee3-bca3-9290-b79212556d53",
 			"responses": []

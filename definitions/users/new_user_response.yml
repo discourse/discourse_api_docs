@@ -1,0 +1,13 @@
+$schema: 'http://json-schema.org/draft-04/schema#'
+description: ""
+type: object
+properties:
+  success:
+    type: boolean
+  active:
+    type: boolean
+  message:
+    type: string
+    minLength: 1
+  user_id:
+    type: number
