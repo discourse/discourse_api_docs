@@ -196,6 +196,21 @@ paths:
           schema:
             $ref: 'definitions/topics/update_topic_response.yml'
   /users:
+    get:
+      description: |
+        Get a single user by username
+      tags:
+        - Users
+      parameters:
+        - name: username
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: get user response
+          schema:
+            $ref: 'definitions/users/get_user_response.yml'
     post:
       description: |
         Creates a new user
@@ -211,3 +226,31 @@ paths:
           description: new user response
           schema:
             $ref: 'definitions/users/new_user_response.yml'
+  /admin/users/{id}/suspend:
+    put:
+      description: |
+        Suspend a user
+      tags:
+        - Admin
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: empty response body
+  /admin/users/{id}/unsuspend:
+    put:
+      description: |
+        Unsuspend a user
+      tags:
+        - Admin
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: empty response body

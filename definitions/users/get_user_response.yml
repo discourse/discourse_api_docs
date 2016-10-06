@@ -1,0 +1,164 @@
+$schema: 'http://json-schema.org/draft-04/schema#'
+description: ""
+type: object
+properties:
+  user_badges:
+    type: array
+    uniqueItems: null
+    minItems: null
+    items:
+      required:
+        type: null
+      properties:
+        type: null
+  user:
+    type: object
+    properties:
+      id:
+        type: number
+      username:
+        type: string
+        minLength: 1
+      avatar_template:
+        type: string
+        minLength: 1
+      name:
+        type: string
+      last_posted_at:
+        type: null
+      last_seen_at:
+        type: string
+        minLength: 1
+      created_at:
+        type: string
+        minLength: 1
+      website_name:
+        type: null
+      can_edit:
+        type: boolean
+      can_edit_username:
+        type: boolean
+      can_edit_email:
+        type: boolean
+      can_edit_name:
+        type: boolean
+      can_send_private_messages:
+        type: boolean
+      can_send_private_message_to_user:
+        type: boolean
+      trust_level:
+        type: number
+      moderator:
+        type: boolean
+      admin:
+        type: boolean
+      title:
+        type: null
+      uploaded_avatar_id:
+        type: number
+      badge_count:
+        type: number
+      custom_fields:
+        type: object
+        properties:
+          type: null
+        required:
+          type: null
+      pending_count:
+        type: number
+      profile_view_count:
+        type: number
+      primary_group_name:
+        type: null
+      primary_group_flair_url:
+        type: null
+      primary_group_flair_bg_color:
+        type: null
+      primary_group_flair_color:
+        type: null
+      invited_by:
+        type: null
+      groups:
+        type: array
+        uniqueItems: true
+        minItems: 1
+        items:
+          required:
+            - id
+            - automatic
+            - name
+            - user_count
+            - alias_level
+            - visible
+            - automatic_membership_retroactive
+            - primary_group
+            - has_messages
+            - mentionable
+          properties:
+            id:
+              type: number
+            automatic:
+              type: boolean
+            name:
+              type: string
+              minLength: 1
+            user_count:
+              type: number
+            alias_level:
+              type: number
+            visible:
+              type: boolean
+            automatic_membership_email_domains:
+              type: null
+            automatic_membership_retroactive:
+              type: boolean
+            primary_group:
+              type: boolean
+            title:
+              type: null
+            grant_trust_level:
+              type: null
+            has_messages:
+              type: boolean
+            mentionable:
+              type: boolean
+            flair_url:
+              type: null
+            flair_bg_color:
+              type: null
+            flair_color:
+              type: null
+      featured_user_badge_ids:
+        type: array
+        uniqueItems: null
+        minItems: null
+        items:
+          required:
+            type: null
+          properties:
+            type: null
+      card_badge:
+        type: null
+    required:
+      - id
+      - username
+      - avatar_template
+      - name
+      - last_seen_at
+      - created_at
+      - can_edit
+      - can_edit_username
+      - can_edit_email
+      - can_edit_name
+      - can_send_private_messages
+      - can_send_private_message_to_user
+      - trust_level
+      - moderator
+      - admin
+      - uploaded_avatar_id
+      - badge_count
+      - custom_fields
+      - pending_count
+      - profile_view_count
+      - groups
+      - featured_user_badge_ids
