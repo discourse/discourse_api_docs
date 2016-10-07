@@ -76,7 +76,7 @@ paths:
   /posts:
     post:
       description: |
-        Create a new topic or a new post on an existing topic.
+        Create a new topic or a new post
       tags:
         - Topics
         - Posts
@@ -97,6 +97,11 @@ paths:
                 description: required if creating a new post
               raw:
                 type: string
+              category:
+                type: integer
+                description: |
+                  optional if creating a new topic,
+                  ignored if creating a new post
       responses:
         '200':
           description: new topic response
@@ -254,3 +259,22 @@ paths:
       responses:
         '200':
           description: empty response body
+  /admin/users/{id}/activate:
+    put:
+      description: |
+        Activate a user
+      tags:
+        - Admin
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: activate user response
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
