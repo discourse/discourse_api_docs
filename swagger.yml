@@ -200,6 +200,51 @@ paths:
           description: update topic response
           schema:
             $ref: 'definitions/topics/update_topic_response.yml'
+  /t/{topic_id}/invite:
+    post:
+      description: |
+        Invite user to topic
+      tags:
+        - Invites
+      responses:
+        '200':
+          description: response
+  /topics/private-messages/{username}.json:
+    get:
+      description: |
+        Get a list of private messages for a user
+      tags:
+        - Private Messages
+      responses:
+        '200':
+          description: response
+  /notifications.json:
+    get:
+      description: |
+        Get some notifications
+      tags:
+        - Notifications
+      responses:
+        '200':
+          description: response
+  /invites:
+    post:
+      description: |
+        Invite a user
+      tags:
+        - Invites
+      responses:
+        '200':
+          description: response
+  /invites/disposable:
+    post:
+      description: |
+        Create disposable invite token
+      tags:
+        - Invites
+      responses:
+        '200':
+          description: response
   /users:
     get:
       description: |
@@ -231,6 +276,27 @@ paths:
           description: new user response
           schema:
             $ref: 'definitions/users/new_user_response.yml'
+  /tags/{tag}:
+    get:
+      description: |
+        Get a specific tag
+      tags:
+        - Tags
+      parameters:
+        - name: tag
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: |
+            tag response
+  /search/query:
+    get:
+      description: |
+        Search for something
+      tags:
+        - Search
   /admin/users/{id}/suspend:
     put:
       description: |
@@ -278,3 +344,58 @@ paths:
             properties:
               success:
                 type: string
+  /admin/groups.json:
+    get:
+      description: |
+        Get some groups
+      tags:
+        - Admin
+        - Groups
+      responses:
+        '200':
+          description: groups response
+  /admin/groups:
+    post:
+      description: |
+        Create a group
+      tags:
+        - Admin
+        - Groups
+      #parameters:
+      #  - name: name
+      #    in: body
+      #    required: true
+      #    type: string
+      responses:
+        '200':
+          description: create group response
+  /admin/groups/{group_id}.json:
+    delete:
+      description: |
+        Delete a group
+      tags:
+        - Admin
+        - Groups
+      responses:
+        '200':
+          description: delete group response
+  /groups/{group_name}/members.json:
+    get:
+      description: |
+        Get some group members
+      tags:
+        - Admin
+        - Groups
+      responses:
+        '200':
+          description: group members response
+  /admin/groups/{group_id}/members.json:
+    delete:
+      description: |
+        Delete a user from a group
+      tags:
+        - Admin
+        - Groups
+      responses:
+        '200':
+          description: delete user from group response
