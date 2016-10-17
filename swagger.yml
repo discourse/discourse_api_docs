@@ -399,3 +399,21 @@ paths:
       responses:
         '200':
           description: delete user from group response
+  /latest.json:
+    get:
+      description: |
+        Get the latest topics
+      tags:
+        - Topics
+      parameters:
+        - name: order
+          in: path
+          required: false
+          type: string
+          enum:
+            - default
+            - created
+            - activity
+            - views
+            - posts
+            - category
