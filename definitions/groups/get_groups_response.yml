@@ -32,22 +32,29 @@ items:
       type: number
     visible:
       type: boolean
-    #automatic_membership_email_domains:
-    #automatic_membership_retroactive:
-    #  type: boolean
-    #primary_group:
-    #  type: boolean
-    #title:
-    #grant_trust_level:
-    #incoming_email:
-    #notification_level:
-    #  type: number
-    #has_messages:
-    #  type: boolean
-    #is_member:
-    #  type: boolean
-    #mentionable:
-    #  type: boolean
-    #flair_url:
-    #flair_bg_color:
-    #flair_color:
+    automatic_membership_email_domains:
+      type: null
+    automatic_membership_retroactive:
+      type: boolean
+    primary_group:
+      type: boolean
+    title:
+      type: null
+    grant_trust_level:
+      type: null
+    incoming_email:
+      type: null
+    notification_level:
+      type: number
+    has_messages:
+      type: boolean
+    is_member:
+      type: boolean
+    mentionable:
+      type: boolean
+    flair_url:
+      type: boolean
+    flair_bg_color:
+      type: null
+    flair_color:
+      type: null

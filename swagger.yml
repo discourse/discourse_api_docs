@@ -356,14 +356,6 @@ paths:
           description: groups response
           schema:
             $ref: 'definitions/groups/get_groups_response.yml'
-            #type: array
-            #items:
-            #  type: object
-            #  properties:
-            #    id:
-            #      type: integer
-            #    automatic:
-            #      type: boolean
   /admin/groups:
     post:
       description: |
@@ -371,14 +363,21 @@ paths:
       tags:
         - Admin
         - Groups
-      #parameters:
-      #  - name: name
-      #    in: body
-      #    required: true
-      #    type: string
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - name
+            properties:
+              name:
+                type: string
       responses:
         '200':
           description: create group response
+          schema:
+            $ref: 'definitions/groups/new_group_response.yml'
   /admin/groups/{group_id}.json:
     delete:
       description: |
