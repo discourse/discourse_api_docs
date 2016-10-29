@@ -1,0 +1,132 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "discourse1",
+      "avatar_template": "/letter_avatar_proxy/v2/letter/d/da6949/{size}.png"
+    },
+    {
+      "id": -1,
+      "username": "system",
+      "avatar_template": "/letter_avatar_proxy/v2/letter/s/bcef8e/{size}.png"
+    }
+  ],
+  "topic_list": {
+    "can_create_topic": false,
+    "draft": null,
+    "draft_key": "new_topic",
+    "draft_sequence": null,
+    "per_page": 30,
+    "topics": [
+      {
+        "id": 13,
+        "title": "2a6aa74e-e341-5e3c-1eaa-78c6331f305f",
+        "fancy_title": "2a6aa74e-e341-5e3c-1eaa-78c6331f305f",
+        "slug": "2a6aa74e-e341-5e3c-1eaa-78c6331f305f",
+        "posts_count": 1,
+        "reply_count": 0,
+        "highest_post_number": 1,
+        "image_url": null,
+        "created_at": "2016-10-29T14:14:20.321Z",
+        "last_posted_at": "2016-10-29T14:14:20.516Z",
+        "bumped": true,
+        "bumped_at": "2016-10-29T14:14:20.516Z",
+        "unseen": false,
+        "pinned": false,
+        "unpinned": null,
+        "visible": true,
+        "closed": false,
+        "archived": false,
+        "bookmarked": null,
+        "liked": null,
+        "views": 1,
+        "like_count": 0,
+        "has_summary": false,
+        "archetype": "regular",
+        "last_poster_username": "discourse1",
+        "category_id": 1,
+        "pinned_globally": false,
+        "posters": [
+          {
+            "extras": "latest single",
+            "description": "Original Poster, Most Recent Poster",
+            "user_id": 1
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "title": "E45937e6-b689-b938-f7d1-13f64906b04a",
+        "fancy_title": "E45937e6-b689-b938-f7d1-13f64906b04a",
+        "slug": "e45937e6-b689-b938-f7d1-13f64906b04a",
+        "posts_count": 7,
+        "reply_count": 0,
+        "highest_post_number": 7,
+        "image_url": null,
+        "created_at": "2016-10-29T14:13:49.614Z",
+        "last_posted_at": "2016-10-29T14:15:16.236Z",
+        "bumped": true,
+        "bumped_at": "2016-10-29T14:15:16.236Z",
+        "unseen": false,
+        "pinned": false,
+        "unpinned": null,
+        "visible": true,
+        "closed": false,
+        "archived": false,
+        "bookmarked": null,
+        "liked": null,
+        "views": 1,
+        "like_count": 0,
+        "has_summary": false,
+        "archetype": "regular",
+        "last_poster_username": "discourse1",
+        "category_id": 1,
+        "pinned_globally": false,
+        "posters": [
+          {
+            "extras": "latest single",
+            "description": "Original Poster, Most Recent Poster",
+            "user_id": 1
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "title": "Welcome to Discourse",
+        "fancy_title": "Welcome to Discourse",
+        "slug": "welcome-to-discourse",
+        "posts_count": 1,
+        "reply_count": 0,
+        "highest_post_number": 1,
+        "image_url": null,
+        "created_at": "2016-10-21T02:29:17.537Z",
+        "last_posted_at": "2016-10-21T02:29:17.587Z",
+        "bumped": true,
+        "bumped_at": "2016-10-21T02:29:17.587Z",
+        "unseen": false,
+        "pinned": true,
+        "unpinned": null,
+        "excerpt": "The first paragraph of this pinned topic will be visible as a welcome message to all new visitors on your homepage. It&#39;s important! \n\nEdit this into a brief description of your community: \n\n\nWho is it for?\nWhat can they &hellip;",
+        "visible": true,
+        "closed": false,
+        "archived": false,
+        "bookmarked": null,
+        "liked": null,
+        "views": 0,
+        "like_count": 0,
+        "has_summary": false,
+        "archetype": "regular",
+        "last_poster_username": "system",
+        "category_id": 1,
+        "pinned_globally": true,
+        "posters": [
+          {
+            "extras": "latest single",
+            "description": "Original Poster, Most Recent Poster",
+            "user_id": -1
+          }
+        ]
+      }
+    ]
+  }
+}

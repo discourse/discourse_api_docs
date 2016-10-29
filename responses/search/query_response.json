@@ -1,0 +1,60 @@
+{
+  "posts": [
+    {
+      "id": 16,
+      "name": null,
+      "username": "discourse1",
+      "avatar_template": "/letter_avatar_proxy/v2/letter/d/da6949/{size}.png",
+      "created_at": "2016-10-29T14:14:20.516Z",
+      "cooked": "<p>ecf65fcd-1e16-7c4c-4244-a467b46c610becf65fcd-1e16-7c4c-4244-a467b46c610b ecf65fcd-1e16-7c4c-4244-a467b46c610b ecf65fcd-1e16-7c4c-4244-a467b46c610b ecf65fcd-1e16-7c4c-4244-a467b46c610becf65fcd-1e16-7c4c-4244-a467b46c610b ecf65fcd-1e16-7c4c-4244-a467b46c610becf65fcd-1e16-7c4c-4244-a467b46c610b</p>",
+      "like_count": 0,
+      "blurb": "ecf65fcd-1e16-7c4c-4244-a467b46c610becf65fcd-1e16-7c4c-4244-a467b46c610b ecf65fcd-1e16-7c4c-4244-a467b4...",
+      "post_number": 1,
+      "topic_id": 13
+    }
+  ],
+  "topics": [
+    {
+      "id": 13,
+      "title": "2a6aa74e-e341-5e3c-1eaa-78c6331f305f",
+      "fancy_title": "2a6aa74e-e341-5e3c-1eaa-78c6331f305f",
+      "slug": "2a6aa74e-e341-5e3c-1eaa-78c6331f305f",
+      "posts_count": 1,
+      "reply_count": 0,
+      "highest_post_number": 1,
+      "image_url": null,
+      "created_at": "2016-10-29T14:14:20.321Z",
+      "last_posted_at": "2016-10-29T14:14:20.516Z",
+      "bumped": true,
+      "bumped_at": "2016-10-29T14:14:20.516Z",
+      "unseen": false,
+      "pinned": false,
+      "unpinned": null,
+      "visible": true,
+      "closed": false,
+      "archived": false,
+      "bookmarked": null,
+      "liked": null,
+      "views": 1,
+      "like_count": 0,
+      "has_summary": false,
+      "archetype": "regular",
+      "last_poster_username": null,
+      "category_id": 1,
+      "pinned_globally": false,
+      "posters": []
+    }
+  ],
+  "users": [],
+  "categories": [],
+  "grouped_search_result": {
+    "more_posts": null,
+    "more_users": null,
+    "more_categories": null,
+    "post_ids": [
+      16
+    ],
+    "user_ids": [],
+    "category_ids": []
+  }
+}

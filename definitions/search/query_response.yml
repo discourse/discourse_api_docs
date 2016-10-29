@@ -1,0 +1,202 @@
+$schema: 'http://json-schema.org/draft-04/schema#'
+description: ""
+type: object
+properties:
+  posts:
+    type: array
+    uniqueItems: true
+    minItems: 1
+    items:
+      required:
+        - id
+        - username
+        - avatar_template
+        - created_at
+        - cooked
+        - like_count
+        - blurb
+        - post_number
+        - topic_id
+      properties:
+        id:
+          type: number
+        name:
+          type: null
+        username:
+          type: string
+          minLength: 1
+        avatar_template:
+          type: string
+          minLength: 1
+        created_at:
+          type: string
+          minLength: 1
+        cooked:
+          type: string
+          minLength: 1
+        like_count:
+          type: number
+        blurb:
+          type: string
+          minLength: 1
+        post_number:
+          type: number
+        topic_id:
+          type: number
+  topics:
+    type: array
+    uniqueItems: true
+    minItems: 1
+    items:
+      required:
+        - id
+        - title
+        - fancy_title
+        - slug
+        - posts_count
+        - reply_count
+        - highest_post_number
+        - created_at
+        - last_posted_at
+        - bumped
+        - bumped_at
+        - unseen
+        - pinned
+        - visible
+        - closed
+        - archived
+        - views
+        - like_count
+        - has_summary
+        - archetype
+        - category_id
+        - pinned_globally
+      properties:
+        id:
+          type: number
+        title:
+          type: string
+          minLength: 1
+        fancy_title:
+          type: string
+          minLength: 1
+        slug:
+          type: string
+          minLength: 1
+        posts_count:
+          type: number
+        reply_count:
+          type: number
+        highest_post_number:
+          type: number
+        image_url:
+          type: null
+        created_at:
+          type: string
+          minLength: 1
+        last_posted_at:
+          type: string
+          minLength: 1
+        bumped:
+          type: boolean
+        bumped_at:
+          type: string
+          minLength: 1
+        unseen:
+          type: boolean
+        pinned:
+          type: boolean
+        unpinned:
+          type: null
+        visible:
+          type: boolean
+        closed:
+          type: boolean
+        archived:
+          type: boolean
+        bookmarked:
+          type: null
+        liked:
+          type: null
+        views:
+          type: number
+        like_count:
+          type: number
+        has_summary:
+          type: boolean
+        archetype:
+          type: string
+          minLength: 1
+        last_poster_username:
+          type: null
+        category_id:
+          type: number
+        pinned_globally:
+          type: boolean
+        posters:
+          type: array
+          uniqueItems: null
+          minItems: null
+          items:
+            required:
+              type: null
+            properties:
+              type: null
+  users:
+    type: array
+    uniqueItems: null
+    minItems: null
+    items:
+      required:
+        type: null
+      properties:
+        type: null
+  categories:
+    type: array
+    uniqueItems: null
+    minItems: null
+    items:
+      required:
+        type: null
+      properties:
+        type: null
+  grouped_search_result:
+    type: object
+    properties:
+      more_posts:
+        type: null
+      more_users:
+        type: null
+      more_categories:
+        type: null
+      post_ids:
+        type: array
+        uniqueItems: null
+        minItems: null
+        items:
+          required:
+            type: null
+          properties:
+            type: null
+      user_ids:
+        type: array
+        uniqueItems: null
+        minItems: null
+        items:
+          required:
+            type: null
+          properties:
+            type: null
+      category_ids:
+        type: array
+        uniqueItems: null
+        minItems: null
+        items:
+          required:
+            type: null
+          properties:
+            type: null
+    required:
+      - post_ids
+      - user_ids
+      - category_ids

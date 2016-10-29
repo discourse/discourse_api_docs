@@ -297,6 +297,20 @@ paths:
         Search for something
       tags:
         - Search
+      parameters:
+        - name: term
+          in: path
+          required: true
+          type: string
+        - name: include_blurbs
+          in: path
+          required: false
+          type: boolean
+      responses:
+        '200':
+          description: search response
+          schema:
+            $ref: 'definitions/search/query_response.yml'
   /admin/users/{id}/suspend:
     put:
       description: |
@@ -344,6 +358,17 @@ paths:
             properties:
               success:
                 type: string
+  /admin/users/list/active.json:
+    get:
+      description: return a list of active users
+      tags:
+        - Admin
+        - Users
+      responses:
+        '200':
+          description: list of active users response
+          schema:
+            $ref: 'definitions/users/active_list.yml'
   /admin/groups.json:
     get:
       description: |
@@ -474,3 +499,8 @@ paths:
             - views
             - posts
             - category
+      responses:
+        '200':
+          description: latest topics response
+          schema:
+            $ref: 'definitions/topics/latest_topics_response.yml'
