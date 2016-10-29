@@ -388,6 +388,11 @@ paths:
       responses:
         '200':
           description: delete group response
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
   /groups/{group_name}/members.json:
     get:
       description: |
@@ -398,16 +403,59 @@ paths:
       responses:
         '200':
           description: group members response
-  /admin/groups/{group_id}/members.json:
+          schema:
+            $ref: 'definitions/groups/group_members_response.yml'
+  /groups/{group_id}/members.json:
+    put:
+      description: |
+        Add users to a group (comma separated)
+      tags:
+        - Admin
+        - Groups
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - usernames
+            properties:
+              usernames:
+                type: string
+      responses:
+        '200':
+          description: |
+            add user to group response
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+          
     delete:
       description: |
         Delete a user from a group
       tags:
         - Admin
         - Groups
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - user_id
+            properties:
+              user_id:
+                type: integer
       responses:
         '200':
           description: delete user from group response
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
   /latest.json:
     get:
       description: |

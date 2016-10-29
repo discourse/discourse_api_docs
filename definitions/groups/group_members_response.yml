@@ -1,0 +1,54 @@
+$schema: 'http://json-schema.org/draft-04/schema#'
+description: ""
+type: object
+properties:
+  members:
+    type: array
+    uniqueItems: true
+    minItems: 1
+    items:
+      required:
+        - id
+        - username
+        - avatar_template
+        - last_seen_at
+      properties:
+        id:
+          type: number
+        username:
+          type: string
+          minLength: 1
+        avatar_template:
+          type: string
+          minLength: 1
+        name:
+          type: null
+        title:
+          type: null
+        last_posted_at:
+          type: null
+        last_seen_at:
+          type: string
+          minLength: 1
+  owners:
+    type: array
+    uniqueItems: null
+    minItems: null
+    items:
+      required:
+        type: null
+      properties:
+        type: null
+  meta:
+    type: object
+    properties:
+      total:
+        type: number
+      limit:
+        type: number
+      offset:
+        type: number
+    required:
+      - total
+      - limit
+      - offset
