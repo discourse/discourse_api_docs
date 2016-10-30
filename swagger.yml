@@ -369,6 +369,17 @@ paths:
           description: list of active users response
           schema:
             $ref: 'definitions/users/active_list.yml'
+  /admin/users/list/new.json:
+    get:
+      description: return a list of new users
+      tags:
+        - Admin
+        - Users
+      responses:
+        '200':
+          description: list of new users response
+          schema:
+            $ref: 'definitions/users/new_list.yml'
   /admin/groups.json:
     get:
       description: |
