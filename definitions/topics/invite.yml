@@ -1,0 +1,19 @@
+$schema: 'http://json-schema.org/draft-04/schema#'
+description: ""
+type: object
+properties:
+  user:
+    type: object
+    properties:
+      id:
+        type: number
+      username:
+        type: string
+        minLength: 1
+      avatar_template:
+        type: string
+        minLength: 1
+    required:
+      - id
+      - username
+      - avatar_template

@@ -206,9 +206,27 @@ paths:
         Invite user to topic
       tags:
         - Invites
+        - Topics
+      parameters:
+        - name: topic_id
+          in: path
+          required: true
+          type: integer
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            required:
+              - username
+            properties:
+              username:
+                type: string
       responses:
         '200':
-          description: response
+          description: invite response
+          schema:
+            $ref: 'definitions/topics/invite.yml'
   /topics/private-messages/{username}.json:
     get:
       description: |
@@ -358,28 +376,30 @@ paths:
             properties:
               success:
                 type: string
-  /admin/users/list/active.json:
+  /admin/users/list/{flag}.json:
     get:
-      description: return a list of active users
+      description: |
+        returns a list of users
       tags:
         - Admin
         - Users
+      parameters:
+        - name: flag
+          in: path
+          required: true
+          type: string
+          enum:
+            - active
+            - new
+            - staff
+            - suspended
+            - blocked
+            - suspect
       responses:
         '200':
-          description: list of active users response
+          description: list of users response
           schema:
-            $ref: 'definitions/users/active_list.yml'
-  /admin/users/list/new.json:
-    get:
-      description: return a list of new users
-      tags:
-        - Admin
-        - Users
-      responses:
-        '200':
-          description: list of new users response
-          schema:
-            $ref: 'definitions/users/new_list.yml'
+            $ref: 'definitions/users/list.yml'
   /admin/groups.json:
     get:
       description: |
