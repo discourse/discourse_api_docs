@@ -248,21 +248,71 @@ paths:
   /invites:
     post:
       description: |
-        Invite a user
+        Invite a user by email to join your Discourse forum
       tags:
         - Invites
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - email
+            properties:
+              email:
+                type: string
+              group_names:
+                type: string
+              custom_message:
+                type: string
       responses:
         '200':
           description: response
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
   /invites/disposable:
     post:
       description: |
         Create disposable invite token
       tags:
         - Invites
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - username
+            properties:
+              username:
+                type: string
+              email:
+                type: string
+              quantity:
+                type: integer
+              group_names:
+                type: string
       responses:
         '200':
-          description: response
+          description: disposable invites response
+          schema:
+            type: array
+            items:
+              type: string
+        '429':
+          description: rate limit response
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  type: string
+              error_type:
+                type: string
   /users:
     get:
       description: |
