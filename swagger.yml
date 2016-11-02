@@ -235,7 +235,20 @@ paths:
         - Private Messages
       responses:
         '200':
-          description: response
+          description: list of private messages response
+          schema:
+            $ref: 'definitions/topics/private-messages.yml'
+  /topics/private-messages-sent/{username}.json:
+    get:
+      description: |
+        Get a list of private messages sent
+      tags:
+        - Private Messages
+      responses:
+        '200':
+          description: private messages sent response
+          schema:
+            $ref: 'definitions/topics/private-messages-sent.yml'
   /notifications.json:
     get:
       description: |

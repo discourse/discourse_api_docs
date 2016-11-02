@@ -1,0 +1,33 @@
+$schema: 'http://json-schema.org/draft-04/schema#'
+description: ""
+type: object
+properties:
+  topic_list:
+    type: object
+    properties:
+      can_create_topic:
+        type: boolean
+      draft:
+        type: null
+      draft_key:
+        type: string
+        minLength: 1
+      draft_sequence:
+        type: number
+      per_page:
+        type: number
+      topics:
+        type: array
+        uniqueItems: null
+        minItems: null
+        items:
+          required:
+            type: null
+          properties:
+            type: null
+    required:
+      - can_create_topic
+      - draft_key
+      - draft_sequence
+      - per_page
+      - topics
