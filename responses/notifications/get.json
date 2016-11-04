@@ -1,0 +1,6 @@
+{
+  "notifications": [],
+  "total_rows_notifications": 0,
+  "seen_notification_id": 0,
+  "load_more_notifications": "/notifications?offset=60&username=discourse1"
+}

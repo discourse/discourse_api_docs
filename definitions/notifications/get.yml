@@ -1,0 +1,20 @@
+$schema: 'http://json-schema.org/draft-04/schema#'
+description: ""
+type: object
+properties:
+  notifications:
+    type: array
+    uniqueItems: null
+    minItems: null
+    items:
+      required:
+        type: null
+      properties:
+        type: null
+  total_rows_notifications:
+    type: number
+  seen_notification_id:
+    type: number
+  load_more_notifications:
+    type: string
+    minLength: 1

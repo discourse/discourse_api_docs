@@ -257,7 +257,9 @@ paths:
         - Notifications
       responses:
         '200':
-          description: response
+          description: notifications response
+          schema:
+            $ref: 'definitions/notifications/get.yml'
   /invites:
     post:
       description: |
@@ -357,10 +359,20 @@ paths:
           description: new user response
           schema:
             $ref: 'definitions/users/new_user_response.yml'
+  /tags:
+    get:
+      description: |
+        get a list of tags (requires the tag plugin)
+      tags:
+        - Tags
+      responses:
+        '200':
+          description: |
+            tag list response
   /tags/{tag}:
     get:
       description: |
-        Get a specific tag
+        Get a specific tag (requires the tag plugin)
       tags:
         - Tags
       parameters:
