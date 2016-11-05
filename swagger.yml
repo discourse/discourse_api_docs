@@ -610,3 +610,53 @@ paths:
           description: latest topics response
           schema:
             $ref: 'definitions/topics/latest_topics_response.yml'
+  /session/forgot_password:
+    post:
+      description: |
+        Send password reset email
+      tags:
+        - Password Reset
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - login
+            properties:
+              login:
+                type: string
+      responses:
+        '200':
+          description: |
+            send password reset email response
+          schema:
+            type: object
+            properties:
+              result:
+                type: string
+              user_found:
+                type: boolean
+  /users/password-reset/{token}:
+    put:
+      description: |
+        create a new password
+      tags:
+        - Password Reset
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - username
+              - password
+            properties:
+              username:
+                type: string
+              password:
+                type: string
+      responses:
+        '200':
+          description: |
+            password has been reset response
