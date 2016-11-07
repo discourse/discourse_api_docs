@@ -4,13 +4,6 @@ type: object
 properties:
   user_badges:
     type: array
-    uniqueItems: null
-    minItems: null
-    items:
-      required:
-        type: null
-      properties:
-        type: null
   user:
     type: object
     properties:
@@ -23,9 +16,10 @@ properties:
         type: string
         minLength: 1
       name:
-        type: string
-      last_posted_at:
         type: null
+      last_posted_at:
+        type: string
+        minLength: 1
       last_seen_at:
         type: string
         minLength: 1
@@ -55,15 +49,11 @@ properties:
       title:
         type: null
       uploaded_avatar_id:
-        type: number
+        type: null
       badge_count:
         type: number
       custom_fields:
-        type: object
-        properties:
-          type: null
-        required:
-          type: null
+        type: null
       pending_count:
         type: number
       profile_view_count:
@@ -93,6 +83,7 @@ properties:
             - automatic_membership_retroactive
             - primary_group
             - has_messages
+            - is_member
             - mentionable
           properties:
             id:
@@ -118,7 +109,11 @@ properties:
               type: null
             grant_trust_level:
               type: null
+            notification_level:
+              type: null
             has_messages:
+              type: boolean
+            is_member:
               type: boolean
             mentionable:
               type: boolean
@@ -130,35 +125,5 @@ properties:
               type: null
       featured_user_badge_ids:
         type: array
-        uniqueItems: null
-        minItems: null
-        items:
-          required:
-            type: null
-          properties:
-            type: null
       card_badge:
         type: null
-    required:
-      - id
-      - username
-      - avatar_template
-      - name
-      - last_seen_at
-      - created_at
-      - can_edit
-      - can_edit_username
-      - can_edit_email
-      - can_edit_name
-      - can_send_private_messages
-      - can_send_private_message_to_user
-      - trust_level
-      - moderator
-      - admin
-      - uploaded_avatar_id
-      - badge_count
-      - custom_fields
-      - pending_count
-      - profile_view_count
-      - groups
-      - featured_user_badge_ids

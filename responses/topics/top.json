@@ -1,0 +1,59 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "discourse1",
+      "avatar_template": "/letter_avatar_proxy/v2/letter/d/da6949/{size}.png"
+    }
+  ],
+  "topic_list": {
+    "can_create_topic": true,
+    "draft": null,
+    "draft_key": "new_topic",
+    "draft_sequence": 0,
+    "for_period": "yearly",
+    "per_page": 30,
+    "topics": [
+      {
+        "id": 12,
+        "title": "E45937e6-b689-b938-f7d1-13f64906b04a",
+        "fancy_title": "E45937e6-b689-b938-f7d1-13f64906b04a",
+        "slug": "e45937e6-b689-b938-f7d1-13f64906b04a",
+        "posts_count": 7,
+        "reply_count": 0,
+        "highest_post_number": 7,
+        "image_url": null,
+        "created_at": "2016-10-29T14:13:49.614Z",
+        "last_posted_at": "2016-10-29T14:15:16.236Z",
+        "bumped": true,
+        "bumped_at": "2016-10-29T14:15:16.236Z",
+        "unseen": false,
+        "last_read_post_number": 4,
+        "unread": 0,
+        "new_posts": 0,
+        "pinned": false,
+        "unpinned": null,
+        "visible": true,
+        "closed": false,
+        "archived": false,
+        "notification_level": 1,
+        "bookmarked": false,
+        "liked": false,
+        "views": 3,
+        "like_count": 0,
+        "has_summary": false,
+        "archetype": "regular",
+        "last_poster_username": "discourse1",
+        "category_id": 1,
+        "pinned_globally": false,
+        "posters": [
+          {
+            "extras": "latest single",
+            "description": "Original Poster, Most Recent Poster",
+            "user_id": 1
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,8 +1,9 @@
 swagger: '2.0'
 info:
   title: 'Discourse API'
-  description: 'Move your app forward with the Discourse API'
-  version: 1.0.0
+  description: |
+    'Move your app forward with the Discourse API'
+  version: 1.6.6
 host: discourse.example.com
 schemes:
   - https
@@ -328,7 +329,7 @@ paths:
                   type: string
               error_type:
                 type: string
-  /users:
+  /users/{username}.json:
     get:
       description: |
         Get a single user by username
@@ -344,6 +345,7 @@ paths:
           description: get user response
           schema:
             $ref: 'definitions/users/get_user_response.yml'
+  /users:
     post:
       description: |
         Creates a new user
@@ -610,6 +612,35 @@ paths:
           description: latest topics response
           schema:
             $ref: 'definitions/topics/latest_topics_response.yml'
+  /top.json:
+    get:
+      description: |
+        Get the top topics
+      tags:
+        - Topics
+      responses:
+        '200':
+          description: top topics response
+          schema:
+            $ref: 'definitions/topics/top.yml'
+  /top/{flag}.json:
+    get:
+      description: |
+        Get the top topics filtered by specified flag
+      tags:
+        - Topics
+      parameters:
+        - name: flag
+          in: path
+          required: false
+          type: string
+          enum:
+            - all
+            - yearly
+            - quarterly
+            - monthly
+            - weekly
+            - daily
   /session/forgot_password:
     post:
       description: |
