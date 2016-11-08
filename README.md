@@ -23,9 +23,6 @@ Now you can import the collection json file and start making API requests.
 
 Contributions are welcome! Start by cloning the repo.
 
-*This can probably be easily converted to a rack/sinatra app instead of
-node.js for development*
-
 To edit the api docs, edit the swagger.yml file not the json file.
 
 To view your changes locally, run:
@@ -64,8 +61,3 @@ node toschema.js responses/topics/topic_respones.json definitions/topics/topic_r
 This will convert a json response into json schema and then convert the schema
 to yml.
 
-### Resources
-
-These are some helpful resources:
-
-- http://azimi.me/2015/07/16/split-swagger-into-smaller-files.html
