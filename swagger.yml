@@ -1,8 +1,27 @@
 swagger: '2.0'
 info:
-  title: 'Discourse API'
+  title: 'Discourse API Documentation'
   description: |
-    'Move your app forward with the Discourse API'
+    Bend discourse to your will with the Discourse API
+
+    ### Authentication
+
+    Some endpoints do not require any authentication, pretty much anything else will
+    require you to be authenticated.
+
+    To become authenticated you will need to create an API Key from the admin panel.
+
+    Once you have your API Key you can pass it in as a GET url parameter like this:
+    
+    ```
+    curl -X GET "http://127.0.0.1:3000/admin/users/list/active.json?api_key=714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19&api_username=discourse1"
+    ```
+
+    If you are making a POST request you can pass them in the body:
+
+    ```
+    curl -X POST "Content-Type: multipart/form-data;" -F "api_key=714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19" -F "api_username=discourse1" -F "name=89853c20-4409-e91a-a8ea-f6cdff96aaaa" -F "color=49d9e9" -F "text_color=f0fcfd" "http://127.0.0.1:3000/categories"
+    ```
   version: 1.6.6
 host: discourse.example.com
 schemes:
