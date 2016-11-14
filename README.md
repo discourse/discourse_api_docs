@@ -4,6 +4,10 @@ To view the the Discourse API Documentation you can visit:
 
   https://oblakeerickson.github.io/discourse_api_docs
 
+Here is an example of the the ReDoc site looks like:
+
+![redoc](https://cloud.githubusercontent.com/assets/1490496/20266324/e818b49e-aa32-11e6-8390-242f0f155cb7.gif)
+
 ### Postman
 
 In addition to the docs site, you can also import the postman json files into
