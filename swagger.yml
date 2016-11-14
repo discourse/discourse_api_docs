@@ -2,7 +2,7 @@ swagger: '2.0'
 info:
   title: 'Discourse API Documentation'
   description: |
-    Bend discourse to your will with the Discourse API
+    Documentation on how to use Discourse through API calls.
 
     ### Authentication
 

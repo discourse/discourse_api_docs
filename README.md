@@ -19,6 +19,10 @@ discourse instance.
 
 Now you can import the collection json file and start making API requests.
 
+Here is a demo:
+
+![discourse_postman](https://cloud.githubusercontent.com/assets/1490496/20265862/9478355a-aa30-11e6-98b0-ecf7d2ab9263.gif)
+
 ### Contributing
 
 Contributions are welcome! Start by cloning the repo.
