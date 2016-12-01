@@ -1,0 +1,11 @@
+{
+  "api_key": {
+    "id": 2,
+    "key": "342397cb620049d4f5b5f66ce9a26cd674de757e3c982cc41125bc47dac29a37",
+    "user": {
+      "id": 4,
+      "username": "discourse2",
+      "avatar_template": "/letter_avatar_proxy/v2/letter/d/4af34b/{size}.png"
+    }
+  }
+}

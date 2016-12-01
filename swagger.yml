@@ -22,7 +22,7 @@ info:
     ```
     curl -X POST "Content-Type: multipart/form-data;" -F "api_key=714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19" -F "api_username=discourse1" -F "name=89853c20-4409-e91a-a8ea-f6cdff96aaaa" -F "color=49d9e9" -F "text_color=f0fcfd" "http://127.0.0.1:3000/categories"
     ```
-  version: 1.6.6
+  version: latest
 host: discourse.example.com
 schemes:
   - https
@@ -472,6 +472,22 @@ paths:
             properties:
               success:
                 type: string
+  /admin/users/{id}/generate_api_key:
+    post:
+      description: |
+        Generate/Regenerate api_key for a user
+      tags:
+        - Admin
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: generate api key response
+          schema:
+            $ref: 'definitions/admin/generate_api_key.yml'
   /admin/users/list/{flag}.json:
     get:
       description: |
