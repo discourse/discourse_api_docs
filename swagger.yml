@@ -726,3 +726,34 @@ paths:
         '200':
           description: |
             password has been reset response
+  /admin/site_settings.json:
+    get:
+      description: |
+        show site settings
+      tags:
+        - Admin
+      responses:
+        '200':
+          description: show site settings response
+          schema:
+            $ref: 'definitions/admin/site_settings.yml'
+  /admin/site_settings/title:
+    put:
+      description: |
+        Update the site title
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - title
+            properties:
+              title:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
