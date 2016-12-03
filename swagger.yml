@@ -757,3 +757,73 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/site_description:
+    put:
+      description: |
+        Update the site description
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - site_description
+            properties:
+              site_description:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/contact_email:
+    put:
+      description: |
+        Update the contact email
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - contact_email
+            properties:
+              contact_email:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+        '422':
+          description: |
+            Invalid email address
+          schema:
+            type: object
+            properties:
+              errors:
+                type: array
+                items:
+                  type: string
+  /admin/site_settings/contact_url:
+    put:
+      description: |
+        Update the contact url
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - contact_url
+            properties:
+              contact_url:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
