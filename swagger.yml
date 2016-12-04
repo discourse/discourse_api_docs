@@ -827,3 +827,43 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/notification_email:
+    put:
+      description: |
+        Update the notification email
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - notification_email
+            properties:
+              notification_email:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/site_contact_username:
+    put:
+      description: |
+        Update the site contact username
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - site_contact_username
+            properties:
+              site_contact_username:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
