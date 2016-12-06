@@ -867,3 +867,245 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/logo_url:
+    put:
+      description: |
+        Update logo url
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - logo_url
+            properties:
+              logo_url:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/logo_small_url:
+    put:
+      description: |
+        Update the small logo url
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - logo_small_url
+            properties:
+              logo_small_url:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/digest_logo_url:
+    put:
+      description: |
+        Update the digest logo url
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - digest_logo_url
+            properties:
+              digest_logo_url:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/mobile_logo_url:
+    put:
+      description: |
+        Update the mobile logo url
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - mobile_logo_url
+            properties:
+              mobile_logo_url:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/favicon_url:
+    put:
+      description: |
+        Update the favicon url
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - favicon_url
+            properties:
+              favicon_url:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/apple_touch_icon_url:
+    put:
+      description: |
+        Update the apple touch icon url
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - apple_touch_icon_url
+            properties:
+              apple_touch_icon_url:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/default_opengraph_image_url:
+    put:
+      description: |
+        Update the default opengraph image url
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - default_opengraph_image_url
+            properties:
+              default_opengraph_image_url:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/twitter_summary_large_image_url:
+    put:
+      description: |
+        Update the twitter summary large image url
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - twitter_summary_large_image_url
+            properties:
+              twitter_summary_large_image_url:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/exclude_rel_nofollow_domains:
+    put:
+      description: |
+        Update the exclude rel nofollow domains
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - exclude_rel_nofollow_domains
+            properties:
+              exclude_rel_nofollow_domains:
+                description: |
+                  pipe delimited
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/company_short_name:
+    put:
+      description: |
+        Update the company short name
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - company_short_name
+            properties:
+              company_short_name:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/company_full_name:
+    put:
+      description: |
+        Update the company full name
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - company_full_name
+            properties:
+              company_full_name:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/company_domain:
+    put:
+      description: |
+        Update the company domain
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - company_domain
+            properties:
+              company_domain:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
