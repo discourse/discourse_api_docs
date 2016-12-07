@@ -1109,3 +1109,103 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/default_locale:
+    put:
+      description: |
+        Update the default locale
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - default_locale
+            properties:
+              default_locale:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/allow_user_locale:
+    put:
+      description: |
+        Update allow user locale
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - allow_user_locale
+            properties:
+              allow_user_locale:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/set_locale_from_accept_language_header:
+    put:
+      description: |
+        Update set locale from accept language header
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - set_locale_from_accept_language_header
+            properties:
+              set_locale_from_accept_language_header:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/categories_topics:
+    put:
+      description: |
+        Update the number of topics to show
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - categories_topics
+            properties:
+              categories_topics:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/suggested_topics:
+    put:
+      description: |
+        Update the number of suggested topics
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - suggested_topics
+            properties:
+              suggested_topics:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
