@@ -165,6 +165,47 @@ paths:
           description: update post response
           schema:
             $ref: 'definitions/posts/update_post_response.yml'
+  /post_actions:
+    post:
+      description: |
+        Like a post and other actions
+      tags:
+        - Posts
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - id
+              - post_action_type_id
+            properties:
+              id:
+                type: integer
+              post_action_type_id:
+                type: integer
+              flag_topic:
+                type: boolean
+  /post_actions/{id}:
+    delete:
+      description: |
+        Un-like a post
+      tags:
+        - Posts
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - post_action_type_id
+            properties:
+              post_action_type_id:
+                type: integer
   /t/{id}.json:
     get:
       description: |
