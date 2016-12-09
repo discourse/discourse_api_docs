@@ -1250,3 +1250,163 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/limit_suggested_to_category:
+    put:
+      description: |
+        Update show topics from the current category
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - limit_suggested_to_category
+            properties:
+              limit_suggested_to_category:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/suggested_topics_max_days_old:
+    put:
+      description: |
+        Update suggested topics max days old
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - suggested_topics_max_days_old
+            properties:
+              suggested_topics_max_days_old:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/track_external_right_clicks:
+    put:
+      description: |
+        Update track external right clicks
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - track_external_right_clicks
+            properties:
+              track_external_right_clicks:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/ga_universal_tracking_code:
+    put:
+      description: |
+        Update Google Universal Analytics tracking code
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - ga_universal_tracking_code
+            properties:
+              ga_universal_tracking_code:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/ga_universal_domain_name:
+    put:
+      description: |
+        Update Google Universal Analytics domain name
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - ga_universal_domain_name
+            properties:
+              ga_universal_domain_name:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/ga_tracking_code:
+    put:
+      description: |
+        Update the OBSOLETE ga tracking code
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - ga_tracking_code
+            properties:
+              ga_tracking_code:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/ga_domain_name:
+    put:
+      description: |
+        Update the OBSOLETE ga domain name
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - ga_domain_name
+            properties:
+              ga_domain_name:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/gtm_container_id:
+    put:
+      description: |
+        Update Google Tag Manager container id
+      tags:
+        - Admin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - gtm_container_id
+            properties:
+              gtm_container_id:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
