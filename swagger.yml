@@ -1410,3 +1410,26 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/top_menu:
+    put:
+      description: |
+        Update the homepage navigation
+      tags:
+        - Admin
+        - Site Settings
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - top_menu
+            properties:
+              top_menu:
+                description: pipe delimited
+                example: latest|new|unread|top|categories|read
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
