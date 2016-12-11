@@ -1429,6 +1429,15 @@ paths:
                 description: pipe delimited
                 example: latest|new|unread|top|categories|read
                 type: string
+                enum:
+                  - latest
+                  - new
+                  - unread
+                  - top
+                  - categories
+                  - read
+                  - posted
+                  - bookmarks
       responses:
         '200':
           description: |
