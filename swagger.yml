@@ -1442,3 +1442,36 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/post_menu:
+    put:
+      description: |
+        Update the post menu items
+      tags:
+        - Admin
+        - Site Settings
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - post_menu
+            properties:
+              post_menu:
+                description: pipe delimited
+                example: like|edit|flag|delete|share|bookmark|reply
+                type: string
+                enum:
+                  - like-count
+                  - like
+                  - share
+                  - flag
+                  - edit
+                  - bookmark
+                  - delete
+                  - admin
+                  - reply
+      responses:
+        '200':
+          description: |
+            empty response body
