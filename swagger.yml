@@ -1507,3 +1507,28 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/desktop_category_page_style:
+    put:
+      description: |
+        Update the visual style for the /categories page
+      tags:
+        - Admin
+        - Site Settings
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - desktop_category_page_style
+            properties:
+              desktop_category_page_style:
+                type: string
+                enum:
+                  - categories_only
+                  - categories_with_featured_topics
+                  - categories_and_latest_topics
+      responses:
+        '200':
+          description: |
+            empty response body
