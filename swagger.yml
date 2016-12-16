@@ -1555,3 +1555,28 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/category_style:
+    put:
+      description: |
+        Update the category style
+      tags:
+        - Admin
+        - Site Settings
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - category_style
+            properties:
+              category_style:
+                type: string
+                enum:
+                  - bar
+                  - box
+                  - bullet
+      responses:
+        '200':
+          description: |
+            empty response body
