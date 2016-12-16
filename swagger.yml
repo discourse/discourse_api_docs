@@ -1532,3 +1532,26 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/category_colors:
+    put:
+      description: |
+        Update a list of hexadecimal color values
+      tags:
+        - Admin
+        - Site Settings
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - category_colors
+            properties:
+              category_colors:
+                description: pipe delimited
+                example: BF1E2E|F1592A|F7941D
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
