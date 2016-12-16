@@ -1580,3 +1580,24 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/enable_mobile_theme:
+    put:
+      description: |
+        Update enable mobile theme
+      tags:
+        - Admin
+        - Site Settings
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - enable_mobile_theme
+            properties:
+              enable_mobile_theme:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
