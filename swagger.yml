@@ -1601,3 +1601,24 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/relative_date_duration:
+    put:
+      description: |
+        Update relative date duration
+      tags:
+        - Admin
+        - Site Settings
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - relative_date_duration
+            properties:
+              relative_date_duration:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
