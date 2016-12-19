@@ -1622,3 +1622,24 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/fixed_category_positions:
+    put:
+      description: |
+        Update fixed category positions
+      tags:
+        - Admin
+        - Site Settings
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - fixed_category_positions
+            properties:
+              fixed_category_positions:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
