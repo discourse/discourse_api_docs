@@ -1643,3 +1643,24 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/fixed_category_positions_on_create:
+    put:
+      description: |
+        Update fixed category positions on create
+      tags:
+        - Admin
+        - Site Settings
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - fixed_category_positions_on_create
+            properties:
+              fixed_category_positions_on_create:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
