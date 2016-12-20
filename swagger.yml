@@ -1664,3 +1664,66 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/show_subcategory_list:
+    put:
+      description: |
+        Update show subcategory list
+      tags:
+        - Admin
+        - Site Settings
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - show_subcategory_list
+            properties:
+              show_subcategory_list:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/enable_badges:
+    put:
+      description: |
+        Update enable the badge system
+      tags:
+        - Admin
+        - Site Settings
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - enable_badges
+            properties:
+              enable_badges:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/enable_whispers:
+    put:
+      description: |
+        Update enable whispers
+      tags:
+        - Admin
+        - Site Settings
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - enable_whispers
+            properties:
+              enable_whispers:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
