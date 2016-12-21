@@ -1727,3 +1727,24 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/invite_only:
+    put:
+      description: |
+        Update invite only
+      tags:
+        - Admin
+        - Site Settings
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - invite_only
+            properties:
+              invite_only:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
