@@ -1733,7 +1733,7 @@ paths:
         Update invite only
       tags:
         - Admin
-        - Site Settings
+        - Site Settings Login
       parameters:
         - name: body
           in: body
@@ -1743,6 +1743,48 @@ paths:
               - invite_only
             properties:
               invite_only:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/login_required:
+    put:
+      description: |
+        Update login required
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - login_required
+            properties:
+              login_required:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/must_approve_users:
+    put:
+      description: |
+        Update must approve users
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - must_approve_users
+            properties:
+              must_approve_users:
                 type: boolean
       responses:
         '200':
