@@ -1790,3 +1790,87 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/enable_local_logins:
+    put:
+      description: |
+        Update enable_local_logins
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - enable_local_logins
+            properties:
+              enable_local_logins:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/allow_new_registrations:
+    put:
+      description: |
+        Update allow new registrations
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - allow_new_registrations
+            properties:
+              allow_new_registrations:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/enable_signup_cta:
+    put:
+      description: |
+        Update enable signup cta
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - enable_signup_cta
+            properties:
+              enable_signup_cta:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/enable_google_oauth2_logins:
+    put:
+      description: |
+        Update enable Google Oauth2 authentication
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - enable_google_oath2_logins
+            properties:
+              enable_google_oath2_logins:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
