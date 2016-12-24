@@ -1874,3 +1874,45 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/google_oath2_client_id:
+    put:
+      description: |
+        Update google oauth2 client id
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - google_oath2_client_id
+            properties:
+              google_oath2_client_id:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/google_oath2_client_secret:
+    put:
+      description: |
+        Update google oauth2 client secret
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - google_oath2_client_secret
+            properties:
+              google_oath2_client_secret:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
