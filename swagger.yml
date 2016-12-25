@@ -1916,3 +1916,24 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/enable_yahoo_logins:
+    put:
+      description: |
+        Update enable yahoo logins
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - enable_yahoo_logins
+            properties:
+              enable_yahoo_logins:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
