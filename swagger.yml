@@ -1937,3 +1937,66 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/enable_twitter_logins:
+    put:
+      description: |
+        Enable twitter logins
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - enable_twitter_logins
+            properties:
+              enable_twitter_logins:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/twitter_consumer_key:
+    put:
+      description: |
+        twitter consumer key
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - twitter_consumer_key
+            properties:
+              twitter_consumer_key:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/twitter_consumer_secret:
+    put:
+      description: |
+        twitter consumer secret
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - twitter_consumer_secret
+            properties:
+              twitter_consumer_secret:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
