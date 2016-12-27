@@ -2000,3 +2000,66 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/enable_instagram_logins:
+    put:
+      description: |
+        enable instagram logins
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - enable_instagram_logins
+            properties:
+              enable_instagram_logins:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/instagram_consumer_key:
+    put:
+      description: |
+        instagram consumer key
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - instagram_consumer_key
+            properties:
+              instagram_consumer_key:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/instagram_consumer_secret:
+    put:
+      description: |
+        instagram consumer secret
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - instagram_consumer_secret
+            properties:
+              instagram_consumer_secret:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
