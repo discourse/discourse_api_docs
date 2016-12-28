@@ -2063,3 +2063,87 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/enable_facebook_logins:
+    put:
+      description: |
+        enable facebook logins
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - enable_facebook_logins
+            properties:
+              enable_facebook_logins:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/facebook_app_id:
+    put:
+      description: |
+        facebook app id
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - facebook_app_id
+            properties:
+              facebook_app_id:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/facebook_app_secret:
+    put:
+      description: |
+        facebook app secret
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - facebook_app_secret
+            properties:
+              facebook_app_secret:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/facebook_request_extra_profile_details:
+    put:
+      description: |
+        enable facebook logins
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - facebook_request_extra_profile_details
+            properties:
+              facebook_request_extra_profile_details:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
