@@ -2129,7 +2129,7 @@ paths:
   /admin/site_settings/facebook_request_extra_profile_details:
     put:
       description: |
-        enable facebook logins
+        facebook request extra profile details
       tags:
         - Admin
         - Site Settings Login
@@ -2142,6 +2142,1041 @@ paths:
               - facebook_request_extra_profile_details
             properties:
               facebook_request_extra_profile_details:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/enable_github_logins:
+    put:
+      description: |
+        enable github logins
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - enable_github_logins
+            properties:
+              enable_github_logins:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/github_client_id:
+    put:
+      description: |
+        github client id
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - github_client_id
+            properties:
+              github_client_id:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/github_client_secret:
+    put:
+      description: |
+        github client secret
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - github_client_secret
+            properties:
+              github_client_secret:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/enable_sso:
+    put:
+      description: |
+        enable sso
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - enable_sso
+            properties:
+              enable_sso:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/sso_allows_all_return_paths:
+    put:
+      description: |
+        sso allows all return paths
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - sso_allows_all_return_paths
+            properties:
+              ss_allows_all_return_paths:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/enable_sso_provider:
+    put:
+      description: |
+        enable sso provider
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - enable_sso_provider
+            properties:
+              enable_sso_provider:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/verbose_sso_logging:
+    put:
+      description: |
+        verbose sso logging
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - verbose_sso_logging
+            properties:
+              verbose_sso_logging:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/sso_url:
+    put:
+      description: |
+        sso url
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - sso_url
+            properties:
+              sso_url:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/sso_secret:
+    put:
+      description: |
+        sso secret
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - sso_secret
+            properties:
+              sso_secret:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/sso_overrides_bio:
+    put:
+      description: |
+        sso overrides bio
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - sso_overrides_bio
+            properties:
+              sso_overrides_bio:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/sso_overrides_email:
+    put:
+      description: |
+        sso overrides email
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - sso_overrides_email
+            properties:
+              sso_overrides_email:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/sso_overrides_username:
+    put:
+      description: |
+        sso overrides username
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - sso_overrides_username
+            properties:
+              sso_overrides_username:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/sso_overrides_name:
+    put:
+      description: |
+        sso overrides name
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - sso_overrides_name
+            properties:
+              sso_overrides_name:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/sso_overrides_avatar:
+    put:
+      description: |
+        sso overrides avatar
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - sso_overrides_avatar
+            properties:
+              sso_overrides_avatar:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/sso_not_approved_url:
+    put:
+      description: |
+        sso not approved url
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - sso_not_approved_url
+            properties:
+              sso_not_approved_url:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/email_domains_blacklist:
+    put:
+      description: |
+        email domains blacklist
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - email_domains_blacklist
+            properties:
+              email_domains_blacklist:
+                description: |
+                  pipe delimited
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/email_domains_whitelist:
+    put:
+      description: |
+        email domains whitelist
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - email_domains_whitelist
+            properties:
+              email_domains_whitelist:
+                description: |
+                  pipe delimited
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/forgot_password_strict:
+    put:
+      description: |
+        forgot password strict
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - forgot_password_strict
+            properties:
+              forgot_password_strict:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/log_out_strict:
+    put:
+      description: |
+        log out strict
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - log_out_strict
+            properties:
+              log_out_strict:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/pending_users_reminder_delay:
+    put:
+      description: |
+        pending users reminder delay
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - pending_users_reminder_delay
+            properties:
+              pending_users_reminder_delay:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/maximum_session_age:
+    put:
+      description: |
+        maximum session age
+      tags:
+        - Admin
+        - Site Settings Login
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - maximum_session_age
+            properties:
+              maximum_session_age:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/min_username_length:
+    put:
+      description: |
+        min username length
+      tags:
+        - Admin
+        - Site Settings Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - min_username_length
+            properties:
+              min_username_length:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/max_username_length:
+    put:
+      description: |
+        max username length
+      tags:
+        - Admin
+        - Site Settings Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - max_username_length
+            properties:
+              max_username_length:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/reserved_usernames:
+    put:
+      description: |
+        reserved usernames
+      tags:
+        - Admin
+        - Site Settings Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - reserved_usernames
+            properties:
+              reserved_usernames:
+                description: |
+                  pipe delimited
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/min_password_length:
+    put:
+      description: |
+        min password length
+      tags:
+        - Admin
+        - Site Settings Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - min_password_length
+            properties:
+              min_password_length:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/min_admin_password_length:
+    put:
+      description: |
+        min admin password length
+      tags:
+        - Admin
+        - Site Settings Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - min_admin_password_length
+            properties:
+              min_admin_password_length:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/block_common_passwords:
+    put:
+      description: |
+        block common passwords
+      tags:
+        - Admin
+        - Site Settings Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - block_common_passwords
+            properties:
+              block_common_passwords:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/username_change_period:
+    put:
+      description: |
+        username change period
+      tags:
+        - Admin
+        - Site Settings Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - username_change_period
+            properties:
+              username_change_period:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/email_editable:
+    put:
+      description: |
+        email editable
+      tags:
+        - Admin
+        - Site Settings Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - email_editable
+            properties:
+              email_editable:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/logout_redirect:
+    put:
+      description: |
+        logout redirect
+      tags:
+        - Admin
+        - Site Settings Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - logout_redirect
+            properties:
+              logout_redirect:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/full_name_required:
+    put:
+      description: |
+        full name required
+      tags:
+        - Admin
+        - Site Settings Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - full_name_required
+            properties:
+              full_name_required:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/enable_names:
+    put:
+      description: |
+        enable names
+      tags:
+        - Admin
+        - Site Settings Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - enable_names
+            properties:
+              enable_names:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/invite_expiry_days:
+    put:
+      description: |
+        invite expiry days
+      tags:
+        - Admin
+        - Site Settings Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - invite_expiry_days
+            properties:
+              invite_expiry_days:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/invite_passthrough_hours:
+    put:
+      description: |
+        invite passthrough hours
+      tags:
+        - Admin
+        - Site Settings Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - invite_passthrough_hours
+            properties:
+              invite_passthrough_hours:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/invites_per_page:
+    put:
+      description: |
+        invites per page
+      tags:
+        - Admin
+        - Site Settings Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - invites_per_page
+            properties:
+              invites_per_page:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/delete_user_max_post_age:
+    put:
+      description: |
+        delete user max post age
+      tags:
+        - Admin
+        - Site Settings Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - delete_user_max_post_age
+            properties:
+              delete_user_max_post_age:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/delete_all_posts_max:
+    put:
+      description: |
+        delete all posts max
+      tags:
+        - Admin
+        - Site Settings Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - delete_all_posts_max
+            properties:
+              delete_all_posts_max:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/redirect_users_to_top_page:
+    put:
+      description: |
+        redirect users to top page
+      tags:
+        - Admin
+        - Site Settings Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - redirect_users_to_top_page
+            properties:
+              redirect_users_to_top_page:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/show_email_on_profile:
+    put:
+      description: |
+        show email on profile
+      tags:
+        - Admin
+        - Site Settings Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - show_email_on_profile
+            properties:
+              show_email_on_profile:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/prioritize_username_in_ux:
+    put:
+      description: |
+        prioritize username in ux
+      tags:
+        - Admin
+        - Site Settings Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - prioritize_username_in_ux
+            properties:
+              prioritize_username_in_ux:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/email_token_valid_hours:
+    put:
+      description: |
+        email token valid hours
+      tags:
+        - Admin
+        - Site Settings Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - email_token_valid_hours
+            properties:
+              email_token_valid_hours:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/purge_unactivated_users_grace_period_days:
+    put:
+      description: |
+        purge unactivated users grace period days
+      tags:
+        - Admin
+        - Site Settings Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - purge_unactivated_users_grace_period_days
+            properties:
+              purge_unactivated_users_grace_period_days:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/public_user_custom_fields:
+    put:
+      description: |
+        public user custom fields
+      tags:
+        - Admin
+        - Site Settings Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - public_user_custom_fields
+            properties:
+              public_user_custom_fields:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/staff_users_custom_fields:
+    put:
+      description: |
+        staff user custom fields
+      tags:
+        - Admin
+        - Site Settings Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - staff_users_custom_fields
+            properties:
+              staff_users_custom_fields:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/enable_user_directory:
+    put:
+      description: |
+        enable user directory
+      tags:
+        - Admin
+        - Site Settings Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - enable_user_directory
+            properties:
+              enable_user_directory:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/allow_anonymous_posting:
+    put:
+      description: |
+        allow anonymous posting
+      tags:
+        - Admin
+        - Site Settings Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - allow_anonymous_posting
+            properties:
+              allow_anonymous_posting:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/anonymous_posting_min_trust_level:
+    put:
+      description: |
+        anonymous posting min trust level
+      tags:
+        - Admin
+        - Site Settings Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - anonymous_posting_min_trust_level
+            properties:
+              anonymous_posting_min_trust_level:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/anonymous_account_duration_minutes:
+    put:
+      description: |
+        anonymous account duration minutes
+      tags:
+        - Admin
+        - Site Settings Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - anonymous_account_duration_minutes
+            properties:
+              anonymous_account_duration_minutes:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/hide_user_profiles_from_public:
+    put:
+      description: |
+        hide user profiles from public
+      tags:
+        - Admin
+        - Site Settings Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - hide_user_profiles_from_public
+            properties:
+              hide_user_profiles_from_public:
                 type: boolean
       responses:
         '200':
