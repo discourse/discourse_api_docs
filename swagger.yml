@@ -3644,3 +3644,864 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/traditional_markdown_linebreaks:
+    put:
+      description: |
+        traditional markdown linebreaks
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - traditional_markdown_linebreaks
+            properties:
+              traditional_markdown_linebreaks:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/allow_html_tables:
+    put:
+      description: |
+        allow html tables
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - allow_html_tables
+            properties:
+              allow_html_tables:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/suppress_reply_directly_below:
+    put:
+      description: |
+        suppress reply directly below
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - suppress_reply_directly_below
+            properties:
+              suppress_reply_directly_below:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/suppress_reply_directly_above:
+    put:
+      description: |
+        suppress reply directly above
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - suppress_reply_directly_above
+            properties:
+              suppress_reply_directly_above:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/suppress_reply_when_quoting:
+    put:
+      description: |
+        suppress reply when quoting
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - suppress_reply_when_quoting
+            properties:
+              suppress_reply_when_quoting:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/max_reply_history:
+    put:
+      description: |
+        max reply history
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - max_reply_history
+            properties:
+              max_reply_history:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/post_undo_action_window_mins:
+    put:
+      description: |
+        post undo action window mins
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - post_undo_action_window_mins
+            properties:
+              post_undo_action_window_mins:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/max_mentions_per_post:
+    put:
+      description: |
+        max mentions per post
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - max_mentions_per_post
+            properties:
+              max_mentions_per_post:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/max_users_notified_per_group_mention:
+    put:
+      description: |
+        max users notified per group mention
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - max_users_notified_per_group_mention
+            properties:
+              max_users_notified_per_group_mention:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/newuser_max_replies_per_topic:
+    put:
+      description: |
+        newuser max replies per topic
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - newuser_max_replies_per_topic
+            properties:
+              newuser_max_replies_per_topic:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/newuser_max_mentions_per_post:
+    put:
+      description: |
+        newuser max mentions per post
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - newuser_max_mentions_per_post
+            properties:
+              newuser_max_mentions_per_post:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/title_max_word_length:
+    put:
+      description: |
+        title max word length
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - title_max_word_length
+            properties:
+              title_max_word_length:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/newuser_max_links:
+    put:
+      description: |
+        newuser max links
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - newuser_max_links
+            properties:
+              newuser_max_links:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/newuser_max_images:
+    put:
+      description: |
+        newuser max images
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - newuser_max_images
+            properties:
+              newuser_max_images:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/newuser_max_attachments:
+    put:
+      description: |
+        newuser max attachments
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - newuser_max_attachments
+            properties:
+              newuser_max_attachments:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/post_excerpt_maxlength:
+    put:
+      description: |
+        post excerpt maxlength
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - post_excerpt_maxlength
+            properties:
+              post_excerpt_maxlength:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/show_pinned_excerpt_mobile:
+    put:
+      description: |
+        show pinned excerpt mobile
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - show_pinned_excerpt_mobile
+            properties:
+              show_pinned_excerpt_mobile:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/show_pinned_excerpt_desktop:
+    put:
+      description: |
+        show pinned excerpt desktop
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - show_pinned_excerpt_desktop
+            properties:
+              show_pinned_excerpt_desktop:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/display_name_on_posts:
+    put:
+      description: |
+        display name on posts
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - display_name_on_posts
+            properties:
+              display_name_on_posts:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/show_time_gap_days:
+    put:
+      description: |
+        show time gap days
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - show_time_gap_days
+            properties:
+              show_time_gap_days:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/short_progress_text_threshold:
+    put:
+      description: |
+        short progress text threshold
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - short_progress_text_threshold
+            properties:
+              short_progress_text_threshold:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/default_code_lang:
+    put:
+      description: |
+        default code lang
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - default_code_lang
+            properties:
+              default_code_lang:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/warn_reviving_old_topic_age:
+    put:
+      description: |
+        warn reviving old topic age
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - warn_reviving_old_topic_age
+            properties:
+              warn_reviving_old_topic_age:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/autohighlight_all_code:
+    put:
+      description: |
+        autohighlight all code
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - autohighlight_all_code
+            properties:
+              autohighlight_all_code:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/highlighted_languages:
+    put:
+      description: |
+        highlighted languages
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - highlighted_languages
+            properties:
+              highlighted_languages:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/delete_old_hidden_posts:
+    put:
+      description: |
+        delete old hidden posts
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - delete_old_hidden_posts
+            properties:
+              delete_old_hidden_posts:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/censored_words:
+    put:
+      description: |
+        censored words
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - censored_words
+            properties:
+              censored_words:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/censored_pattern:
+    put:
+      description: |
+        censored pattern
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - censored_pattern
+            properties:
+              censored_pattern:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/enable_emoji:
+    put:
+      description: |
+        enable emoji
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - enable_emoji
+            properties:
+              enable_emoji:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/emoji_set:
+    put:
+      description: |
+        emoji set
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - emoji_set
+            properties:
+              emoji_set:
+                type: string
+                enum:
+                  - apple
+                  - google
+                  - twitter
+                  - emoji_one
+                  - win10
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/enforce_square_emoji:
+    put:
+      description: |
+        enforce square emoji
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - enforce_square_emoji
+            properties:
+              enforce_square_emoji:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/approve_post_count:
+    put:
+      description: |
+        approve post count
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - approve_post_count
+            properties:
+              approve_post_count:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/approve_unless_trust_level:
+    put:
+      description: |
+        approve unless trust level
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - approve_unless_trust_level
+            properties:
+              approve_unless_trust_level:
+                type: integer
+                enum:
+                  - 0
+                  - 1
+                  - 2
+                  - 3
+                  - 4
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/approve_new_topics_unless_trust_level:
+    put:
+      description: |
+        approve new topics unless trust level
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - approve_new_topics_unless_trust_level
+            properties:
+              approve_new_topics_unless_trust_level:
+                type: integer
+                enum:
+                  - 0
+                  - 1
+                  - 2
+                  - 3
+                  - 4
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/notify_about_queued_posts_after:
+    put:
+      description: |
+        notify about queued posts after
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - notify_about_queued_posts_after
+            properties:
+              notify_about_queued_posts_after:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/auto_close_messages_post_count:
+    put:
+      description: |
+        auto close messages post count
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - auto_close_messages_post_count
+            properties:
+              auto_close_messages_post_count:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/auto_close_topics_post_count:
+    put:
+      description: |
+        auto close topics post count
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - auto_close_topics_post_count
+            properties:
+              auto_close_topics_post_count:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/code_formatting_style:
+    put:
+      description: |
+        code formatting style
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - code_formatting_style
+            properties:
+              code_formatting_style:
+                type: string
+                enum:
+                  - 4-spaces-indent
+                  - code-fences
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/embed_truncate:
+    put:
+      description: |
+        embed truncate
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - embed_truncate
+            properties:
+              embed_truncate:
+                type: boolean
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/allowed_href_schemes:
+    put:
+      description: |
+        allowed href schemes
+      tags:
+        - Admin
+        - Site Settings Posting
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - allowed_href_schemes
+            properties:
+              allowed_href_schemes:
+                type: string
+      responses:
+        '200':
+          description: |
+            empty response body
