@@ -4539,3 +4539,24 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/private_email_time_window_seconds:
+    put:
+      description: |
+        private email time window seconds
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - private_email_time_window_seconds
+            properties:
+              private_email_time_window_seconds:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
