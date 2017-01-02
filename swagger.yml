@@ -4505,3 +4505,24 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/email_time_window_mins:
+    put:
+      description: |
+        email time window mins
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - email_time_window_mins
+            properties:
+              email_time_window_mins:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
