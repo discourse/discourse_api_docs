@@ -4560,3 +4560,24 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/email_posts_context:
+    put:
+      description: |
+        email posts context
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - email_posts_context
+            properties:
+              email_posts_context:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
