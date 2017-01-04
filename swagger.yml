@@ -4581,3 +4581,24 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/digest_min_excerpt_length:
+    put:
+      description: |
+        digest min excerpt length
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - digest_min_excerpt_length
+            properties:
+              digest_min_excerpt_length:
+                type: integer
+      responses:
+        '200':
+          description: |
+            empty response body
