@@ -4602,3 +4602,25 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/digest_topics:
+    put:
+      description: |
+        digest topics
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - digest_topics
+            properties:
+              digest_topics:
+                type: integer
+                example: 5
+      responses:
+        '200':
+          description: |
+            empty response body
