@@ -418,6 +418,52 @@ paths:
           description: get user response
           schema:
             $ref: 'definitions/users/get_user_response.yml'
+  /uploads.json:
+    post:
+      description: |
+        Upload an avatar
+      tags:
+        - Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - type
+              - user_id
+            properties:
+              type:
+                type: string
+                example: avatar
+              user_id:
+                type: integer
+                example: 1
+        - name: files[]
+          in: formData
+          required: true
+          type: file
+  /users/{username}/preferences/avatar/pick:
+    put:
+      description: |
+        update avatar
+      tags:
+        - Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - upload_id
+              - type
+            properties:
+              upload_id:
+                type: integer
+                example: 4
+              type:
+                type: string
+                example: uploaded
   /users:
     post:
       description: |
