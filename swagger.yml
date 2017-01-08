@@ -4670,3 +4670,25 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/digest_posts:
+    put:
+      description: |
+        digest posts
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - digest_posts
+            properties:
+              digest_posts:
+                type: integer
+                example: 3
+      responses:
+        '200':
+          description: |
+            empty response body
