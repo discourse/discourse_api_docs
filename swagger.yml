@@ -4714,3 +4714,25 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/delete_digest_email_after_days:
+    put:
+      description: |
+        delete digest email after days
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - delete_digest_email_after_days
+            properties:
+              delete_digest_email_after_days:
+                type: integer
+                example: 365
+      responses:
+        '200':
+          description: |
+            empty response body
