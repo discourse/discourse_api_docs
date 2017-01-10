@@ -4736,3 +4736,26 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/digest_suppress_categories:
+    put:
+      description: |
+        digest suppress categories
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - digest_suppress_categories
+            properties:
+              digest_suppress_categories:
+                type: string
+                description: pipe delimited category_id's
+                example: 3|1
+      responses:
+        '200':
+          description: |
+            empty response body
