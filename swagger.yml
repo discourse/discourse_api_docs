@@ -4759,3 +4759,25 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/disable_digest_emails:
+    put:
+      description: |
+        disable digest emails
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - disable_digest_emails
+            properties:
+              digest_digest_emails:
+                type: boolean
+                example: false
+      responses:
+        '200':
+          description: |
+            empty response body
