@@ -4781,3 +4781,75 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/email_accent_bg_color:
+    put:
+      description: |
+        email accent bg color
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - email_accent_bg_color
+            properties:
+              email_accent_bg_color:
+                type: string
+                example: "#2F70AD"
+                description: |
+                  Enter a color name ('red') or hex value ('#FF000').
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/email_accent_fg_color:
+    put:
+      description: |
+        email accent fg color
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - email_accent_fg_color
+            properties:
+              email_accent_fg_color:
+                type: string
+                example: "#FFFFFF"
+                description: |
+                  Enter a color name ('white') or hex value ('#FFFFFF').
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/email_link_color:
+    put:
+      description: |
+        email link color
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - email_link_color
+            properties:
+              email_link_color:
+                type: string
+                example: "#006699"
+                description: |
+                  Enter a color name ('blue') or hex value ('#0000FF').
+      responses:
+        '200':
+          description: |
+            empty response body
