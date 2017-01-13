@@ -4853,3 +4853,25 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/show_topic_featured_link_in_digest:
+    put:
+      description: |
+        show topic featured link in digest
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - show_topic_featured_link_in_digest
+            properties:
+              show_topic_featured_link_in_digest:
+                type: boolean
+                example: false
+      responses:
+        '200':
+          description: |
+            empty response body
