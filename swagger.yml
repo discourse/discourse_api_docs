@@ -4875,3 +4875,26 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/email_custom_headers:
+    put:
+      description: |
+        email custom headers
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - email_custom_headers
+            properties:
+              email_custom_headers:
+                type: string
+                example: 'Auto-Submitted: auto-generated'
+                description: A pipe-delimited list of custom email headers
+      responses:
+        '200':
+          description: |
+            empty response body
