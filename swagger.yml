@@ -4898,3 +4898,26 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/email_subject:
+    put:
+      description: |
+        email subject
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - email_subject
+            properties:
+              email_subject:
+                type: string
+                example: '[%{site_name}] %{optional_pm}%{optional_cat}%{topic_title}'
+                description: Customizable subject format for standard emails.
+      responses:
+        '200':
+          description: |
+            empty response body
