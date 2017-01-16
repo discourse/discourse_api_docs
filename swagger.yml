@@ -421,9 +421,9 @@ paths:
   /uploads.json:
     post:
       description: |
-        Upload an avatar
+        Upload an image or avatar
       tags:
-        - Users
+        - Upload
       parameters:
         - name: body
           in: body
@@ -431,18 +431,55 @@ paths:
             type: object
             required:
               - type
-              - user_id
             properties:
               type:
                 type: string
-                example: avatar
+                example: upload
+                description: |
+                  a lowercase string with numbers but no spaces. Set to 'avatar' if uploading an avatar
               user_id:
                 type: integer
                 example: 1
+                description: required if uploading an avatar
+              synchronous:
+                type: boolean
+                example: true
+                description: use this flag to return an id and url
         - name: files[]
           in: formData
           required: true
           type: file
+      responses:
+        200:
+          description: |
+            if async will return '{ success: true}'
+          schema:
+            type: object
+            properties:
+              id:
+                type: integer
+              user_id:
+                type: integer
+              original_filename:
+                type: string
+              filesize:
+                type: integer
+              width:
+                type: integer
+              height:
+                type: integer
+              url:
+                type: string
+              created_at:
+                type: string
+              updated_at:
+                type: string
+              sha1:
+                type: string
+              origin:
+                type: null
+              retain_hours:
+                type: null
   /users/{username}/preferences/avatar/pick:
     put:
       description: |
