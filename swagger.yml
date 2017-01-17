@@ -4958,3 +4958,26 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/reply_by_email_enabled:
+    put:
+      description: |
+        reply by email enabled
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - reply_by_email_enabled
+            properties:
+              reply_by_email_enabled:
+                type: boolean
+                example: false
+                description: `reply_by_email_address` needs to be set first
+      responses:
+        '200':
+          description: |
+            empty response body
