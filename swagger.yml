@@ -4981,3 +4981,585 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/reply_by_email_address:
+    put:
+      description: |
+        reply by email address
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - reply_by_email_address
+            properties:
+              reply_by_email_address:
+                type: string
+                example: '%{reply_key}@reply.example.com or replies+%{reply_key}@example.com'
+                description: Template for reply by email incoming email address.
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/alternative_reply_by_email_addresses:
+    put:
+      description: |
+        alternative reply by email addresses
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - alternative_reply_by_email_addresses
+            properties:
+              alternative_reply_by_email_addresses:
+                type: string
+                example: '%{reply_key}@reply.example.com|replies+%{reply_key}@example.com'
+                description: List of alternative templates for reply by email incoming email addresses.
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/manual_polling_enabled:
+    put:
+      description: |
+        manual polling enabled
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - manual_polling_enabled
+            properties:
+              manual_polling_enabled:
+                type: boolean
+                example: false
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/pop3_polling_enabled:
+    put:
+      description: |
+        pop3 polling enabled
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - pop3_polling_enabled
+            properties:
+              pop3_polling_enabled:
+                type: boolean
+                example: false
+                description: You must set a 'pop3 polling host' before enabling POP3 polling
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/pop3_polling_ssl:
+    put:
+      description: |
+        pop3 polling ssl
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - pop3_polling_ssl
+            properties:
+              pop3_polling_ssl:
+                type: boolean
+                example: true
+                description: Use SSL while connecting to the POP3 server
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/pop3_polling_openssl_verify:
+    put:
+      description: |
+        pop3 polling openssl verify
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - pop3_polling_openssl_verify
+            properties:
+              pop3_polling_openssl_verify:
+                type: boolean
+                example: true
+                description: Verify TLS server certificate
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/pop3_polling_period_mins:
+    put:
+      description: |
+        pop3 polling period mins
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - pop3_polling_period_mins
+            properties:
+              pop3_polling_period_mins:
+                type: integer
+                example: 5
+                description: |
+                  "The period in minutes between checking the POP3 account for email. NOTE: requires restart."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/pop3_polling_host:
+    put:
+      description: |
+        pop3 polling host
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - pop3_polling_host
+            properties:
+              pop3_polling_host:
+                type: string
+                description: The host to poll for email via POP3
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/pop3_polling_port:
+    put:
+      description: |
+        pop3 polling port
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - pop3_polling_port
+            properties:
+              pop3_polling_port:
+                type: integer
+                example: 995
+                description: The port to poll a POP3 account on
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/pop3_polling_username:
+    put:
+      description: |
+        pop3 polling username
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - pop3_polling_username
+            properties:
+              pop3_polling_username:
+                type: string
+                description: The username for the POP3 account to poll for email.
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/pop3_polling_password:
+    put:
+      description: |
+        pop3 polling password
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - pop3_polling_password
+            properties:
+              pop3_polling_password:
+                type: string
+                description: The password for the POP3 account to poll for email.
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/log_mail_processing_failures:
+    put:
+      description: |
+        log mail processing failures
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - log_mail_processing_failures
+            properties:
+              log_mail_processing_failures:
+                type: boolean
+                description: Log all email processing failures to http://yoursite.com/logs
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/incoming_email_prefer_html:
+    put:
+      description: |
+        incoming email prefer html
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - incoming_email_prefer_html
+            properties:
+              incoming_email_prefer_html:
+                type: boolean
+                description: |
+                  Use the HTML instead of the text for incoming email. May cause unexpected formatting issues!
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/email_in:
+    put:
+      description: |
+        email in
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - email_in
+            properties:
+              email_in:
+                type: boolean
+                description: |
+                  'Allow users to post new topics via email (requires pop3 polling). Configure the addresses in the "Settings" tab of each category.'
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/email_in_min_trust:
+    put:
+      description: |
+        email in min trust
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - email_in_min_trust
+            properties:
+              email_in_min_trust:
+                type: integer
+                enum:
+                  - 0
+                  - 1
+                  - 2
+                  - 3
+                  - 4
+                description: |
+                  The minimum trust level a user needs to have to be allowed to post new topics via email.
+                example: 2
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/email_prefix:
+    put:
+      description: |
+        email prefix
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - email_prefix
+            properties:
+              email_prefix:
+                type: string
+                description: |
+                  "The [label] used in the subject of emails. It will default to 'title' if not set."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/email_site_title:
+    put:
+      description: |
+        email site title
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - email_site_title
+            properties:
+              email_site_title:
+                type: string
+                description: |
+                  The title of the site used as the sender of emails from the site. Default to 'title' if not set. If your 'title' contains characters that are not allowed in email sender strings, use this setting.
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/disable_emails:
+    put:
+      description: |
+        disable emails
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - disable_emails
+            properties:
+              disable_emails:
+                type: boolean
+                example: false
+                description: |
+                  Prevent Discourse from sending any kind of emails
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/strip_images_from_short_emails:
+    put:
+      description: |
+        strip images from short emails
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - strip_images_from_short_emails
+            properties:
+              strip_images_from_short_emails:
+                type: boolean
+                example: true
+                description: Strip images from emails having size less than 2800 Bytes
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/short_email_length:
+    put:
+      description: |
+        short email length
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - short_email_length
+            properties:
+              short_email_length:
+                type: integer
+                example: 2800
+                description: Short email length in Bytes
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/display_name_on_email_from:
+    put:
+      description: |
+        display name on email from
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - display_name_on_email_from
+            properties:
+              display_name_on_email_from:
+                type: boolean
+                example: true
+                description: |
+                  Display full names on email from fields
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/unsubscribe_via_email:
+    put:
+      description: |
+        unsubscribe via email
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - unsubscribe_via_email
+            properties:
+              unsubscribe_via_email:
+                type: boolean
+                example: true
+                description: |
+                  Allow users to unsubscribe from emails by sending an email with 'unsubscribe' in the subject or body
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/unsubscribe_via_email_footer:
+    put:
+      description: |
+        unsubscribe via email footer
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - unsubscribe_via_email_footer
+            properties:
+              unsubscribe_via_email_footer:
+                type: boolean
+                example: false
+                description: 'Attach an unsubcribe via email mailto: link to the footer of sent email'
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/delete_email_logs_after_days:
+    put:
+      description: |
+        delete email logs after days
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - delete_email_logs_after_days
+            properties:
+              delete_email_logs_after_days:
+                type: integer
+                exampe: 365
+                description: |
+                  Delete email logs after (N) days. 0 to keep indefinitely
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/max_emails_per_day_per_user:
+    put:
+      description: |
+        max emails per day per user
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - max_emails_per_day_per_user
+            properties:
+              max_emails_per_day_per_user:
+                type: integer
+                example: 100
+                description: Maximum number of emails to send users per day. 0 to disable the limit
+      responses:
+        '200':
+          description: |
+            empty response body
