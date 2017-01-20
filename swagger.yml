@@ -5563,3 +5563,26 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/enable_staged_users:
+    put:
+      description: |
+        enable staged users
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - enable_staged_users
+            properties:
+              enable_staged_users:
+                type: boolean
+                example: true
+                description: Automatically create staged users when processing incoming emails.
+      responses:
+        '200':
+          description: |
+            empty response body
