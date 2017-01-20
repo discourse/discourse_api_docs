@@ -5586,3 +5586,26 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/maximum_staged_users_per_email:
+    put:
+      description: |
+        maximum staged users per email
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - maximum_staged_users_per_email
+            properties:
+              maximum_staged_users_per_email:
+                type: integer
+                example: 10
+                description: Maximum number of staged users created when processing an incoming email.
+      responses:
+        '200':
+          description: |
+            empty response body
