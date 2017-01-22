@@ -5609,3 +5609,26 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/auto_generated_whitelist:
+    put:
+      description: |
+        auto generated whitelist
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - auto_generated_whitelist
+            properties:
+              auto_generated_whitelist:
+                type: string
+                example: "foo@bar.com|discourse@bar.com"
+                description: List of email addresses that won't be checked for auto-generated content.
+      responses:
+        '200':
+          description: |
+            empty response body
