@@ -5658,7 +5658,7 @@ paths:
   /admin/site_settings/ignore_by_title:
     put:
       description: |
-        block auto generated emails
+        ignore by title
       tags:
         - Admin
         - Site Settings Email
@@ -5668,12 +5668,12 @@ paths:
           schema:
             type: object
             required:
-              - block_auto_generated_emails
+              - ignore_by_title
             properties:
-              block_auto_generated_emails:
-                type: boolean
-                example: true
-                description: Block incoming emails identified as being auto generated.
+              ignore_by_title:
+                type: string
+                example: ""
+                description: pipe delimited list
       responses:
         '200':
           description: |
