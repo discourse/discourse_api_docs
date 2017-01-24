@@ -5678,3 +5678,233 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/mailgun_api_key:
+    put:
+      description: |
+        mailgun api key
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - mailgun_api_key
+            properties:
+              mailgun_api_key:
+                type: string
+                example: ""
+                description: Mailgun Secret API key used to verify webhook messages.
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/bounce_score_threshold:
+    put:
+      description: |
+        bounce score threshold
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - bounce_score_threshold
+            properties:
+              bounce_score_threshold:
+                type: integer
+                example: 4
+                description: Max bounce score before we will stop emailing a user.
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/bounce_score_threshold_deactivate:
+    put:
+      description: |
+        bounce score threshold deactive
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - bounce_score_threshold_deactivate
+            properties:
+              bounce_score_threshold_deactivate:
+                type: integer
+                example: 30
+                description: Max bounce score before we will deactivate a user.
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/soft_bounce_score:
+    put:
+      description: |
+        soft bounce score
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - soft_bounce_score
+            properties:
+              soft_bounce_score:
+                type: integer
+                example: 1
+                description: Bounce score added to the user when a temporary bounce happens.
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/hard_bounce_score:
+    put:
+      description: |
+        hard bounce score
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - hard_bounce_score
+            properties:
+              hard_bounce_score:
+                type: integer
+                example: 2
+                description: Bounce score added to the user when a permanent bounce happens.
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/reset_bounce_score_after_days:
+    put:
+      description: |
+        reset bounce score after days
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - reset_bounce_score_after_days
+            properties:
+              reset_bounce_score_after_days:
+                type: integer
+                example: 31
+                description: Automatically reset bounce score after X days.
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/attachment_content_type_blacklist:
+    put:
+      description: |
+        attachment content type blacklist
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - attachment_content_type_blacklist
+            properties:
+              attachment_content_type_blacklist:
+                type: string
+                example: "pkcs7|x-vcard"
+                description: Pipe delimited list of keywords used to blacklist attachments based on the content type.
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/attachment_filename_blacklist:
+    put:
+      description: |
+        attachment filename blacklist
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - attachment_filename_blacklist
+            properties:
+              attachment_filename_blacklist:
+                type: string
+                example: "smime.p7s|signature.asc"
+                description: Pipe delimited list of keywords used to blacklist attachments based on the filename.
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/enable_forwarded_emails:
+    put:
+      description: |
+        enable forwarded emails
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - enable_forwarded_emails
+            properties:
+              enable_forwarded_emails:
+                type: boolean
+                example: false
+                description: '[BETA] Allow users to create a topic by forwarding an email in.'
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/always_show_trimmed_content:
+    put:
+      description: |
+        always show trimmed content
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - always_show_trimmed_content
+            properties:
+              always_show_trimmed_content:
+                type: boolean
+                example: false
+                description: Always show trimmed part of incoming emails. WARNING: might reveal email addresses.
+      responses:
+        '200':
+          description: |
+            empty response body
