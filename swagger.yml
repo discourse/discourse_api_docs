@@ -5655,3 +5655,26 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/ignore_by_title:
+    put:
+      description: |
+        block auto generated emails
+      tags:
+        - Admin
+        - Site Settings Email
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - block_auto_generated_emails
+            properties:
+              block_auto_generated_emails:
+                type: boolean
+                example: true
+                description: Block incoming emails identified as being auto generated.
+      responses:
+        '200':
+          description: |
+            empty response body
