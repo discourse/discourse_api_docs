@@ -5908,3 +5908,606 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/max_image_size_kb:
+    put:
+      description: |
+        max image size kb
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - max_image_size_kb
+            properties:
+              max_image_size_kb:
+                type: integer
+                example: 3072
+                description: 'The maximum image upload size in kB. This must be configured in nginx {client_max_body_size} / apache or proxy as well.'
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/max_attachment_size_kb:
+    put:
+      description: |
+        max attachment size kb
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - max_attachment_size_kb
+            properties:
+              max_image_size_kb:
+                type: integer
+                example: 3072
+                description: 'The maximum attachment upload size in kB. This must be configured in nginx {client_max_body_size} / apache or proxy as well.'
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/max_image_megapixels:
+    put:
+      description: |
+        max image megapixels
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - max_image_megapixels
+            properties:
+              max_image_megapixels:
+                type: integer
+                example: 40
+                description: 'Maximum number of megapixels allowed for an image'
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/authorized_extensions:
+    put:
+      description: |
+        authorized extensions
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - authorized_extensions
+            properties:
+              authorized_extensions:
+                type: string
+                example: "jpg|jpeg|png|gif"
+                description: 'A pipe delimited list of file extensions allowed for upload (use "*" to enable all file types)'
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/crawl_images:
+    put:
+      description: |
+        crawl images
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - crawl_images
+            properties:
+              crawl_images:
+                type: boolean
+                example: true
+                description: 'Retrieve images from remote URLs to insert the correct width and height dimensions.'
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/max_image_width:
+    put:
+      description: |
+        max image width
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - max_image_width
+            properties:
+              max_image_width:
+                type: integer
+                example: 690
+                description: 'Maximum thumbnail width of images in a post'
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/max_image_height:
+    put:
+      description: |
+        max image height
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - max_image_height
+            properties:
+              max_image_height:
+                type: integer
+                example: 500
+                description: 'Maximum thumbnail height of images in a post'
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/download_remote_images_to_local:
+    put:
+      description: |
+        download remote images to local
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - download_remote_images_to_local
+            properties:
+              max_image_width:
+                type: boolean
+                example: true
+                description: 'Convert remote images to local images by downloading them; this prevents broken images.'
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/download_remote_images_threshold:
+    put:
+      description: |
+        download remote images threshold
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - download_remote_images_threshold
+            properties:
+              download_remote_images_threshold:
+                type: integer
+                example: 10
+                description: "Minimum disk space necessary to download remote images locally (in percent)"
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/download_remote_images_max_days_old:
+    put:
+      description: |
+        download remote images max days old
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - download_remote_images_max_days_old
+            properties:
+              download_remote_images_max_days_old:
+                type: integer
+                example: 30
+                description: "Don't download remote images for posts that are more than n days old."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/disabled_image_download_domains:
+    put:
+      description: |
+        disabled image download domains
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - disabled_image_download_domains
+            properties:
+              disabled_image_download_domains:
+                type: string
+                example: ""
+                description: "Remote images will never be downloaded from these domains. Pipe-delimited list."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/create_thumbnails:
+    put:
+      description: |
+        create thumbnails
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - create_thumbnails
+            properties:
+              create_thumbnails:
+                type: boolean
+                example: true
+                description: |
+                  "Create thumbnails and lightbox images that are too large to fit in a post"
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/clean_up_uploads:
+    put:
+      description: |
+        clean up uploads
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - clean_up_uploads
+            properties:
+              clean_up_uploads:
+                type: boolean
+                example: true
+                description: |
+                  "Remove orphan unreferenced uploads to prevent illegal hosting. WARNING: you may want to back up of your /uploads directory before enabling this setting."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/clean_orphan_uploads_grace_period_hours:
+    put:
+      description: |
+        clean orphan uploads grace period hours
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - clean_orphan_uploads_grace_period_hours
+            properties:
+              clean_orphan_uploads_grace_period_hours:
+                type: integer
+                example: 48
+                description: |
+                  "Grace period (in hours) before an orphan upload is removed."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/purge_deleted_uploads_grace_period_days:
+    put:
+      description: |
+        purge deleted uploads grace period days
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - purge_deleted_uploads_grace_period_days
+            properties:
+              purge_deleted_uploads_grace_period_days:
+                type: integer
+                example: 30
+                description: |
+                  "Grace period (in days) before a deleted upload is erased."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/prevent_anons_from_downloading_files:
+    put:
+      description: |
+        prevent anons from downloading files
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - prevent_anons_from_downloading_files
+            properties:
+              prevent_anons_from_downloading_files:
+                type: boolean
+                example: false
+                description: |
+                  "Prevent anonymous users from downloading attachments. WARNING: this will prevent any non-image site assets posted as attachments from working."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/enable_s3_uploads:
+    put:
+      description: |
+        enable s3 uploads
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - enable_s3_uploads
+            properties:
+              enable_s3_uploads:
+                type: boolean
+                example: false
+                description: |
+                  "Place uploads on Amazon S3 storage. IMPORTANT: requires valid S3 credentials (both access key id & secret access key)."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/s3_use_iam_profile:
+    put:
+      description: |
+        s3 use iam profile
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - s3_use_iam_profile
+            properties:
+              s3_use_iam_profile:
+                type: boolean
+                example: false
+                description: |
+                  'Use AWS EC2 IAM role to retrieve keys. NOTE: enabling will override "s3 access key id" and "s3 secret access key" settings.'
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/s3_access_key_id:
+    put:
+      description: |
+        s3 access key id
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - s3_access_key_id
+            properties:
+              s3_access_key_id:
+                type: string
+                example: ""
+                description: |
+                  "The Amazon S3 access key id that will be used to upload images."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/s3_secret_access_key:
+    put:
+      description: |
+        s3 secret access key
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - s3_secret_access_key
+            properties:
+              s3_secret_access_key:
+                type: string
+                example: ""
+                description: |
+                  "The Amazon S3 secret access key that will be used to upload images."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/s3_region:
+    put:
+      description: |
+        s3 region
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - s3_region
+            properties:
+              s3_region:
+                type: string
+                enum:
+                  - ap-northeast-1
+                  - ap-northeast-2
+                  - ap-south-1
+                  - ap-southeast-1
+                  - ap-southeast-2
+                  - cn-north-1
+                  - eu-central-1
+                  - eu-west-1
+                  - sa-east-1
+                  - us-east-1
+                  - us-gov-west-1
+                  - us-west-1
+                  - us-west-2
+                example: "us-west-2"
+                description: |
+                  "The Amazon S3 region name that will be used to upload images."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/s3_upload_bucket:
+    put:
+      description: |
+        s3 upload bucket
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - s3_upload_bucket
+            properties:
+              s3_upload_bucket:
+                type: string
+                example: ""
+                description: |
+                  "The Amazon S3 bucket name that files will be uploaded into. WARNING: must be lowercase, no periods, no underscores."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/s3_cdn_url:
+    put:
+      description: |
+        s3 cdn url
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - s3_cdn_url
+            properties:
+              s3_cdn_url:
+                type: string
+                example: ""
+                description: |
+                  "The CDN URL to use for all s3 assets (for example: https://cdn.somewhere.com). WARNING: after changing this setting you must rebake all old posts."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/allow_profile_backgrounds:
+    put:
+      description: |
+        allow profile backgrounds
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - allow_profile_backgrounds
+            properties:
+              allow_profile_backgrounds:
+                type: boolean
+                example: true
+                description: |
+                  "Allow users to upload profile backgrounds."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/automatically_download_gravatars:
+    put:
+      description: |
+        automatically download gravatars
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - automatically_download_gravatars
+            properties:
+              automatically_download_gravatars:
+                type: boolean
+                example: true
+                description: |
+                  "Download Gravatars for users upon account creation or email change."
+      responses:
+        '200':
+          description: |
+            empty response body
