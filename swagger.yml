@@ -6511,3 +6511,243 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/allow_uploaded_avatars:
+    put:
+      description: |
+        allow uploaded avatars
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - allow_uploaded_avatars
+            properties:
+              allow_uploaded_avatars:
+                type: boolean
+                example: true
+                description: |
+                  "Allow users to upload custom profile pictures."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/allow_animated_avatars:
+    put:
+      description: |
+        allow animated avatars
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - allow_animated_avatars
+            properties:
+              allow_animated_avatars:
+                type: boolean
+                example: false
+                description: |
+                  "Allow users to use animated gif profile pictures. WARNING: run the avatars:refresh rake task after changing this setting."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/allow_animated_thumbnails:
+    put:
+      description: |
+        allow animated thumbnails
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - allow_animated_thumbnails
+            properties:
+              allow_animated_thumbnails:
+                type: boolean
+                example: true
+                description: |
+                  "Generate animated thumbnails of animated gifs."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/default_avatars:
+    put:
+      description: |
+        default avatars
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - default_avatars
+            properties:
+              default_avatars:
+                type: string
+                example: ""
+                description: |
+                  "URLs to avatars that will be used by default for new users until they change them."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/avatar_sizes:
+    put:
+      description: |
+        avatar sizes
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - avatar_sizes
+            properties:
+              avatar_sizes:
+                type: string
+                example: "20|25|32|45|60|120"
+                description: |
+                  "List of automatically generated avatar sizes."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/external_system_avatars_enabled:
+    put:
+      description: |
+        external system avatars enabled
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - external_system_avatars_enabled
+            properties:
+              external_system_avatars_enabled:
+                type: boolean
+                example: true
+                description: |
+                  "Use external system avatars service."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/external_system_avatars_url:
+    put:
+      description: |
+        external system avatars url
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - external_system_avatars_url
+            properties:
+              external_system_avatars_url:
+                type: string
+                example: "/letter_avatar_proxy/v2/letter/{first_letter}/{color}/{size}.png"
+                description: |
+                  "URL of the external system avatars service. Allowed substitutions are {username} {first_letter} {color} {size}"
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/allow_all_attachments_for_group_messages:
+    put:
+      description: |
+        allow all attachments for group messages
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - allow_all_attachments_for_group_messages
+            properties:
+              allow_all_attachments_for_group_messages:
+                type: boolean
+                example: false
+                description: |
+                  "Allow all email attachments for group messages."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/convert_pasted_images_to_hq_jpg:
+    put:
+      description: |
+        convert pasted images to hq jpg
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - convert_pasted_images_to_hq_jpg
+            properties:
+              convert_pasted_images_to_hq_jpg:
+                type: boolean
+                example: true
+                description: |
+                  "Convert pasted images to high-quality JPG files."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/convert_pasted_images_quality:
+    put:
+      description: |
+        convert pasted images quality
+      tags:
+        - Admin
+        - Site Settings Files
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - convert_pasted_images_quality
+            properties:
+              convert_pasted_images_quality:
+                type: integer
+                example: 95
+                description: |
+                  "Quality of the converted JPG file (1 is lowest quality, 100 is best quality)."
+      responses:
+        '200':
+          description: |
+            empty response body
