@@ -6751,3 +6751,789 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/default_trust_level:
+    put:
+      description: |
+        default trust level
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - default_trust_level
+            properties:
+              default_trust_level:
+                type: integer
+                example: 0
+                enum:
+                  - 0
+                  - 1
+                  - 2
+                  - 3
+                  - 4
+                description: |
+                  "Default trust level (0-4) for all new users. WARNING! Changing this will put you at serious risk for spam."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/default_invitee_trust_level:
+    put:
+      description: |
+        default invitee trust level
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - default_invitee_trust_level
+            properties:
+              default_invitee_trust_level:
+                type: integer
+                example: 1
+                enum:
+                  - 0
+                  - 1
+                  - 2
+                  - 3
+                  - 4
+                description: |
+                  "Default trust level (0-4) for invited users."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/min_trust_to_create_topic:
+    put:
+      description: |
+        min trust to create topic
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - min_trust_to_create_topic
+            properties:
+              min_trust_to_create_topic:
+                type: integer
+                example: 0
+                enum:
+                  - 0
+                  - 1
+                  - 2
+                  - 3
+                  - 4
+                description: |
+                  "The minimum trust level required to create a new topic"
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/min_trust_to_edit_wiki_post:
+    put:
+      description: |
+        min trust to edit wiki post
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - min_trust_to_edit_wiki_post
+            properties:
+              min_trust_to_edit_wiki_post:
+                type: integer
+                example: 1
+                enum:
+                  - 0
+                  - 1
+                  - 2
+                  - 3
+                  - 4
+                description: |
+                  "The minimum trust level required to edit post marked as wiki."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/min_trust_to_edit_post:
+    put:
+      description: |
+        min trust to edit post
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - min_trust_to_edit_post
+            properties:
+              min_trust_to_edit_post:
+                type: integer
+                example: 0
+                enum:
+                  - 0
+                  - 1
+                  - 2
+                  - 3
+                  - 4
+                description: |
+                  "The minimum trust level required to edit posts."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/min_trust_to_allow_self_wiki:
+    put:
+      description: |
+        min trust to allow self wiki
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - min_trust_to_allow_self_wiki
+            properties:
+              min_trust_to_allow_self_wiki:
+                type: integer
+                example: 3
+                enum:
+                  - 0
+                  - 1
+                  - 2
+                  - 3
+                  - 4
+                description: |
+                  "The minimum trust level required to make user's own post wiki."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/min_trust_to_send_messages:
+    put:
+      description: |
+        min trust to send messages
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - min_trust_to_send_messages
+            properties:
+              min_trust_to_send_messages:
+                type: integer
+                example: 0
+                enum:
+                  - 0
+                  - 1
+                  - 2
+                  - 3
+                  - 4
+                description: |
+                  "The minimum trust level required to create new private messages."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/tl1_requires_topics_entered:
+    put:
+      description: |
+        tl1 requires topics entered
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - tl1_requires_topics_entered
+            properties:
+              tl1_requires_topics_entered:
+                type: integer
+                example: 5
+                description: |
+                  "How many topics a new user must enter before promotion to trust level 1."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/tl1_requires_read_posts:
+    put:
+      description: |
+        tl1 requires read posts
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - tl1_requires_read_posts
+            properties:
+              tl1_requires_read_posts:
+                type: integer
+                example: 30
+                description: |
+                  "How many posts a new user must read before promotion to trust level 1."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/tl1_requires_time_spent_mins:
+    put:
+      description: |
+        tl1 requires time spent mins
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - tl1_requires_time_spent_mins
+            properties:
+              tl1_requires_time_spent_mins:
+                type: integer
+                example: 10
+                description: |
+                  "How many minutes a new user must read posts before promotion to trust level 1."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/tl2_requires_topics_entered:
+    put:
+      description: |
+        tl2 requires topics entered
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - tl2_requires_topics_entered
+            properties:
+              tl2_requires_topics_entered:
+                type: integer
+                example: 20
+                description: |
+                  "How many topics a user must enter before promotion to trust level 2."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/tl2_requires_read_posts:
+    put:
+      description: |
+        tl2 requires read posts
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - tl2_requires_read_posts
+            properties:
+              tl2_requires_read_posts:
+                type: integer
+                example: 100
+                description: |
+                  "How many posts a user must read before promotion to trust level 2."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/tl2_requires_time_spent_mins:
+    put:
+      description: |
+        tl2 requires time spent mins
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - tl2_requires_time_spent_mins
+            properties:
+              tl2_requires_time_spent_mins:
+                type: integer
+                example: 60
+                description: |
+                  "How many minutes a user must read posts before promotion to trust level 2."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/tl2_requires_days_visited:
+    put:
+      description: |
+        tl2 requires days visited
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - tl2_requires_days_visited
+            properties:
+              tl2_requires_days_visited:
+                type: integer
+                example: 15
+                description: |
+                  "How many days a user must visit the site before promotion to trust level 2."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/tl2_requires_likes_received:
+    put:
+      description: |
+        tl2 requires likes received
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - tl2_requires_likes_received
+            properties:
+              tl2_requires_likes_received:
+                type: integer
+                example: 1
+                description: |
+                  "How many likes a user must receive before promotion to trust level 2."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/tl2_requires_likes_given:
+    put:
+      description: |
+        tl2 requires likes given
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - tl2_requires_likes_given
+            properties:
+              tl2_requires_likes_given:
+                type: integer
+                example: 1
+                description: |
+                  "How many likes a user must cast before promotion to trust level 2."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/tl2_requires_topic_reply_count:
+    put:
+      description: |
+        tl2 requires topic reply count
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - tl2_requires_topic_reply_count
+            properties:
+              tl2_requires_topic_reply_count:
+                type: integer
+                example: 3
+                description: |
+                  "How many topics user must reply to before promotion to trust level 2."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/tl3_time_period:
+    put:
+      description: |
+        tl2 time period
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - tl3_time_period
+            properties:
+              tl3_time_period:
+                type: integer
+                example: 100
+                description: |
+                  "Trust Level 3 requirements time period (in days)"
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/tl3_requires_days_visited:
+    put:
+      description: |
+        tl3 requires days visited
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - tl3_requires_days_visited
+            properties:
+              tl3_requires_days_visited:
+                type: integer
+                example: 50
+                description: |
+                  "Minimum number of days that a user needs to have visited the site in the last (tl3 time period) days to qualify for promotion to trust level 3. Set higher than tl3 time period to disable promotions to tl3. (0 or higher)"
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/tl3_requires_topics_replied_to:
+    put:
+      description: |
+        tl3 requires topics replied to
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - tl3_requires_topics_replied_to
+            properties:
+              tl3_requires_topics_replied_to:
+                type: integer
+                example: 10
+                description: |
+                  "Minimum number of topics a user needs to have replied to in the last (tl3 time period) days to qualify for promotion to trust level 3. (0 or higher)"
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/tl3_requires_topics_viewed:
+    put:
+      description: |
+        tl3 requires topics viewed
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - tl3_requires_topics_viewed
+            properties:
+              tl3_requires_topics_viewed:
+                type: integer
+                example: 25
+                description: |
+                  "The percentage of topics created in the last (tl3 time period) days that a user needs to have viewed to qualify for promotion to trust level 3. (0 to 100)"
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/tl3_requires_topics_viewed_cap:
+    put:
+      description: |
+        tl3 requires topics viewed cap
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - tl3_requires_topics_viewed_cap
+            properties:
+              tl3_requires_topics_viewed_cap:
+                type: integer
+                example: 500
+                description: |
+                  "The maximum required number of topics viewed in the last (tl3 time period) days."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/tl3_requires_posts_read:
+    put:
+      description: |
+        tl3 requires posts read
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - tl3_requires_posts_read
+            properties:
+              tl3_requires_posts_read:
+                type: integer
+                example: 25
+                description: |
+                  "The percentage of posts created in the last (tl3 time period) days that a user needs to have viewed to qualify for promotion to trust level 3. (0 to 100)"
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/tl3_requires_posts_read_cap:
+    put:
+      description: |
+        tl3 requires posts read cap
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - tl3_requires_posts_read_cap
+            properties:
+              tl3_requires_posts_read_cap:
+                type: integer
+                example: 20000
+                description: |
+                  "The maximum required number of posts read in the last (tl3 time period) days."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/tl3_requires_topics_viewed_all_time:
+    put:
+      description: |
+        tl3 requires topics viewed all time
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - tl3_requires_viewed_all_time
+            properties:
+              tl3_requires_viewed_all_time:
+                type: integer
+                example: 200
+                description: |
+                  "The minimum total number of topics a user must have viewed to qualify for trust level 3."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/tl3_requires_posts_read_all_time:
+    put:
+      description: |
+        tl3 requires posts read all time
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - tl3_requires_posts_read_all_time
+            properties:
+              tl3_requires_posts_read_all_time:
+                type: integer
+                example: 500
+                description: |
+                  "The minimum total number of posts a user must have read to qualify for trust level 3."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/tl3_requires_max_flagged:
+    put:
+      description: |
+        tl3 requires max flagged
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - tl3_requires_max_flagged
+            properties:
+              tl3_requires_max_flagged:
+                type: integer
+                example: 5
+                description: |
+                  "User must not have had more than x posts flagged by x different users in the last (tl3 time period) days to qualify for promotion to trust level 3, where x is this setting's value. (0 or higher)"
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/tl3_promotion_min_duration:
+    put:
+      description: |
+        tl3 promotion min duration
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - tl3_promotion_min_duration
+            properties:
+              tl3_promotion_min_duration:
+                type: integer
+                example: 14
+                description: |
+                  "The minimum number of days that a promotion to trust level 3 lasts before a user can be demoted back to trust level 2."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/tl3_requires_likes_given:
+    put:
+      description: |
+        tl3 requires likes given
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - tl3_requires_likes_given
+            properties:
+              tl3_requires_likes_given:
+                type: integer
+                example: 30
+                description: |
+                  "The minimum number of likes that must be given in the last (tl3 time period) days to qualify for promotion to trust level 3."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/tl3_requires_likes_received:
+    put:
+      description: |
+        tl3 requires likes received
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - tl3_requires_likes_received
+            properties:
+              tl3_requires_likes_received:
+                type: integer
+                example: 20
+                description: |
+                  "The minimum number of likes that must be received in the last (tl3 time period) days to qualify for promotion to trust level 3."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/tl3_links_no_follow:
+    put:
+      description: |
+        tl3 links no follow
+      tags:
+        - Admin
+        - Site Settings Trust Levels
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - tl3_links_no_follow
+            properties:
+              tl3_links_no_follow:
+                type: boolean
+                example: false
+                description: |
+                  "Do not remove rel=nofollow from links posted by trust level 3 users."
+      responses:
+        '200':
+          description: |
+            empty response body
