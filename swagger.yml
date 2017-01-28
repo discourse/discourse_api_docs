@@ -7801,3 +7801,171 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/add_rel_nofollow_to_user_content:
+    put:
+      description: |
+        add rel nofollow to user content
+      tags:
+        - Admin
+        - Site Settings Spam
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - add_rel_nofollow_to_user_content
+            properties:
+              add_rel_nofollow_to_user_content:
+                type: boolean
+                example: true
+                description: |
+                  'Add rel nofollow to all submitted user content, except for internal links (including parent domains). If you change this, you must rebake all posts with: "rake posts:rebake"'
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/flags_required_to_hide_post:
+    put:
+      description: |
+        flags required to hide post
+      tags:
+        - Admin
+        - Site Settings Spam
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - flags_required_to_hide_post
+            properties:
+              flags_required_to_hide_post:
+                type: integer
+                example: 3
+                description: |
+                  "Number of flags that cause a post to be automatically hidden and message sent to the user (0 for never)"
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/cooldown_minutes_after_hiding_posts:
+    put:
+      description: |
+        cooldown minutes after hiding posts
+      tags:
+        - Admin
+        - Site Settings Spam
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - cooldown_minutes_after_hiding_posts
+            properties:
+              cooldown_minutes_after_hiding_posts:
+                type: integer
+                example: 10
+                description: |
+                  "Number of minutes a user must wait before they can edit a post hidden via community flagging"
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/num_spam_flags_to_block_new_user:
+    put:
+      description: |
+        num spam flags to block new user
+      tags:
+        - Admin
+        - Site Settings Spam
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - num_spam_flags_to_block_new_user
+            properties:
+              num_spam_flags_to_block_new_user:
+                type: integer
+                example: 3
+                description: |
+                  "If a new user's posts get this many spam flags from num_users_to_block_new_user different users, hide all their posts and prevent future posting. 0 to disable."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/num_users_to_block_new_user:
+    put:
+      description: |
+        num users to block new user
+      tags:
+        - Admin
+        - Site Settings Spam
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - num_users_to_block_new_user
+            properties:
+              num_users_to_block_new_user:
+                type: integer
+                example: 3
+                description: |
+                  "If a new user's posts get num_spam_flags_to_block_new_user spam flags from this many different users, hide all their posts and prevent future posting. 0 to disable."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/num_tl3_flags_to_block_new_user:
+    put:
+      description: |
+        num tl3 flags to block new user
+      tags:
+        - Admin
+        - Site Settings Spam
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - num_tl3_flags_to_block_new_user
+            properties:
+              num_tl3_flags_to_block_new_user:
+                type: integer
+                example: 4
+                description: |
+                  "If a new user's posts get this many flags from num_tl3_users_to_block_new_user different trust level 3 users, hide all their posts and prevent future posting. 0 to disable."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/num_tl3_users_to_block_new_user:
+    put:
+      description: |
+        num tl3 users to block new user
+      tags:
+        - Admin
+        - Site Settings Spam
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - num_tl3_users_to_block_new_user
+            properties:
+              num_tl3_users_to_block_new_user:
+                type: integer
+                example: 2
+                description: |
+                  "If a new user's posts get num_tl3_flags_to_block_new_user flags from this many different trust level 3 users, hide all their posts and prevent future posting. 0 to disable."
+      responses:
+        '200':
+          description: |
+            empty response body
