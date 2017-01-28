@@ -7537,3 +7537,171 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/force_https:
+    put:
+      description: |
+        force https
+      tags:
+        - Admin
+        - Site Settings Security
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - force_https
+            properties:
+              force_https:
+                type: boolean
+                example: false
+                description: |
+                  "Force your site to use HTTPS only. WARNING: do NOT enable this until you verify HTTPS is fully set up and working absolutely everywhere! Did you check your CDN, all social logins, and any external logos / dependencies to make sure they are all HTTPS compatible, too?"
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/enable_escaped_fragments:
+    put:
+      description: |
+        enable escaped fragments
+      tags:
+        - Admin
+        - Site Settings Security
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - enable_escaped_fragments
+            properties:
+              enable_escaped_fragments:
+                type: boolean
+                example: true
+                description: |
+                  "Fall back to Google's Ajax-Crawling API if no webcrawler is detected. See https://developers.google.com/webmasters/ajax-crawling/docs/learn-more"
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/allow_index_in_robots_txt:
+    put:
+      description: |
+        allow index in robots txt
+      tags:
+        - Admin
+        - Site Settings Security
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - allow_index_in_robots_txt
+            properties:
+              allow_index_in_robots_txt:
+                type: boolean
+                example: true
+                description: |
+                  "Specify in robots.txt that this site is allowed to be indexed by web search engines."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/enable_noscript_support:
+    put:
+      description: |
+        enable noscript support
+      tags:
+        - Admin
+        - Site Settings Security
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - enable_noscript_support
+            properties:
+              enable_noscript_support:
+                type: boolean
+                example: true
+                description: |
+                  "Enable standard webcrawler search engine support via the noscript tag"
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/allow_moderators_to_create_categories:
+    put:
+      description: |
+        allow moderators to create categories
+      tags:
+        - Admin
+        - Site Settings Security
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - allow_moderators_to_create_categories
+            properties:
+              allow_moderators_to_create_categories:
+                type: boolean
+                example: false
+                description: |
+                  "Allow moderators to create new categories"
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/cors_origins:
+    put:
+      description: |
+        cors origins
+      tags:
+        - Admin
+        - Site Settings Security
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - cors_origins
+            properties:
+              cors_origins:
+                type: string
+                example: ""
+                description: |
+                  "Allowed origins for cross-origin requests (CORS). Each origin must include http:// or https://. The DISCOURSE_ENABLE_CORS env variable must be set to true to enable CORS."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/use_admin_ip_whitelist:
+    put:
+      description: |
+        use admin ip whitelist
+      tags:
+        - Admin
+        - Site Settings Security
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - use_admin_ip_whitelist
+            properties:
+              use_admin_ip_whitelist:
+                type: boolean
+                example: false
+                description: |
+                  "Admins can only log in if they are at an IP address defined in the Screened IPs list (Admin > Logs > Screened Ips)."
+      responses:
+        '200':
+          description: |
+            empty response body
