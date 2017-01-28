@@ -7705,3 +7705,99 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/enable_flash_video_onebox:
+    put:
+      description: |
+        enable flash video onebox
+      tags:
+        - Admin
+        - Site Settings Onebox
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - enable_flash_video_onebox
+            properties:
+              enable_flash_video_onebox:
+                type: boolean
+                example: false
+                description: |
+                  "Enable embedding of swf and flv (Adobe Flash) links in oneboxes. WARNING: may introduce security risks."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/post_onebox_maxlength:
+    put:
+      description: |
+        post onebox maxlength
+      tags:
+        - Admin
+        - Site Settings Onebox
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - post_onebox_maxlength
+            properties:
+              post_onebox_maxlength:
+                type: integer
+                example: 500
+                description: |
+                  "Maximum length of a oneboxed Discourse post in characters."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/onebox_domains_blacklist:
+    put:
+      description: |
+        onebox domains blacklist
+      tags:
+        - Admin
+        - Site Settings Onebox
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - onebox_domains_blacklist
+            properties:
+              onebox_domains_blacklist:
+                type: string
+                example: ""
+                description: |
+                  "A list of domains that will never be oneboxed."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/max_oneboxes_per_post:
+    put:
+      description: |
+        max oneboxes per post
+      tags:
+        - Admin
+        - Site Settings Onebox
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - max_oneboxes_per_post
+            properties:
+              max_oneboxes_per_post:
+                type: integer
+                example: 50
+                description: |
+                  "Enable embedding of swf and flv (Adobe Flash) links in oneboxes. WARNING: may introduce security risks."
+      responses:
+        '200':
+          description: |
+            empty response body
