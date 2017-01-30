@@ -7969,3 +7969,27 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/notify_mods_when_user_blocked:
+    put:
+      description: |
+        notify mods when user blocked
+      tags:
+        - Admin
+        - Site Settings Spam
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - notify_mods_when_user_blocked
+            properties:
+              notify_mods_when_user_blocked:
+                type: boolean
+                example: false
+                description: |
+                  "If a user is automatically blocked, send a message to all moderators."
+      responses:
+        '200':
+          description: |
+            empty response body
