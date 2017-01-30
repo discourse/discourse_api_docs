@@ -8353,3 +8353,507 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/unique_posts_min:
+    put:
+      description: |
+        unique posts mins
+      tags:
+        - Admin
+        - Site Settings Rate Limits
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - unique_posts_min
+            properties:
+              unique_posts_min:
+                type: integer
+                example: 5
+                description: |
+                  "How many minutes before a user can make a post with the same content again"
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/rate_limit_create_topic:
+    put:
+      description: |
+        rate limit create topic
+      tags:
+        - Admin
+        - Site Settings Rate Limits
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - rate_limit_create_topic
+            properties:
+              rate_limit_create_topic:
+                type: integer
+                example: 16
+                description: |
+                  "After creating a topic, users must wait (n) seconds before creating another topic."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/rate_limit_create_post:
+    put:
+      description: |
+        rate limit create post
+      tags:
+        - Admin
+        - Site Settings Rate Limits
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - rate_limit_create_post
+            properties:
+              rate_limit_create_post:
+                type: integer
+                example: 5
+                description: |
+                  "After posting, users must wait (n) seconds before creating another post."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/rate_limit_new_user_create_topic:
+    put:
+      description: |
+        rate limit new user create topic
+      tags:
+        - Admin
+        - Site Settings Rate Limits
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - rate_limit_new_user_create_topic
+            properties:
+              rate_limit_new_user_create_topic:
+                type: integer
+                example: 120
+                description: |
+                  "After creating a topic, new users must wait (n) seconds before creating another topic."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/rate_limit_new_user_create_post:
+    put:
+      description: |
+        rate limit new user create post
+      tags:
+        - Admin
+        - Site Settings Rate Limits
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - rate_limit_new_user_create_post
+            properties:
+              rate_limit_new_user_create_post:
+                type: integer
+                example: 30
+                description: |
+                  "After posting, new users must wait (n) seconds before creating another post."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/max_topics_per_day:
+    put:
+      description: |
+        max topics per day
+      tags:
+        - Admin
+        - Site Settings Rate Limits
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - max_topics_per_day
+            properties:
+              max_topics_per_day:
+                type: integer
+                example: 20
+                description: |
+                  "Maximum number of topics a user can create per day."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/max_private_messages_per_day:
+    put:
+      description: |
+        max private messages per day
+      tags:
+        - Admin
+        - Site Settings Rate Limits
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - max_private_messages_per_day
+            properties:
+              max_private_messages_per_day:
+                type: integer
+                example: 20
+                description: |
+                  "Maximum number of messages users can create per day."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/max_likes_per_day:
+    put:
+      description: |
+        max likes per day
+      tags:
+        - Admin
+        - Site Settings Rate Limits
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - max_likes_per_day
+            properties:
+              max_likes_per_day:
+                type: integer
+                example: 50
+                description: |
+                  "Maximum number of likes per user per day."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/max_bookmarks_per_day:
+    put:
+      description: |
+        max bookmarks per day
+      tags:
+        - Admin
+        - Site Settings Rate Limits
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - max_bookmarks_per_day
+            properties:
+              max_bookmarks_per_day:
+                type: integer
+                example:  20
+                description: |
+                  "Maximum number of bookmarks per user per day."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/max_flags_per_day:
+    put:
+      description: |
+        max flags per day
+      tags:
+        - Admin
+        - Site Settings Rate Limits
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - max_flags_per_day
+            properties:
+              max_flags_per_day:
+                type: integer
+                example: 20
+                description: |
+                  "Maximum number of flags per user per day."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/max_edits_per_day:
+    put:
+      description: |
+        max edits per day
+      tags:
+        - Admin
+        - Site Settings Rate Limits
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - max_edits_per_day
+            properties:
+              max_edits_per_day:
+                type: integer
+                example: 30
+                description: |
+                  "Maximum number of edits per user per day."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/max_invites_per_day:
+    put:
+      description: |
+        max invites per day
+      tags:
+        - Admin
+        - Site Settings Rate Limits
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - max_invites_per_day
+            properties:
+              max_invites_per_day:
+                type: integer
+                example: 10
+                description: |
+                  "Maximum number of invites a user can send per day."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/max_topic_invitations_per_day:
+    put:
+      description: |
+        max topic invitations per day
+      tags:
+        - Admin
+        - Site Settings Rate Limits
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - max_topic_invitations_per_day
+            properties:
+              max_topic_invitations_per_day:
+                type: integer
+                example: 30
+                description: |
+                  "Maximum number of topic invitations a user can send per day."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/max_topics_in_first_day:
+    put:
+      description: |
+        max topics in first day
+      tags:
+        - Admin
+        - Site Settings Rate Limits
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - max_topics_in_first_day
+            properties:
+              max_topics_in_first_day:
+                type: integer
+                example: 3
+                description: |
+                  "The maximum number of topics a user is allowed to create in the 24 hour period after creating their first post"
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/max_replies_in_first_day:
+    put:
+      description: |
+        max replies in first day
+      tags:
+        - Admin
+        - Site Settings Rate Limits
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - max_replies_in_first_day
+            properties:
+              max_replies_in_first_day:
+                type: integer
+                example: 10
+                description: |
+                  "The maximum number of replies a user is allowed to create in the 24 hour period after creating their first post"
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/tl2_additional_likes_per_day_multiplier:
+    put:
+      description: |
+        tl2 additional likes per day multiplier
+      tags:
+        - Admin
+        - Site Settings Rate Limits
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - tl2_additional_likes_per_day_multiplier
+            properties:
+              tl2_additional_likes_per_day_multiplier:
+                type: decimal
+                example: 1.5
+                description: |
+                  "Increase limit of likes per day for tl2 (member) by multiplying with this number"
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/tl3_additional_likes_per_day_multiplier:
+    put:
+      description: |
+        tl3 additional likes per day multiplier
+      tags:
+        - Admin
+        - Site Settings Rate Limits
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - tl3_additional_likes_per_day_multiplier
+            properties:
+              tl3_additional_likes_per_day_multiplier:
+                type: decimal
+                example: 2
+                description: |
+                  "Increase limit of likes per day for tl3 (regular) by multiplying with this number"
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/tl4_additional_likes_per_day_multiplier:
+    put:
+      description: |
+        tl4 additional likes per day multiplier
+      tags:
+        - Admin
+        - Site Settings Rate Limits
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - tl4_additional_likes_per_day_multiplier
+            properties:
+              tl4_additional_likes_per_day_multiplier:
+                type: decimal
+                example: 3
+                description: |
+                  "Increase limit of likes per day for tl4 (leader) by multiplying with this number"
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/alert_admins_if_errors_per_minute:
+    put:
+      description: |
+        alert admins if errors per minute
+      tags:
+        - Admin
+        - Site Settings Rate Limits
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - alert_admins_if_errors_per_minute
+            properties:
+              alert_admins_if_errors_per_minute:
+                type: integer
+                example: 0
+                description: |
+                  "Number of errors per minute in order to trigger an admin alert. A value of 0 disables this feature. NOTE: requires restart."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/alert_admins_if_errors_per_hour:
+    put:
+      description: |
+        alert admins if errors per hour
+      tags:
+        - Admin
+        - Site Settings Rate Limits
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - alert_admins_if_errors_per_hour
+            properties:
+              alert_admins_if_errors_per_hour:
+                type: integer
+                example: 0
+                description: |
+                  "Number of errors per hour in order to trigger an admin alert. A value of 0 disables this feature. NOTE: requires restart."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/max_prints_per_hour_per_user:
+    put:
+      description: |
+        max prints per hour per user
+      tags:
+        - Admin
+        - Site Settings Rate Limits
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - max_prints_per_hour_per_user
+            properties:
+              max_prints_per_hour_per_user:
+                type: integer
+                example: 5
+                description: |
+                  "Maximum number of /print page impressions (set to 0 to disable)"
+      responses:
+        '200':
+          description: |
+            empty response body
