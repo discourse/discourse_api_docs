@@ -7993,3 +7993,363 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/flag_sockpuppets:
+    put:
+      description: |
+        flag sockpuppets
+      tags:
+        - Admin
+        - Site Settings Spam
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - flag_sockpuppets
+            properties:
+              flag_sockpuppets:
+                type: boolean
+                example: false
+                description: |
+                  "If a new user replies to a topic from the same IP address as the new user who started the topic, flag both of their posts as potential spam."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/newuser_spam_host_threshold:
+    put:
+      description: |
+        newuser spam host threshold
+      tags:
+        - Admin
+        - Site Settings Spam
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - newuser_spam_host_threshold
+            properties:
+              newuser_spam_host_threshold:
+                type: integer
+                example: 3
+                description: |
+                  "How many times a new user can post a link to the same host within their `newuser_spam_host_threshold` posts before being considered spam."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/white_listed_spam_host_domains:
+    put:
+      description: |
+        white listed spam host domains
+      tags:
+        - Admin
+        - Site Settings Spam
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - white_listed_spam_host_domains
+            properties:
+              white_listed_spam_host_domains:
+                type: string
+                example: ""
+                description: |
+                  "A list of domains excluded from spam host testing. New users will never be restricted from creating posts with links to these domains."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/levenshtein_distance_spammer_emails:
+    put:
+      description: |
+        levenshtein distance spammer emails
+      tags:
+        - Admin
+        - Site Settings Spam
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - levenshtein_distance_spammer_emails
+            properties:
+              levenshtein_distance_spammer_emails:
+                type: integer
+                example: 2
+                description: |
+                  "When matching spammer emails, number of characters difference that will still allow a fuzzy match."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/max_new_accounts_per_registration_ip:
+    put:
+      description: |
+        max new accounts per registration ip
+      tags:
+        - Admin
+        - Site Settings Spam
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - max_new_accounts_per_registration_ip
+            properties:
+              max_new_accounts_per_registration_ip:
+                type: integer
+                example: 3
+                description: |
+                  "If there are already (n) trust level 0 accounts from this IP (and none is a staff member or at TL2 or higher), stop accepting new signups from that IP."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/min_ban_entries_for_roll_up:
+    put:
+      description: |
+        min ban entries for roll up
+      tags:
+        - Admin
+        - Site Settings Spam
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - min_ban_entries_for_roll_up
+            properties:
+              min_ban_entries_for_roll_up:
+                type: integer
+                example: 5
+                description: |
+                  "When clicking the Roll up button, will create a new subnet ban entry if there are at least (N) entries."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/max_age_unmatched_emails:
+    put:
+      description: |
+        max age unmatched emails
+      tags:
+        - Admin
+        - Site Settings Spam
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - max_age_unmatched_emails
+            properties:
+              max_age_unmatched_emails:
+                type: integer
+                example: 365
+                description: |
+                  "Delete unmatched screened email entries after (N) days."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/max_age_unmatched_ips:
+    put:
+      description: |
+        max age unmatched ips
+      tags:
+        - Admin
+        - Site Settings Spam
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - max_age_unmatched_ips
+            properties:
+              max_age_unmatched_ips:
+                type: integer
+                example: 365
+                description: |
+                  "Delete unmatched screened IP entries after (N) days."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/num_flaggers_to_close_topic:
+    put:
+      description: |
+        num flaggers to close topic
+      tags:
+        - Admin
+        - Site Settings Spam
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - num_flaggers_to_close_topic
+            properties:
+              num_flaggers_to_close_topic:
+                type: integer
+                example: 5
+                description: |
+                  "Minimum number of unique flaggers that is required to automatically pause a topic for intervention"
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/num_flags_to_close_topic:
+    put:
+      description: |
+        num flags to close topic
+      tags:
+        - Admin
+        - Site Settings Spam
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - num_flags_to_close_topic
+            properties:
+              num_flags_to_close_topic:
+                type: integer
+                example: 12
+                description: |
+                  "Minimum number of active flags that is required to automatically pause a topic for intervention"
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/auto_respond_to_flag_actions:
+    put:
+      description: |
+        auto respond to flag actions
+      tags:
+        - Admin
+        - Site Settings Spam
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - auto_respond_to_flag_actions
+            properties:
+              auto_respond_to_flag_actions:
+                type: boolean
+                example: true
+                description: |
+                  "Enable automatic reply when disposing a flag."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/min_first_post_typing_time:
+    put:
+      description: |
+        min first post typing time
+      tags:
+        - Admin
+        - Site Settings Spam
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - min_first_post_typing_time
+            properties:
+              min_first_post_typing_time:
+                type: integer
+                example: 3000
+                description: |
+                  "Minimum amount of time in milliseconds a user must type during first post, if threshold is not met post will automatically enter the needs approval queue. Set to 0 to disable (not recommended)"
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/auto_block_fast_typers_on_first_post:
+    put:
+      description: |
+        auto block fast typers on first post
+      tags:
+        - Admin
+        - Site Settings Spam
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - auto_block_fast_typers_on_first_post
+            properties:
+              auto_block_fast_typers_on_first_post:
+                type: boolean
+                example: true
+                description: |
+                  "Automatically block users that do not meet min_first_post_typing_time"
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/auto_block_fast_typers_max_trust_level:
+    put:
+      description: |
+        auto black fast typers max trust level
+      tags:
+        - Admin
+        - Site Settings Spam
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - auto_block_fast_typers_max_trust_level
+            properties:
+              auto_block_fast_typers_max_trust_level:
+                type: integer
+                example: 0
+                description: |
+                  "Maximum trust level to auto block fast typers"
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/auto_block_first_post_regex:
+    put:
+      description: |
+        auto block first post regex
+      tags:
+        - Admin
+        - Site Settings Spam
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - auto_block_first_post_regex
+            properties:
+              auto_block_first_post_regex:
+                type: string
+                example: ""
+                description: |
+                  "Case insensitive regex that if passed will cause first post by user to be blocked and sent to approval queue. Example: raging|a[bc]a , will cause all posts containing raging or aba or aca to be blocked on first. Only applies to first post."
+      responses:
+        '200':
+          description: |
+            empty response body
