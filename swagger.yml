@@ -8857,3 +8857,99 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/force_hostname:
+    put:
+      description: |
+        force hostname
+      tags:
+        - Admin
+        - Site Settings Developer
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - force_hostname
+            properties:
+              force_hostname:
+                type: string
+                example: ""
+                description: |
+                  "DEVELOPER ONLY! WARNING! Specify a hostname in the URL. Leave blank for default."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/port:
+    put:
+      description: |
+        port
+      tags:
+        - Admin
+        - Site Settings Developer
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - port
+            properties:
+              port:
+                type: integer
+                example: 3000
+                description: |
+                  "DEVELOPER ONLY! WARNING! Use this HTTP port rather than the default of port 80. Leave blank for default of 80."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/queue_jobs:
+    put:
+      description: |
+        queue jobs
+      tags:
+        - Admin
+        - Site Settings Developer
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - queue jobs
+            properties:
+              port:
+                type: boolean
+                example: true
+                description: |
+                  "DEVELOPER ONLY! WARNING! By default, queue jobs in sidekiq. If disabled, your site will be broken."
+      responses:
+        '200':
+          description: |
+            empty response body
+  /admin/site_settings/enable_long_polling:
+    put:
+      description: |
+        enable long polling
+      tags:
+        - Admin
+        - Site Settings Developer
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - enable_long_polling
+            properties:
+              enable_long_polling:
+                type: boolean
+                example: true
+                description: |
+                  "Message bus used for notification can use long polling"
+      responses:
+        '200':
+          description: |
+            empty response body
