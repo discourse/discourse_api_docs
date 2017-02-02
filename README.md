@@ -14,8 +14,8 @@ In addition to the docs site, you can also import the postman json files into
 [postman](https://www.getpostman.com/) to test making real API calls and see the json output.
 
 Postman files:
-  - [environment](https://raw.githubusercontent.com/oblakeerickson/discourse_api_docs/master/postman/discourse_local.postman_environment.json)
-  - [collection](https://raw.githubusercontent.com/oblakeerickson/discourse_api_docs/master/postman/discourse.postman_collection.json)
+  - [environment](https://raw.githubusercontent.com/discourse/discourse_api_docs/master/postman/discourse_local.postman_environment.json)
+  - [collection](https://raw.githubusercontent.com/discourse/discourse_api_docs/master/postman/discourse.postman_collection.json)
 
 Start by importing the environment json file. After you import it be sure to
 change the `base_url`, `api_username`, and `api_key` values to match your
