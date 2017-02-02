@@ -2,7 +2,7 @@
 
 To view the the Discourse API Documentation you can visit:
 
-  https://oblakeerickson.github.io/discourse_api_docs
+  https://discourse.github.io/discourse_api_docs
 
 Here is an example of what the ReDoc site looks like:
 
