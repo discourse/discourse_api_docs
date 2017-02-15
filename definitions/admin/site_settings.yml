@@ -60,14 +60,9 @@ properties:
           uniqueItems: null
           minItems: null
           items:
-            required:
-              type: null
-            properties:
-              type: null
+            type: object
   diags:
     type: object
     properties:
       last_message_processed:
-        type: null
-    required:
-      type: null
+        type: object

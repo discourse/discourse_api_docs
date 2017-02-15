@@ -76,13 +76,12 @@ items:
     flag_level:
       type: number
     title:
-      type: null
     suspended_at:
-      type: null
+      type: object
     suspended_till:
-      type: null
+      type: object
     suspended:
-      type: null
+      type: object
     blocked:
       type: boolean
     time_read:

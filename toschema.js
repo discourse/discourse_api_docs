@@ -16,7 +16,7 @@ var addTypeIfEmptyObject = function(obj) {
   for(var i in obj) {
     if (typeof obj[i] === "object") {
       if (Object.keys(obj[i]).length === 0) {
-        obj[i] = {type: null};
+        obj[i] = {type: "object"};
       } else {
         addTypeIfEmptyObject(obj[i]);
       }

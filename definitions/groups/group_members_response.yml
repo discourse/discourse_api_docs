@@ -21,24 +21,21 @@ properties:
         avatar_template:
           type: string
           minLength: 1
-        name:
-          type: null
-        title:
-          type: null
-        last_posted_at:
-          type: null
-        last_seen_at:
-          type: string
-          minLength: 1
+#        name:
+#          type: object
+#        title:
+#          type: object
+#        last_posted_at:
+#          type: object
+#        last_seen_at:
+#          type: string
+#          minLength: 1
   owners:
     type: array
     uniqueItems: null
     minItems: null
     items:
-      required:
-        type: null
-      properties:
-        type: null
+      type: object
   meta:
     type: object
     properties:

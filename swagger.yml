@@ -1,6 +1,8 @@
 swagger: '2.0'
 info:
   title: 'Discourse API Documentation'
+  x-logo:
+    url: "https://discourse-meta.s3-us-west-1.amazonaws.com/optimized/3X/9/d/9d543e92b15b06924249654667a81441a55867eb_1_690x184.png"
   description: |
     Documentation on how to use Discourse through API calls.
 
@@ -879,7 +881,7 @@ paths:
       description: |
         Update the site title
       tags:
-        - Admin
+        - Site Settings Required
       parameters:
         - name: body
           in: body
@@ -899,7 +901,7 @@ paths:
       description: |
         Update the site description
       tags:
-        - Admin
+        - Site Settings Required
       parameters:
         - name: body
           in: body
@@ -919,7 +921,7 @@ paths:
       description: |
         Update the contact email
       tags:
-        - Admin
+        - Site Settings Required
       parameters:
         - name: body
           in: body
@@ -949,7 +951,7 @@ paths:
       description: |
         Update the contact url
       tags:
-        - Admin
+        - Site Settings Required
       parameters:
         - name: body
           in: body
@@ -969,7 +971,7 @@ paths:
       description: |
         Update the notification email
       tags:
-        - Admin
+        - Site Settings Required
       parameters:
         - name: body
           in: body
@@ -989,7 +991,7 @@ paths:
       description: |
         Update the site contact username
       tags:
-        - Admin
+        - Site Settings Required
       parameters:
         - name: body
           in: body
@@ -1009,7 +1011,7 @@ paths:
       description: |
         Update logo url
       tags:
-        - Admin
+        - Site Settings Required
       parameters:
         - name: body
           in: body
@@ -1029,7 +1031,7 @@ paths:
       description: |
         Update the small logo url
       tags:
-        - Admin
+        - Site Settings Required
       parameters:
         - name: body
           in: body
@@ -1049,7 +1051,7 @@ paths:
       description: |
         Update the digest logo url
       tags:
-        - Admin
+        - Site Settings Required
       parameters:
         - name: body
           in: body
@@ -1069,7 +1071,7 @@ paths:
       description: |
         Update the mobile logo url
       tags:
-        - Admin
+        - Site Settings Required
       parameters:
         - name: body
           in: body
@@ -1089,7 +1091,7 @@ paths:
       description: |
         Update the favicon url
       tags:
-        - Admin
+        - Site Settings Required
       parameters:
         - name: body
           in: body
@@ -1109,7 +1111,7 @@ paths:
       description: |
         Update the apple touch icon url
       tags:
-        - Admin
+        - Site Settings Required
       parameters:
         - name: body
           in: body
@@ -1129,7 +1131,7 @@ paths:
       description: |
         Update the default opengraph image url
       tags:
-        - Admin
+        - Site Settings Required
       parameters:
         - name: body
           in: body
@@ -1149,7 +1151,7 @@ paths:
       description: |
         Update the twitter summary large image url
       tags:
-        - Admin
+        - Site Settings Required
       parameters:
         - name: body
           in: body
@@ -1169,7 +1171,7 @@ paths:
       description: |
         Update the exclude rel nofollow domains
       tags:
-        - Admin
+        - Site Settings Required
       parameters:
         - name: body
           in: body
@@ -1191,7 +1193,7 @@ paths:
       description: |
         Update the company short name
       tags:
-        - Admin
+        - Site Settings Required
       parameters:
         - name: body
           in: body
@@ -1211,7 +1213,7 @@ paths:
       description: |
         Update the company full name
       tags:
-        - Admin
+        - Site Settings Required
       parameters:
         - name: body
           in: body
@@ -1231,7 +1233,7 @@ paths:
       description: |
         Update the company domain
       tags:
-        - Admin
+        - Site Settings Required
       parameters:
         - name: body
           in: body
@@ -1251,7 +1253,7 @@ paths:
       description: |
         Update the default locale
       tags:
-        - Admin
+        - Site Settings Basic Setup
       parameters:
         - name: body
           in: body
@@ -1271,7 +1273,7 @@ paths:
       description: |
         Update allow user locale
       tags:
-        - Admin
+        - Site Settings Basic Setup
       parameters:
         - name: body
           in: body
@@ -1291,7 +1293,7 @@ paths:
       description: |
         Update set locale from accept language header
       tags:
-        - Admin
+        - Site Settings Basic Setup
       parameters:
         - name: body
           in: body
@@ -1311,7 +1313,7 @@ paths:
       description: |
         Update the number of topics to show
       tags:
-        - Admin
+        - Site Settings Basic Setup
       parameters:
         - name: body
           in: body
@@ -1331,7 +1333,7 @@ paths:
       description: |
         Update the number of suggested topics
       tags:
-        - Admin
+        - Site Settings Basic Setup
       parameters:
         - name: body
           in: body
@@ -1351,7 +1353,7 @@ paths:
       description: |
         Update show topics from the current category
       tags:
-        - Admin
+        - Site Settings Basic Setup
       parameters:
         - name: body
           in: body
@@ -1371,7 +1373,7 @@ paths:
       description: |
         Update suggested topics max days old
       tags:
-        - Admin
+        - Site Settings Basic Setup
       parameters:
         - name: body
           in: body
@@ -1391,7 +1393,7 @@ paths:
       description: |
         Update track external right clicks
       tags:
-        - Admin
+        - Site Settings Basic Setup
       parameters:
         - name: body
           in: body
@@ -1411,7 +1413,7 @@ paths:
       description: |
         Update Google Universal Analytics tracking code
       tags:
-        - Admin
+        - Site Settings Basic Setup
       parameters:
         - name: body
           in: body
@@ -1431,7 +1433,7 @@ paths:
       description: |
         Update Google Universal Analytics domain name
       tags:
-        - Admin
+        - Site Settings Basic Setup
       parameters:
         - name: body
           in: body
@@ -1451,7 +1453,7 @@ paths:
       description: |
         Update the OBSOLETE ga tracking code
       tags:
-        - Admin
+        - Site Settings Basic Setup
       parameters:
         - name: body
           in: body
@@ -1471,7 +1473,7 @@ paths:
       description: |
         Update the OBSOLETE ga domain name
       tags:
-        - Admin
+        - Site Settings Basic Setup
       parameters:
         - name: body
           in: body
@@ -1491,7 +1493,7 @@ paths:
       description: |
         Update Google Tag Manager container id
       tags:
-        - Admin
+        - Site Settings Basic Setup
       parameters:
         - name: body
           in: body
@@ -1511,8 +1513,7 @@ paths:
       description: |
         Update the homepage navigation
       tags:
-        - Admin
-        - Site Settings
+        - Site Settings Basic Setup
       parameters:
         - name: body
           in: body
@@ -1543,8 +1544,7 @@ paths:
       description: |
         Update the post menu items
       tags:
-        - Admin
-        - Site Settings
+        - Site Settings Basic Setup
       parameters:
         - name: body
           in: body
@@ -1576,8 +1576,7 @@ paths:
       description: |
         Update the post menu hidden items
       tags:
-        - Admin
-        - Site Settings
+        - Site Settings Basic Setup
       parameters:
         - name: body
           in: body
@@ -1608,8 +1607,7 @@ paths:
       description: |
         Update the visual style for the /categories page
       tags:
-        - Admin
-        - Site Settings
+        - Site Settings Basic Setup
       parameters:
         - name: body
           in: body
@@ -1633,8 +1631,7 @@ paths:
       description: |
         Update a list of hexadecimal color values
       tags:
-        - Admin
-        - Site Settings
+        - Site Settings Basic Setup
       parameters:
         - name: body
           in: body
@@ -1656,8 +1653,7 @@ paths:
       description: |
         Update the category style
       tags:
-        - Admin
-        - Site Settings
+        - Site Settings Basic Setup
       parameters:
         - name: body
           in: body
@@ -1681,8 +1677,7 @@ paths:
       description: |
         Update enable mobile theme
       tags:
-        - Admin
-        - Site Settings
+        - Site Settings Basic Setup
       parameters:
         - name: body
           in: body
@@ -1702,8 +1697,7 @@ paths:
       description: |
         Update relative date duration
       tags:
-        - Admin
-        - Site Settings
+        - Site Settings Basic Setup
       parameters:
         - name: body
           in: body
@@ -1723,8 +1717,7 @@ paths:
       description: |
         Update fixed category positions
       tags:
-        - Admin
-        - Site Settings
+        - Site Settings Basic Setup
       parameters:
         - name: body
           in: body
@@ -1744,8 +1737,7 @@ paths:
       description: |
         Update fixed category positions on create
       tags:
-        - Admin
-        - Site Settings
+        - Site Settings Basic Setup
       parameters:
         - name: body
           in: body
@@ -1765,8 +1757,7 @@ paths:
       description: |
         Update show subcategory list
       tags:
-        - Admin
-        - Site Settings
+        - Site Settings Basic Setup
       parameters:
         - name: body
           in: body
@@ -1786,8 +1777,7 @@ paths:
       description: |
         Update enable the badge system
       tags:
-        - Admin
-        - Site Settings
+        - Site Settings Basic Setup
       parameters:
         - name: body
           in: body
@@ -1807,8 +1797,7 @@ paths:
       description: |
         Update enable whispers
       tags:
-        - Admin
-        - Site Settings
+        - Site Settings Basic Setup
       parameters:
         - name: body
           in: body
@@ -1828,7 +1817,6 @@ paths:
       description: |
         Update invite only
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -1849,7 +1837,6 @@ paths:
       description: |
         Update login required
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -1870,7 +1857,6 @@ paths:
       description: |
         Update must approve users
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -1891,7 +1877,6 @@ paths:
       description: |
         Update enable_local_logins
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -1912,7 +1897,6 @@ paths:
       description: |
         Update allow new registrations
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -1933,7 +1917,6 @@ paths:
       description: |
         Update enable signup cta
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -1954,7 +1937,6 @@ paths:
       description: |
         Update enable Google Oauth2 authentication
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -1975,7 +1957,6 @@ paths:
       description: |
         Update google oauth2 client id
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -1996,7 +1977,6 @@ paths:
       description: |
         Update google oauth2 client secret
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2017,7 +1997,6 @@ paths:
       description: |
         Update enable yahoo logins
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2038,7 +2017,6 @@ paths:
       description: |
         Enable twitter logins
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2059,7 +2037,6 @@ paths:
       description: |
         twitter consumer key
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2080,7 +2057,6 @@ paths:
       description: |
         twitter consumer secret
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2101,7 +2077,6 @@ paths:
       description: |
         enable instagram logins
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2122,7 +2097,6 @@ paths:
       description: |
         instagram consumer key
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2143,7 +2117,6 @@ paths:
       description: |
         instagram consumer secret
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2164,7 +2137,6 @@ paths:
       description: |
         enable facebook logins
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2185,7 +2157,6 @@ paths:
       description: |
         facebook app id
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2206,7 +2177,6 @@ paths:
       description: |
         facebook app secret
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2227,7 +2197,6 @@ paths:
       description: |
         facebook request extra profile details
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2248,7 +2217,6 @@ paths:
       description: |
         enable github logins
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2269,7 +2237,6 @@ paths:
       description: |
         github client id
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2290,7 +2257,6 @@ paths:
       description: |
         github client secret
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2311,7 +2277,6 @@ paths:
       description: |
         enable sso
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2332,7 +2297,6 @@ paths:
       description: |
         sso allows all return paths
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2353,7 +2317,6 @@ paths:
       description: |
         enable sso provider
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2374,7 +2337,6 @@ paths:
       description: |
         verbose sso logging
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2395,7 +2357,6 @@ paths:
       description: |
         sso url
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2416,7 +2377,6 @@ paths:
       description: |
         sso secret
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2437,7 +2397,6 @@ paths:
       description: |
         sso overrides bio
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2458,7 +2417,6 @@ paths:
       description: |
         sso overrides email
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2479,7 +2437,6 @@ paths:
       description: |
         sso overrides username
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2500,7 +2457,6 @@ paths:
       description: |
         sso overrides name
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2521,7 +2477,6 @@ paths:
       description: |
         sso overrides avatar
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2542,7 +2497,6 @@ paths:
       description: |
         sso not approved url
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2563,7 +2517,6 @@ paths:
       description: |
         email domains blacklist
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2586,7 +2539,6 @@ paths:
       description: |
         email domains whitelist
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2609,7 +2561,6 @@ paths:
       description: |
         forgot password strict
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2630,7 +2581,6 @@ paths:
       description: |
         log out strict
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2651,7 +2601,6 @@ paths:
       description: |
         pending users reminder delay
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2672,7 +2621,6 @@ paths:
       description: |
         maximum session age
       tags:
-        - Admin
         - Site Settings Login
       parameters:
         - name: body
@@ -2693,7 +2641,6 @@ paths:
       description: |
         min username length
       tags:
-        - Admin
         - Site Settings Users
       parameters:
         - name: body
@@ -2714,7 +2661,6 @@ paths:
       description: |
         max username length
       tags:
-        - Admin
         - Site Settings Users
       parameters:
         - name: body
@@ -2735,7 +2681,6 @@ paths:
       description: |
         reserved usernames
       tags:
-        - Admin
         - Site Settings Users
       parameters:
         - name: body
@@ -2758,7 +2703,6 @@ paths:
       description: |
         min password length
       tags:
-        - Admin
         - Site Settings Users
       parameters:
         - name: body
@@ -2779,7 +2723,6 @@ paths:
       description: |
         min admin password length
       tags:
-        - Admin
         - Site Settings Users
       parameters:
         - name: body
@@ -2800,7 +2743,6 @@ paths:
       description: |
         block common passwords
       tags:
-        - Admin
         - Site Settings Users
       parameters:
         - name: body
@@ -2821,7 +2763,6 @@ paths:
       description: |
         username change period
       tags:
-        - Admin
         - Site Settings Users
       parameters:
         - name: body
@@ -2842,7 +2783,6 @@ paths:
       description: |
         email editable
       tags:
-        - Admin
         - Site Settings Users
       parameters:
         - name: body
@@ -2863,7 +2803,6 @@ paths:
       description: |
         logout redirect
       tags:
-        - Admin
         - Site Settings Users
       parameters:
         - name: body
@@ -2884,7 +2823,6 @@ paths:
       description: |
         full name required
       tags:
-        - Admin
         - Site Settings Users
       parameters:
         - name: body
@@ -2905,7 +2843,6 @@ paths:
       description: |
         enable names
       tags:
-        - Admin
         - Site Settings Users
       parameters:
         - name: body
@@ -2926,7 +2863,6 @@ paths:
       description: |
         invite expiry days
       tags:
-        - Admin
         - Site Settings Users
       parameters:
         - name: body
@@ -2947,7 +2883,6 @@ paths:
       description: |
         invite passthrough hours
       tags:
-        - Admin
         - Site Settings Users
       parameters:
         - name: body
@@ -2968,7 +2903,6 @@ paths:
       description: |
         invites per page
       tags:
-        - Admin
         - Site Settings Users
       parameters:
         - name: body
@@ -2989,7 +2923,6 @@ paths:
       description: |
         delete user max post age
       tags:
-        - Admin
         - Site Settings Users
       parameters:
         - name: body
@@ -3010,7 +2943,6 @@ paths:
       description: |
         delete all posts max
       tags:
-        - Admin
         - Site Settings Users
       parameters:
         - name: body
@@ -3031,7 +2963,6 @@ paths:
       description: |
         redirect users to top page
       tags:
-        - Admin
         - Site Settings Users
       parameters:
         - name: body
@@ -3052,7 +2983,6 @@ paths:
       description: |
         show email on profile
       tags:
-        - Admin
         - Site Settings Users
       parameters:
         - name: body
@@ -3073,7 +3003,6 @@ paths:
       description: |
         prioritize username in ux
       tags:
-        - Admin
         - Site Settings Users
       parameters:
         - name: body
@@ -3094,7 +3023,6 @@ paths:
       description: |
         email token valid hours
       tags:
-        - Admin
         - Site Settings Users
       parameters:
         - name: body
@@ -3115,7 +3043,6 @@ paths:
       description: |
         purge unactivated users grace period days
       tags:
-        - Admin
         - Site Settings Users
       parameters:
         - name: body
@@ -3136,7 +3063,6 @@ paths:
       description: |
         public user custom fields
       tags:
-        - Admin
         - Site Settings Users
       parameters:
         - name: body
@@ -3157,7 +3083,6 @@ paths:
       description: |
         staff user custom fields
       tags:
-        - Admin
         - Site Settings Users
       parameters:
         - name: body
@@ -3178,7 +3103,6 @@ paths:
       description: |
         enable user directory
       tags:
-        - Admin
         - Site Settings Users
       parameters:
         - name: body
@@ -3199,7 +3123,6 @@ paths:
       description: |
         allow anonymous posting
       tags:
-        - Admin
         - Site Settings Users
       parameters:
         - name: body
@@ -3220,7 +3143,6 @@ paths:
       description: |
         anonymous posting min trust level
       tags:
-        - Admin
         - Site Settings Users
       parameters:
         - name: body
@@ -3241,7 +3163,6 @@ paths:
       description: |
         anonymous account duration minutes
       tags:
-        - Admin
         - Site Settings Users
       parameters:
         - name: body
@@ -3262,7 +3183,6 @@ paths:
       description: |
         hide user profiles from public
       tags:
-        - Admin
         - Site Settings Users
       parameters:
         - name: body
@@ -3283,7 +3203,6 @@ paths:
       description: |
         min post length
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3304,7 +3223,6 @@ paths:
       description: |
         min first post length
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3325,7 +3243,6 @@ paths:
       description: |
         min private message post length
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3346,7 +3263,6 @@ paths:
       description: |
         max post length
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3367,7 +3283,6 @@ paths:
       description: |
         topic featured link enabled
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3388,7 +3303,6 @@ paths:
       description: |
         body min entropy
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3409,7 +3323,6 @@ paths:
       description: |
         min topic title length
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3430,7 +3343,6 @@ paths:
       description: |
         max topic title length
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3451,7 +3363,6 @@ paths:
       description: |
         title min entropy
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3472,7 +3383,6 @@ paths:
       description: |
         allow_uppercase_posts
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3493,7 +3403,6 @@ paths:
       description: |
         title_prettify
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3514,7 +3423,6 @@ paths:
       description: |
         title fancy entities
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3535,7 +3443,6 @@ paths:
       description: |
         min private message title length
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3556,7 +3463,6 @@ paths:
       description: |
         allow uncategorized topics
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3577,7 +3483,6 @@ paths:
       description: |
         allow duplicate topic titles
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3598,7 +3503,6 @@ paths:
       description: |
         min_title_similar_length
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3619,7 +3523,6 @@ paths:
       description: |
         min body title length
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3640,7 +3543,6 @@ paths:
       description: |
         enable private messages
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3661,7 +3563,6 @@ paths:
       description: |
         editing grace period
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3682,7 +3583,6 @@ paths:
       description: |
         post edit time limit
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3703,7 +3603,6 @@ paths:
       description: |
         edit history visible to public
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3724,7 +3623,6 @@ paths:
       description: |
         delete removed posts after
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3745,7 +3643,6 @@ paths:
       description: |
         traditional markdown linebreaks
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3766,7 +3663,6 @@ paths:
       description: |
         allow html tables
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3787,7 +3683,6 @@ paths:
       description: |
         suppress reply directly below
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3808,7 +3703,6 @@ paths:
       description: |
         suppress reply directly above
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3829,7 +3723,6 @@ paths:
       description: |
         suppress reply when quoting
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3850,7 +3743,6 @@ paths:
       description: |
         max reply history
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3871,7 +3763,6 @@ paths:
       description: |
         post undo action window mins
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3892,7 +3783,6 @@ paths:
       description: |
         max mentions per post
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3913,7 +3803,6 @@ paths:
       description: |
         max users notified per group mention
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3934,7 +3823,6 @@ paths:
       description: |
         newuser max replies per topic
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3955,7 +3843,6 @@ paths:
       description: |
         newuser max mentions per post
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3976,7 +3863,6 @@ paths:
       description: |
         title max word length
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -3997,7 +3883,6 @@ paths:
       description: |
         newuser max links
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -4018,7 +3903,6 @@ paths:
       description: |
         newuser max images
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -4039,7 +3923,6 @@ paths:
       description: |
         newuser max attachments
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -4060,7 +3943,6 @@ paths:
       description: |
         post excerpt maxlength
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -4081,7 +3963,6 @@ paths:
       description: |
         show pinned excerpt mobile
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -4102,7 +3983,6 @@ paths:
       description: |
         show pinned excerpt desktop
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -4123,7 +4003,6 @@ paths:
       description: |
         display name on posts
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -4144,7 +4023,6 @@ paths:
       description: |
         show time gap days
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -4165,7 +4043,6 @@ paths:
       description: |
         short progress text threshold
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -4186,7 +4063,6 @@ paths:
       description: |
         default code lang
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -4207,7 +4083,6 @@ paths:
       description: |
         warn reviving old topic age
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -4228,7 +4103,6 @@ paths:
       description: |
         autohighlight all code
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -4249,7 +4123,6 @@ paths:
       description: |
         highlighted languages
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -4270,7 +4143,6 @@ paths:
       description: |
         delete old hidden posts
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -4291,7 +4163,6 @@ paths:
       description: |
         censored words
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -4312,7 +4183,6 @@ paths:
       description: |
         censored pattern
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -4333,7 +4203,6 @@ paths:
       description: |
         enable emoji
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -4354,7 +4223,6 @@ paths:
       description: |
         emoji set
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -4381,7 +4249,6 @@ paths:
       description: |
         enforce square emoji
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -4402,7 +4269,6 @@ paths:
       description: |
         approve post count
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -4423,7 +4289,6 @@ paths:
       description: |
         approve unless trust level
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -4450,7 +4315,6 @@ paths:
       description: |
         approve new topics unless trust level
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -4477,7 +4341,6 @@ paths:
       description: |
         notify about queued posts after
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -4498,7 +4361,6 @@ paths:
       description: |
         auto close messages post count
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -4519,7 +4381,6 @@ paths:
       description: |
         auto close topics post count
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -4540,7 +4401,6 @@ paths:
       description: |
         code formatting style
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -4564,7 +4424,6 @@ paths:
       description: |
         embed truncate
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -4585,7 +4444,6 @@ paths:
       description: |
         allowed href schemes
       tags:
-        - Admin
         - Site Settings Posting
       parameters:
         - name: body
@@ -4606,7 +4464,6 @@ paths:
       description: |
         email time window mins
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -4627,7 +4484,6 @@ paths:
       description: |
         private email time window seconds
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -4648,7 +4504,6 @@ paths:
       description: |
         email posts context
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -4669,7 +4524,6 @@ paths:
       description: |
         digest min excerpt length
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -4690,7 +4544,6 @@ paths:
       description: |
         digest topics
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -4712,7 +4565,6 @@ paths:
       description: |
         digest posts
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -4734,7 +4586,6 @@ paths:
       description: |
         digest other topics
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -4756,7 +4607,6 @@ paths:
       description: |
         delete digest email after days
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -4778,7 +4628,6 @@ paths:
       description: |
         digest suppress categories
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -4801,7 +4650,6 @@ paths:
       description: |
         disable digest emails
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -4823,7 +4671,6 @@ paths:
       description: |
         email accent bg color
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -4847,7 +4694,6 @@ paths:
       description: |
         email accent fg color
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -4871,7 +4717,6 @@ paths:
       description: |
         email link color
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -4895,7 +4740,6 @@ paths:
       description: |
         show topic featured link in digest
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -4917,7 +4761,6 @@ paths:
       description: |
         email custom headers
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -4940,7 +4783,6 @@ paths:
       description: |
         email subject
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -4963,7 +4805,6 @@ paths:
       description: |
         reply by email enabled
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -4986,7 +4827,6 @@ paths:
       description: |
         reply by email address
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5009,7 +4849,6 @@ paths:
       description: |
         alternative reply by email addresses
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5032,7 +4871,6 @@ paths:
       description: |
         manual polling enabled
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5054,7 +4892,6 @@ paths:
       description: |
         pop3 polling enabled
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5077,7 +4914,6 @@ paths:
       description: |
         pop3 polling ssl
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5100,7 +4936,6 @@ paths:
       description: |
         pop3 polling openssl verify
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5123,7 +4958,6 @@ paths:
       description: |
         pop3 polling period mins
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5147,7 +4981,6 @@ paths:
       description: |
         pop3 polling host
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5169,7 +5002,6 @@ paths:
       description: |
         pop3 polling port
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5192,7 +5024,6 @@ paths:
       description: |
         pop3 polling username
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5214,7 +5045,6 @@ paths:
       description: |
         pop3 polling password
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5236,7 +5066,6 @@ paths:
       description: |
         log mail processing failures
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5258,7 +5087,6 @@ paths:
       description: |
         incoming email prefer html
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5281,7 +5109,6 @@ paths:
       description: |
         email in
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5304,7 +5131,6 @@ paths:
       description: |
         email in min trust
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5334,7 +5160,6 @@ paths:
       description: |
         email prefix
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5357,7 +5182,6 @@ paths:
       description: |
         email site title
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5380,7 +5204,6 @@ paths:
       description: |
         disable emails
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5404,7 +5227,6 @@ paths:
       description: |
         strip images from short emails
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5427,7 +5249,6 @@ paths:
       description: |
         short email length
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5450,7 +5271,6 @@ paths:
       description: |
         display name on email from
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5474,7 +5294,6 @@ paths:
       description: |
         unsubscribe via email
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5498,7 +5317,6 @@ paths:
       description: |
         unsubscribe via email footer
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5521,7 +5339,6 @@ paths:
       description: |
         delete email logs after days
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5545,7 +5362,6 @@ paths:
       description: |
         max emails per day per user
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5568,7 +5384,6 @@ paths:
       description: |
         enable staged users
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5591,7 +5406,6 @@ paths:
       description: |
         maximum staged users per email
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5614,7 +5428,6 @@ paths:
       description: |
         auto generated whitelist
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5637,7 +5450,6 @@ paths:
       description: |
         block auto generated emails
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5660,7 +5472,6 @@ paths:
       description: |
         ignore by title
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5683,7 +5494,6 @@ paths:
       description: |
         mailgun api key
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5706,7 +5516,6 @@ paths:
       description: |
         bounce score threshold
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5729,7 +5538,6 @@ paths:
       description: |
         bounce score threshold deactive
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5752,7 +5560,6 @@ paths:
       description: |
         soft bounce score
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5775,7 +5582,6 @@ paths:
       description: |
         hard bounce score
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5798,7 +5604,6 @@ paths:
       description: |
         reset bounce score after days
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5821,7 +5626,6 @@ paths:
       description: |
         attachment content type blacklist
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5844,7 +5648,6 @@ paths:
       description: |
         attachment filename blacklist
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5867,7 +5670,6 @@ paths:
       description: |
         enable forwarded emails
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5890,7 +5692,6 @@ paths:
       description: |
         always show trimmed content
       tags:
-        - Admin
         - Site Settings Email
       parameters:
         - name: body
@@ -5913,7 +5714,6 @@ paths:
       description: |
         max image size kb
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -5936,7 +5736,6 @@ paths:
       description: |
         max attachment size kb
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -5959,7 +5758,6 @@ paths:
       description: |
         max image megapixels
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -5982,7 +5780,6 @@ paths:
       description: |
         authorized extensions
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6005,7 +5802,6 @@ paths:
       description: |
         crawl images
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6028,7 +5824,6 @@ paths:
       description: |
         max image width
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6051,7 +5846,6 @@ paths:
       description: |
         max image height
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6074,7 +5868,6 @@ paths:
       description: |
         download remote images to local
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6097,7 +5890,6 @@ paths:
       description: |
         download remote images threshold
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6120,7 +5912,6 @@ paths:
       description: |
         download remote images max days old
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6143,7 +5934,6 @@ paths:
       description: |
         disabled image download domains
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6166,7 +5956,6 @@ paths:
       description: |
         create thumbnails
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6190,7 +5979,6 @@ paths:
       description: |
         clean up uploads
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6214,7 +6002,6 @@ paths:
       description: |
         clean orphan uploads grace period hours
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6238,7 +6025,6 @@ paths:
       description: |
         purge deleted uploads grace period days
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6262,7 +6048,6 @@ paths:
       description: |
         prevent anons from downloading files
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6286,7 +6071,6 @@ paths:
       description: |
         enable s3 uploads
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6310,7 +6094,6 @@ paths:
       description: |
         s3 use iam profile
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6334,7 +6117,6 @@ paths:
       description: |
         s3 access key id
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6358,7 +6140,6 @@ paths:
       description: |
         s3 secret access key
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6382,7 +6163,6 @@ paths:
       description: |
         s3 region
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6420,7 +6200,6 @@ paths:
       description: |
         s3 upload bucket
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6444,7 +6223,6 @@ paths:
       description: |
         s3 cdn url
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6468,7 +6246,6 @@ paths:
       description: |
         allow profile backgrounds
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6492,7 +6269,6 @@ paths:
       description: |
         automatically download gravatars
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6516,7 +6292,6 @@ paths:
       description: |
         allow uploaded avatars
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6540,7 +6315,6 @@ paths:
       description: |
         allow animated avatars
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6564,7 +6338,6 @@ paths:
       description: |
         allow animated thumbnails
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6588,7 +6361,6 @@ paths:
       description: |
         default avatars
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6612,7 +6384,6 @@ paths:
       description: |
         avatar sizes
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6636,7 +6407,6 @@ paths:
       description: |
         external system avatars enabled
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6660,7 +6430,6 @@ paths:
       description: |
         external system avatars url
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6684,7 +6453,6 @@ paths:
       description: |
         allow all attachments for group messages
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6708,7 +6476,6 @@ paths:
       description: |
         convert pasted images to hq jpg
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6732,7 +6499,6 @@ paths:
       description: |
         convert pasted images quality
       tags:
-        - Admin
         - Site Settings Files
       parameters:
         - name: body
@@ -6756,7 +6522,6 @@ paths:
       description: |
         default trust level
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -6786,7 +6551,6 @@ paths:
       description: |
         default invitee trust level
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -6816,7 +6580,6 @@ paths:
       description: |
         min trust to create topic
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -6846,7 +6609,6 @@ paths:
       description: |
         min trust to edit wiki post
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -6876,7 +6638,6 @@ paths:
       description: |
         min trust to edit post
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -6906,7 +6667,6 @@ paths:
       description: |
         min trust to allow self wiki
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -6936,7 +6696,6 @@ paths:
       description: |
         min trust to send messages
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -6966,7 +6725,6 @@ paths:
       description: |
         tl1 requires topics entered
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -6990,7 +6748,6 @@ paths:
       description: |
         tl1 requires read posts
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -7014,7 +6771,6 @@ paths:
       description: |
         tl1 requires time spent mins
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -7038,7 +6794,6 @@ paths:
       description: |
         tl2 requires topics entered
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -7062,7 +6817,6 @@ paths:
       description: |
         tl2 requires read posts
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -7086,7 +6840,6 @@ paths:
       description: |
         tl2 requires time spent mins
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -7110,7 +6863,6 @@ paths:
       description: |
         tl2 requires days visited
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -7134,7 +6886,6 @@ paths:
       description: |
         tl2 requires likes received
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -7158,7 +6909,6 @@ paths:
       description: |
         tl2 requires likes given
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -7182,7 +6932,6 @@ paths:
       description: |
         tl2 requires topic reply count
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -7206,7 +6955,6 @@ paths:
       description: |
         tl2 time period
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -7230,7 +6978,6 @@ paths:
       description: |
         tl3 requires days visited
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -7254,7 +7001,6 @@ paths:
       description: |
         tl3 requires topics replied to
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -7278,7 +7024,6 @@ paths:
       description: |
         tl3 requires topics viewed
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -7302,7 +7047,6 @@ paths:
       description: |
         tl3 requires topics viewed cap
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -7326,7 +7070,6 @@ paths:
       description: |
         tl3 requires posts read
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -7350,7 +7093,6 @@ paths:
       description: |
         tl3 requires posts read cap
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -7374,7 +7116,6 @@ paths:
       description: |
         tl3 requires topics viewed all time
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -7398,7 +7139,6 @@ paths:
       description: |
         tl3 requires posts read all time
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -7422,7 +7162,6 @@ paths:
       description: |
         tl3 requires max flagged
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -7446,7 +7185,6 @@ paths:
       description: |
         tl3 promotion min duration
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -7470,7 +7208,6 @@ paths:
       description: |
         tl3 requires likes given
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -7494,7 +7231,6 @@ paths:
       description: |
         tl3 requires likes received
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -7518,7 +7254,6 @@ paths:
       description: |
         tl3 links no follow
       tags:
-        - Admin
         - Site Settings Trust Levels
       parameters:
         - name: body
@@ -7542,7 +7277,6 @@ paths:
       description: |
         force https
       tags:
-        - Admin
         - Site Settings Security
       parameters:
         - name: body
@@ -7566,7 +7300,6 @@ paths:
       description: |
         enable escaped fragments
       tags:
-        - Admin
         - Site Settings Security
       parameters:
         - name: body
@@ -7590,7 +7323,6 @@ paths:
       description: |
         allow index in robots txt
       tags:
-        - Admin
         - Site Settings Security
       parameters:
         - name: body
@@ -7614,7 +7346,6 @@ paths:
       description: |
         enable noscript support
       tags:
-        - Admin
         - Site Settings Security
       parameters:
         - name: body
@@ -7638,7 +7369,6 @@ paths:
       description: |
         allow moderators to create categories
       tags:
-        - Admin
         - Site Settings Security
       parameters:
         - name: body
@@ -7662,7 +7392,6 @@ paths:
       description: |
         cors origins
       tags:
-        - Admin
         - Site Settings Security
       parameters:
         - name: body
@@ -7686,7 +7415,6 @@ paths:
       description: |
         use admin ip whitelist
       tags:
-        - Admin
         - Site Settings Security
       parameters:
         - name: body
@@ -7710,7 +7438,6 @@ paths:
       description: |
         enable flash video onebox
       tags:
-        - Admin
         - Site Settings Onebox
       parameters:
         - name: body
@@ -7734,7 +7461,6 @@ paths:
       description: |
         post onebox maxlength
       tags:
-        - Admin
         - Site Settings Onebox
       parameters:
         - name: body
@@ -7758,7 +7484,6 @@ paths:
       description: |
         onebox domains blacklist
       tags:
-        - Admin
         - Site Settings Onebox
       parameters:
         - name: body
@@ -7782,7 +7507,6 @@ paths:
       description: |
         max oneboxes per post
       tags:
-        - Admin
         - Site Settings Onebox
       parameters:
         - name: body
@@ -7806,7 +7530,6 @@ paths:
       description: |
         add rel nofollow to user content
       tags:
-        - Admin
         - Site Settings Spam
       parameters:
         - name: body
@@ -7830,7 +7553,6 @@ paths:
       description: |
         flags required to hide post
       tags:
-        - Admin
         - Site Settings Spam
       parameters:
         - name: body
@@ -7854,7 +7576,6 @@ paths:
       description: |
         cooldown minutes after hiding posts
       tags:
-        - Admin
         - Site Settings Spam
       parameters:
         - name: body
@@ -7878,7 +7599,6 @@ paths:
       description: |
         num spam flags to block new user
       tags:
-        - Admin
         - Site Settings Spam
       parameters:
         - name: body
@@ -7902,7 +7622,6 @@ paths:
       description: |
         num users to block new user
       tags:
-        - Admin
         - Site Settings Spam
       parameters:
         - name: body
@@ -7926,7 +7645,6 @@ paths:
       description: |
         num tl3 flags to block new user
       tags:
-        - Admin
         - Site Settings Spam
       parameters:
         - name: body
@@ -7950,7 +7668,6 @@ paths:
       description: |
         num tl3 users to block new user
       tags:
-        - Admin
         - Site Settings Spam
       parameters:
         - name: body
@@ -7974,7 +7691,6 @@ paths:
       description: |
         notify mods when user blocked
       tags:
-        - Admin
         - Site Settings Spam
       parameters:
         - name: body
@@ -7998,7 +7714,6 @@ paths:
       description: |
         flag sockpuppets
       tags:
-        - Admin
         - Site Settings Spam
       parameters:
         - name: body
@@ -8022,7 +7737,6 @@ paths:
       description: |
         newuser spam host threshold
       tags:
-        - Admin
         - Site Settings Spam
       parameters:
         - name: body
@@ -8046,7 +7760,6 @@ paths:
       description: |
         white listed spam host domains
       tags:
-        - Admin
         - Site Settings Spam
       parameters:
         - name: body
@@ -8070,7 +7783,6 @@ paths:
       description: |
         levenshtein distance spammer emails
       tags:
-        - Admin
         - Site Settings Spam
       parameters:
         - name: body
@@ -8094,7 +7806,6 @@ paths:
       description: |
         max new accounts per registration ip
       tags:
-        - Admin
         - Site Settings Spam
       parameters:
         - name: body
@@ -8118,7 +7829,6 @@ paths:
       description: |
         min ban entries for roll up
       tags:
-        - Admin
         - Site Settings Spam
       parameters:
         - name: body
@@ -8142,7 +7852,6 @@ paths:
       description: |
         max age unmatched emails
       tags:
-        - Admin
         - Site Settings Spam
       parameters:
         - name: body
@@ -8166,7 +7875,6 @@ paths:
       description: |
         max age unmatched ips
       tags:
-        - Admin
         - Site Settings Spam
       parameters:
         - name: body
@@ -8190,7 +7898,6 @@ paths:
       description: |
         num flaggers to close topic
       tags:
-        - Admin
         - Site Settings Spam
       parameters:
         - name: body
@@ -8214,7 +7921,6 @@ paths:
       description: |
         num flags to close topic
       tags:
-        - Admin
         - Site Settings Spam
       parameters:
         - name: body
@@ -8238,7 +7944,6 @@ paths:
       description: |
         auto respond to flag actions
       tags:
-        - Admin
         - Site Settings Spam
       parameters:
         - name: body
@@ -8262,7 +7967,6 @@ paths:
       description: |
         min first post typing time
       tags:
-        - Admin
         - Site Settings Spam
       parameters:
         - name: body
@@ -8286,7 +7990,6 @@ paths:
       description: |
         auto block fast typers on first post
       tags:
-        - Admin
         - Site Settings Spam
       parameters:
         - name: body
@@ -8310,7 +8013,6 @@ paths:
       description: |
         auto black fast typers max trust level
       tags:
-        - Admin
         - Site Settings Spam
       parameters:
         - name: body
@@ -8334,7 +8036,6 @@ paths:
       description: |
         auto block first post regex
       tags:
-        - Admin
         - Site Settings Spam
       parameters:
         - name: body
@@ -8358,7 +8059,6 @@ paths:
       description: |
         unique posts mins
       tags:
-        - Admin
         - Site Settings Rate Limits
       parameters:
         - name: body
@@ -8382,7 +8082,6 @@ paths:
       description: |
         rate limit create topic
       tags:
-        - Admin
         - Site Settings Rate Limits
       parameters:
         - name: body
@@ -8406,7 +8105,6 @@ paths:
       description: |
         rate limit create post
       tags:
-        - Admin
         - Site Settings Rate Limits
       parameters:
         - name: body
@@ -8430,7 +8128,6 @@ paths:
       description: |
         rate limit new user create topic
       tags:
-        - Admin
         - Site Settings Rate Limits
       parameters:
         - name: body
@@ -8454,7 +8151,6 @@ paths:
       description: |
         rate limit new user create post
       tags:
-        - Admin
         - Site Settings Rate Limits
       parameters:
         - name: body
@@ -8478,7 +8174,6 @@ paths:
       description: |
         max topics per day
       tags:
-        - Admin
         - Site Settings Rate Limits
       parameters:
         - name: body
@@ -8502,7 +8197,6 @@ paths:
       description: |
         max private messages per day
       tags:
-        - Admin
         - Site Settings Rate Limits
       parameters:
         - name: body
@@ -8526,7 +8220,6 @@ paths:
       description: |
         max likes per day
       tags:
-        - Admin
         - Site Settings Rate Limits
       parameters:
         - name: body
@@ -8550,7 +8243,6 @@ paths:
       description: |
         max bookmarks per day
       tags:
-        - Admin
         - Site Settings Rate Limits
       parameters:
         - name: body
@@ -8574,7 +8266,6 @@ paths:
       description: |
         max flags per day
       tags:
-        - Admin
         - Site Settings Rate Limits
       parameters:
         - name: body
@@ -8598,7 +8289,6 @@ paths:
       description: |
         max edits per day
       tags:
-        - Admin
         - Site Settings Rate Limits
       parameters:
         - name: body
@@ -8622,7 +8312,6 @@ paths:
       description: |
         max invites per day
       tags:
-        - Admin
         - Site Settings Rate Limits
       parameters:
         - name: body
@@ -8646,7 +8335,6 @@ paths:
       description: |
         max topic invitations per day
       tags:
-        - Admin
         - Site Settings Rate Limits
       parameters:
         - name: body
@@ -8670,7 +8358,6 @@ paths:
       description: |
         max topics in first day
       tags:
-        - Admin
         - Site Settings Rate Limits
       parameters:
         - name: body
@@ -8694,7 +8381,6 @@ paths:
       description: |
         max replies in first day
       tags:
-        - Admin
         - Site Settings Rate Limits
       parameters:
         - name: body
@@ -8718,7 +8404,6 @@ paths:
       description: |
         tl2 additional likes per day multiplier
       tags:
-        - Admin
         - Site Settings Rate Limits
       parameters:
         - name: body
@@ -8742,7 +8427,6 @@ paths:
       description: |
         tl3 additional likes per day multiplier
       tags:
-        - Admin
         - Site Settings Rate Limits
       parameters:
         - name: body
@@ -8766,7 +8450,6 @@ paths:
       description: |
         tl4 additional likes per day multiplier
       tags:
-        - Admin
         - Site Settings Rate Limits
       parameters:
         - name: body
@@ -8790,7 +8473,6 @@ paths:
       description: |
         alert admins if errors per minute
       tags:
-        - Admin
         - Site Settings Rate Limits
       parameters:
         - name: body
@@ -8814,7 +8496,6 @@ paths:
       description: |
         alert admins if errors per hour
       tags:
-        - Admin
         - Site Settings Rate Limits
       parameters:
         - name: body
@@ -8838,7 +8519,6 @@ paths:
       description: |
         max prints per hour per user
       tags:
-        - Admin
         - Site Settings Rate Limits
       parameters:
         - name: body
@@ -8862,7 +8542,6 @@ paths:
       description: |
         force hostname
       tags:
-        - Admin
         - Site Settings Developer
       parameters:
         - name: body
@@ -8886,7 +8565,6 @@ paths:
       description: |
         port
       tags:
-        - Admin
         - Site Settings Developer
       parameters:
         - name: body
@@ -8910,7 +8588,6 @@ paths:
       description: |
         queue jobs
       tags:
-        - Admin
         - Site Settings Developer
       parameters:
         - name: body
@@ -8934,7 +8611,6 @@ paths:
       description: |
         enable long polling
       tags:
-        - Admin
         - Site Settings Developer
       parameters:
         - name: body
@@ -8958,7 +8634,6 @@ paths:
       description: |
         long polling interval
       tags:
-        - Admin
         - Site Settings Developer
       parameters:
         - name: body
@@ -8982,7 +8657,6 @@ paths:
       description: |
         long polling base url
       tags:
-        - Admin
         - Site Settings Developer
       parameters:
         - name: body
@@ -9006,7 +8680,6 @@ paths:
       description: |
         background polling interval
       tags:
-        - Admin
         - Site Settings Developer
       parameters:
         - name: body
@@ -9030,7 +8703,6 @@ paths:
       description: |
         polling interval
       tags:
-        - Admin
         - Site Settings Developer
       parameters:
         - name: body
@@ -9054,7 +8726,6 @@ paths:
       description: |
         anon polling interval
       tags:
-        - Admin
         - Site Settings Developer
       parameters:
         - name: body
@@ -9078,7 +8749,6 @@ paths:
       description: |
         flush timings secs
       tags:
-        - Admin
         - Site Settings Developer
       parameters:
         - name: body
@@ -9102,7 +8772,6 @@ paths:
       description: |
         active user rate limit secs
       tags:
-        - Admin
         - Site Settings Developer
       parameters:
         - name: body
@@ -9126,7 +8795,6 @@ paths:
       description: |
         verbose localization
       tags:
-        - Admin
         - Site Settings Developer
       parameters:
         - name: body
@@ -9150,7 +8818,6 @@ paths:
       description: |
         top topics formula log views multiplier
       tags:
-        - Admin
         - Site Settings Developer
       parameters:
         - name: body
@@ -9174,7 +8841,6 @@ paths:
       description: |
         top topics formula first post likes multiplier
       tags:
-        - Admin
         - Site Settings Developer
       parameters:
         - name: body
@@ -9198,7 +8864,6 @@ paths:
       description: |
         top topics formula first post likes multiplier
       tags:
-        - Admin
         - Site Settings Developer
       parameters:
         - name: body
@@ -9222,7 +8887,6 @@ paths:
       description: |
         rebake old posts count
       tags:
-        - Admin
         - Site Settings Developer
       parameters:
         - name: body
@@ -9246,7 +8910,6 @@ paths:
       description: |
         tos url
       tags:
-        - Admin
         - Site Settings Legal
       parameters:
         - name: body
@@ -9270,7 +8933,6 @@ paths:
       description: |
         privacy policy url
       tags:
-        - Admin
         - Site Settings Legal
       parameters:
         - name: body
@@ -9294,7 +8956,6 @@ paths:
       description: |
         faq url
       tags:
-        - Admin
         - Site Settings Legal
       parameters:
         - name: body
@@ -9318,7 +8979,6 @@ paths:
       description: |
         readonly_mode_during_backup
       tags:
-        - Admin
         - Site Settings Backups
       parameters:
         - name: body
@@ -9342,7 +9002,6 @@ paths:
       description: |
         allow_restore
       tags:
-        - Admin
         - Site Settings Backups
       parameters:
         - name: body
@@ -9366,7 +9025,6 @@ paths:
       description: |
         maximum backups
       tags:
-        - Admin
         - Site Settings Backups
       parameters:
         - name: body
@@ -9390,7 +9048,6 @@ paths:
       description: |
         automatic backups enabled
       tags:
-        - Admin
         - Site Settings Backups
       parameters:
         - name: body
@@ -9414,7 +9071,6 @@ paths:
       description: |
         backup frequency
       tags:
-        - Admin
         - Site Settings Backups
       parameters:
         - name: body
@@ -9438,7 +9094,6 @@ paths:
       description: |
         enable s3 backups
       tags:
-        - Admin
         - Site Settings Backups
       parameters:
         - name: body
@@ -9462,7 +9117,6 @@ paths:
       description: |
         s3 backup bucket
       tags:
-        - Admin
         - Site Settings Backups
       parameters:
         - name: body
@@ -9486,7 +9140,6 @@ paths:
       description: |
         s3 disable cleanup
       tags:
-        - Admin
         - Site Settings Backups
       parameters:
         - name: body
@@ -9510,7 +9163,6 @@ paths:
       description: |
         backup time of day
       tags:
-        - Admin
         - Site Settings Backups
       parameters:
         - name: body
@@ -9534,7 +9186,6 @@ paths:
       description: |
         backup with uploads
       tags:
-        - Admin
         - Site Settings Backups
       parameters:
         - name: body
@@ -9558,7 +9209,6 @@ paths:
       description: |
         min search term length
       tags:
-        - Admin
         - Site Settings Search
       parameters:
         - name: body
@@ -9582,7 +9232,6 @@ paths:
       description: |
         search tokenize chinese japanese korean
       tags:
-        - Admin
         - Site Settings Search
       parameters:
         - name: body
@@ -9606,7 +9255,6 @@ paths:
       description: |
         search prefer recent posts
       tags:
-        - Admin
         - Site Settings Search
       parameters:
         - name: body
@@ -9630,7 +9278,6 @@ paths:
       description: |
         search recent posts size
       tags:
-        - Admin
         - Site Settings Search
       parameters:
         - name: body
@@ -9654,7 +9301,6 @@ paths:
       description: |
         version checks
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -9678,7 +9324,6 @@ paths:
       description: |
         new version emails
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -9702,7 +9347,6 @@ paths:
       description: |
         send welcome message
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -9726,7 +9370,6 @@ paths:
       description: |
         suppress uncategorized badge
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -9750,7 +9393,6 @@ paths:
       description: |
         slug generation method
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -9778,7 +9420,6 @@ paths:
       description: |
         permalink normalizations
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -9802,7 +9443,6 @@ paths:
       description: |
         max similar results
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -9826,7 +9466,6 @@ paths:
       description: |
         minimum topics similar
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -9850,7 +9489,6 @@ paths:
       description: |
         previous visit timeout hours
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -9874,7 +9512,6 @@ paths:
       description: |
         staff like weight
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -9898,7 +9535,6 @@ paths:
       description: |
         topic view duration hours
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -9922,7 +9558,6 @@ paths:
       description: |
         user profile view duration hours
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -9946,7 +9581,6 @@ paths:
       description: |
         summary score threshold
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -9970,7 +9604,6 @@ paths:
       description: |
         summary posts required
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -9994,7 +9627,6 @@ paths:
       description: |
         summary likes required
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -10018,7 +9650,6 @@ paths:
       description: |
         summary percent filter
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -10042,7 +9673,6 @@ paths:
       description: |
         summary max results
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -10066,7 +9696,6 @@ paths:
       description: |
         topic views heat low
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -10090,7 +9719,6 @@ paths:
       description: |
         topic views heat medium
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -10114,7 +9742,6 @@ paths:
       description: |
         topic views heat high
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -10138,7 +9765,6 @@ paths:
       description: |
         topic post like heat low
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -10162,7 +9788,6 @@ paths:
       description: |
         topic post like heat medium
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -10186,7 +9811,6 @@ paths:
       description: |
         topic post like heat high
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -10210,7 +9834,6 @@ paths:
       description: |
         history hours low
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -10234,7 +9857,6 @@ paths:
       description: |
         history hours medium
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -10258,7 +9880,6 @@ paths:
       description: |
         history hours high
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -10282,7 +9903,6 @@ paths:
       description: |
         cold age days low
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -10306,7 +9926,6 @@ paths:
       description: |
         cold age days medium
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -10330,7 +9949,6 @@ paths:
       description: |
         cold age days high
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -10354,7 +9972,6 @@ paths:
       description: |
         educate until posts
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -10378,7 +9995,6 @@ paths:
       description: |
         sequential replies threshold
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -10402,7 +10018,6 @@ paths:
       description: |
         dominating topic minimum percent
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -10426,7 +10041,6 @@ paths:
       description: |
         disable avatar education message
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -10450,7 +10064,6 @@ paths:
       description: |
         global notice
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -10474,7 +10087,6 @@ paths:
       description: |
         notify about flags after
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -10498,7 +10110,6 @@ paths:
       description: |
         show create topics notice
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -10522,7 +10133,6 @@ paths:
       description: |
         disable edit notifications
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -10546,7 +10156,6 @@ paths:
       description: |
         vacuum db days
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -10570,7 +10179,6 @@ paths:
       description: |
         delete drafts older than n days
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -10594,7 +10202,6 @@ paths:
       description: |
         bootstrap mode min users
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -10618,7 +10225,6 @@ paths:
       description: |
         automatically unpin topics
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -10642,7 +10248,6 @@ paths:
       description: |
         read time word count
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -10666,7 +10271,6 @@ paths:
       description: |
         topic page title includes category
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -10690,7 +10294,6 @@ paths:
       description: |
         "native app install banner"
       tags:
-        - Admin
         - Site Settings Other
       parameters:
         - name: body
@@ -10714,7 +10317,6 @@ paths:
       description: |
         "default email digest frequency"
       tags:
-        - Admin
         - Site Settings User Preferences
       parameters:
         - name: body
@@ -10738,7 +10340,6 @@ paths:
       description: |
         "default include tl0 in digests"
       tags:
-        - Admin
         - Site Settings User Preferences
       parameters:
         - name: body
@@ -10762,7 +10363,6 @@ paths:
       description: |
         "default email private messages"
       tags:
-        - Admin
         - Site Settings User Preferences
       parameters:
         - name: body
@@ -10786,7 +10386,6 @@ paths:
       description: |
         "default email direct"
       tags:
-        - Admin
         - Site Settings User Preferences
       parameters:
         - name: body
@@ -10810,7 +10409,6 @@ paths:
       description: |
         "default email mailing list mode"
       tags:
-        - Admin
         - Site Settings User Preferences
       parameters:
         - name: body
@@ -10834,7 +10432,6 @@ paths:
       description: |
         "default email mailing list mode frequency"
       tags:
-        - Admin
         - Site Settings User Preferences
       parameters:
         - name: body
@@ -10862,7 +10459,6 @@ paths:
       description: |
         "disable mailing list mode"
       tags:
-        - Admin
         - Site Settings User Preferences
       parameters:
         - name: body
@@ -10886,7 +10482,6 @@ paths:
       description: |
         "default email always"
       tags:
-        - Admin
         - Site Settings User Preferences
       parameters:
         - name: body
@@ -10910,7 +10505,6 @@ paths:
       description: |
         "default email previous replies"
       tags:
-        - Admin
         - Site Settings User Preferences
       parameters:
         - name: body
@@ -10934,7 +10528,6 @@ paths:
       description: |
         "default email in reply to"
       tags:
-        - Admin
         - Site Settings User Preferences
       parameters:
         - name: body
@@ -10958,7 +10551,6 @@ paths:
       description: |
         "default other new topic duration minutes"
       tags:
-        - Admin
         - Site Settings User Preferences
       parameters:
         - name: body
@@ -10982,7 +10574,6 @@ paths:
       description: |
         "default other auto track topics after msecs"
       tags:
-        - Admin
         - Site Settings User Preferences
       parameters:
         - name: body
@@ -11006,7 +10597,6 @@ paths:
       description: |
         "default other notification level when replying"
       tags:
-        - Admin
         - Site Settings User Preferences
       parameters:
         - name: body
@@ -11030,7 +10620,6 @@ paths:
       description: |
         "default other external links in new tab"
       tags:
-        - Admin
         - Site Settings User Preferences
       parameters:
         - name: body
@@ -11054,7 +10643,6 @@ paths:
       description: |
         "default other enable quoting"
       tags:
-        - Admin
         - Site Settings User Preferences
       parameters:
         - name: body
@@ -11078,7 +10666,6 @@ paths:
       description: |
         default other dynamic favicon
       tags:
-        - Admin
         - Site Settings User Preferences
       parameters:
         - name: body
@@ -11102,7 +10689,6 @@ paths:
       description: |
         "default other disable jump reply"
       tags:
-        - Admin
         - Site Settings User Preferences
       parameters:
         - name: body
@@ -11126,7 +10712,6 @@ paths:
       description: |
         "default other like notification frequency"
       tags:
-        - Admin
         - Site Settings User Preferences
       parameters:
         - name: body
@@ -11150,7 +10735,6 @@ paths:
       description: |
         "default topics automatic unpin"
       tags:
-        - Admin
         - Site Settings User Preferences
       parameters:
         - name: body
@@ -11173,7 +10757,6 @@ paths:
       description: |
         "default categories watching"
       tags:
-        - Admin
         - Site Settings User Preferences
       parameters:
         - name: body
@@ -11197,7 +10780,6 @@ paths:
       description: |
         "default categories tracking"
       tags:
-        - Admin
         - Site Settings User Preferences
       parameters:
         - name: body
@@ -11221,7 +10803,6 @@ paths:
       description: |
         "default categories muted"
       tags:
-        - Admin
         - Site Settings User Preferences
       parameters:
         - name: body
@@ -11245,7 +10826,6 @@ paths:
       description: |
         "default categories watching first post"
       tags:
-        - Admin
         - Site Settings User Preferences
       parameters:
         - name: body
@@ -11269,7 +10849,6 @@ paths:
       description: |
         "max user api reqs per day"
       tags:
-        - Admin
         - Site Settings User API
       parameters:
         - name: body
@@ -11293,7 +10872,6 @@ paths:
       description: |
         "max user api reqs per minute"
       tags:
-        - Admin
         - Site Settings User API
       parameters:
         - name: body
@@ -11317,7 +10895,6 @@ paths:
       description: |
         "allow user api keys"
       tags:
-        - Admin
         - Site Settings User API
       parameters:
         - name: body
@@ -11341,7 +10918,6 @@ paths:
       description: |
         "allow user api key scopes"
       tags:
-        - Admin
         - Site Settings User API
       parameters:
         - name: body
@@ -11365,7 +10941,6 @@ paths:
       description: |
         "max api keys per user"
       tags:
-        - Admin
         - Site Settings User Preferences
       parameters:
         - name: body
@@ -11389,7 +10964,6 @@ paths:
       description: |
         "min trust level for user api key"
       tags:
-        - Admin
         - Site Settings User API
       parameters:
         - name: body
@@ -11413,7 +10987,6 @@ paths:
       description: |
         "allowed user api push urls"
       tags:
-        - Admin
         - Site Settings User API
       parameters:
         - name: body
@@ -11437,7 +11010,6 @@ paths:
       description: |
         "allowed user api auth redirects"
       tags:
-        - Admin
         - Site Settings User API
       parameters:
         - name: body
@@ -11461,7 +11033,6 @@ paths:
       description: |
         "tagging enabled"
       tags:
-        - Admin
         - Site Settings Tags
       parameters:
         - name: body
@@ -11485,7 +11056,6 @@ paths:
       description: |
         "tag style"
       tags:
-        - Admin
         - Site Settings Tags
       parameters:
         - name: body
@@ -11513,7 +11083,6 @@ paths:
       description: |
         "max tags per topic"
       tags:
-        - Admin
         - Site Settings Tags
       parameters:
         - name: body
@@ -11537,7 +11106,6 @@ paths:
       description: |
         "max tag length"
       tags:
-        - Admin
         - Site Settings Tags
       parameters:
         - name: body
@@ -11561,7 +11129,6 @@ paths:
       description: |
         "min trust to create tag"
       tags:
-        - Admin
         - Site Settings Tags
       parameters:
         - name: body
@@ -11591,7 +11158,6 @@ paths:
       description: |
         "min trust level to tag topics"
       tags:
-        - Admin
         - Site Settings Tags
       parameters:
         - name: body
@@ -11621,7 +11187,6 @@ paths:
       description: |
         "max_tag_search_results"
       tags:
-        - Admin
         - Site Settings Tags
       parameters:
         - name: body
@@ -11645,7 +11210,6 @@ paths:
       description: |
         "show filter by tag"
       tags:
-        - Admin
         - Site Settings Tags
       parameters:
         - name: body
@@ -11669,7 +11233,6 @@ paths:
       description: |
         "max tags in filter list"
       tags:
-        - Admin
         - Site Settings Tags
       parameters:
         - name: body
@@ -11693,7 +11256,6 @@ paths:
       description: |
         "tags sort alphabetically"
       tags:
-        - Admin
         - Site Settings Tags
       parameters:
         - name: body
@@ -11717,7 +11279,6 @@ paths:
       description: |
         "staff tags"
       tags:
-        - Admin
         - Site Settings Tags
       parameters:
         - name: body
@@ -11741,7 +11302,6 @@ paths:
       description: |
         "suppress overlapping tags in list"
       tags:
-        - Admin
         - Site Settings Tags
       parameters:
         - name: body
@@ -11765,7 +11325,6 @@ paths:
       description: |
         "remove muted tags from latest"
       tags:
-        - Admin
         - Site Settings Tags
       parameters:
         - name: body
@@ -11789,7 +11348,6 @@ paths:
       description: |
         "details enabled"
       tags:
-        - Admin
         - Site Settings Plugins
       parameters:
         - name: body
@@ -11813,7 +11371,6 @@ paths:
       description: |
         "daily performance report"
       tags:
-        - Admin
         - Site Settings Plugins
       parameters:
         - name: body
@@ -11837,7 +11394,6 @@ paths:
       description: |
         "poll enabled"
       tags:
-        - Admin
         - Site Settings Plugins
       parameters:
         - name: body
@@ -11861,7 +11417,6 @@ paths:
       description: |
         "poll maximum options"
       tags:
-        - Admin
         - Site Settings Plugins
       parameters:
         - name: body
@@ -11885,7 +11440,6 @@ paths:
       description: |
         "poll edit window mins"
       tags:
-        - Admin
         - Site Settings Plugins
       parameters:
         - name: body

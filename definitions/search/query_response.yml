@@ -21,7 +21,7 @@ properties:
         id:
           type: number
         name:
-          type: null
+          type: object
         username:
           type: string
           minLength: 1
@@ -90,7 +90,7 @@ properties:
         highest_post_number:
           type: number
         image_url:
-          type: null
+          type: object
         created_at:
           type: string
           minLength: 1
@@ -107,7 +107,7 @@ properties:
         pinned:
           type: boolean
         unpinned:
-          type: null
+          type: object
         visible:
           type: boolean
         closed:
@@ -115,9 +115,9 @@ properties:
         archived:
           type: boolean
         bookmarked:
-          type: null
+          type: object
         liked:
-          type: null
+          type: object
         views:
           type: number
         like_count:
@@ -128,7 +128,7 @@ properties:
           type: string
           minLength: 1
         last_poster_username:
-          type: null
+          type: object
         category_id:
           type: number
         pinned_globally:
@@ -138,64 +138,46 @@ properties:
           uniqueItems: null
           minItems: null
           items:
-            required:
-              type: null
-            properties:
-              type: null
+            type: object
   users:
     type: array
     uniqueItems: null
     minItems: null
     items:
-      required:
-        type: null
-      properties:
-        type: null
+      type: object
   categories:
     type: array
     uniqueItems: null
     minItems: null
     items:
-      required:
-        type: null
-      properties:
-        type: null
+      type: object
   grouped_search_result:
     type: object
     properties:
       more_posts:
-        type: null
+        type: object
       more_users:
-        type: null
+        type: object
       more_categories:
-        type: null
+        type: object
       post_ids:
         type: array
         uniqueItems: null
         minItems: null
         items:
-          required:
-            type: null
-          properties:
-            type: null
+          type: object
       user_ids:
         type: array
         uniqueItems: null
         minItems: null
         items:
-          required:
-            type: null
-          properties:
-            type: null
+          type: object
       category_ids:
         type: array
         uniqueItems: null
         minItems: null
         items:
-          required:
-            type: null
-          properties:
-            type: null
+          type: object
     required:
       - post_ids
       - user_ids

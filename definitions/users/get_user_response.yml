@@ -4,6 +4,10 @@ type: object
 properties:
   user_badges:
     type: array
+    uniqueItems: null
+    minItems: null
+    items:
+      type: object
   user:
     type: object
     properties:
@@ -16,7 +20,7 @@ properties:
         type: string
         minLength: 1
       name:
-        type: null
+        type: object
       last_posted_at:
         type: string
         minLength: 1
@@ -27,7 +31,7 @@ properties:
         type: string
         minLength: 1
       website_name:
-        type: null
+        type: object
       can_edit:
         type: boolean
       can_edit_username:
@@ -47,27 +51,27 @@ properties:
       admin:
         type: boolean
       title:
-        type: null
+        type: object
       uploaded_avatar_id:
-        type: null
+        type: object
       badge_count:
         type: number
       custom_fields:
-        type: null
+        type: object
       pending_count:
         type: number
       profile_view_count:
         type: number
       primary_group_name:
-        type: null
+        type: object
       primary_group_flair_url:
-        type: null
+        type: object
       primary_group_flair_bg_color:
-        type: null
+        type: object
       primary_group_flair_color:
-        type: null
+        type: object
       invited_by:
-        type: null
+        type: object
       groups:
         type: array
         uniqueItems: true
@@ -100,17 +104,17 @@ properties:
             visible:
               type: boolean
             automatic_membership_email_domains:
-              type: null
+              type: object
             automatic_membership_retroactive:
               type: boolean
             primary_group:
               type: boolean
             title:
-              type: null
+              type: object
             grant_trust_level:
-              type: null
+              type: object
             notification_level:
-              type: null
+              type: object
             has_messages:
               type: boolean
             is_member:
@@ -118,12 +122,38 @@ properties:
             mentionable:
               type: boolean
             flair_url:
-              type: null
+              type: object
             flair_bg_color:
-              type: null
+              type: object
             flair_color:
-              type: null
+              type: object
       featured_user_badge_ids:
         type: array
+        uniqueItems: null
+        minItems: null
+        items:
+          type: object
       card_badge:
-        type: null
+        type: object
+    required:
+      - id
+      - username
+      - avatar_template
+      - last_posted_at
+      - last_seen_at
+      - created_at
+      - can_edit
+      - can_edit_username
+      - can_edit_email
+      - can_edit_name
+      - can_send_private_messages
+      - can_send_private_message_to_user
+      - trust_level
+      - moderator
+      - admin
+      - badge_count
+      - custom_fields
+      - pending_count
+      - profile_view_count
+      - groups
+      - featured_user_badge_ids

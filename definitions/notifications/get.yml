@@ -7,10 +7,7 @@ properties:
     uniqueItems: null
     minItems: null
     items:
-      required:
-        type: null
-      properties:
-        type: null
+      type: object
   total_rows_notifications:
     type: number
   seen_notification_id:

@@ -28,11 +28,11 @@ properties:
   reply_count:
     type: number
   reply_to_post_number:
-    type: null
+    type: object
   quote_count:
     type: number
   avg_time:
-    type: null
+    type: object
   incoming_link_count:
     type: number
   reads:
@@ -49,13 +49,13 @@ properties:
   display_username:
     type: string
   primary_group_name:
-    type: null
+    type: object
   primary_group_flair_url:
-    type: null
+    type: object
   primary_group_flair_bg_color:
-    type: null
+    type: object
   primary_group_flair_color:
-    type: null
+    type: object
   version:
     type: number
   can_edit:
@@ -67,7 +67,7 @@ properties:
   can_wiki:
     type: boolean
   user_title:
-    type: null
+    type: object
   raw:
     type: string
     minLength: 1
@@ -76,10 +76,7 @@ properties:
     uniqueItems: null
     minItems: null
     items:
-      required:
-        type: null
-      properties:
-        type: null
+      type: object
   moderator:
     type: boolean
   admin:
@@ -91,15 +88,15 @@ properties:
   hidden:
     type: boolean
   hidden_reason_id:
-    type: null
+    type: object
   trust_level:
     type: number
   deleted_at:
-    type: null
+    type: object
   user_deleted:
     type: boolean
   edit_reason:
-    type: null
+    type: object
   can_view_edit_history:
     type: boolean
   wiki:

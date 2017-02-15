@@ -19,19 +19,19 @@ properties:
       visible:
         type: boolean
       automatic_membership_email_domains:
-        type: null
+        type: object
       automatic_membership_retroactive:
         type: boolean
       primary_group:
         type: boolean
       title:
-        type: null
+        type: object
       grant_trust_level:
-        type: null
+        type: object
       incoming_email:
-        type: null
+        type: object
       notification_level:
-        type: null
+        type: object
       has_messages:
         type: boolean
       is_member:
@@ -39,11 +39,11 @@ properties:
       mentionable:
         type: boolean
       flair_url:
-        type: null
+        type: object
       flair_bg_color:
-        type: null
+        type: object
       flair_color:
-        type: null
+        type: object
     required:
       - id
       - automatic

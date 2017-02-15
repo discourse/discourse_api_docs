@@ -26,7 +26,7 @@ properties:
       can_create_topic:
         type: boolean
       draft:
-        type: null
+        type: object
       draft_key:
         type: string
         minLength: 1
@@ -91,7 +91,7 @@ properties:
             highest_post_number:
               type: number
             image_url:
-              type: null
+              type: object
             created_at:
               type: string
               minLength: 1
@@ -114,7 +114,7 @@ properties:
             pinned:
               type: boolean
             unpinned:
-              type: null
+              type: object
             visible:
               type: boolean
             closed:

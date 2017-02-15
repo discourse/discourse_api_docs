@@ -71,11 +71,11 @@ properties:
             reply_count:
               type: number
             reply_to_post_number:
-              type: null
+              type: object
             quote_count:
               type: number
             avg_time:
-              type: null
+              type: object
             incoming_link_count:
               type: number
             reads:
@@ -92,13 +92,13 @@ properties:
             display_username:
               type: string
             primary_group_name:
-              type: null
+              type: object
             primary_group_flair_url:
-              type: null
+              type: object
             primary_group_flair_bg_color:
-              type: null
+              type: object
             primary_group_flair_color:
-              type: null
+              type: object
             version:
               type: number
             can_edit:
@@ -112,16 +112,13 @@ properties:
             read:
               type: boolean
             user_title:
-              type: null
+              type: object
             actions_summary:
               type: array
               uniqueItems: null
               minItems: null
               items:
-                required:
-                  type: null
-                properties:
-                  type: null
+                type: object
             moderator:
               type: boolean
             admin:
@@ -133,15 +130,15 @@ properties:
             hidden:
               type: boolean
             hidden_reason_id:
-              type: null
+              type: object
             trust_level:
               type: number
             deleted_at:
-              type: null
+              type: object
             user_deleted:
               type: boolean
             edit_reason:
-              type: null
+              type: object
             can_view_edit_history:
               type: boolean
             wiki:
@@ -151,10 +148,7 @@ properties:
         uniqueItems: null
         minItems: null
         items:
-          required:
-            type: null
-          properties:
-            type: null
+          type: object
     required:
       - posts
       - stream
@@ -163,18 +157,13 @@ properties:
     uniqueItems: null
     minItems: null
     items:
-      required:
-        type: null
       properties:
         '0':
           type: array
           uniqueItems: true
           minItems: null
           items:
-            required:
-              type: null
-            properties:
-              type: null
+            type: object
   id:
     type: number
   title:
@@ -197,7 +186,7 @@ properties:
   like_count:
     type: number
   last_posted_at:
-    type: null
+    type: object
   visible:
     type: boolean
   closed:
@@ -215,20 +204,20 @@ properties:
   category_id:
     type: number
   word_count:
-    type: null
+    type: object
   deleted_at:
-    type: null
+    type: object
   user_id:
     type: number
   draft:
-    type: null
+    type: object
   draft_key:
     type: string
     minLength: 1
   draft_sequence:
-    type: null
+    type: object
   unpinned:
-    type: null
+    type: object
   pinned_globally:
     type: boolean
   pinned:
@@ -237,14 +226,14 @@ properties:
     type: string
     minLength: 1
   pinned_until:
-    type: null
+    type: object
   details:
     type: object
     properties:
       auto_close_at:
-        type: null
+        type: object
       auto_close_hours:
-        type: null
+        type: object
       auto_close_based_on_last_post:
         type: boolean
       created_by:
@@ -363,7 +352,7 @@ properties:
             pinned:
               type: boolean
             unpinned:
-              type: null
+              type: object
             excerpt:
               type: string
               minLength: 1
@@ -374,9 +363,9 @@ properties:
             archived:
               type: boolean
             bookmarked:
-              type: null
+              type: object
             liked:
-              type: null
+              type: object
             archetype:
               type: string
               minLength: 1
@@ -431,7 +420,7 @@ properties:
   highest_post_number:
     type: number
   deleted_by:
-    type: null
+    type: object
   actions_summary:
     type: array
     uniqueItems: true
@@ -454,4 +443,4 @@ properties:
   chunk_size:
     type: number
   bookmarked:
-    type: null
+    type: object

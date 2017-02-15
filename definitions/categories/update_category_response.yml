@@ -29,9 +29,9 @@ properties:
       position:
         type: number
       description:
-        type: null
+        type: object
       description_text:
-        type: null
+        type: object
       topic_url:
         type: string
         minLength: 1
@@ -42,26 +42,23 @@ properties:
       read_restricted:
         type: boolean
       permission:
-        type: null
+        type: object
       notification_level:
-        type: null
+        type: object
       can_edit:
         type: boolean
       topic_template:
         type: string
       has_children:
-        type: null
+        type: object
       available_groups:
         type: array
         uniqueItems: null
         minItems: null
         items:
-          required:
-            type: null
-          properties:
-            type: null
+          type: object
       auto_close_hours:
-        type: null
+        type: object
       auto_close_based_on_last_post:
         type: boolean
       group_permissions:
@@ -79,7 +76,7 @@ properties:
               type: string
               minLength: 1
       email_in:
-        type: null
+        type: object
       email_in_allow_strangers:
         type: boolean
       suppress_from_homepage:
@@ -87,8 +84,8 @@ properties:
       can_delete:
         type: boolean
       cannot_delete_reason:
-        type: null
-      algow_badges:
+        type: object
+      allow_badges:
         type: boolean
       custom_fields:
         type: object
