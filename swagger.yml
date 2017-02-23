@@ -503,6 +503,23 @@ paths:
               type:
                 type: string
                 example: uploaded
+  /users/{username}/preferences/email:
+    put:
+      description: |
+        update email
+      tags:
+        - Users
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - email
+            properties:
+              email:
+                type: string
+                example: discourse1@example.com
   /users:
     post:
       description: |
