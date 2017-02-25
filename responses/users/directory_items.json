@@ -1,0 +1,91 @@
+{
+  "directory_items": [
+    {
+      "id": 5,
+      "likes_received": 0,
+      "likes_given": 0,
+      "topics_entered": 1,
+      "topic_count": 1,
+      "post_count": 0,
+      "posts_read": 3,
+      "days_visited": 1,
+      "user": {
+        "id": 5,
+        "username": "foobar",
+        "avatar_template": "/letter_avatar_proxy/v2/letter/f/f19dbf/{size}.png",
+        "name": "foo bar",
+        "title": null
+      }
+    },
+    {
+      "id": 4,
+      "likes_received": 0,
+      "likes_given": 0,
+      "topics_entered": 0,
+      "topic_count": 0,
+      "post_count": 0,
+      "posts_read": 0,
+      "days_visited": 0,
+      "user": {
+        "id": 4,
+        "username": "test2",
+        "avatar_template": "/letter_avatar_proxy/v2/letter/t/f475e1/{size}.png",
+        "name": "test2",
+        "title": null
+      }
+    },
+    {
+      "id": 3,
+      "likes_received": 0,
+      "likes_given": 0,
+      "topics_entered": 0,
+      "topic_count": 0,
+      "post_count": 0,
+      "posts_read": 0,
+      "days_visited": 0,
+      "user": {
+        "id": 3,
+        "username": "discourse4",
+        "avatar_template": "/letter_avatar_proxy/v2/letter/d/22d042/{size}.png",
+        "name": "My Name",
+        "title": null
+      }
+    },
+    {
+      "id": 6,
+      "likes_received": 0,
+      "likes_given": 0,
+      "topics_entered": 3,
+      "topic_count": 1,
+      "post_count": 0,
+      "posts_read": 7,
+      "days_visited": 3,
+      "user": {
+        "id": 6,
+        "username": "blake3",
+        "avatar_template": "/letter_avatar_proxy/v2/letter/b/e68b1a/{size}.png",
+        "name": "blake2",
+        "title": null
+      }
+    },
+    {
+      "id": 1,
+      "likes_received": 0,
+      "likes_given": 0,
+      "topics_entered": 6,
+      "topic_count": 6,
+      "post_count": 3,
+      "posts_read": 3,
+      "days_visited": 5,
+      "user": {
+        "id": 1,
+        "username": "discourse1",
+        "avatar_template": "/letter_avatar_proxy/v2/letter/d/da6949/{size}.png",
+        "name": null,
+        "title": null
+      }
+    }
+  ],
+  "total_rows_directory_items": 5,
+  "load_more_directory_items": "/directory_items?order=likes_received&page=1&period=weekly"
+}

@@ -1,0 +1,61 @@
+$schema: 'http://json-schema.org/draft-04/schema#'
+description: ""
+type: object
+properties:
+  directory_items:
+    type: array
+    uniqueItems: true
+    minItems: 1
+    items:
+      required:
+        - id
+        - likes_received
+        - likes_given
+        - topics_entered
+        - topic_count
+        - post_count
+        - posts_read
+        - days_visited
+      properties:
+        id:
+          type: number
+        likes_received:
+          type: number
+        likes_given:
+          type: number
+        topics_entered:
+          type: number
+        topic_count:
+          type: number
+        post_count:
+          type: number
+        posts_read:
+          type: number
+        days_visited:
+          type: number
+        user:
+          type: object
+          properties:
+            id:
+              type: number
+            username:
+              type: string
+              minLength: 1
+            avatar_template:
+              type: string
+              minLength: 1
+            name:
+              type: string
+              minLength: 1
+            title:
+              type: object
+          required:
+            - id
+            - username
+            - avatar_template
+            - name
+  total_rows_directory_items:
+    type: number
+  load_more_directory_items:
+    type: string
+    minLength: 1

@@ -536,6 +536,48 @@ paths:
           description: new user response
           schema:
             $ref: 'definitions/users/new_user_response.yml'
+  /directory_items.json?period={period}&order={order}:
+    get:
+      description: |
+        get a public list of users
+      tags:
+        - Users
+      parameters:
+        - name: period
+          in: path
+          required: true
+          type: string
+          enum:
+            - daily
+            - weekly
+            - monthly
+            - quarterly
+            - yearly
+            - all
+        - name: order
+          in: path
+          required: true
+          type: string
+          enum:
+            - likes_received
+            - likes_given
+            - topic_count
+            - post_count
+            - topics_entered
+            - posts_read
+            - days_visited
+        - name: asc
+          in: path
+          required: false
+          type: boolean
+          enum:
+            - true
+      responses:
+        '200':
+          description: |
+            public list of users response
+          schema:
+            $ref: 'definitions/users/directory_items_response.yml'
   /tags:
     get:
       description: |
@@ -798,6 +840,14 @@ paths:
             - views
             - posts
             - category
+            - likes
+            - op_likes
+            - posters
+        - name: ascending
+          in: path
+          required: false
+          type: boolean
+          description: defaults to desc, add `ascending=true` to sort asc
       responses:
         '200':
           description: latest topics response
