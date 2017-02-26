@@ -623,6 +623,33 @@ paths:
           description: search response
           schema:
             $ref: 'definitions/search/query_response.yml'
+  /admin/email.json:
+    get:
+      description: |
+        Show email settings
+      tags:
+        - Admin
+      responses:
+        '200':
+          description: |
+            email settings response
+          schema:
+            type: object
+            properties:
+              delivery_method:
+                type: string
+                example: smtp
+              settings:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      example: address
+                    value:
+                      type: string
+                      example: localhost
   /admin/users/{id}/suspend:
     put:
       description: |
