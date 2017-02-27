@@ -628,7 +628,7 @@ paths:
       description: |
         Show email settings
       tags:
-        - Admin
+        - Admin Emails
       responses:
         '200':
           description: |
@@ -650,6 +650,34 @@ paths:
                     value:
                       type: string
                       example: localhost
+  /admin/customize/email_templates.json:
+    get:
+      description: |
+        show list of email templates
+      tags:
+        - Admin Emails
+      responses:
+        '200':
+          description: |
+            show email templates response
+          schema:
+            type: object
+            properties:
+              email_templates:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    title:
+                      type: string
+                    subject:
+                      type: string
+                    body:
+                      type: string
+                    can_revert:
+                      type: boolean
   /admin/users/{id}/suspend:
     put:
       description: |
