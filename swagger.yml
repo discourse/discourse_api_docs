@@ -760,6 +760,28 @@ paths:
             - suspended
             - blocked
             - suspect
+        - name: order
+          in: path
+          required: false
+          type: string
+          enum:
+            - created
+            - last_emailed
+            - seen
+            - username
+            - email
+            - trust_level
+            - days_visited
+            - posts_read
+            - topics_viewed
+            - posts
+            - read_time
+        - name: ascending
+          in: path
+          required: false
+          type: boolean
+          description: |
+            optional. defaults to desc.
       responses:
         '200':
           description: list of users response
