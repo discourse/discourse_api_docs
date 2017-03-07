@@ -404,6 +404,34 @@ paths:
                   type: string
               error_type:
                 type: string
+  /tag_groups.json:
+    get:
+      description: |
+        Get a list of tag groups
+      tags:
+        - Tags
+      responses:
+        '200':
+          description: |
+            List of tag groups response
+          schema:
+            type: object
+            properties:
+              tag_groups:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    tag_names:
+                      type: array
+                    parent_tag_name:
+                      type: array
+                    one_per_topic:
+                      type: boolean
   /users/{username}.json:
     get:
       description: |
@@ -581,7 +609,7 @@ paths:
   /tags:
     get:
       description: |
-        get a list of tags (requires the tag plugin)
+        get a list of tags
       tags:
         - Tags
       responses:
@@ -591,7 +619,7 @@ paths:
   /tags/{tag}:
     get:
       description: |
-        Get a specific tag (requires the tag plugin)
+        Get a specific tag
       tags:
         - Tags
       parameters:
