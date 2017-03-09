@@ -432,6 +432,23 @@ paths:
                       type: array
                     one_per_topic:
                       type: boolean
+    post:
+      description: |
+        Create a new tag group
+      tags:
+        - Tags
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - name
+            properties:
+              name:
+                type: string
+              tag_names[]:
+                type: string
   /users/{username}.json:
     get:
       description: |
