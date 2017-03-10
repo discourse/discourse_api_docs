@@ -449,6 +449,32 @@ paths:
                 type: string
               tag_names[]:
                 type: string
+      responses:
+        '200':
+          description: |
+            Create tab group response
+          schema:
+            type: object
+            properties:
+              tag_group:
+                type: object
+                required:
+                  - id
+                  - name
+                  - tag_names
+                  - parent_tag_name
+                  - one_per_topic
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  tag_names:
+                    type: array
+                  parent_tag_name:
+                    type: array
+                  one_per_topic:
+                    type: boolean
   /users/{username}.json:
     get:
       description: |
