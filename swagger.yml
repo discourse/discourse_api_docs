@@ -475,6 +475,37 @@ paths:
                     type: array
                   one_per_topic:
                     type: boolean
+  /tag_groups/{id}.json:
+    get:
+      description: |
+        Get a single tag group
+      tags:
+        - Tags
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: |
+            Tag group response
+          schema:
+            type: object
+            properties:
+              tag_group:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  tag_names:
+                    type: array
+                  parent_tag_name:
+                    type: array
+                  one_per_topic:
+                    type: boolean
     put:
       description: |
         Update an existing tag group
