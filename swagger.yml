@@ -475,6 +475,50 @@ paths:
                     type: array
                   one_per_topic:
                     type: boolean
+    put:
+      description: |
+        Update an existing tag group
+      tags:
+        - Tags
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - name
+            properties:
+              name:
+                type: string
+              tag_names[]:
+                type: string
+      responses:
+        '200':
+          description: |
+            Create tab group response
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+                example: OK
+              tag_group:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  tag_names:
+                    type: array
+                  parent_tag_name:
+                    type: array
+                  one_per_topic:
+                    type: boolean
   /users/{username}.json:
     get:
       description: |
