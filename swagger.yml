@@ -11788,3 +11788,33 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/plugins:
+    get:
+      description: |
+        "get a list of installed plugins"
+      tags:
+        - Plugins
+      responses:
+        '200':
+          description: |
+            "plugin list response"
+          schema:
+            type: object
+            properties:
+              plugins:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    name:
+                      type: string
+                    version:
+                      type: string
+                    url:
+                      type: string
+                    enabled:
+                      type: boolean
+                    enabled_setting:
+                      type: string
