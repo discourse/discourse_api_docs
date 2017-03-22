@@ -11818,3 +11818,24 @@ paths:
                       type: boolean
                     enabled_setting:
                       type: string
+  /admin/backups.json:
+    get:
+      description: |
+        "get a list of backups"
+      tags:
+        - Backups
+      responses:
+        '200':
+          description: |
+            "list of backups response"
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                filename:
+                  type: string
+                size:
+                  type: integer
+                link:
+                  type: string
