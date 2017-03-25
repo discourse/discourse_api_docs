@@ -590,6 +590,11 @@ paths:
                 example: upload
                 description: |
                   a lowercase string with numbers but no spaces. Set to 'avatar' if uploading an avatar
+                enum:
+                  - avatar
+                  - profile_background
+                  - card_background
+                  - custom_emoji
               user_id:
                 type: integer
                 example: 1
