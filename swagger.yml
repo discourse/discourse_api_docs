@@ -11849,3 +11849,44 @@ paths:
                   type: integer
                 link:
                   type: string
+  /admin/emails/sent.json:
+    get:
+      description: |
+        get a list of sent emails
+      tags:
+        - Emails
+      parameters:
+        - name: offset
+          in: path
+          required: true
+          example: 0
+          type: integer
+      responses:
+        '200':
+          description: |
+            list of sent emails response
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: integer
+                reply_key:
+                  type: string
+                to_address:
+                  type: string
+                email_type:
+                  type: string
+                user_id:
+                  type: integer
+                created_at:
+                  type: string
+                skipped:
+                  type: boolean
+                  example: false
+                bounced:
+                  type: boolean
+                  example: false
+                user:
+                  type: object
