@@ -11849,13 +11849,24 @@ paths:
                   type: integer
                 link:
                   type: string
-  /admin/emails/sent.json:
+  /admin/emails/{action}.json:
     get:
       description: |
-        get a list of sent emails
+        get a list of emails
       tags:
         - Emails
       parameters:
+        - name: action
+          in: path
+          required: true
+          example: sent
+          type: string
+          enum:
+            - sent
+            - skipped
+            - bounced
+            - received
+            - rejected
         - name: offset
           in: path
           required: true
@@ -11864,7 +11875,7 @@ paths:
       responses:
         '200':
           description: |
-            list of sent emails response
+            list of emails response
           schema:
             type: array
             items:
