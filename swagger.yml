@@ -11901,3 +11901,36 @@ paths:
                   example: false
                 user:
                   type: object
+  /admin/flags/{type}.json:
+    get:
+      description: |
+        get a list of flags
+      tags:
+        - Flags
+      parameters:
+        - name: type
+          in: path
+          required: true
+          example: active
+          type: string
+          enum:
+            - active
+            - old
+        - name: offset
+          in: path
+          required: true
+          example: 0
+          type: integer
+      responses:
+        '200':
+          description: |
+            list of flags response
+          schema:
+            type: object
+            properties:
+              posts:
+                type: array
+              topics:
+                type: array
+              users:
+                type: array
