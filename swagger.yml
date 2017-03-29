@@ -11934,3 +11934,15 @@ paths:
                 type: array
               users:
                 type: array
+  /admin/badges.json:
+    get:
+      description: |
+        get a list of badges
+      tags:
+        - Badges
+      responses:
+        200:
+          description: |
+            list of badges response
+          schema:
+            $ref: 'definitions/admin/get_badges.yml'

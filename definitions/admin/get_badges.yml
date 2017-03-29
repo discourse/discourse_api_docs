@@ -1,0 +1,12 @@
+$schema: 'http://json-schema.org/draft-04/schema#'
+description: ""
+type: object
+properties:
+  badges:
+    type: array
+  badge_types:
+    type: array
+  badge_groupings:
+    type: array
+  admin_badges:
+    type: object
