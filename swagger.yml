@@ -11946,3 +11946,46 @@ paths:
             list of badges response
           schema:
             $ref: 'definitions/admin/get_badges.yml'
+    post:
+      description: |
+        create a badge
+      tags:
+        - Badges
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            properties:
+              allow_title:
+                type: boolean
+              multiple_grant:
+                type: boolean
+              listable:
+                type: boolean
+              auto_revoke:
+                type: boolean
+              enabled:
+                type: boolean
+              show_posts:
+                type: boolean
+              target_posts:
+                type: boolean
+              name:
+                type: string
+              description:
+                type: string
+              long_description:
+                type: string
+              icon:
+                type: string
+              image:
+                type: string
+              badge_grouping_id:
+                type: integer
+              badge_type_id:
+                type: integer
+      responses:
+        200:
+          description: |
+            create a badge response
