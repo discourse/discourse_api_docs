@@ -11989,3 +11989,27 @@ paths:
         200:
           description: |
             create a badge response
+  /admin/customize/user_fields:
+    post:
+      description: |
+        create a user_fields
+      tags:
+        - User Fields
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            properties:
+              user_field[name]:
+                type: string
+              user_field[description]:
+                type: string
+              user_field[field_type:
+                type: string
+              user_field[required]:
+                type: boolean
+      responses:
+        200:
+          description: |
+            create a user_fields response
