@@ -11990,9 +11990,18 @@ paths:
           description: |
             create a badge response
   /admin/customize/user_fields:
+    get:
+      description: |
+        list user fields
+      tags:
+        - User Fields
+      responses:
+        200:
+          description: |
+            list user fields response
     post:
       description: |
-        create a user_fields
+        create a user fields
       tags:
         - User Fields
       parameters:
