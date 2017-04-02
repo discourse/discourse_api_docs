@@ -12022,3 +12022,24 @@ paths:
         200:
           description: |
             create a user_fields response
+  /admin/customize/user_fields/{id}:
+    delete:
+      description: |
+        delete a user field
+      tags:
+        - User Fields
+      parameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+      responses:
+        200:
+          description: |
+            delete a user field response
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+                example: "OK"
