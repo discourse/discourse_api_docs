@@ -11831,13 +11831,13 @@ paths:
   /admin/backups.json:
     get:
       description: |
-        "get a list of backups"
+        get a list of backups
       tags:
         - Backups
       responses:
-        '200':
+        200:
           description: |
-            "list of backups response"
+            list of backups response
           schema:
             type: array
             items:
