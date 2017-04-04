@@ -728,6 +728,10 @@ paths:
           type: boolean
           enum:
             - true
+        - name: page
+          in: path
+          required: false
+          type: integer
       responses:
         '200':
           description: |
