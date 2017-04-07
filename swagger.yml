@@ -11783,7 +11783,7 @@ paths:
   /admin/site_settings/poll_edit_window_mins:
     put:
       description: |
-        "poll edit window mins"
+        poll edit window mins
       tags:
         - Site Settings Plugins
       parameters:
@@ -11798,7 +11798,7 @@ paths:
                 type: integer
                 example: 5
                 description: |
-                  "Number of minutes after post creation during which polls can be edited."
+                  Number of minutes after post creation during which polls can be edited.
       responses:
         '200':
           description: |
@@ -11806,13 +11806,13 @@ paths:
   /admin/plugins:
     get:
       description: |
-        "get a list of installed plugins"
+        get a list of installed plugins
       tags:
         - Plugins
       responses:
         '200':
           description: |
-            "plugin list response"
+            plugin list response
           schema:
             type: object
             properties:
