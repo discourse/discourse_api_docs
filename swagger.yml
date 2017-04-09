@@ -6269,7 +6269,8 @@ paths:
               download_remote_images_max_days_old:
                 type: integer
                 example: 30
-                description: "Don't download remote images for posts that are more than n days old."
+                description: |
+                  Don't download remote images for posts that are more than n days old.
       responses:
         '200':
           description: |
