@@ -11995,7 +11995,7 @@ paths:
         200:
           description: |
             create a badge response
-  /admin/customize/user_fields:
+  /admin/customize/user_fields.json:
     get:
       description: |
         list user fields
