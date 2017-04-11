@@ -12049,3 +12049,28 @@ paths:
               success:
                 type: string
                 example: "OK"
+  /t/{id}/status_update:
+    post:
+      description: |
+        Create a timed topic
+      tags:
+        - Topics
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            properties:
+              time:
+                type: string
+              timezone_offset:
+                type: integer
+              status_type:
+                type: string
+                example: publish_to_category
+              category_id:
+                type: integer
+      responses:
+        200:
+          description: |
+            create a timed topic response
