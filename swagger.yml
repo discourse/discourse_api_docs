@@ -12074,3 +12074,25 @@ paths:
         200:
           description: |
             create a timed topic response
+  /t/{id}/status:
+    put:
+      description: |
+        Update a topics status
+      tags:
+        - Topics
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                example: closed
+              enabled:
+                type: boolean
+                example: true
+      responses:
+        200:
+          description: |
+            update status response
