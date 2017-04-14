@@ -344,7 +344,7 @@ paths:
   /invites:
     post:
       description: |
-        Invite a user by email to join your Discourse forum
+        Invite a user by email to join your forum
       tags:
         - Invites
       parameters:
@@ -369,6 +369,32 @@ paths:
             properties:
               success:
                 type: string
+  /invites/link:
+    post:
+      description: |
+        generate an invite link but don't send an email
+      tags:
+        - Invites
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - email
+            properties:
+              email:
+                type: string
+              group_names:
+                type: string
+              custom_message:
+                type: string
+      responses:
+        '200':
+          description: response
+          schema:
+            type: string
+            example: "http://forum.com/invites/token_value"
   /invites/disposable:
     post:
       description: |
