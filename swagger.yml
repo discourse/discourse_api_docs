@@ -12115,6 +12115,9 @@ paths:
               status:
                 type: string
                 example: closed
+                enum:
+                  - closed
+                  - visible
               enabled:
                 type: boolean
                 example: true
