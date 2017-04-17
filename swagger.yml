@@ -12118,6 +12118,7 @@ paths:
                 enum:
                   - closed
                   - visible
+                  - archived
               enabled:
                 type: boolean
                 example: true
