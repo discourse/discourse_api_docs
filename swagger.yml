@@ -12119,9 +12119,12 @@ paths:
                   - closed
                   - visible
                   - archived
+                  - pinned_globally
               enabled:
                 type: boolean
                 example: true
+              until:
+                type: string
       responses:
         200:
           description: |
