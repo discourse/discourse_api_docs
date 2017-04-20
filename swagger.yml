@@ -12129,3 +12129,22 @@ paths:
         200:
           description: |
             update status response
+  /t/{id}/change-timestamp:
+    put:
+      description: |
+        Update a topics timestamp
+      tags:
+        - Topics
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            properties:
+              timestamp:
+                type: integer
+                example: 1491199200
+      responses:
+        200:
+          description: |
+            update timestamp response
