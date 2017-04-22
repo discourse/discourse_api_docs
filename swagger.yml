@@ -12148,3 +12148,9 @@ paths:
         200:
           description: |
             update timestamp response
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+                example: OK
