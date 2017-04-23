@@ -4,9 +4,104 @@ type: object
 properties:
   badges:
     type: array
+    items:
+      properties:
+         id:
+            type: number
+         name:
+            type: string
+         description:
+            type: string
+         grant_count:
+            type: number
+         allow_title:
+            type: boolean
+         multiple_grant:
+            type: boolean
+         icon:
+            type: string
+         image:
+            type: string
+         listable:
+            type: boolean
+         enabled:
+            type: boolean
+         badge_grouping_id:
+            type: number
+         system:
+            type: boolean
+         long_description:
+            type: string
+         slug:
+            type: string
+         query:
+            type: string
+         trigger:
+            type: number
+         target_posts:
+            type: boolean
+         auto_revoke:
+            type: boolean
+         show_posts:
+            type: booelan
+         badge_type_id:
+            type: number
   badge_types:
     type: array
+    items:
+      properties:
+         id:
+            type: number
+         name:
+            type: string
+         sort_order:
+            type: number
   badge_groupings:
     type: array
+    items:
+      properties:
+         id:
+            type: number
+         name:
+            type: number
+         description:
+            type: string
+         position:
+            type: number
+         system:
+            type: boolean 
   admin_badges:
     type: object
+    properties:
+      protected_system_fields:
+         type: array
+         items:
+            type: string
+  triggers:
+    type: object
+    properties:
+      none:
+         type: number
+      post_action:
+         type: number
+      post_revision:
+         type: number
+      trust_level_change:
+         type: number
+      user_change:
+          type: number
+      post_processed:
+          type: number
+  badge_ids:
+    type: array
+    items:
+      type: number
+  badge_grouping_ids:
+    type: array
+    items:
+      type: number
+  badge_type_ids:
+    type: array
+    items:
+      type: number
+

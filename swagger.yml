@@ -459,8 +459,10 @@ paths:
                       type: string
                     tag_names:
                       type: array
+                      items:
+                        type: string
                     parent_tag_name:
-                      type: array
+                      type: string
                     one_per_topic:
                       type: boolean
     post:
@@ -478,8 +480,10 @@ paths:
             properties:
               name:
                 type: string
-              tag_names[]:
-                type: string
+              tag_names:
+                type: array
+                items:
+                  type: string
       responses:
         '200':
           description: |
@@ -502,8 +506,14 @@ paths:
                     type: string
                   tag_names:
                     type: array
+                    items:
+                      type: string
                   parent_tag_name:
                     type: array
+                    items:
+                      properties:
+                        tag_name:
+                          type: string
                   one_per_topic:
                     type: boolean
   /tag_groups/{id}.json:
@@ -533,8 +543,14 @@ paths:
                     type: string
                   tag_names:
                     type: array
+                    items:
+                      type: string
                   parent_tag_name:
                     type: array
+                    items:
+                      properties:
+                        tag_name:
+                          type: string
                   one_per_topic:
                     type: boolean
     put:
@@ -556,8 +572,10 @@ paths:
             properties:
               name:
                 type: string
-              tag_names[]:
-                type: string
+              tag_names:
+                type: array
+                items:
+                  type: string
       responses:
         '200':
           description: |
@@ -577,8 +595,14 @@ paths:
                     type: string
                   tag_names:
                     type: array
+                    items:
+                      type: string
                   parent_tag_name:
                     type: array
+                    items:
+                      properties:
+                        tag_name:
+                          type: string
                   one_per_topic:
                     type: boolean
   /users/{username}.json:
