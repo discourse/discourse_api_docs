@@ -12178,3 +12178,28 @@ paths:
               success:
                 type: string
                 example: OK
+  /t/{id}/notifications:
+    post:
+      description: |
+        set notification level
+      tags:
+        - Topics
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            properties:
+              notification_level:
+                type: integer
+                example: 0
+      responses:
+        200:
+          description: |
+            set notification level response
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+                example: OK
