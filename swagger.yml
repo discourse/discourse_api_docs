@@ -12193,6 +12193,11 @@ paths:
               notification_level:
                 type: integer
                 example: 0
+                enum:
+                  - 0
+                  - 1
+                  - 2
+                  - 3
       responses:
         200:
           description: |
