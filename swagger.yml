@@ -6,7 +6,7 @@ info:
   description: |
     Documentation on how to use Discourse through API calls.
 
-     ### Authentication
+    ### Authentication
 
     Some endpoints do not require any authentication, pretty much anything else will
     require you to be authenticated.
@@ -1145,7 +1145,6 @@ paths:
             properties:
               success:
                 type: string
-
     delete:
       description: |
         Delete a user from a group
