@@ -14,7 +14,7 @@ info:
     To become authenticated you will need to create an API Key from the admin panel.
 
     Once you have your API Key you can pass it in as a GET url parameter like this:
-    
+
     ```
     curl -X GET "http://127.0.0.1:3000/admin/users/list/active.json?api_key=714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19&api_username=discourse1"
     ```
@@ -975,6 +975,27 @@ paths:
             properties:
               success:
                 type: string
+  /admin/users/{id}/anonymize:
+    put:
+      description: |
+        Anonymize a user
+      tags:
+        - Admin
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: succesfully anonymized user
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              username:
+                type: "string"
   /admin/users/{id}/generate_api_key:
     post:
       description: |
@@ -1124,7 +1145,7 @@ paths:
             properties:
               success:
                 type: string
-          
+
     delete:
       description: |
         Delete a user from a group
