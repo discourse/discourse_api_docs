@@ -1012,6 +1012,26 @@ paths:
           description: generate api key response
           schema:
             $ref: 'definitions/admin/generate_api_key.yml'
+  /admin/users/{id}/groups:
+    post:
+      description: |
+        Assign a group to a user
+      tags:
+        - Admin
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - group_id
+            properties:
+              group_id:
+                type: integer
   /admin/users/list/{flag}.json:
     get:
       description: |
