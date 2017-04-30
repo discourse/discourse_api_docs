@@ -1032,6 +1032,25 @@ paths:
             properties:
               group_id:
                 type: integer
+  /admin/users/{id}/groups/{group_id}:
+    delete:
+      description: |
+        Remove a group assigned to a user
+      tags:
+        - Admin
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+        - name: group_id
+          in: path
+          required: true
+          type: integer
+      responses:
+        200:
+          description: |
+            empty response body
   /admin/users/list/{flag}.json:
     get:
       description: |
