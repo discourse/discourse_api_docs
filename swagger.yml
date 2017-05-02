@@ -11964,6 +11964,32 @@ paths:
                   type: integer
                 link:
                   type: string
+    post:
+      description: |
+        create a backup
+      tags:
+        - Backups
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - with_uploads
+            properties:
+              with_uploads:
+                type: boolean
+                example: true
+      responses:
+        200:
+          description: |
+            create a backup response
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+                example: OK
   /admin/emails/{action}.json:
     get:
       description: |
