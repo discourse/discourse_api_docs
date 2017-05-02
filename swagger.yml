@@ -12267,3 +12267,24 @@ paths:
               success:
                 type: string
                 example: OK
+  /user_badges/{id}:
+    delete:
+      description: |
+        revoke a badge assigned to a user
+      tags:
+        - Badges
+      parameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+      responses:
+        200:
+          description: |
+            revoke a badge response
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+                example: OK
