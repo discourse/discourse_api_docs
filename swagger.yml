@@ -42,7 +42,7 @@ paths:
       tags:
         - Categories
       responses:
-        '200':
+        200:
           description: |
             A category_list object that contains an array of categories
           schema:
@@ -58,7 +58,7 @@ paths:
       tags:
         - Categories
       responses:
-        '200':
+        200:
           description: category response
           schema:
             $ref: 'definitions/categories/new_category_response.yml'
@@ -74,7 +74,7 @@ paths:
           required: true
           type: integer
       responses:
-        '200':
+        200:
           description: category response
           schema:
             $ref: 'definitions/categories/category_response.yml'
@@ -91,7 +91,7 @@ paths:
           schema:
             $ref: 'definitions/categories/update_category.yml'
       responses:
-        '200':
+        200:
           description: update category response
           schema:
             $ref: 'definitions/categories/update_category_response.yml'
@@ -143,7 +143,7 @@ paths:
                   pick a date other than the default current time
                 example: "2017-01-31"
       responses:
-        '200':
+        200:
           description: new topic response
           schema:
             $ref: 'definitions/topics/new_topic_response.yml'
@@ -159,7 +159,7 @@ paths:
           required: true
           type: integer
       responses:
-        '200':
+        200:
           description: post response
           schema:
             $ref: 'definitions/posts/get_post_response.yml'
@@ -181,7 +181,7 @@ paths:
               post[raw]:
                 type: string
       responses:
-        '200':
+        200:
           description: update post response
           schema:
             $ref: 'definitions/posts/update_post_response.yml'
