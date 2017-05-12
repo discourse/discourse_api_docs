@@ -1071,7 +1071,7 @@ paths:
             - blocked
             - suspect
         - name: order
-          in: path
+          in: query
           required: false
           type: string
           enum:
@@ -1087,11 +1087,15 @@ paths:
             - posts
             - read_time
         - name: ascending
-          in: path
+          in: query
           required: false
           type: boolean
           description: |
-            optional. defaults to desc.
+            optional. defaults to descending.
+        - name: page
+          in: query
+          required: false
+          type: integer
       responses:
         '200':
           description: list of users response
