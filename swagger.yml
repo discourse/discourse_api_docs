@@ -624,7 +624,7 @@ paths:
   /uploads.json:
     post:
       description: |
-        Upload an image or avatar
+        Upload a file like an image or an avatar
       tags:
         - Upload
       parameters:
@@ -637,7 +637,7 @@ paths:
             properties:
               type:
                 type: string
-                example: upload
+                example: composer
                 description: |
                   a lowercase string with numbers but no spaces. Set to 'avatar' if uploading an avatar
                 enum:
@@ -645,6 +645,7 @@ paths:
                   - profile_background
                   - card_background
                   - custom_emoji
+                  - composer
               user_id:
                 type: integer
                 example: 1
