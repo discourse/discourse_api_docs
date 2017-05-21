@@ -12325,3 +12325,22 @@ paths:
               success:
                 type: string
                 example: OK
+  /user_actions.json:
+    get:
+      description: |
+        get a list of user actions
+      tags:
+        - Users
+      parameters:
+        - name: offset
+          in: query
+          type: integer
+          required: true
+        - name: username
+          in: query
+          type: string
+          required: true
+        - name: filter
+          in: query
+          type: integer
+          required: true
