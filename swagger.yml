@@ -12344,3 +12344,43 @@ paths:
           in: query
           type: integer
           required: true
+      responses:
+        200:
+          description: |
+            list of user actions response
+          schema:
+            type: object
+            properties:
+              user_actions:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    acting_avatar_template:
+                      type: string
+                    acting_name:
+                      type: string
+                    acting_user_id:
+                      type: integer
+                    acting_username:
+                      type: string
+                    action_code:
+                      type: object
+                    action_type:
+                      type: integer
+                    archived:
+                      type: boolean
+                    avatar_template:
+                      type: string
+                    category_id:
+                      type: integer
+                    closed:
+                      type: boolean
+                    created_at:
+                      type: string
+                    delete:
+                      type: boolean
+                    exerpt:
+                      type: string
+                    hidden:
+                      type: boolean
