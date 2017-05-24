@@ -12384,3 +12384,24 @@ paths:
                       type: string
                     hidden:
                       type: boolean
+                    name:
+                      type: string
+                    post_id:
+                      type: integer
+                    slug:
+                      type: string
+                    target_name:
+                      type: string
+                    target_user_id:
+                      type: string
+                    target_username:
+                      type: string
+                    title:
+                      type: string
+                    topic_id:
+                      type: integer
+                    user_id:
+                      type: integer
+                    username:
+                      type: string
+
