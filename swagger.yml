@@ -11924,6 +11924,29 @@ paths:
         '200':
           description: |
             empty response body
+  /admin/site_settings/discourse_narrative_bot_enabled:
+    put:
+      description: |
+        enable discourse narrative bot
+      tags:
+        - Site Settings Narrative Bot
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - discourse_narrative_bot_enabled
+            properties:
+              discourse_narrative_bot_enabled:
+                type: boolean
+                example: true
+                description: |
+                  Enable Discourse Narrative Bot
+      responses:
+        200:
+          description: |
+            empty response body
   /admin/plugins:
     get:
       description: |
@@ -12404,4 +12427,3 @@ paths:
                       type: integer
                     username:
                       type: string
-
