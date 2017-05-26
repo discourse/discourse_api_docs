@@ -11947,6 +11947,29 @@ paths:
         200:
           description: |
             empty response body
+  /admin/site_settings/disable_discourse_narrative_bot_welcome_post:
+    put:
+      description: |
+        disable discourse narrative bot welcome post
+      tags:
+        - Site Settings Narrative Bot
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - disable_discourse_narrative_bot_welcome_post
+            properties:
+              disable_discourse_narrative_bot_welcome_post:
+                type: boolean
+                example: false
+                description: |
+                  disable discourse narrative bot welcome post
+      responses:
+        200:
+          description: |
+            empty response body
   /admin/plugins:
     get:
       description: |
