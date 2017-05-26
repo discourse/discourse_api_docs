@@ -716,6 +716,16 @@ paths:
               type:
                 type: string
                 example: uploaded
+      responses:
+        200:
+          description: |
+            update avatar response
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+                example: OK
   /users/{username}/preferences/email:
     put:
       description: |
