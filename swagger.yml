@@ -11980,6 +11980,29 @@ paths:
         200:
           description: |
             empty response body
+  /admin/site_settings/discourse_narrative_bot_disable_public_replies:
+    put:
+      description: |
+        discourse narrative bot disable public replies
+      tags:
+        - Site Settings Narrative Bot
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - discourse_narrative_bot_disable_public_replies
+            properties:
+              discourse_narrative_bot_disable_public_replies:
+                type: boolean
+                example: false
+                description: |
+                  Disable public replies by Discourse Narrative Bot
+      responses:
+        200:
+          description: |
+            empty response body
   /admin/plugins:
     get:
       description: |
