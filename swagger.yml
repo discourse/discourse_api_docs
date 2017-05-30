@@ -12026,6 +12026,29 @@ paths:
         200:
           description: |
             empty response body
+  /admin/site_settings/discourse_narrative_bot_welcome_post_delay:
+    put:
+      description: |
+        discourse narrative bot welcome post delay
+      tags:
+        - Site Settings Narrative Bot
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - discourse_narrative_bot_welcome_post_delay
+            properties:
+              discourse_narrative_bot_welcome_post_delay:
+                type: integer
+                example: 0
+                description: |
+                  discourse narrative bot welcome post delay
+      responses:
+        200:
+          description: |
+            empty response body
   /admin/plugins:
     get:
       description: |
