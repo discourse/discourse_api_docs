@@ -12003,6 +12003,29 @@ paths:
         200:
           description: |
             empty response body
+  /admin/site_settings/discourse_narrative_bot_ignored_usernames:
+    put:
+      description: |
+        discourse narrative bot ignored usernames
+      tags:
+        - Site Settings Narrative Bot
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - discourse_narrative_bot_ignored_usernames
+            properties:
+              discourse_narrative_bot_ignored_usernames:
+                type: boolean
+                example: discourse|steve
+                description: |
+                  Usernames that the Discourse Narrative Bot should ignore. Pipe delimited.
+      responses:
+        200:
+          description: |
+            empty response body
   /admin/plugins:
     get:
       description: |
