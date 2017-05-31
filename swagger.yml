@@ -12044,7 +12044,33 @@ paths:
                 type: integer
                 example: 0
                 description: |
-                  discourse narrative bot welcome post delay
+                  Wait (n) seconds before sending the Discourse Narrative Bot welcome post.
+      responses:
+        200:
+          description: |
+            empty response body
+  /admin/site_settings/discourse_narrative_bot_welcome_post_type:
+    put:
+      description: |
+        discourse narrative bot welcome post type
+      tags:
+        - Site Settings Narrative Bot
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - discourse_narrative_bot_welcome_post_type
+            properties:
+              discourse_narrative_bot_welcome_post_delay:
+                type: string
+                example: new_user_track
+                enum:
+                  - new_user_track
+                  - welcome_message
+                description: |
+                  Type of welcome post that the Discourse Narrative Bot should send out
       responses:
         200:
           description: |
