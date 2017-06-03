@@ -12237,6 +12237,31 @@ paths:
                 type: array
               users:
                 type: array
+  /user-badges/{username}.json:
+    get:
+      description: |
+        get a list of badges assigned to a user
+      tags:
+        - Badges
+      responses:
+        200:
+          description: |
+            list of badges assigned to a user response
+          schema:
+            type: object
+            properties:
+              badge_types:
+                type: array
+              badges:
+                type: array
+              granted_bies:
+                type: array
+              topics:
+                type: array
+              user_badges:
+                type: array
+              users:
+                type: array
   /admin/badges.json:
     get:
       description: |
