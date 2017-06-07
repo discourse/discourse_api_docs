@@ -12630,3 +12630,42 @@ paths:
                       type: integer
                     username:
                       type: string
+  /admin/api/web_hooks:
+    post:
+      description: |
+        create a web hook
+      tags:
+        - Web Hooks
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            properties:
+              payload_url:
+                type: string
+              content_type:
+                type: integer
+              secret:
+                type: string
+              wildcard_web_hook:
+                type: boolean
+              verify_certificate:
+                type: boolean
+              active:
+                type: boolean
+              web_hook_event_type_ids:
+                type: array
+              category_ids:
+                type: array
+              group_ids:
+                type: array
+      responses:
+        200:
+          description: |
+            create a web hook response
+          schema:
+            type: object
+            properties:
+              web_hook:
+                type: object
