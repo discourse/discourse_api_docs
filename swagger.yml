@@ -12669,3 +12669,26 @@ paths:
             properties:
               web_hook:
                 type: object
+                properties:
+                  active:
+                    type: boolean
+                  category_ids:
+                    type: array
+                  content_type:
+                    type: integer
+                  group_ids:
+                    type: array
+                  id:
+                    type: integer
+                  last_delivery_status:
+                    type: integer
+                  payload_url:
+                    type: string
+                  secret:
+                    type: string
+                  verify_certificate:
+                    type: string
+                  web_hook_event_types:
+                    type: array
+                  wildcard_web_hook:
+                    type: boolean
