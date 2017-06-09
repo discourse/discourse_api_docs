@@ -12690,5 +12690,12 @@ paths:
                     type: string
                   web_hook_event_types:
                     type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
                   wildcard_web_hook:
                     type: boolean
