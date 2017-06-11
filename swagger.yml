@@ -12699,3 +12699,21 @@ paths:
                           type: string
                   wildcard_web_hook:
                     type: boolean
+  /admin/backups/readonly:
+    put:
+      description: |
+        update readonly mode
+      tags:
+        - Readonly
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            properties:
+              enable:
+                type: boolean
+                example: false
+      responses:
+        200:
+          description: empty response body
