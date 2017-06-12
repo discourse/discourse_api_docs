@@ -12704,7 +12704,7 @@ paths:
       description: |
         update readonly mode
       tags:
-        - Readonly
+        - Backups
       parameters:
         - name: body
           in: body
@@ -12717,3 +12717,25 @@ paths:
       responses:
         200:
           description: empty response body
+  /admin/logs/staff_action_logs.json:
+    get:
+      description: |
+        get staff action logs
+      tags:
+        - Logs
+      responses:
+        200:
+          description: |
+            staff action logs response
+          schema:
+            type: object
+            properties:
+              user_history_actions:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+              staff_action_logs:
+                type: object
