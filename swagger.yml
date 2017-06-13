@@ -12739,3 +12739,45 @@ paths:
                     type: string
               staff_action_logs:
                 type: object
+                properties:
+                  action_name:
+                    type: string
+                  details:
+                    type: string
+                  context:
+                    type: string
+                  ip_address:
+                    type: string
+                  email:
+                    type: string
+                  created_at:
+                    type: string
+                  subject:
+                    type: string
+                  previous_value:
+                    type: string
+                  new_value:
+                    type: string
+                  topic_id:
+                    type: integer
+                  post_id:
+                    type: integer
+                  category_id:
+                    type: integer
+                  action:
+                    type: integer
+                  custom_type:
+                    type: string
+                  id:
+                    type: integer
+                  acting_user:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      username:
+                        type: string
+                      avatar_template:
+                        type: string
+                  target_user:
+                    type: string
