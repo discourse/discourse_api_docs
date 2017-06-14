@@ -12723,6 +12723,15 @@ paths:
         get staff action logs
       tags:
         - Logs
+      parameters:
+        - name: action_name
+          in: query
+          required: false
+          type: string
+        - name: action_id
+          in: query
+          required: false
+          type: integer
       responses:
         200:
           description: |
