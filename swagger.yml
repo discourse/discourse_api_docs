@@ -12789,4 +12789,35 @@ paths:
                       avatar_template:
                         type: string
                   target_user:
+  /about.json:
+    get:
+      description: |
+        fetch about page data
+      tags:
+        - About
+      responses:
+        200:
+          description: |
+            about page data response
+          schema:
+            type: object
+            properties:
+              about:
+                type: object
+                properties:
+                  stats:
+                    type: object
+                  description:
                     type: string
+                  title:
+                    type: string
+                  locale:
+                    type: string
+                  version:
+                    type: string
+                  https:
+                    type: boolean
+                  moderators:
+                    type: array
+                  admins:
+                    type: array
