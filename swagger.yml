@@ -12819,5 +12819,31 @@ paths:
                     type: boolean
                   moderators:
                     type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        username:
+                          type: string
+                        avatar_template:
+                          type: string
+                        name:
+                          type: string
+                        title:
+                          type: string
                   admins:
                     type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        username:
+                          type: string
+                        avatar_template:
+                          type: string
+                        name:
+                          type: string
+                        title:
+                          type: string
