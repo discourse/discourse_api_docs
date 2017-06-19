@@ -314,6 +314,20 @@ paths:
           description: invite response
           schema:
             $ref: 'definitions/topics/invite.yml'
+  /t/{topic_id}/bookmark:
+    put:
+      description: |
+        bookmark a topic
+      tags:
+        - Topics
+      parameters:
+        - name: topic_id
+          in: path
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: empty response body
   /topics/private-messages/{username}.json:
     get:
       description: |
