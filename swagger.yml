@@ -12861,3 +12861,24 @@ paths:
                           type: string
                         title:
                           type: string
+  /polls/vote:
+    put:
+      description: |
+        vote on a poll
+      tags:
+        - Poll Plugin
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            properties:
+              post_id:
+                type: integer
+              poll_name:
+                type: string
+              options[]:
+                type: string
+      responses:
+        200:
+          description: vote on a poll response
