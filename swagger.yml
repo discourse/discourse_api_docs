@@ -12881,4 +12881,35 @@ paths:
                 type: string
       responses:
         200:
-          description: vote on a poll response
+          description: |
+            vote on a poll response
+          schema:
+            type: object
+            properties:
+              poll:
+                type: object
+                properties:
+                  options:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      html:
+                        type: string
+                      votes:
+                        type: integer
+                  voters:
+                    type: integer
+                  status:
+                    type: string
+                    example: open
+                  name:
+                    type: string
+                    example: poll
+                  type:
+                    type: string
+                    example: regular
+              vote:
+                type: array
+                items:
+                  type: string
