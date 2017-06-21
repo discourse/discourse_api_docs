@@ -1,5 +1,3 @@
-$schema: 'http://json-schema.org/draft-04/schema#'
-description: ""
 type: object
 properties:
   post_stream:
@@ -7,43 +5,8 @@ properties:
     properties:
       posts:
         type: array
-        uniqueItems: true
-        minItems: 1
         items:
-          required:
-            - id
-            - name
-            - username
-            - avatar_template
-            - created_at
-            - cooked
-            - post_number
-            - post_type
-            - updated_at
-            - reply_count
-            - quote_count
-            - incoming_link_count
-            - reads
-            - score
-            - yours
-            - topic_id
-            - topic_slug
-            - display_username
-            - version
-            - can_edit
-            - can_delete
-            - can_recover
-            - can_wiki
-            - read
-            - moderator
-            - admin
-            - staff
-            - user_id
-            - hidden
-            - trust_level
-            - user_deleted
-            - can_view_edit_history
-            - wiki
+          type: object
           properties:
             id:
               type: number
@@ -143,6 +106,38 @@ properties:
               type: boolean
             wiki:
               type: boolean
+            polls:
+              type: object
+              properties:
+                poll:
+                  type: object
+                  properties:
+                    options:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                          html:
+                            type: string
+                          votes:
+                            type: integer
+                    voters:
+                      type: integer
+                    status:
+                      type: string
+                    name:
+                      type: string
+                    type:
+                      type: string
+            polls_votes:
+              type: object
+              properties:
+                poll:
+                  type: array
+                  items:
+                    type: string
       stream:
         type: array
         uniqueItems: null
