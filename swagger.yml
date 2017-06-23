@@ -781,7 +781,7 @@ paths:
         - Users
       parameters:
         - name: period
-          in: path
+          in: query
           required: true
           type: string
           enum:
@@ -792,7 +792,7 @@ paths:
             - yearly
             - all
         - name: order
-          in: path
+          in: query
           required: true
           type: string
           enum:
@@ -804,13 +804,13 @@ paths:
             - posts_read
             - days_visited
         - name: asc
-          in: path
+          in: query
           required: false
           type: boolean
           enum:
             - true
         - name: page
-          in: path
+          in: query
           required: false
           type: integer
       responses:
