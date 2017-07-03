@@ -12913,3 +12913,22 @@ paths:
                 type: array
                 items:
                   type: string
+  /admin/users/{id}/log_out:
+    post:
+      description: |
+        log a user out
+      tags:
+        - Users
+      parameters:
+        - name: id
+          in: path
+      responses:
+        200:
+          description: |
+            log a user out response
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+                example: OK
