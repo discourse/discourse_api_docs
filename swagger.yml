@@ -1082,6 +1082,21 @@ paths:
         200:
           description: |
             empty response body
+  /admin/users/{id}.json:
+    delete:
+      description: |
+        Delete a user
+      tags:
+        - Users
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+      responses:
+        200:
+          description: |
+            empty response body
   /admin/users/list/{flag}.json:
     get:
       description: |
