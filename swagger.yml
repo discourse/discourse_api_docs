@@ -71,13 +71,17 @@ paths:
   /c/{id}.json:
     get:
       description: |
-        Get a single category
+        Get a list of topics in the specified category
       tags:
         - Categories
       parameters:
         - name: id
           in: path
           required: true
+          type: integer
+        - name: page
+          in: query
+          require: false
           type: integer
       responses:
         200:
