@@ -266,7 +266,7 @@ paths:
         '200':
           description: |
             delete topic response is empty, just a status code
-  /t/{slug}/{id}.json:
+  /t/-/{id}.json:
     put:
       description: |
         Update a single topic
@@ -291,7 +291,7 @@ paths:
           description: update topic response
           schema:
             $ref: 'definitions/topics/update_topic_response.yml'
-  /t/{topic_id}/invite:
+  /t/{id}/invite:
     post:
       description: |
         Invite user to topic
@@ -299,7 +299,7 @@ paths:
         - Invites
         - Topics
       parameters:
-        - name: topic_id
+        - name: id
           in: path
           required: true
           type: integer
@@ -318,20 +318,57 @@ paths:
           description: invite response
           schema:
             $ref: 'definitions/topics/invite.yml'
-  /t/{topic_id}/bookmark:
+  /t/{id}/bookmark:
     put:
       description: |
         bookmark a topic
       tags:
         - Topics
       parameters:
-        - name: topic_id
+        - name: id
           in: path
           required: true
           type: integer
       responses:
         '200':
           description: empty response body
+  /t/{id}/status:
+    put:
+      description: |
+        close a topic
+      tags:
+        - Topics
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            required:
+              - enabled
+              - status
+            properties:
+              enabled:
+                type: boolean
+                example: true
+              status:
+                type: string
+                example: closed
+      responses:
+        200:
+          description: close a topic response
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+                example: OK
+              topic_status_update:
+                type: object
   /topics/private-messages/{username}.json:
     get:
       description: |
