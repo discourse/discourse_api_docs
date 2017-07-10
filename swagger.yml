@@ -1143,7 +1143,6 @@ paths:
       description: |
         returns a list of users
       tags:
-        - Admin
         - Users
       parameters:
         - name: flag
@@ -1183,6 +1182,10 @@ paths:
           in: query
           required: false
           type: integer
+        - name: show_emails
+          in: query
+          required: false
+          type: boolean
       responses:
         '200':
           description: list of users response

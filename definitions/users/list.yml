@@ -5,34 +5,9 @@ minItems: 1
 uniqueItems: true
 items:
   type: object
-  required:
-    - id
-    - username
-    - avatar_template
-    - email
-    - active
-    - admin
-    - moderator
-    - last_seen_at
-    - last_emailed_at
-    - created_at
-    - last_seen_age
-    - last_emailed_age
-    - created_at_age
-    - username_lower
-    - trust_level
-    - trust_level_locked
-    - flag_level
-    - blocked
-    - time_read
-    - staged
-    - days_visited
-    - posts_read_count
-    - topics_entered
-    - post_count
   properties:
     id:
-      type: number
+      type: integer
     username:
       type: string
       minLength: 1
@@ -70,12 +45,13 @@ items:
       type: string
       minLength: 1
     trust_level:
-      type: number
+      type: integer
     trust_level_locked:
       type: boolean
     flag_level:
-      type: number
+      type: integer
     title:
+      type: string
     suspended_at:
       type: object
     suspended_till:
@@ -90,10 +66,10 @@ items:
     staged:
       type: boolean
     days_visited:
-      type: number
+      type: integer
     posts_read_count:
-      type: number
+      type: integer
     topics_entered:
-      type: number
+      type: integer
     post_count:
-      type: number
+      type: integer
