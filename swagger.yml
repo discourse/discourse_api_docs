@@ -456,46 +456,6 @@ paths:
           schema:
             type: string
             example: "http://forum.com/invites/token_value"
-  /invites/disposable:
-    post:
-      description: |
-        Create disposable invite token
-      tags:
-        - Invites
-      parameters:
-        - name: body
-          in: body
-          schema:
-            type: object
-            required:
-              - username
-            properties:
-              username:
-                type: string
-              email:
-                type: string
-              quantity:
-                type: integer
-              group_names:
-                type: string
-      responses:
-        '200':
-          description: disposable invites response
-          schema:
-            type: array
-            items:
-              type: string
-        '429':
-          description: rate limit response
-          schema:
-            type: object
-            properties:
-              errors:
-                type: array
-                items:
-                  type: string
-              error_type:
-                type: string
   /tag_groups.json:
     get:
       description: |
