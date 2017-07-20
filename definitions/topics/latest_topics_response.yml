@@ -4,22 +4,15 @@ type: object
 properties:
   users:
     type: array
-    uniqueItems: true
-    minItems: 1
     items:
-      required:
-        - id
-        - username
-        - avatar_template
+      type: object
       properties:
         id:
-          type: number
+          type: integer
         username:
           type: string
-          minLength: 1
         avatar_template:
           type: string
-          minLength: 1
   topic_list:
     type: object
     properties:
