@@ -26,7 +26,7 @@ properties:
       draft_sequence:
         type: object
       per_page:
-        type: number
+        type: integer
       topics:
         type: array
         uniqueItems: true
@@ -57,9 +57,10 @@ properties:
             - last_poster_username
             - category_id
             - pinned_globally
+          type: object
           properties:
             id:
-              type: number
+              type: integer
             title:
               type: string
               minLength: 1
@@ -70,11 +71,11 @@ properties:
               type: string
               minLength: 1
             posts_count:
-              type: number
+              type: integer
             reply_count:
-              type: number
+              type: integer
             highest_post_number:
-              type: number
+              type: integer
             image_url:
               type: object
             created_at:
@@ -108,9 +109,9 @@ properties:
             liked:
               type: object
             views:
-              type: number
+              type: integer
             like_count:
-              type: number
+              type: integer
             has_summary:
               type: boolean
             archetype:
@@ -120,7 +121,7 @@ properties:
               type: string
               minLength: 1
             category_id:
-              type: number
+              type: integer
             pinned_globally:
               type: boolean
             posters:
@@ -132,6 +133,7 @@ properties:
                   - extras
                   - description
                   - user_id
+                type: object
                 properties:
                   extras:
                     type: string
@@ -140,7 +142,7 @@ properties:
                     type: string
                     minLength: 1
                   user_id:
-                    type: number
+                    type: integer
     required:
       - can_create_topic
       - draft_key
