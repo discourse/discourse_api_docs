@@ -12951,3 +12951,48 @@ paths:
               success:
                 type: string
                 example: OK
+  /page_view_total_reqs:
+    get:
+      description: |
+        return the last month of pageviews
+      tags:
+        - Reports
+      responses:
+        200:
+          description: |
+            pageviews response
+          schema:
+            type: object
+            properties:
+              report:
+                type: object
+                properties:
+                  type:
+                    type: string
+                  title:
+                    type: string
+                  xaxis:
+                    type: string
+                  yaxis:
+                    type: string
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        x:
+                          type: string
+                        y:
+                          type: integer
+                  total:
+                    type: integer
+                  start_date:
+                    type: string
+                  end_date:
+                    type: string
+                  category_id:
+                    type: integer
+                  group_id:
+                    type: integer
+                  prev30Days:
+                    type: integer
