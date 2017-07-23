@@ -12954,9 +12954,26 @@ paths:
   /page_view_total_reqs:
     get:
       description: |
-        return the last month of pageviews
+        return pageview stats, defaults to one month
       tags:
         - Reports
+      parameters:
+        - name: start_date
+          in: query
+          type: string
+          required: false
+        - name: end_date
+          in: query
+          type: string
+          required: false
+        - name: category_id
+          in: query
+          type: integer
+          required: false
+        - name: group_id
+          in: query
+          type: integer
+          required: false
       responses:
         200:
           description: |
