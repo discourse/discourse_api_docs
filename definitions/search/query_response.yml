@@ -17,6 +17,7 @@ properties:
         - blurb
         - post_number
         - topic_id
+      type: object
       properties:
         id:
           type: number
@@ -71,6 +72,7 @@ properties:
         - archetype
         - category_id
         - pinned_globally
+      type: object
       properties:
         id:
           type: number
