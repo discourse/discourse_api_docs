@@ -18,3 +18,5 @@ properties:
     type: boolean
   approved:
     type: boolean
+  user_fields[1]:
+    type: string
