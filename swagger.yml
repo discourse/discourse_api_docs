@@ -13013,3 +13013,45 @@ paths:
                     type: integer
                   prev30Days:
                     type: integer
+  /export_csv/export_entity.json:
+    post:
+      description: |
+        Start export of a report
+      tags:
+        - Reports
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            required:
+              - entity
+              - args[name]
+              - args[start_date]
+              - args[end_date]
+            properties:
+              entity:
+                type: string
+                example: report
+              args[name]:
+                type: string
+                example: page_view_total_reqs
+              args[start_date]:
+                type: string
+                example: YYYY-mm-dd
+              args[end_date]:
+                type: string
+                example: YYYY-mm-dd
+              args[group_id]:
+                type: integer
+      responses:
+        200:
+          description: |
+            Export report response
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+                example: OK
