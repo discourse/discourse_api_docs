@@ -13055,3 +13055,24 @@ paths:
               success:
                 type: string
                 example: OK
+  /user_avatar/{username}/refresh_gravatar.json:
+    post:
+      description: |
+        Refresh a users gravatar
+      tags:
+        - Users
+      parameters:
+        - name: username
+          in: path
+          required: true
+      responses:
+        200:
+          description: |
+            Refresh a users gravatar response
+          schemea:
+            type: object
+            properties:
+              gravatar_upload_id:
+                type: integer
+              gravatar_avatar_template:
+                type: string
