@@ -13064,12 +13064,13 @@ paths:
       parameters:
         - name: username
           in: path
+          type: string
           required: true
       responses:
         200:
           description: |
             Refresh a users gravatar response
-          schemea:
+          schema:
             type: object
             properties:
               gravatar_upload_id:
