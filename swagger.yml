@@ -1151,12 +1151,11 @@ paths:
           description: list of users response
           schema:
             $ref: 'definitions/users/list.yml'
-  /admin/groups.json:
+  /groups/search.json:
     get:
       description: |
         Get some groups
       tags:
-        - Admin
         - Groups
       responses:
         '200':
