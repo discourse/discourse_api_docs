@@ -739,8 +739,8 @@
 							"enabled": true
 						},
 						{
-							"key": "duration",
-							"value": "1",
+							"key": "suspend_untill",
+							"value": "3017-11-14",
 							"type": "text",
 							"enabled": false
 						},
@@ -21806,8 +21806,8 @@
 							"enabled": true
 						},
 						{
-							"key": "duration",
-							"value": "99999",
+							"key": "suspend_untill",
+							"value": "3017-11-14",
 							"type": "text",
 							"enabled": true
 						},
