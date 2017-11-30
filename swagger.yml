@@ -936,11 +936,11 @@ paths:
           schema:
             type: object
             required:
-              - duration
+              - suspend_until
               - reason
             properties:
-              duration:
-                type: integer
+              suspend_until:
+                type: string
               reason:
                 type: string
       responses:
