@@ -936,10 +936,10 @@ paths:
           schema:
             type: object
             required:
-              - suspend_untill
+              - suspend_until
               - reason
             properties:
-              suspend_untill:
+              suspend_until:
                 type: string
               reason:
                 type: string
