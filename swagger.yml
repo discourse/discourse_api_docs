@@ -12282,7 +12282,7 @@ paths:
                 type: array
               users:
                 type: array
-  /user_badges/{username}.json:
+  /user-badges/{username}.json:
     get:
       description: |
         get a list of badges assigned to a user
@@ -12307,7 +12307,7 @@ paths:
                 type: array
               users:
                 type: array
-  /user_badges.json:
+  /user-badges.json:
     post:
       description: |
         assign a badge to a user
