@@ -12307,7 +12307,7 @@ paths:
                 type: array
               users:
                 type: array
-  /user-badges.json:
+  /user_badges.json:
     post:
       description: |
         assign a badge to a user
