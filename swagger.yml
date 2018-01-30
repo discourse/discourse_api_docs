@@ -9166,7 +9166,7 @@ paths:
             properties:
               long_polling_interval:
                 type: integer
-                example: true
+                example: 25000
                 description: |
                   "Amount of time the server should wait before responding to clients when there is no data to send (logged on users only)"
       responses:
