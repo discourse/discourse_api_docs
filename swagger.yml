@@ -335,7 +335,7 @@ paths:
   /t/{id}/status:
     put:
       description: |
-        close a topic
+        Update a topics status
       tags:
         - Topics
       parameters:
@@ -349,18 +349,33 @@ paths:
           schema:
             type: object
             required:
-              - enabled
               - status
+              - enabled
             properties:
+              status:
+                type: string
+                example: pinned
+                description: |
+                  A lowercase string. Valid values shown above.
+                enum:
+                  - closed
+                  - pinned
+                  - pinned-globally
+                  - archived
+                  - visible
               enabled:
                 type: boolean
                 example: true
-              status:
+                description: |
+                 This would be true or false
+              until:
                 type: string
-                example: closed
+                example: '2018-12-31'
+                description: |
+                  Only required for pinned and pinned-globally.
       responses:
         200:
-          description: close a topic response
+          description: Update a Topics Status
           schema:
             type: object
             properties:
@@ -12478,35 +12493,6 @@ paths:
         200:
           description: |
             create a timed topic response
-  /t/{id}/status:
-    put:
-      description: |
-        Update a topics status
-      tags:
-        - Topics
-      parameters:
-        - name: body
-          in: body
-          schema:
-            type: object
-            properties:
-              status:
-                type: string
-                example: closed
-                enum:
-                  - closed
-                  - visible
-                  - archived
-                  - pinned_globally
-              enabled:
-                type: boolean
-                example: true
-              until:
-                type: string
-      responses:
-        200:
-          description: |
-            update status response
   /t/{id}/change-timestamp:
     put:
       description: |
