@@ -195,6 +195,29 @@ paths:
           description: update post response
           schema:
             $ref: 'definitions/posts/update_post_response.yml'
+  /posts/{id}/locked:
+    put:
+      description: |
+        Lock a post from being edited
+      tags:
+        - Posts
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+        - name: body
+          in: body
+          schema: 
+            type: object
+            required:
+              - locked
+            properties:
+              locked:
+                type: boolean
+                example: true
+                description: |
+                  True or False
   /post_actions:
     post:
       description: |
