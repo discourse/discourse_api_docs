@@ -12197,7 +12197,8 @@ paths:
       responses:
         200:
           description: |
-            list of backups response
+            "List of backups response. NOTE: Backups link urls cannot be called directly."
+            "Please create a PUT request to download a backup."
           schema:
             type: array
             items:
@@ -12235,6 +12236,23 @@ paths:
               success:
                 type: string
                 example: OK
+  /admin/backups/{filename}:
+    put:
+      description: |
+        Download a backup. Sends an email to the account specified by your api_username
+        with a link and token to download the backup.
+      tags:
+        - Backups
+      parameters:
+        - name: filename
+          in: path
+          required: true
+          example: discourse-2018-02-22-075414-v20180127005644.tar.gz
+          type: string
+      responses:
+        200:
+          description: |
+            Send an email to download backup response
   /admin/emails/{action}.json:
     get:
       description: |
