@@ -10,14 +10,8 @@ items:
     - automatic
     - name
     - user_count
-    - alias_level
-    - visible
     - automatic_membership_retroactive
     - primary_group
-    - notification_level
-    - has_messages
-    - is_member
-    - mentionable
   properties:
     id:
       type: number
@@ -26,12 +20,16 @@ items:
     name:
       type: string
       minLength: 1
+    display_name:
+      type: string
     user_count:
       type: number
-    alias_level:
+    mentionable_level:
       type: number
-    visible:
-      type: boolean
+    messageable_level:
+      type: number
+    visibility_level:
+      type: number
     automatic_membership_email_domains:
       type: object
     automatic_membership_retroactive:
@@ -44,13 +42,7 @@ items:
       type: object
     incoming_email:
       type: object
-    notification_level:
-      type: number
     has_messages:
-      type: boolean
-    is_member:
-      type: boolean
-    mentionable:
       type: boolean
     flair_url:
       type: object
@@ -58,3 +50,22 @@ items:
       type: object
     flair_color:
       type: object
+    bio_raw:
+      type: object
+    bio_cooked:
+      type: object
+    public_admission:
+      type: boolean
+    public_exit:
+      type: boolean
+    allow_membership_requests:
+      type: boolean
+    full_name:
+      type: string
+    default_notification_level:
+      type: number
+    membership_request_template:
+      type: object
+    is_group_user:
+      type: boolean
+

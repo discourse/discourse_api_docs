@@ -1,0 +1,81 @@
+type: object
+$schema: 'http://json-schema.org/draft-04/schema#'
+description: ""
+properties:
+  group:
+    type: object
+    required:
+      - id
+      - automatic
+      - name
+      - user_count
+      - automatic_membership_retroactive
+      - primary_group
+    properties:
+      id:
+        type: number
+      automatic:
+        type: boolean
+      name:
+        type: string
+        minLength: 1
+      user_count:
+        type: number
+      mentionable_level:
+        type: number
+      messageable_level:
+        type: number
+      visibility_level:
+        type: number
+      automatic_membership_email_domains:
+        type: object
+      automatic_membership_retroactive:
+        type: boolean
+      primary_group:
+        type: boolean
+      title:
+        type: object
+      grant_trust_level:
+        type: object
+      incoming_email:
+        type: object
+      has_messages:
+        type: boolean
+      flair_url:
+        type: object
+      flair_bg_color:
+        type: object
+      flair_color:
+        type: object
+      bio_raw:
+        type: object
+      bio_cooked:
+        type: object
+      public_admission:
+        type: boolean
+      public_exit:
+        type: boolean
+      allow_membership_requests:
+        type: boolean
+      full_name:
+        type: string
+      default_notification_level:
+        type: number
+      membership_request_template:
+        type: object
+      is_group_user:
+        type: boolean
+      is_group_owner:
+        type: boolean
+      mentionable:
+        type: boolean
+      messageable:
+        type: boolean
+  extras:
+    type: object
+    properties:
+      visible_group_names:
+        type: array
+        items:
+          type: string
+

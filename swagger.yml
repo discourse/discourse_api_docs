@@ -1189,7 +1189,7 @@ paths:
           description: list of users response
           schema:
             $ref: 'definitions/users/list.yml'
-  /groups/search.json:
+  /groups.json:
     get:
       description: |
         Get some groups
@@ -1200,6 +1200,30 @@ paths:
           description: groups response
           schema:
             $ref: 'definitions/groups/get_groups_response.yml'
+  /groups/{name}.json:
+    get:
+      description: |
+        Get a specific group
+      tags:
+        - Groups
+      responses:
+        '200':
+          description: group response
+          schema:
+            $ref: 'definitions/groups/get_group_response.yml'
+    put:
+      description: |
+        Update a group
+      tags:
+        - Groups
+      responses:
+        200:
+          description: update group response
+          schema:
+            type: object
+            properties:
+              basic_group:
+                type: object
   /admin/groups:
     post:
       description: |
@@ -1237,19 +1261,6 @@ paths:
             properties:
               success:
                 type: string
-    put:
-      description: |
-        Update a group
-      tags:
-        - Groups
-      responses:
-        200:
-          description: update group response
-          schema:
-            type: object
-            properties:
-              basic_group:
-                type: object
   /groups/{group_name}/members.json:
     get:
       description: |
