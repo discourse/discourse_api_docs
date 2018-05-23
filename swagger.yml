@@ -1132,10 +1132,33 @@ paths:
           in: path
           required: true
           type: integer
+        - name: delete_posts
+          in: query
+          required: false
+          type: boolean
       responses:
         200:
           description: |
-            empty response body
+            Successful delete response
+          schema:
+            type: object
+            properties:
+              deleted:
+                type: boolean
+                example: true
+        403:
+          description: |
+            Could not delete user response
+          schema:
+            type: object
+            properties:
+              deleted:
+                type: boolean
+                example: false
+              message:
+                type: string
+                example: |
+                  You either don't have permission to delete this user or they have existing posts
   /admin/users/list/{flag}.json:
     get:
       description: |
