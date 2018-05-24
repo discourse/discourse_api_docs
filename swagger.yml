@@ -208,7 +208,7 @@ paths:
           type: integer
         - name: body
           in: body
-          schema: 
+          schema:
             type: object
             required:
               - locked
@@ -344,7 +344,7 @@ paths:
   /t/{id}/bookmark:
     put:
       description: |
-        bookmark a topic
+        Bookmark a topic
       tags:
         - Topics
       parameters:
@@ -358,7 +358,7 @@ paths:
   /t/{id}/status:
     put:
       description: |
-        Update a topics status
+        Update a topic's status
       tags:
         - Topics
       parameters:
@@ -471,7 +471,7 @@ paths:
   /invites/link:
     post:
       description: |
-        generate an invite link but don't send an email
+        Generate an invite link but don't send an email
       tags:
         - Invites
       parameters:
@@ -933,7 +933,7 @@ paths:
   /admin/customize/email_templates.json:
     get:
       description: |
-        show list of email templates
+        Show list of email templates
       tags:
         - Admin Emails
       responses:
@@ -1048,7 +1048,7 @@ paths:
   /admin/users/{id}/anonymize:
     put:
       description: |
-        Anonymize a user
+        Anonymize a user's account by changing their username and email address to random values. This is non-reversable
       tags:
         - Admin
       parameters:
@@ -1162,7 +1162,7 @@ paths:
   /admin/users/list/{flag}.json:
     get:
       description: |
-        returns a list of users
+        Returns a list of users
       tags:
         - Users
       parameters:
@@ -1436,7 +1436,7 @@ paths:
   /users/password-reset/{token}:
     put:
       description: |
-        create a new password
+        Create a new password
       tags:
         - Password Reset
       parameters:
@@ -1459,7 +1459,7 @@ paths:
   /admin/site_settings.json:
     get:
       description: |
-        show site settings
+        Show site settings
       tags:
         - Admin
       responses:
