@@ -85,7 +85,7 @@ paths:
           type: integer
       responses:
         200:
-          description: category response
+          description: Category response
           schema:
             $ref: 'definitions/categories/category_response.yml'
   /categories/{id}:
@@ -102,10 +102,25 @@ paths:
             $ref: 'definitions/categories/update_category.yml'
       responses:
         200:
-          description: update category response
+          description: Update category response
           schema:
             $ref: 'definitions/categories/update_category_response.yml'
-  /posts:
+  /posts.json:
+    get:
+      description: |
+        Get a list of the latest posts across topics
+      tags:
+        - Posts
+      parameters:
+        - name: before
+          in: path
+          required: false
+          type: integer
+      responses:
+        200:
+          description: Latest posts response
+          schema:
+            $ref: 'definitions/posts/get_posts_response.yml'
     post:
       description: |
         Create a new topic, a new post, or a private message
