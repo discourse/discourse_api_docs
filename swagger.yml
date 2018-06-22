@@ -994,6 +994,7 @@ paths:
             properties:
               suspend_until:
                 type: string
+                example: '2018-06-22'
               reason:
                 type: string
       responses:
