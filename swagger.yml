@@ -768,7 +768,7 @@ paths:
   /users/{username}/preferences/avatar/pick:
     put:
       description: |
-        update avatar
+        Update avatar
       tags:
         - Users
       parameters:
@@ -799,7 +799,7 @@ paths:
   /users/{username}/preferences/email:
     put:
       description: |
-        update email
+        Update email
       tags:
         - Users
       parameters:
@@ -832,7 +832,7 @@ paths:
   /directory_items.json?period={period}&order={order}:
     get:
       description: |
-        get a public list of users
+        Get a public list of users
       tags:
         - Users
       parameters:
@@ -878,7 +878,7 @@ paths:
   /tags:
     get:
       description: |
-        get a list of tags
+        Get a list of tags
       tags:
         - Tags
       responses:
@@ -1140,6 +1140,23 @@ paths:
           description: |
             empty response body
   /admin/users/{id}.json:
+    get:
+      description: |
+        Get a specific user by id. Returns more info than the public user route.
+      tags:
+        - Users
+        - Admin
+      parameters:
+        - name: id
+          in: path
+          require: true
+          type: integer
+      responses:
+        200:
+          description: |
+            Successful get response
+          schema:
+            $ref: 'definitions/admin/get_user.yml'
     delete:
       description: |
         Delete a user
@@ -12665,7 +12682,7 @@ paths:
   /user_actions.json:
     get:
       description: |
-        get a list of user actions
+        Get a list of user actions
       tags:
         - Users
       parameters:
@@ -13013,7 +13030,7 @@ paths:
   /admin/users/{id}/log_out:
     post:
       description: |
-        log a user out
+        Log a user out
       tags:
         - Users
       parameters:

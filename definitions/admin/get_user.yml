@@ -1,0 +1,230 @@
+$schema: 'http://json-schema.org/draft-04/schema#'
+description: ""
+type: object
+properties:
+  id:
+    type: number
+  username:
+    type: string
+    minLength: 1
+  avatar_template:
+    type: string
+    minLength: 1
+  active:
+    type: boolean
+  admin:
+    type: boolean
+  moderator:
+    type: boolean
+  last_seen_at:
+    type: string
+    minLength: 1
+  last_emailed_at:
+    type: string
+    minLength: 1
+  created_at:
+    type: string
+    minLength: 1
+  last_seen_age:
+    type: number
+  last_emailed_age:
+    type: number
+  created_at_age:
+    type: number
+  username_lower:
+    type: string
+    minLength: 1
+  trust_level:
+    type: number
+  manual_locked_trust_level:
+    type: object
+  flag_level:
+    type: number
+  title:
+    type: object
+  suspended_at:
+    type: string
+    minLength: 1
+  suspended_till:
+    type: string
+    minLength: 1
+  suspended:
+    type: boolean
+  time_read:
+    type: number
+  staged:
+    type: boolean
+  days_visited:
+    type: number
+  posts_read_count:
+    type: number
+  topics_entered:
+    type: number
+  post_count:
+    type: number
+  name:
+    type: string
+    minLength: 1
+  can_send_activation_email:
+    type: boolean
+  can_activate:
+    type: boolean
+  can_deactivate:
+    type: boolean
+  ip_address:
+    type: string
+    minLength: 1
+  registration_ip_address:
+    type: string
+    minLength: 1
+  can_grant_admin:
+    type: boolean
+  can_revoke_admin:
+    type: boolean
+  can_grant_moderation:
+    type: boolean
+  can_revoke_moderation:
+    type: boolean
+  can_impersonate:
+    type: boolean
+  like_count:
+    type: number
+  like_given_count:
+    type: number
+  topic_count:
+    type: number
+  flags_given_count:
+    type: number
+  flags_received_count:
+    type: number
+  private_topics_count:
+    type: number
+  can_delete_all_posts:
+    type: boolean
+  can_be_deleted:
+    type: boolean
+  can_be_anonymized:
+    type: boolean
+  full_suspend_reason:
+    type: string
+    minLength: 1
+  silence_reason:
+    type: object
+  primary_group_id:
+    type: object
+  badge_count:
+    type: number
+  warnings_received_count:
+    type: number
+  user_fields:
+    type: object
+    properties:
+      '1':
+        type: object
+    required:
+      type: object
+  bounce_score:
+    type: number
+  reset_bounce_score_after:
+    type: object
+  can_view_action_logs:
+    type: boolean
+  can_disable_second_factor:
+    type: boolean
+  single_sign_on_record:
+    type: object
+  approved_by:
+    type: object
+  suspended_by:
+    type: object
+    properties:
+      id:
+        type: number
+      username:
+        type: string
+        minLength: 1
+      avatar_template:
+        type: string
+        minLength: 1
+    required:
+      - id
+      - username
+      - avatar_template
+  silenced_by:
+    type: object
+  groups:
+    type: array
+    uniqueItems: true
+    minItems: 1
+    items:
+      required:
+        - id
+        - automatic
+        - name
+        - display_name
+        - user_count
+        - mentionable_level
+        - messageable_level
+        - visibility_level
+        - automatic_membership_retroactive
+        - primary_group
+        - has_messages
+        - public_admission
+        - public_exit
+        - allow_membership_requests
+        - default_notification_level
+      properties:
+        id:
+          type: number
+        automatic:
+          type: boolean
+        name:
+          type: string
+          minLength: 1
+        display_name:
+          type: string
+          minLength: 1
+        user_count:
+          type: number
+        mentionable_level:
+          type: number
+        messageable_level:
+          type: number
+        visibility_level:
+          type: number
+        automatic_membership_email_domains:
+          type: object
+        automatic_membership_retroactive:
+          type: boolean
+        primary_group:
+          type: boolean
+        title:
+          type: object
+        grant_trust_level:
+          type: object
+        incoming_email:
+          type: object
+        has_messages:
+          type: boolean
+        flair_url:
+          type: object
+        flair_bg_color:
+          type: object
+        flair_color:
+          type: object
+        bio_raw:
+          type: object
+        bio_cooked:
+          type: object
+        public_admission:
+          type: boolean
+        public_exit:
+          type: boolean
+        allow_membership_requests:
+          type: boolean
+        full_name:
+          type: object
+        default_notification_level:
+          type: number
+        membership_request_template:
+          type: object
