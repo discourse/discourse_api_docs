@@ -1223,10 +1223,22 @@ paths:
           in: path
           required: true
           type: integer
-        - name: delete_posts
-          in: query
-          required: false
-          type: boolean
+        - name: body
+          in: body
+          schema:
+            type: object
+            properties:
+              delete_posts:
+                type: boolean
+              block_email:
+                type: boolean
+                example: false
+              block_urls:
+                type: boolean
+                example: false
+              block_ip:
+                type: boolean
+                example: false
       responses:
         200:
           description: |
