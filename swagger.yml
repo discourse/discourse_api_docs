@@ -1016,10 +1016,66 @@ paths:
       responses:
         '200':
           description: empty response body
-  /admin/users/{id}/block:
+  /admin/users/{id}/silence:
     put:
       description: |
-        Block a user
+        Silence a user
+      tags:
+        - Admin
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - silenced_till
+              - reason
+              - post_action
+            properties:
+              message:
+                type: string
+              silenced_till:
+                type: string
+                example: '2018-06-22'
+              reason:
+                type: string
+              post_action:
+                type: string
+                example: 'delete'
+      responses:
+        '200':
+          description: Silence a user response
+          schema:
+            type: object
+            properties:
+              silence:
+                type: object
+                properties:
+                  silenced:
+                    type: boolean
+                  silenced_reason:
+                    type: string
+                  silenced_till:
+                    type: string
+                  silenced_at:
+                    type: string
+                  silenced_by:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      username:
+                        type: string
+                      avatar_template:
+                        type: string
+  /admin/users/{id}/unsilence:
+    put:
+      description: |
+        Unsilence a user
       tags:
         - Admin
       parameters:
@@ -1029,21 +1085,21 @@ paths:
           type: integer
       responses:
         '200':
-          description: empty response body
-  /admin/users/{id}/unblock:
-    put:
-      description: |
-        Unblock a user
-      tags:
-        - Admin
-      parameters:
-        - name: id
-          in: path
-          required: true
-          type: integer
-      responses:
-        '200':
-          description: empty response body
+          description: Unsilence a user response
+          schema:
+            type: object
+            properties:
+              unsilence:
+                type: object
+                properties:
+                  silenced:
+                    type: boolean
+                  silenced_reason:
+                    type: string
+                  silenced_till:
+                    type: string
+                  silenced_at:
+                    type: string
   /admin/users/{id}/activate:
     put:
       description: |
