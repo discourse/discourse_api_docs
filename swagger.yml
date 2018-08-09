@@ -121,6 +121,7 @@ paths:
           description: Latest posts response
           schema:
             $ref: 'definitions/posts/get_posts_response.yml'
+  /posts:
     post:
       description: |
         Create a new topic, a new post, or a private message
