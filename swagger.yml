@@ -6,6 +6,10 @@ info:
   description: |
     Documentation on how to use Discourse through API calls.
 
+    ### Content-Type
+
+    The Content-Type must be set to “multipart/form-data” or you may receive a bad request response.
+
     ### Authentication
 
     Some endpoints do not require any authentication, pretty much anything else will
