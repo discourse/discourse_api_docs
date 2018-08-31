@@ -1420,6 +1420,7 @@ paths:
             properties:
               usernames:
                 type: string
+                example: "username1,username2"
       responses:
         '200':
           description: |
@@ -1429,6 +1430,9 @@ paths:
             properties:
               success:
                 type: string
+                example: OK
+              usernames:
+                type: array
     delete:
       description: |
         Delete a user from a group
