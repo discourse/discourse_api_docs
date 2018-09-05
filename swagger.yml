@@ -4,11 +4,28 @@ info:
   x-logo:
     url: "https://discourse-meta.s3-us-west-1.amazonaws.com/optimized/3X/9/d/9d543e92b15b06924249654667a81441a55867eb_1_690x184.png"
   description: |
-    Documentation on how to use Discourse through API calls.
+    This page contains the documentation on how to use Discourse through API calls.
 
-    ### Content-Type
+    > Note: This documentation is not complete, so for missing parts you may have to
+    [reverse engineer the Discourse API](https://meta.discourse.org/t/how-to-reverse-engineer-the-discourse-api/20576) to figure out how to use an API endpoint.
 
-    The Content-Type must be set to "application/x-www-form-urlencoded" or "multipart/form-data" otherwise you may receive a bad request response.
+    ### Request Content-Type
+
+    The Content-Type for POST and PUT requests must be set to `application/x-www-form-urlencoded`
+    or `multipart/form-data` otherwise you may receive a bad request response.
+
+    ### Endpoint Names and Response Content-Type
+
+    Most API endpoints provide the same content as their HTML counterparts. For example
+    the URL `/categories` serves a list of categories, the `/categories.json` API provides the
+    same information in JSON format.
+
+    Instead of sending API requests to `/categories.json` you may also send them to `/categories`
+    and add an `Accept: application/json` header to the request to get the JSON response.
+    Sending requests with the `Accept` header is necessary if you want to use URLs
+    for related endpoints returned by the API, such as pagination URLs.
+    These URLs are returned without the `.json` prefix so you need to add the header in
+    order to get the correct response format.
 
     ### Authentication
 
