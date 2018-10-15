@@ -718,6 +718,22 @@ paths:
           description: get user response
           schema:
             $ref: 'definitions/users/get_user_response.yml'
+  /u/by-external/{external_id}.json:
+    get:
+      description: |
+        Get a single user by SSO external ID
+      tags:
+        - Users
+      parameters:
+        - name: external_id
+          in: path
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: get user response
+          schema:
+            $ref: 'definitions/users/get_user_response.yml'
   /uploads.json:
     post:
       description: |
