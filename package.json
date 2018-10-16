@@ -18,9 +18,9 @@
   },
   "homepage": "https://github.com/oblakeerickson/discourse_api_docs#readme",
   "dependencies": {
-    "express": "^4.14.0",
-    "json-schema-generator": "^2.0.3",
-    "json-schema-ref-parser": "^3.1.2",
-    "yamljs": "^0.2.8"
+    "express": "^4.16.4",
+    "json-schema-generator": "^2.0.6",
+    "json-schema-ref-parser": "^6.0.1",
+    "yamljs": "^0.3.0"
   }
 }
