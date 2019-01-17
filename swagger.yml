@@ -193,7 +193,7 @@ paths:
           description: new topic response
           schema:
             $ref: 'definitions/topics/new_topic_response.yml'
-  /posts/{id}:
+  /posts/{id}.json:
     get:
       description: |
         Get a single post
@@ -12687,7 +12687,7 @@ paths:
               success:
                 type: string
                 example: "OK"
-  /t/{id}/status_update:
+  /t/{id}/timer:
     post:
       description: |
         Create a timed topic
@@ -12701,17 +12701,36 @@ paths:
             properties:
               time:
                 type: string
-              timezone_offset:
-                type: integer
               status_type:
                 type: string
                 example: publish_to_category
+              based_on_last_post:
+                type: boolean
+                example: false
               category_id:
                 type: integer
       responses:
         200:
           description: |
             create a timed topic response
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+                example: "OK"
+              execute_at:
+                type: string
+              duration:
+                type: string
+              based_on_last_post:
+                type: boolean
+                example: false
+              closed:
+                type: boolean
+                example: false
+              category_id:
+                type: integer
   /t/{id}/change-timestamp:
     put:
       description: |
