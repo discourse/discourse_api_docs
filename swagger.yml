@@ -1438,8 +1438,9 @@ paths:
             $ref: 'definitions/groups/group_members_response.yml'
   /groups/{group_id}/members.json:
     put:
+      summary: Add user(s) to a group
       description: |
-        Add users to a group (comma separated)
+        Add user(s) to a group (comma separated)
       tags:
         - Admin
         - Groups
@@ -1467,8 +1468,9 @@ paths:
               usernames:
                 type: array
     delete:
+      summary: Remove user(s) from a group
       description: |
-        Delete a user from a group
+        You may use one of the following request body params to specify the user(s) to remove.
       tags:
         - Admin
         - Groups
@@ -1477,11 +1479,24 @@ paths:
           in: body
           schema:
             type: object
-            required:
-              - user_id
             properties:
               user_id:
                 type: integer
+              user_ids:
+                type: string
+                example: "1,2,3"
+              username:
+                type: string
+                example: "username1"
+              usernames:
+                type: string
+                example: "username1,username2"
+              user_email:
+                type: string
+                example: "user1@example.com"
+              user_emails:
+                type: string
+                example: "user1@example.com,user2@example.com"
       responses:
         '200':
           description: delete user from group response
