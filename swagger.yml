@@ -229,6 +229,12 @@ paths:
             properties:
               post[raw]:
                 type: string
+              post[raw_old]:
+                type: string
+              post[edit_reason]:
+                type: string
+              post[cooked]:
+                type: string
       responses:
         200:
           description: update post response
