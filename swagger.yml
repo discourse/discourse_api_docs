@@ -315,6 +315,12 @@ paths:
           in: path
           required: true
           type: integer
+        - name: print
+          in: query
+          required: false
+          type: boolean
+          example: true
+          description: 'Will return up to 1000 posts in a topic'
       responses:
         '200':
           description: topic response
