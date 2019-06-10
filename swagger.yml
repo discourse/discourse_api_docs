@@ -304,6 +304,32 @@ paths:
             properties:
               post_action_type_id:
                 type: integer
+  /t/{id}/posts.json:
+    get:
+      description: |
+        Get specific posts in a topic. Used for infinite scrolling or pagination.
+      tags:
+        - Topics
+      parameters:
+        - name: post_ids[]
+          in: path
+          required: false
+          type: integer
+          example: '?posts_ids[]=12&post_ids[]=13&post_ids[]=14'
+          description: 'post_ids can be found in the post_stream'
+      responses:
+        200:
+          description: posts in a topic response
+          schema:
+            type: object
+            properties:
+              post_stream:
+                type: object
+                properties:
+                  posts:
+                    type: array
+              id:
+                type: id
   /t/{id}.json:
     get:
       description: |
