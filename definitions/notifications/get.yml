@@ -4,10 +4,62 @@ type: object
 properties:
   notifications:
     type: array
-    uniqueItems: null
-    minItems: null
+    uniqueItems: true
+    minItems: 1
     items:
-      type: object
+      required:
+        - id
+        - notification_type
+        - read
+        - created_at
+        - post_number
+        - topic_id
+        - fancy_title
+        - slug
+      properties:
+        id:
+          type: number
+        notification_type:
+          type: number
+        read:
+          type: boolean
+        created_at:
+          type: string
+          minLength: 1
+        post_number:
+          type: number
+        topic_id:
+          type: number
+        fancy_title:
+          type: string
+          minLength: 1
+        slug:
+          type: string
+          minLength: 1
+        data:
+          type: object
+          properties:
+            topic_title:
+              type: string
+              minLength: 1
+            original_post_id:
+              type: number
+            original_post_type:
+              type: number
+            original_username:
+              type: string
+              minLength: 1
+            revision_number:
+              type: object
+            display_username:
+              type: string
+              minLength: 1
+          required:
+            - topic_title
+            - original_post_id
+            - original_post_type
+            - original_username
+            - display_username
   total_rows_notifications:
     type: number
   seen_notification_id:

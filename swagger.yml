@@ -511,9 +511,14 @@ paths:
   /notifications.json:
     get:
       description: |
-        Get some notifications
+        Get notifications for the specified user
       tags:
         - Notifications
+      parameters:
+        - name: username
+          in: query
+          required: false
+          type: string
       responses:
         '200':
           description: notifications response
