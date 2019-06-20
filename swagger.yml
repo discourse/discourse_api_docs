@@ -524,6 +524,31 @@ paths:
           description: notifications response
           schema:
             $ref: 'definitions/notifications/get.yml'
+  /notifications/mark-read.json:
+    put:
+      description: |
+        Mark notifications as read
+      tags:
+        - Notifications
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            properties:
+              id:
+                type: integer
+                description: |
+                  (optional) Leave off to mark all notifications as read
+      responses:
+        '200':
+          description: successful mark-read response
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+                example: OK
   /invites:
     post:
       description: |
