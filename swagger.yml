@@ -11,8 +11,8 @@ info:
 
     ### Request Content-Type
 
-    The Content-Type for POST and PUT requests must be set to `application/x-www-form-urlencoded`
-    or `multipart/form-data` otherwise you may receive a bad request response.
+    The Content-Type for POST and PUT requests can be set to `application/x-www-form-urlencoded`,
+    `multipart/form-data`, or `application\json`.
 
     ### Endpoint Names and Response Content-Type
 
