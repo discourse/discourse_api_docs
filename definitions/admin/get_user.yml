@@ -121,8 +121,6 @@ properties:
     properties:
       '1':
         type: object
-    required:
-      type: object
   bounce_score:
     type: number
   reset_bounce_score_after:
