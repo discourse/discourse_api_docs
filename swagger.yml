@@ -462,7 +462,7 @@ paths:
                 enum:
                   - closed
                   - pinned
-                  - pinned-globally
+                  - pinned_globally
                   - archived
                   - visible
               enabled:
@@ -474,7 +474,7 @@ paths:
                 type: string
                 example: '2018-12-31'
                 description: |
-                  Only required for pinned and pinned-globally.
+                  Only required for pinned and pinned_globally.
       responses:
         200:
           description: Update a Topics Status
