@@ -1445,19 +1445,29 @@ paths:
           description: group response
           schema:
             $ref: 'definitions/groups/get_group_response.yml'
+  /groups/{id}.json:
     put:
       description: |
         Update a group
       tags:
         - Groups
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            properties:
+              group[name]:
+                type: string
       responses:
         200:
           description: update group response
           schema:
             type: object
             properties:
-              basic_group:
-                type: object
+              success:
+                type: string
+                example: OK
   /admin/groups:
     post:
       description: |
