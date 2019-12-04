@@ -1248,17 +1248,24 @@ paths:
                 type: string
               username:
                 type: "string"
-  /admin/users/{id}/generate_api_key:
+  /admin/api/keys:
     post:
       description: |
-        Generate/Regenerate api_key for a user
+        Generate an api_key for a user
       tags:
         - Admin
       parameters:
-        - name: id
-          in: path
-          required: true
-          type: integer
+        - name: body
+          in: body
+          schema:
+            type: object
+            required:
+              - key[username]
+            properties:
+              key[username]:
+                type: string
+              key[description]:
+                type: string
       responses:
         '200':
           description: generate api key response
