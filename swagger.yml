@@ -1259,13 +1259,16 @@ paths:
           in: body
           schema:
             type: object
-            required:
-              - key[username]
+            required: key
             properties:
-              key[username]:
-                type: string
-              key[description]:
-                type: string
+              key:
+                type: object
+                required: username
+                properties:
+                  username:
+                    type: string
+                  description:
+                    type: string
       responses:
         '200':
           description: generate api key response
