@@ -1,3 +1,4 @@
+require 'json'
 require 'json_schema_ref_parser'
 
 def read_yml_file(file)
@@ -14,4 +15,4 @@ end
 
 schema = read_yml_file('swagger.yml')
 result = JsonSchemaRefParser::RefParser.dereference(schema)
-write_json_file(result.to_json)
+write_json_file(JSON.pretty_generate(result))
