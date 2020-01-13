@@ -377,8 +377,8 @@ paths:
           in: path
           required: true
           type: string
-          description: ProTip: You can just use a `-` instead of the actual slug and the topic will be found by the id.
-          example: -
+          description: "ProTip: You can just use a `-` instead of the actual slug and the topic will be found by the id."
+          example: "-"
         - name: id
           in: path
           required: true
@@ -5658,7 +5658,7 @@ paths:
               reply_by_email_enabled:
                 type: boolean
                 example: false
-                description: `reply_by_email_address` needs to be set first
+                description: "`reply_by_email_address` needs to be set first"
       responses:
         '200':
           description: |
@@ -6545,7 +6545,7 @@ paths:
               always_show_trimmed_content:
                 type: boolean
                 example: false
-                description: Always show trimmed part of incoming emails. WARNING: might reveal email addresses.
+                description: "Always show trimmed part of incoming emails. WARNING: might reveal email addresses."
       responses:
         '200':
           description: |
