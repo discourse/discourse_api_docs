@@ -2495,7 +2495,7 @@
                   "enum": [
                     "closed",
                     "pinned",
-                    "pinned-globally",
+                    "pinned_globally",
                     "archived",
                     "visible"
                   ]
@@ -2508,7 +2508,7 @@
                 "until": {
                   "type": "string",
                   "example": "2018-12-31",
-                  "description": "Only required for pinned and pinned-globally.\n"
+                  "description": "Only required for pinned and pinned_globally.\n"
                 }
               }
             }
@@ -5027,18 +5027,34 @@
         }
       }
     },
-    "/admin/users/{id}/generate_api_key": {
+    "/admin/api/keys": {
       "post": {
-        "description": "Generate/Regenerate api_key for a user\n",
+        "description": "Generate an api_key for a user\n",
         "tags": [
           "Admin"
         ],
         "parameters": [
           {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "integer"
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "required": "key",
+              "properties": {
+                "key": {
+                  "type": "object",
+                  "required": "username",
+                  "properties": {
+                    "username": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
           }
         ],
         "responses": {
@@ -5345,9 +5361,6 @@
                     "1": {
                       "type": "object"
                     }
-                  },
-                  "required": {
-                    "type": "object"
                   }
                 },
                 "bounce_score": {
@@ -5991,11 +6004,27 @@
             }
           }
         }
-      },
+      }
+    },
+    "/groups/{id}.json": {
       "put": {
         "description": "Update a group\n",
         "tags": [
           "Groups"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "group[name]": {
+                  "type": "string"
+                }
+              }
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -6003,8 +6032,9 @@
             "schema": {
               "type": "object",
               "properties": {
-                "basic_group": {
-                  "type": "object"
+                "success": {
+                  "type": "string",
+                  "example": "OK"
                 }
               }
             }
