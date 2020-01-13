@@ -10,7 +10,9 @@
       "last_seen_at": "2016-10-29T12:53:52.312Z"
     }
   ],
-  "owners": [],
+  "owners": [
+    
+  ],
   "meta": {
     "total": 1,
     "limit": 50,
