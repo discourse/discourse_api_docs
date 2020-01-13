@@ -40,13 +40,23 @@ npm install
 node server.js
 ```
 
-Browse to localhost:3001 to see the pretty docs.
+Browse to http://localhost:3001 to see the pretty docs.
 
 Before you push your changes or create a PR convert the yml file to json:
 
 ```
 node tojson.js
 ```
+
+To verify converting to json worked correctly, please run:
+
+```
+node server.js json
+```
+
+which will load the json file directly instead of live converting the yml file
+to json. Now browse to http://localhost:3001 and verify your changes still look
+okay.
 
 Then you can commit your changes and create a PR. This is because we are using
 github pages to host the static doc website.
