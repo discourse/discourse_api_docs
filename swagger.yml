@@ -6055,8 +6055,12 @@ paths:
               - disable_emails
             properties:
               disable_emails:
-                type: boolean
-                example: false
+                type: string
+                enum:
+                  - yes
+                  - no
+                  - non-staff
+                example: "yes"
                 description: |
                   Prevent Discourse from sending any kind of emails
       responses:
@@ -7125,7 +7129,6 @@ paths:
                 type: boolean
                 example: true
                 description: |
-                  "Download Gravatars for users upon account creation or email change."
       responses:
         '200':
           description: |
