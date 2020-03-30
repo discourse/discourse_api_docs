@@ -7129,6 +7129,7 @@ paths:
                 type: boolean
                 example: true
                 description: |
+                  "Download Gravatars for users upon account creation or email change."
       responses:
         '200':
           description: |
