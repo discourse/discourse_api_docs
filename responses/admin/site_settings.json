@@ -2342,10 +2342,24 @@
       "setting": "disable_emails",
       "description": "Prevent Discourse from sending any kind of emails",
       "default": "false",
-      "type": "bool",
-      "value": "false",
+      "type": "enum",
+      "value": "yes",
       "category": "email",
-      "preview": null
+      "preview": null,
+      "valid_values": [
+        {
+          "name": "yes",
+          "value": "yes"
+        },
+        {
+          "name": "no",
+          "value": "no"
+        },
+        {
+          "name": "non-staff",
+          "value": "non-staff"
+        }
+      ]
     },
     {
       "setting": "strip_images_from_short_emails",

@@ -6055,8 +6055,12 @@ paths:
               - disable_emails
             properties:
               disable_emails:
-                type: boolean
-                example: false
+                type: string
+                enum:
+                  - yes
+                  - no
+                  - non-staff
+                example: "yes"
                 description: |
                   Prevent Discourse from sending any kind of emails
       responses:
