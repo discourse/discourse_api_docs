@@ -10,9 +10,9 @@ def read_yml_file(file)
 end
 
 def write_json_file(json)
-  File.open('swagger.json', 'w') { |file| file.write(json) }
+  File.open('openapi.json', 'w') { |file| file.write(json) }
 end
 
-schema = read_yml_file('swagger.yml')
+schema = read_yml_file('openapi.yml')
 result = JsonSchemaRefParser::RefParser.dereference(schema)
 write_json_file(JSON.pretty_generate(result))

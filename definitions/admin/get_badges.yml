@@ -1,4 +1,3 @@
-$schema: 'http://json-schema.org/draft-04/schema#'
 description: ""
 type: object
 properties:
@@ -43,7 +42,7 @@ properties:
          auto_revoke:
             type: boolean
          show_posts:
-            type: booelan
+            type: boolean
          badge_type_id:
             type: number
   badge_types:

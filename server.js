@@ -9,9 +9,9 @@ app.get('/',function(req,res){
   res.sendFile(__dirname + '/local.html');
 });
 
-app.get('/swaggerfile', function(req,res){
+app.get('/openapifile', function(req,res){
   if (args[0] == "json") {
-    fs.readFile('swagger.json', 'utf8', function(err, data) {
+    fs.readFile('openapi.json', 'utf8', function(err, data) {
       var json = JSON.parse(data);
       if (err) throw err;
       refParser.dereference(json, function(err, schema) {
@@ -23,7 +23,7 @@ app.get('/swaggerfile', function(req,res){
       });
     });
   } else {
-    fs.readFile('swagger.yml', 'utf8', function(err, data) {
+    fs.readFile('openapi.yml', 'utf8', function(err, data) {
       if (err) throw err;
       var json = yaml.parse(data);
       refParser.dereference(json, function(err, schema) {
