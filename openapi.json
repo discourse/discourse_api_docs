@@ -874,7 +874,7 @@
                     "type": "integer",
                     "description": "optional if creating a new topic,\nignored if creating a new post\n"
                   },
-                  "target_usernames": {
+                  "target_recipients": {
                     "type": "string",
                     "description": "required for private message, comma separated\n",
                     "example": "discourse1,discourse2"

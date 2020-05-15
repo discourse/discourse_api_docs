@@ -172,7 +172,7 @@ paths:
                   description: |
                     optional if creating a new topic,
                     ignored if creating a new post
-                target_usernames:
+                target_recipients:
                   type: string
                   description: |
                     required for private message, comma separated
