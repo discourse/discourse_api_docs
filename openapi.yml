@@ -12,7 +12,7 @@ info:
     ### Request Content-Type
 
     The Content-Type for POST and PUT requests can be set to `application/x-www-form-urlencoded`,
-    `multipart/form-data`, or `application\json`.
+    `multipart/form-data`, or `application/json`.
 
     ### Endpoint Names and Response Content-Type
 
