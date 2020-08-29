@@ -23238,7 +23238,7 @@
                   "user_field[description]": {
                     "type": "string"
                   },
-                  "user_field[field_type": {
+                  "user_field[field_type]": {
                     "type": "string"
                   },
                   "user_field[required]": {
