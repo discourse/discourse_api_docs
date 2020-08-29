@@ -17597,7 +17597,7 @@
     },
     "/admin/site_settings/auto_block_fast_typers_max_trust_level": {
       "put": {
-        "description": "auto black fast typers max trust level\n",
+        "description": "auto block fast typers max trust level\n",
         "tags": [
           "Site Settings Spam"
         ],
