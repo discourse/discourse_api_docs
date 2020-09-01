@@ -8943,7 +8943,7 @@ paths:
   /admin/site_settings/auto_block_fast_typers_max_trust_level:
     put:
       description: |
-        auto black fast typers max trust level
+        auto block fast typers max trust level
       tags:
         - Site Settings Spam
       requestBody:
@@ -12870,7 +12870,7 @@ paths:
                   type: string
                 user_field[description]:
                   type: string
-                user_field[field_type:
+                user_field[field_type]:
                   type: string
                 user_field[required]:
                   type: boolean
