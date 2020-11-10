@@ -824,10 +824,32 @@ paths:
   /u/by-external/{external_id}.json:
     get:
       description: |
-        Get a single user by SSO external ID
+        Get user by 'Discourse SSO' external ID
       tags:
         - Users
       parameters:
+        - name: external_id
+          in: path
+          required: true
+      responses:
+        '200':
+          description: get user response
+          content:
+            application/json:
+              schema:
+                $ref: 'definitions/users/get_user_response.yml'
+  /u/by-external/{provider}/{external_id}.json:
+    get:
+      description: |
+        Get user by identity provider external ID
+      tags:
+        - Users
+      parameters:
+        - name: provider
+          in: path
+          required: true
+          description: |
+            Authentication provider name. Can be found in the provider's callback URL: `/auth/{provider}/callback`
         - name: external_id
           in: path
           required: true
