@@ -4488,7 +4488,7 @@
         }
       }
     },
-    "/tags": {
+    "/tag": {
       "get": {
         "description": "Get a list of tags\n",
         "tags": [
@@ -4501,7 +4501,7 @@
         }
       }
     },
-    "/tags/{tag}": {
+    "/tag/{tag}": {
       "get": {
         "description": "Get a specific tag\n",
         "tags": [

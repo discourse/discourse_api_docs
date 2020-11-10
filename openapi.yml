@@ -1028,7 +1028,7 @@ paths:
             application/json:
               schema:
                 $ref: 'definitions/users/directory_items_response.yml'
-  /tags:
+  /tag:
     get:
       description: |
         Get a list of tags
@@ -1038,7 +1038,7 @@ paths:
         '200':
           description: |
             tag list response
-  /tags/{tag}:
+  /tag/{tag}:
     get:
       description: |
         Get a specific tag
