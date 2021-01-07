@@ -54,6 +54,11 @@ info:
     -F "color=49d9e9" \
     -F "text_color=f0fcfd"
     ```
+
+    ### Boolean values
+
+    If an endpoint accepts a boolean be sure to specify it as a lowercase
+    'true' or 'false' value unless noted otherwise.
   version: latest
 servers:
   - url: https://discourse.example.com
