@@ -158,14 +158,15 @@ paths:
       parameters: []
       responses:
         '200':
-          description: category created
+          description: success response
           content:
             application/json:
               schema:
-                type: object
+                additionalProperties: false
                 properties:
                   category:
                     type: object
+                    additionalProperties: false
                     properties:
                       id:
                         type: integer
@@ -184,42 +185,60 @@ paths:
                       position:
                         type: integer
                       description:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       description_text:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
+                      description_excerpt:
+                        type:
+                        - string
+                        - 'null'
                       topic_url:
-                        type: string
+                        type:
+                        - string
+                        - 'null'
                       read_restricted:
                         type: boolean
                       permission:
-                        type: integer
-                        nullable: true
+                        type:
+                        - integer
+                        - 'null'
                       notification_level:
                         type: integer
-                        nullable: true
                       can_edit:
                         type: boolean
                       topic_template:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       has_children:
-                        type: boolean
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       sort_order:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
+                      sort_ascending:
+                        type:
+                        - string
+                        - 'null'
                       show_subcategory_list:
                         type: boolean
                       num_featured_topics:
                         type: integer
                       default_view:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       subcategory_list_style:
                         type: string
-                      default_topic_period:
+                      default_top_period:
+                        type: string
+                      default_list_filter:
                         type: string
                       minimum_required_tags:
                         type: integer
@@ -227,23 +246,45 @@ paths:
                         type: boolean
                       custom_fields:
                         type: object
+                        additionalProperties: false
+                        properties: {}
+                        required: []
                       min_tags_from_required_group:
                         type: integer
                       required_tag_group_name:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
+                      read_only_banner:
+                        type:
+                        - string
+                        - 'null'
                       available_groups:
                         type: array
+                        items: []
                       auto_close_hours:
-                        type: integer
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       auto_close_based_on_last_post:
                         type: boolean
                       group_permissions:
                         type: array
+                        items:
+                        - type: object
+                          additionalProperties: false
+                          properties:
+                            permission_type:
+                              type: integer
+                            group_name:
+                              type: string
+                          required:
+                          - permission_type
+                          - group_name
                       email_in:
-                        type: boolean
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       email_in_allow_strangers:
                         type: boolean
                       mailinglist_mirror:
@@ -253,8 +294,9 @@ paths:
                       can_delete:
                         type: boolean
                       cannot_delete_reason:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       allow_badges:
                         type: boolean
                       topic_featured_link_allowed:
@@ -262,53 +304,103 @@ paths:
                       search_priority:
                         type: integer
                       uploaded_logo:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       uploaded_background:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                     required:
                     - id
+                    - name
+                    - color
+                    - text_color
+                    - slug
+                    - topic_count
+                    - post_count
+                    - position
+                    - description
+                    - description_text
+                    - description_excerpt
+                    - topic_url
+                    - read_restricted
+                    - permission
+                    - notification_level
+                    - can_edit
+                    - topic_template
+                    - has_children
+                    - sort_order
+                    - sort_ascending
+                    - show_subcategory_list
+                    - num_featured_topics
+                    - default_view
+                    - subcategory_list_style
+                    - default_top_period
+                    - default_list_filter
+                    - minimum_required_tags
+                    - navigate_to_first_post_after_read
+                    - custom_fields
+                    - min_tags_from_required_group
+                    - required_tag_group_name
+                    - read_only_banner
+                    - available_groups
+                    - auto_close_hours
+                    - auto_close_based_on_last_post
+                    - group_permissions
+                    - email_in
+                    - email_in_allow_strangers
+                    - mailinglist_mirror
+                    - all_topics_wiki
+                    - can_delete
+                    - cannot_delete_reason
+                    - allow_badges
+                    - topic_featured_link_allowed
+                    - search_priority
+                    - uploaded_logo
+                    - uploaded_background
                 required:
                 - category
       requestBody:
         content:
           application/json:
             schema:
-              type: object
+              additionalProperties: false
               properties:
                 name:
                   type: string
                 color:
                   type: string
+                  example: 49d9e9
                 text_color:
                   type: string
+                  example: f0fcfd
               required:
               - name
-              - color
-              - text_color
     get:
       summary: Retreives a list of categories
       tags:
       - Categories
       responses:
         '200':
-          description: categories response
+          description: success response
           content:
             application/json:
               schema:
-                type: object
+                additionalProperties: false
                 properties:
                   category_list:
                     type: object
+                    additionalProperties: false
                     properties:
                       can_create_category:
                         type: boolean
                       can_create_topic:
                         type: boolean
                       draft:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       draft_key:
                         type: string
                       draft_sequence:
@@ -316,7 +408,8 @@ paths:
                       categories:
                         type: array
                         items:
-                          type: object
+                        - type: object
+                          additionalProperties: false
                           properties:
                             id:
                               type: integer
@@ -336,42 +429,49 @@ paths:
                               type: integer
                             description:
                               type: string
-                              nullable: true
                             description_text:
                               type: string
-                              nullable: true
-                            topic_url:
+                            description_excerpt:
                               type: string
-                              nullable: true
+                            topic_url:
+                              type:
+                              - string
+                              - 'null'
                             read_restricted:
                               type: boolean
                             permission:
                               type: integer
-                              nullable: true
                             notification_level:
                               type: integer
-                              nullable: true
                             can_edit:
                               type: boolean
                             topic_template:
-                              type: string
-                              nullable: true
+                              type:
+                              - string
+                              - 'null'
                             has_children:
                               type: boolean
-                              nullable: true
                             sort_order:
-                              type: string
-                              nullable: true
+                              type:
+                              - string
+                              - 'null'
+                            sort_ascending:
+                              type:
+                              - string
+                              - 'null'
                             show_subcategory_list:
                               type: boolean
                             num_featured_topics:
                               type: integer
                             default_view:
-                              type: string
-                              nullable: true
+                              type:
+                              - string
+                              - 'null'
                             subcategory_list_style:
                               type: string
-                            default_topic_period:
+                            default_top_period:
+                              type: string
+                            default_list_filter:
                               type: string
                             minimum_required_tags:
                               type: integer
@@ -387,39 +487,87 @@ paths:
                               type: integer
                             topics_all_time:
                               type: integer
+                            is_uncategorized:
+                              type: boolean
+                            subcategory_ids:
+                              type: array
+                              items: []
                             uploaded_logo:
-                              type: string
-                              nullable: true
+                              type:
+                              - string
+                              - 'null'
                             uploaded_background:
-                              type: string
-                              nullable: true
+                              type:
+                              - string
+                              - 'null'
+                          required:
+                          - id
+                          - name
+                          - color
+                          - text_color
+                          - slug
+                          - topic_count
+                          - post_count
+                          - position
+                          - description
+                          - description_text
+                          - description_excerpt
+                          - topic_url
+                          - read_restricted
+                          - permission
+                          - notification_level
+                          - can_edit
+                          - topic_template
+                          - has_children
+                          - sort_order
+                          - sort_ascending
+                          - show_subcategory_list
+                          - num_featured_topics
+                          - default_view
+                          - subcategory_list_style
+                          - default_top_period
+                          - default_list_filter
+                          - minimum_required_tags
+                          - navigate_to_first_post_after_read
+                          - topics_day
+                          - topics_week
+                          - topics_month
+                          - topics_year
+                          - topics_all_time
+                          - is_uncategorized
+                          - subcategory_ids
+                          - uploaded_logo
+                          - uploaded_background
                     required:
+                    - can_create_category
+                    - can_create_topic
                     - categories
                 required:
                 - category_list
-  "/categories/{category_id}.json":
+  "/categories/{id}.json":
     put:
       summary: Updates a category
       tags:
       - Categories
       parameters:
-      - name: category_id
+      - name: id
         in: path
         schema:
-          type: string
+          type: integer
         required: true
       responses:
         '200':
-          description: category created
+          description: success response
           content:
             application/json:
               schema:
-                type: object
+                additionalProperties: false
                 properties:
                   success:
                     type: string
                   category:
                     type: object
+                    additionalProperties: false
                     properties:
                       id:
                         type: integer
@@ -438,46 +586,55 @@ paths:
                       position:
                         type: integer
                       description:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       description_text:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       description_excerpt:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       topic_url:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       read_restricted:
                         type: boolean
                       permission:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       notification_level:
                         type: integer
-                        nullable: true
                       can_edit:
                         type: boolean
                       topic_template:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       has_children:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       sort_order:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       sort_ascending:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       show_subcategory_list:
                         type: boolean
                       num_featured_topics:
                         type: integer
                       default_view:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       subcategory_list_style:
                         type: string
                       default_top_period:
@@ -490,32 +647,45 @@ paths:
                         type: boolean
                       custom_fields:
                         type: object
+                        additionalProperties: false
                         properties: {}
+                        required: []
                       min_tags_from_required_group:
                         type: integer
                       required_tag_group_name:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
+                      read_only_banner:
+                        type:
+                        - string
+                        - 'null'
                       available_groups:
                         type: array
-                        items: {}
+                        items: []
                       auto_close_hours:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       auto_close_based_on_last_post:
                         type: boolean
                       group_permissions:
                         type: array
                         items:
-                          type: object
+                        - type: object
+                          additionalProperties: false
                           properties:
                             permission_type:
                               type: integer
                             group_name:
                               type: string
+                          required:
+                          - permission_type
+                          - group_name
                       email_in:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       email_in_allow_strangers:
                         type: boolean
                       mailinglist_mirror:
@@ -525,8 +695,9 @@ paths:
                       can_delete:
                         type: boolean
                       cannot_delete_reason:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       allow_badges:
                         type: boolean
                       topic_featured_link_allowed:
@@ -534,55 +705,109 @@ paths:
                       search_priority:
                         type: integer
                       uploaded_logo:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       uploaded_background:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
+                    required:
+                    - id
+                    - name
+                    - color
+                    - text_color
+                    - slug
+                    - topic_count
+                    - post_count
+                    - position
+                    - description
+                    - description_text
+                    - description_excerpt
+                    - topic_url
+                    - read_restricted
+                    - permission
+                    - notification_level
+                    - can_edit
+                    - topic_template
+                    - has_children
+                    - sort_order
+                    - sort_ascending
+                    - show_subcategory_list
+                    - num_featured_topics
+                    - default_view
+                    - subcategory_list_style
+                    - default_top_period
+                    - default_list_filter
+                    - minimum_required_tags
+                    - navigate_to_first_post_after_read
+                    - custom_fields
+                    - min_tags_from_required_group
+                    - required_tag_group_name
+                    - read_only_banner
+                    - available_groups
+                    - auto_close_hours
+                    - auto_close_based_on_last_post
+                    - group_permissions
+                    - email_in
+                    - email_in_allow_strangers
+                    - mailinglist_mirror
+                    - all_topics_wiki
+                    - can_delete
+                    - cannot_delete_reason
+                    - allow_badges
+                    - topic_featured_link_allowed
+                    - search_priority
+                    - uploaded_logo
+                    - uploaded_background
+                required:
+                - success
+                - category
       requestBody:
         content:
           application/json:
             schema:
-              type: object
+              additionalProperties: false
               properties:
                 name:
                   type: string
                 color:
                   type: string
+                  example: 49d9e9
                 text_color:
                   type: string
+                  example: f0fcfd
               required:
               - name
-              - color
-              - text_color
-  "/c/{category_slug}/{category_id}.json":
+  "/c/{slug}/{id}.json":
     get:
       summary: List topics
       tags:
       - Categories
       parameters:
-      - name: category_slug
+      - name: slug
         in: path
         schema:
           type: string
         required: true
-      - name: category_id
+      - name: id
         in: path
         schema:
           type: integer
         required: true
       responses:
         '200':
-          description: response
+          description: success response
           content:
             application/json:
               schema:
-                type: object
+                additionalProperties: false
                 properties:
                   users:
                     type: array
                     items:
-                      type: object
+                    - type: object
+                      additionalProperties: false
                       properties:
                         id:
                           type: integer
@@ -590,19 +815,26 @@ paths:
                           type: string
                         name:
                           type: string
-                          nullable: true
                         avatar_template:
                           type: string
+                      required:
+                      - id
+                      - username
+                      - name
+                      - avatar_template
                   primary_groups:
                     type: array
+                    items: []
                   topic_list:
                     type: object
+                    additionalProperties: false
                     properties:
                       can_create_topic:
                         type: boolean
                       draft:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       draft_key:
                         type: string
                       draft_sequence:
@@ -612,7 +844,8 @@ paths:
                       topics:
                         type: array
                         items:
-                          type: object
+                        - type: object
+                          additionalProperties: false
                           properties:
                             id:
                               type: integer
@@ -629,8 +862,9 @@ paths:
                             highest_post_number:
                               type: integer
                             image_url:
-                              type: string
-                              nullable: true
+                              type:
+                              - string
+                              - 'null'
                             created_at:
                               type: string
                             last_posted_at:
@@ -646,8 +880,9 @@ paths:
                             pinned:
                               type: boolean
                             unpinned:
-                              type: boolean
-                              nullable: true
+                              type:
+                              - string
+                              - 'null'
                             excerpt:
                               type: string
                             visible:
@@ -657,11 +892,13 @@ paths:
                             archived:
                               type: boolean
                             bookmarked:
-                              type: boolean
-                              nullable: true
+                              type:
+                              - string
+                              - 'null'
                             liked:
-                              type: boolean
-                              nullable: true
+                              type:
+                              - string
+                              - 'null'
                             views:
                               type: integer
                             like_count:
@@ -672,17 +909,17 @@ paths:
                               type: string
                             category_id:
                               type: integer
-                            op_like_count:
-                              type: integer
                             pinned_globally:
                               type: boolean
                             featured_link:
-                              type: string
-                              nullable: true
+                              type:
+                              - string
+                              - 'null'
                             posters:
                               type: array
                               items:
-                                type: object
+                              - type: object
+                                additionalProperties: false
                                 properties:
                                   extras:
                                     type: string
@@ -691,18 +928,64 @@ paths:
                                   user_id:
                                     type: integer
                                   primary_group_id:
-                                    type: integer
-                                    nullable: true
-  "/c/{category_id}/show.json":
+                                    type:
+                                    - string
+                                    - 'null'
+                                required:
+                                - extras
+                                - description
+                                - user_id
+                                - primary_group_id
+                          required:
+                          - id
+                          - title
+                          - fancy_title
+                          - slug
+                          - posts_count
+                          - reply_count
+                          - highest_post_number
+                          - image_url
+                          - created_at
+                          - last_posted_at
+                          - bumped
+                          - bumped_at
+                          - archetype
+                          - unseen
+                          - pinned
+                          - unpinned
+                          - excerpt
+                          - visible
+                          - closed
+                          - archived
+                          - bookmarked
+                          - liked
+                          - views
+                          - like_count
+                          - has_summary
+                          - last_poster_username
+                          - category_id
+                          - pinned_globally
+                          - featured_link
+                          - posters
+                    required:
+                    - can_create_topic
+                    - draft
+                    - draft_key
+                    - draft_sequence
+                    - per_page
+                    - topics
+                required:
+                - topic_list
+  "/c/{id}/show.json":
     get:
       summary: Show category
       tags:
       - Categories
       parameters:
-      - name: category_id
+      - name: id
         in: path
         schema:
-          type: string
+          type: integer
         required: true
       responses:
         '200':
@@ -710,10 +993,11 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                additionalProperties: false
                 properties:
                   category:
                     type: object
+                    additionalProperties: false
                     properties:
                       id:
                         type: integer
@@ -732,45 +1016,55 @@ paths:
                       position:
                         type: integer
                       description:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       description_text:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       description_excerpt:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       topic_url:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       read_restricted:
                         type: boolean
                       permission:
-                        type: integer
+                        type:
+                        - integer
+                        - 'null'
                       notification_level:
                         type: integer
-                        nullable: true
                       can_edit:
                         type: boolean
                       topic_template:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       has_children:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       sort_order:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       sort_ascending:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       show_subcategory_list:
                         type: boolean
                       num_featured_topics:
                         type: integer
                       default_view:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       subcategory_list_style:
                         type: string
                       default_top_period:
@@ -783,32 +1077,45 @@ paths:
                         type: boolean
                       custom_fields:
                         type: object
+                        additionalProperties: false
                         properties: {}
+                        required: []
                       min_tags_from_required_group:
                         type: integer
                       required_tag_group_name:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
+                      read_only_banner:
+                        type:
+                        - string
+                        - 'null'
                       available_groups:
                         type: array
-                        items: {}
+                        items: []
                       auto_close_hours:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       auto_close_based_on_last_post:
                         type: boolean
                       group_permissions:
                         type: array
                         items:
-                          type: object
+                        - type: object
+                          additionalProperties: false
                           properties:
                             permission_type:
                               type: integer
                             group_name:
                               type: string
+                          required:
+                          - permission_type
+                          - group_name
                       email_in:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       email_in_allow_strangers:
                         type: boolean
                       mailinglist_mirror:
@@ -818,8 +1125,9 @@ paths:
                       can_delete:
                         type: boolean
                       cannot_delete_reason:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       allow_badges:
                         type: boolean
                       topic_featured_link_allowed:
@@ -827,11 +1135,63 @@ paths:
                       search_priority:
                         type: integer
                       uploaded_logo:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
                       uploaded_background:
-                        type: string
-                        nullable: true
+                        type:
+                        - string
+                        - 'null'
+                    required:
+                    - id
+                    - name
+                    - color
+                    - text_color
+                    - slug
+                    - topic_count
+                    - post_count
+                    - position
+                    - description
+                    - description_text
+                    - description_excerpt
+                    - topic_url
+                    - read_restricted
+                    - permission
+                    - notification_level
+                    - can_edit
+                    - topic_template
+                    - has_children
+                    - sort_order
+                    - sort_ascending
+                    - show_subcategory_list
+                    - num_featured_topics
+                    - default_view
+                    - subcategory_list_style
+                    - default_top_period
+                    - default_list_filter
+                    - minimum_required_tags
+                    - navigate_to_first_post_after_read
+                    - custom_fields
+                    - min_tags_from_required_group
+                    - required_tag_group_name
+                    - read_only_banner
+                    - available_groups
+                    - auto_close_hours
+                    - auto_close_based_on_last_post
+                    - group_permissions
+                    - email_in
+                    - email_in_allow_strangers
+                    - mailinglist_mirror
+                    - all_topics_wiki
+                    - can_delete
+                    - cannot_delete_reason
+                    - allow_badges
+                    - topic_featured_link_allowed
+                    - search_priority
+                    - uploaded_logo
+                    - uploaded_background
+                required:
+                - category
   "/admin/groups.json":
     post:
       summary: Creates a group
