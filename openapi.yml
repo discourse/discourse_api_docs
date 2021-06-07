@@ -251,6 +251,12 @@ paths:
                         required: []
                       min_tags_from_required_group:
                         type: integer
+                      allowed_tags:
+                        type: array
+                      allowed_tag_groups:
+                        type: array
+                      allow_global_tags:
+                        type: boolean
                       required_tag_group_name:
                         type:
                         - string
@@ -267,6 +273,8 @@ paths:
                         - string
                         - 'null'
                       auto_close_based_on_last_post:
+                        type: boolean
+                      allow_unlimited_owner_edits_on_first_post:
                         type: boolean
                       group_permissions:
                         type: array
@@ -347,6 +355,7 @@ paths:
                     - available_groups
                     - auto_close_hours
                     - auto_close_based_on_last_post
+                    - allow_unlimited_owner_edits_on_first_post
                     - group_permissions
                     - email_in
                     - email_in_allow_strangers
@@ -378,7 +387,7 @@ paths:
               required:
               - name
     get:
-      summary: Retreives a list of categories
+      summary: Retrieves a list of categories
       tags:
       - Categories
       responses:
@@ -397,14 +406,6 @@ paths:
                         type: boolean
                       can_create_topic:
                         type: boolean
-                      draft:
-                        type:
-                        - string
-                        - 'null'
-                      draft_key:
-                        type: string
-                      draft_sequence:
-                        type: integer
                       categories:
                         type: array
                         items:
@@ -652,6 +653,12 @@ paths:
                         required: []
                       min_tags_from_required_group:
                         type: integer
+                      allowed_tags:
+                        type: array
+                      allowed_tag_groups:
+                        type: array
+                      allow_global_tags:
+                        type: boolean
                       required_tag_group_name:
                         type:
                         - string
@@ -668,6 +675,8 @@ paths:
                         - string
                         - 'null'
                       auto_close_based_on_last_post:
+                        type: boolean
+                      allow_unlimited_owner_edits_on_first_post:
                         type: boolean
                       group_permissions:
                         type: array
@@ -748,6 +757,7 @@ paths:
                     - available_groups
                     - auto_close_hours
                     - auto_close_based_on_last_post
+                    - allow_unlimited_owner_edits_on_first_post
                     - group_permissions
                     - email_in
                     - email_in_allow_strangers
@@ -831,16 +841,10 @@ paths:
                     properties:
                       can_create_topic:
                         type: boolean
-                      draft:
-                        type:
-                        - string
-                        - 'null'
-                      draft_key:
-                        type: string
-                      draft_sequence:
-                        type: integer
                       per_page:
                         type: integer
+                      top_tags:
+                        type: array
                       topics:
                         type: array
                         items:
@@ -969,9 +973,6 @@ paths:
                           - posters
                     required:
                     - can_create_topic
-                    - draft
-                    - draft_key
-                    - draft_sequence
                     - per_page
                     - topics
                 required:
@@ -1082,6 +1083,12 @@ paths:
                         required: []
                       min_tags_from_required_group:
                         type: integer
+                      allowed_tags:
+                        type: array
+                      allowed_tag_groups:
+                        type: array
+                      allow_global_tags:
+                        type: boolean
                       required_tag_group_name:
                         type:
                         - string
@@ -1098,6 +1105,8 @@ paths:
                         - string
                         - 'null'
                       auto_close_based_on_last_post:
+                        type: boolean
+                      allow_unlimited_owner_edits_on_first_post:
                         type: boolean
                       group_permissions:
                         type: array
@@ -1178,6 +1187,7 @@ paths:
                     - available_groups
                     - auto_close_hours
                     - auto_close_based_on_last_post
+                    - allow_unlimited_owner_edits_on_first_post
                     - group_permissions
                     - email_in
                     - email_in_allow_strangers
@@ -1472,6 +1482,16 @@ paths:
                         type:
                         - string
                         - 'null'
+                      smtp_updated_at:
+                        type:
+                        - string
+                        - 'null'
+                      smtp_updated_by:
+                        type:
+                        - object
+                        - 'null'
+                      smtp_enabled:
+                        type: boolean
                       smtp_server:
                         type:
                         - string
@@ -1483,6 +1503,16 @@ paths:
                       smtp_ssl:
                         type:
                         - string
+                        - 'null'
+                      imap_enabled:
+                        type: boolean
+                      imap_updated_at:
+                        type:
+                        - string
+                        - 'null'
+                      imap_updated_by:
+                        type:
+                        - object
                         - 'null'
                       imap_server:
                         type:
@@ -1538,6 +1568,21 @@ paths:
                         type: array
                         items: []
                       muted_category_ids:
+                        type: array
+                        items: []
+                      watching_tags:
+                        type: array
+                        items: []
+                      watching_first_post_tags:
+                        type: array
+                        items: []
+                      tracking_tags:
+                        type: array
+                        items: []
+                      regular_tags:
+                        type: array
+                        items: []
+                      muted_tags:
                         type: array
                         items: []
                     required:
@@ -1953,7 +1998,7 @@ paths:
                 - load_more_groups
   "/invites.json":
     post:
-      summary: Invite to site by email
+      summary: Create an invite
       tags:
       - Invites
       parameters:
@@ -1975,9 +2020,40 @@ paths:
               schema:
                 type: object
                 properties:
-                  success:
+                  id:
+                    type: integer
+                    example: 42
+                  link:
                     type: string
-                    example: OK
+                    example: http://example.com/invites/9045fd767efe201ca60c6658bcf14158
+                  email:
+                    type: string
+                    example: not-a-user-yet@example.com
+                  emailed:
+                    type: boolean
+                    example: false
+                  custom_message:
+                    type: string
+                    example: Hello world!
+                    nullable: true
+                  topics:
+                    type: array
+                    example: []
+                  groups:
+                    type: array
+                    example: []
+                  created_at:
+                    type: string
+                    example: '2021-01-01T12:00:00.000Z'
+                  updated_at:
+                    type: string
+                    example: '2021-01-01T12:00:00.000Z'
+                  expires_at:
+                    type: string
+                    example: '2021-02-01T12:00:00.000Z'
+                  expired:
+                    type: boolean
+                    example: false
       requestBody:
         content:
           application/json:
@@ -1986,50 +2062,31 @@ paths:
               properties:
                 email:
                   type: string
-                group_names:
-                  type: string
+                  example: not-a-user-yet@example.com
+                  description: required for email invites only
+                skip_email:
+                  type: boolean
+                  default: false
                 custom_message:
                   type: string
-              required:
-              - email
-  "/invites/link.json":
-    post:
-      summary: Generate an invite link, but do not send an email
-      tags:
-      - Invites
-      parameters:
-      - name: Api-Key
-        in: header
-        required: true
-        schema:
-          type: string
-      - name: Api-Username
-        in: header
-        required: true
-        schema:
-          type: string
-      responses:
-        '200':
-          description: success response
-          content:
-            application/json:
-              schema:
-                type: string
-                example: http://discourse.example.com/invites/token_value
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                email:
-                  type: string
+                  description: optional, for email invites
+                max_redemptions_allowed:
+                  type: integer
+                  example: 5
+                  default: 1
+                  description: optional, for link invites
+                topic_id:
+                  type: int
+                group_id:
+                  type:
+                  - int
+                  description: optional, either this or `group_names`
                 group_names:
                   type: string
-                custom_message:
+                  description: optional, either this or `group_id`
+                expires_at:
                   type: string
-              required:
-              - email
+                  default: controlled by invite_expiry_days site setting
   "/notifications.json":
     get:
       summary: Get the notifications that belong to the current user
@@ -2260,30 +2317,22 @@ paths:
       tags:
       - Posts
       - Topics
-      parameters:
-      - name: Api-Key
-        in: header
-        required: true
-        schema:
-          type: string
-      - name: Api-Username
-        in: header
-        required: true
-        schema:
-          type: string
+      - Private Messages
+      parameters: []
       responses:
         '200':
           description: post created
           content:
             application/json:
               schema:
-                type: object
+                additionalProperties: false
                 properties:
                   id:
                     type: integer
                   name:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                   username:
                     type: string
                   avatar_template:
@@ -2301,8 +2350,9 @@ paths:
                   reply_count:
                     type: integer
                   reply_to_post_number:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                   quote_count:
                     type: integer
                   incoming_link_count:
@@ -2320,20 +2370,25 @@ paths:
                   topic_slug:
                     type: string
                   display_username:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                   primary_group_name:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                   primary_group_flair_url:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                   primary_group_flair_bg_color:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                   primary_group_flair_color:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                   version:
                     type: integer
                   can_edit:
@@ -2345,17 +2400,24 @@ paths:
                   can_wiki:
                     type: boolean
                   user_title:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
+                  bookmarked:
+                    type: boolean
                   actions_summary:
                     type: array
                     items:
-                      type: object
+                    - type: object
+                      additionalProperties: false
                       properties:
                         id:
                           type: integer
                         can_act:
                           type: boolean
+                      required:
+                      - id
+                      - can_act
                   moderator:
                     type: boolean
                   admin:
@@ -2371,55 +2433,112 @@ paths:
                   trust_level:
                     type: integer
                   deleted_at:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                   user_deleted:
                     type: boolean
                   edit_reason:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                   can_view_edit_history:
                     type: boolean
                   wiki:
                     type: boolean
                   reviewable_id:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                   reviewable_score_count:
                     type: integer
                   reviewable_score_pending_count:
                     type: integer
+                required:
+                - id
+                - name
+                - username
+                - avatar_template
+                - created_at
+                - cooked
+                - post_number
+                - post_type
+                - updated_at
+                - reply_count
+                - reply_to_post_number
+                - quote_count
+                - incoming_link_count
+                - reads
+                - readers_count
+                - score
+                - yours
+                - topic_id
+                - topic_slug
+                - display_username
+                - primary_group_name
+                - primary_group_flair_url
+                - primary_group_flair_bg_color
+                - primary_group_flair_color
+                - version
+                - can_edit
+                - can_delete
+                - can_recover
+                - can_wiki
+                - user_title
+                - bookmarked
+                - actions_summary
+                - moderator
+                - admin
+                - staff
+                - user_id
+                - draft_sequence
+                - hidden
+                - trust_level
+                - deleted_at
+                - user_deleted
+                - edit_reason
+                - can_view_edit_history
+                - wiki
+                - reviewable_id
+                - reviewable_score_count
+                - reviewable_score_pending_count
       requestBody:
         content:
           application/json:
             schema:
-              type: object
+              additionalProperties: false
               properties:
                 title:
                   type: string
                   description: Required if creating a new topic or new private message.
+                raw:
+                  type: string
                 topic_id:
                   type: integer
                   description: Required if creating a new post.
-                raw:
-                  type: string
                 category:
                   type: integer
                   description: Optional if creating a new topic, and ignored if creating
                     a new post.
-                target_usernames:
+                target_recipients:
                   type: string
                   description: Required for private message, comma separated.
                   example: blake,sam
+                target_usernames:
+                  type: string
+                  description: Deprecated. Use target_recipients instead.
+                  deprecated: true
                 archetype:
                   type: string
+                  description: Required for new private message.
+                  example: private_message
                 created_at:
                   type: string
               required:
               - raw
   "/posts/{id}.json":
     get:
-      summary: Retreive a single post
+      summary: Retrieve a single post
       tags:
       - Posts
       parameters:
