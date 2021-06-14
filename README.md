@@ -2,7 +2,7 @@
 
 To view the the Discourse API Documentation you can visit:
 
-  http://docs.discourse.org/
+  https://docs.discourse.org/
 
 ### Contributing
 
