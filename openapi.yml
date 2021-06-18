@@ -2339,6 +2339,8 @@ paths:
                     type: string
                   created_at:
                     type: string
+                  raw:
+                    type: string
                   cooked:
                     type: string
                   post_number:
