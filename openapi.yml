@@ -276,6 +276,10 @@ paths:
                         type: boolean
                       allow_unlimited_owner_edits_on_first_post:
                         type: boolean
+                      default_slow_mode_seconds:
+                        type:
+                        - string
+                        - 'null'
                       group_permissions:
                         type: array
                         items:
@@ -356,6 +360,7 @@ paths:
                     - auto_close_hours
                     - auto_close_based_on_last_post
                     - allow_unlimited_owner_edits_on_first_post
+                    - default_slow_mode_seconds
                     - group_permissions
                     - email_in
                     - email_in_allow_strangers
@@ -678,6 +683,10 @@ paths:
                         type: boolean
                       allow_unlimited_owner_edits_on_first_post:
                         type: boolean
+                      default_slow_mode_seconds:
+                        type:
+                        - string
+                        - 'null'
                       group_permissions:
                         type: array
                         items:
@@ -758,6 +767,7 @@ paths:
                     - auto_close_hours
                     - auto_close_based_on_last_post
                     - allow_unlimited_owner_edits_on_first_post
+                    - default_slow_mode_seconds
                     - group_permissions
                     - email_in
                     - email_in_allow_strangers
@@ -1108,6 +1118,10 @@ paths:
                         type: boolean
                       allow_unlimited_owner_edits_on_first_post:
                         type: boolean
+                      default_slow_mode_seconds:
+                        type:
+                        - string
+                        - 'null'
                       group_permissions:
                         type: array
                         items:
@@ -1188,6 +1202,7 @@ paths:
                     - auto_close_hours
                     - auto_close_based_on_last_post
                     - allow_unlimited_owner_edits_on_first_post
+                    - default_slow_mode_seconds
                     - group_permissions
                     - email_in
                     - email_in_allow_strangers
@@ -2248,13 +2263,16 @@ paths:
                         primary_group_name:
                           type: string
                           nullable: true
-                        primary_group_flair_url:
+                        flair_name:
                           type: string
                           nullable: true
-                        primary_group_flair_bg_color:
+                        flair_url:
                           type: string
                           nullable: true
-                        primary_group_flair_color:
+                        flair_bg_color:
+                          type: string
+                          nullable: true
+                        flair_color:
                           type: string
                           nullable: true
                         version:
@@ -2379,15 +2397,19 @@ paths:
                     type:
                     - string
                     - 'null'
-                  primary_group_flair_url:
+                  flair_name:
                     type:
                     - string
                     - 'null'
-                  primary_group_flair_bg_color:
+                  flair_url:
                     type:
                     - string
                     - 'null'
-                  primary_group_flair_color:
+                  flair_bg_color:
+                    type:
+                    - string
+                    - 'null'
+                  flair_color:
                     type:
                     - string
                     - 'null'
@@ -2478,9 +2500,10 @@ paths:
                 - topic_slug
                 - display_username
                 - primary_group_name
-                - primary_group_flair_url
-                - primary_group_flair_bg_color
-                - primary_group_flair_color
+                - flair_name
+                - flair_url
+                - flair_bg_color
+                - flair_color
                 - version
                 - can_edit
                 - can_delete
@@ -2613,13 +2636,16 @@ paths:
                   primary_group_name:
                     type: string
                     nullable: true
-                  primary_group_flair_url:
+                  flair_name:
                     type: string
                     nullable: true
-                  primary_group_flair_bg_color:
+                  flair_url:
                     type: string
                     nullable: true
-                  primary_group_flair_color:
+                  flair_bg_color:
+                    type: string
+                    nullable: true
+                  flair_color:
                     type: string
                     nullable: true
                   version:
@@ -2754,13 +2780,13 @@ paths:
                       primary_group_name:
                         type: string
                         nullable: true
-                      primary_group_flair_url:
+                      flair_url:
                         type: string
                         nullable: true
-                      primary_group_flair_bg_color:
+                      flair_bg_color:
                         type: string
                         nullable: true
-                      primary_group_flair_color:
+                      flair_color:
                         type: string
                         nullable: true
                       version:
@@ -2942,13 +2968,16 @@ paths:
                   primary_group_name:
                     type: string
                     nullable: true
-                  primary_group_flair_url:
+                  flair_name:
                     type: string
                     nullable: true
-                  primary_group_flair_bg_color:
+                  flair_url:
                     type: string
                     nullable: true
-                  primary_group_flair_color:
+                  flair_bg_color:
+                    type: string
+                    nullable: true
+                  flair_color:
                     type: string
                     nullable: true
                   version:
@@ -3110,9 +3139,7 @@ paths:
                               type: boolean
                             last_read_post_number:
                               type: integer
-                            unread:
-                              type: integer
-                            new_posts:
+                            unread_posts:
                               type: integer
                             pinned:
                               type: boolean
@@ -3264,9 +3291,7 @@ paths:
                               type: boolean
                             last_read_post_number:
                               type: integer
-                            unread:
-                              type: integer
-                            new_posts:
+                            unread_posts:
                               type: integer
                             pinned:
                               type: boolean
@@ -3722,9 +3747,7 @@ paths:
                               type: boolean
                             last_read_post_number:
                               type: integer
-                            unread:
-                              type: integer
-                            new_posts:
+                            unread_posts:
                               type: integer
                             pinned:
                               type: boolean
@@ -3858,13 +3881,16 @@ paths:
                             primary_group_name:
                               type: string
                               nullable: true
-                            primary_group_flair_url:
+                            flair_name:
                               type: string
                               nullable: true
-                            primary_group_flair_bg_color:
+                            flair_url:
                               type: string
                               nullable: true
-                            primary_group_flair_color:
+                            flair_bg_color:
+                              type: string
+                              nullable: true
+                            flair_color:
                               type: string
                               nullable: true
                             version:
@@ -4014,13 +4040,16 @@ paths:
                             primary_group_name:
                               type: string
                               nullable: true
-                            primary_group_flair_url:
+                            flair_name:
                               type: string
                               nullable: true
-                            primary_group_flair_bg_color:
+                            flair_url:
                               type: string
                               nullable: true
-                            primary_group_flair_color:
+                            flair_bg_color:
+                              type: string
+                              nullable: true
+                            flair_color:
                               type: string
                               nullable: true
                             version:
@@ -4133,9 +4162,7 @@ paths:
                           type: boolean
                         last_read_post_number:
                           type: integer
-                        unread:
-                          type: integer
-                        new_posts:
+                        unread_posts:
                           type: integer
                         pinned:
                           type: boolean
@@ -4332,13 +4359,16 @@ paths:
                             primary_group_name:
                               type: string
                               nullable: true
-                            primary_group_flair_url:
+                            flair_name:
                               type: string
                               nullable: true
-                            primary_group_flair_color:
+                            flair_url:
                               type: string
                               nullable: true
-                            primary_group_flair_bg_color:
+                            flair_color:
+                              type: string
+                              nullable: true
+                            flair_bg_color:
                               type: string
                               nullable: true
                       created_by:
@@ -4678,9 +4708,7 @@ paths:
                               type: boolean
                             last_read_post_number:
                               type: integer
-                            unread:
-                              type: integer
-                            new_posts:
+                            unread_posts:
                               type: integer
                             pinned:
                               type: boolean
@@ -4822,9 +4850,7 @@ paths:
                               type: boolean
                             last_read_post_number:
                               type: integer
-                            unread:
-                              type: integer
-                            new_posts:
+                            unread_posts:
                               type: integer
                             pinned:
                               type: boolean
@@ -4874,7 +4900,7 @@ paths:
                                   primary_group_id:
                                     type: string
                                     nullable: true
-  "/top/{flag}.json":
+  "/top.json?period={flag}":
     get:
       summary: Get the top topics filtered by a flag
       tags:
@@ -4972,9 +4998,7 @@ paths:
                               type: boolean
                             last_read_post_number:
                               type: integer
-                            unread:
-                              type: integer
-                            new_posts:
+                            unread_posts:
                               type: integer
                             pinned:
                               type: boolean
@@ -5780,6 +5804,19 @@ paths:
                     type:
                     - string
                     - 'null'
+                  penalty_counts:
+                    type: object
+                    additionalProperties: false
+                    properties:
+                      silenced:
+                        type: integer
+                      suspended:
+                        type: integer
+                    required:
+                    - silenced
+                    - suspended
+                  next_penalty:
+                    type: string
                   tl3_requirements:
                     type: object
                     additionalProperties: false
@@ -6620,13 +6657,13 @@ components:
             primary_group_name:
               type: string
               nullable: true
-            primary_group_flair_url:
+            flair_url:
               type: string
               nullable: true
-            primary_group_flair_bg_color:
+            flair_bg_color:
               type: string
               nullable: true
-            primary_group_flair_color:
+            flair_color:
               type: string
               nullable: true
             featured_topic:
