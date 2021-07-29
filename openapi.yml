@@ -6196,6 +6196,33 @@ paths:
               required:
               - suspend_until
               - reason
+  "/admin/users/{id}/anonymize.json":
+    put:
+      summary: Anonymize a user
+      tags:
+      - Users
+      - Admin
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: response
+          content:
+            application/json:
+              schema:
+                additionalProperties: false
+                properties:
+                  success:
+                    type: string
+                  username:
+                    type: string
+                required:
+                - success
+                - username
   "/admin/users/{id}/log_out.json":
     post:
       summary: Log a user out
