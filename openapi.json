@@ -147,6 +147,642 @@
         }
       }
     },
+    "/admin/badges.json": {
+      "get": {
+        "summary": "List badges",
+        "tags": [
+          "Badges"
+        ],
+        "responses": {
+          "200": {
+            "description": "success response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "badges": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "description": {
+                              "type": "string"
+                            },
+                            "grant_count": {
+                              "type": "integer"
+                            },
+                            "allow_title": {
+                              "type": "boolean"
+                            },
+                            "multiple_grant": {
+                              "type": "boolean"
+                            },
+                            "icon": {
+                              "type": "string"
+                            },
+                            "image_url": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            },
+                            "listable": {
+                              "type": "boolean"
+                            },
+                            "enabled": {
+                              "type": "boolean"
+                            },
+                            "badge_grouping_id": {
+                              "type": "integer"
+                            },
+                            "system": {
+                              "type": "boolean"
+                            },
+                            "long_description": {
+                              "type": "string"
+                            },
+                            "slug": {
+                              "type": "string"
+                            },
+                            "manually_grantable": {
+                              "type": "boolean"
+                            },
+                            "query": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            },
+                            "trigger": {
+                              "type": [
+                                "integer",
+                                "null"
+                              ]
+                            },
+                            "target_posts": {
+                              "type": "boolean"
+                            },
+                            "auto_revoke": {
+                              "type": "boolean"
+                            },
+                            "show_posts": {
+                              "type": "boolean"
+                            },
+                            "i18n_name": {
+                              "type": "string"
+                            },
+                            "badge_type_id": {
+                              "type": "integer"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "name",
+                            "description",
+                            "grant_count",
+                            "allow_title",
+                            "multiple_grant",
+                            "icon",
+                            "image_url",
+                            "listable",
+                            "enabled",
+                            "badge_grouping_id",
+                            "system",
+                            "long_description",
+                            "slug",
+                            "manually_grantable",
+                            "query",
+                            "trigger",
+                            "target_posts",
+                            "auto_revoke",
+                            "show_posts",
+                            "i18n_name",
+                            "badge_type_id"
+                          ]
+                        }
+                      ]
+                    },
+                    "badge_types": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "sort_order": {
+                              "type": "integer"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "name",
+                            "sort_order"
+                          ]
+                        }
+                      ]
+                    },
+                    "badge_groupings": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "description": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            },
+                            "position": {
+                              "type": "integer"
+                            },
+                            "system": {
+                              "type": "boolean"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "name",
+                            "description",
+                            "position",
+                            "system"
+                          ]
+                        }
+                      ]
+                    },
+                    "admin_badges": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "protected_system_fields": {
+                          "type": "array",
+                          "items": []
+                        },
+                        "triggers": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "user_change": {
+                              "type": "integer"
+                            },
+                            "none": {
+                              "type": "integer"
+                            },
+                            "post_revision": {
+                              "type": "integer"
+                            },
+                            "trust_level_change": {
+                              "type": "integer"
+                            },
+                            "post_action": {
+                              "type": "integer"
+                            }
+                          },
+                          "required": [
+                            "user_change",
+                            "none",
+                            "post_revision",
+                            "trust_level_change",
+                            "post_action"
+                          ]
+                        },
+                        "badge_ids": {
+                          "type": "array",
+                          "items": []
+                        },
+                        "badge_grouping_ids": {
+                          "type": "array",
+                          "items": []
+                        },
+                        "badge_type_ids": {
+                          "type": "array",
+                          "items": []
+                        }
+                      },
+                      "required": [
+                        "protected_system_fields",
+                        "triggers",
+                        "badge_ids",
+                        "badge_grouping_ids",
+                        "badge_type_ids"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "badges",
+                    "badge_types",
+                    "badge_groupings",
+                    "admin_badges"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create badge",
+        "tags": [
+          "Badges"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "success response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "badge_types": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "sort_order": {
+                              "type": "integer"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "name",
+                            "sort_order"
+                          ]
+                        }
+                      ]
+                    },
+                    "badge": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "grant_count": {
+                          "type": "integer"
+                        },
+                        "allow_title": {
+                          "type": "boolean"
+                        },
+                        "multiple_grant": {
+                          "type": "boolean"
+                        },
+                        "icon": {
+                          "type": "string"
+                        },
+                        "image_url": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
+                        "listable": {
+                          "type": "boolean"
+                        },
+                        "enabled": {
+                          "type": "boolean"
+                        },
+                        "badge_grouping_id": {
+                          "type": "integer"
+                        },
+                        "system": {
+                          "type": "boolean"
+                        },
+                        "long_description": {
+                          "type": "string"
+                        },
+                        "slug": {
+                          "type": "string"
+                        },
+                        "manually_grantable": {
+                          "type": "boolean"
+                        },
+                        "query": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
+                        "trigger": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
+                        "target_posts": {
+                          "type": "boolean"
+                        },
+                        "auto_revoke": {
+                          "type": "boolean"
+                        },
+                        "show_posts": {
+                          "type": "boolean"
+                        },
+                        "badge_type_id": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "name",
+                        "description",
+                        "grant_count",
+                        "allow_title",
+                        "multiple_grant",
+                        "icon",
+                        "image_url",
+                        "listable",
+                        "enabled",
+                        "badge_grouping_id",
+                        "system",
+                        "long_description",
+                        "slug",
+                        "manually_grantable",
+                        "query",
+                        "trigger",
+                        "target_posts",
+                        "auto_revoke",
+                        "show_posts",
+                        "badge_type_id"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "badge_types",
+                    "badge"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "The name for the new badge."
+                  },
+                  "badge_type_id": {
+                    "type": "integer",
+                    "description": "The ID for the badge type. 1 for Gold, 2 for Silver,\n3 for Bronze."
+                  }
+                },
+                "required": [
+                  "name",
+                  "badge_type_id"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/badges/{id}.json": {
+      "put": {
+        "summary": "Update badge",
+        "tags": [
+          "Badges"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "badge_types": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "sort_order": {
+                              "type": "integer"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "name",
+                            "sort_order"
+                          ]
+                        }
+                      ]
+                    },
+                    "badge": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "grant_count": {
+                          "type": "integer"
+                        },
+                        "allow_title": {
+                          "type": "boolean"
+                        },
+                        "multiple_grant": {
+                          "type": "boolean"
+                        },
+                        "icon": {
+                          "type": "string"
+                        },
+                        "image_url": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
+                        "listable": {
+                          "type": "boolean"
+                        },
+                        "enabled": {
+                          "type": "boolean"
+                        },
+                        "badge_grouping_id": {
+                          "type": "integer"
+                        },
+                        "system": {
+                          "type": "boolean"
+                        },
+                        "long_description": {
+                          "type": "string"
+                        },
+                        "slug": {
+                          "type": "string"
+                        },
+                        "manually_grantable": {
+                          "type": "boolean"
+                        },
+                        "query": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
+                        "trigger": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
+                        "target_posts": {
+                          "type": "boolean"
+                        },
+                        "auto_revoke": {
+                          "type": "boolean"
+                        },
+                        "show_posts": {
+                          "type": "boolean"
+                        },
+                        "badge_type_id": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "name",
+                        "description",
+                        "grant_count",
+                        "allow_title",
+                        "multiple_grant",
+                        "icon",
+                        "image_url",
+                        "listable",
+                        "enabled",
+                        "badge_grouping_id",
+                        "system",
+                        "long_description",
+                        "slug",
+                        "manually_grantable",
+                        "query",
+                        "trigger",
+                        "target_posts",
+                        "auto_revoke",
+                        "show_posts",
+                        "badge_type_id"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "badge_types",
+                    "badge"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "The name for the new badge."
+                  },
+                  "badge_type_id": {
+                    "type": "integer",
+                    "description": "The ID for the badge type. 1 for Gold, 2 for Silver,\n3 for Bronze."
+                  }
+                },
+                "required": [
+                  "name",
+                  "badge_type_id"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete badge",
+        "tags": [
+          "Badges"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success response"
+          }
+        }
+      }
+    },
     "/categories.json": {
       "post": {
         "summary": "Creates a category",
@@ -7750,6 +8386,235 @@
         }
       }
     },
+    "/user-badges/{username}.json": {
+      "get": {
+        "summary": "List badges for a user",
+        "tags": [
+          "Badges",
+          "Users"
+        ],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "badges": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "description": {
+                              "type": "string"
+                            },
+                            "grant_count": {
+                              "type": "integer"
+                            },
+                            "allow_title": {
+                              "type": "boolean"
+                            },
+                            "multiple_grant": {
+                              "type": "boolean"
+                            },
+                            "icon": {
+                              "type": "string"
+                            },
+                            "image_url": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            },
+                            "listable": {
+                              "type": "boolean"
+                            },
+                            "enabled": {
+                              "type": "boolean"
+                            },
+                            "badge_grouping_id": {
+                              "type": "integer"
+                            },
+                            "system": {
+                              "type": "boolean"
+                            },
+                            "slug": {
+                              "type": "string"
+                            },
+                            "manually_grantable": {
+                              "type": "boolean"
+                            },
+                            "badge_type_id": {
+                              "type": "integer"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "name",
+                            "description",
+                            "grant_count",
+                            "allow_title",
+                            "multiple_grant",
+                            "icon",
+                            "image_url",
+                            "listable",
+                            "enabled",
+                            "badge_grouping_id",
+                            "system",
+                            "slug",
+                            "manually_grantable",
+                            "badge_type_id"
+                          ]
+                        }
+                      ]
+                    },
+                    "badge_types": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "sort_order": {
+                              "type": "integer"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "name",
+                            "sort_order"
+                          ]
+                        }
+                      ]
+                    },
+                    "granted_bies": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "username": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "avatar_template": {
+                              "type": "string"
+                            },
+                            "flair_name": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            },
+                            "admin": {
+                              "type": "boolean"
+                            },
+                            "moderator": {
+                              "type": "boolean"
+                            },
+                            "trust_level": {
+                              "type": "integer"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "username",
+                            "name",
+                            "avatar_template",
+                            "flair_name",
+                            "admin",
+                            "moderator",
+                            "trust_level"
+                          ]
+                        }
+                      ]
+                    },
+                    "user_badges": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "granted_at": {
+                              "type": "string"
+                            },
+                            "grouping_position": {
+                              "type": "integer"
+                            },
+                            "is_favorite": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            },
+                            "can_favorite": {
+                              "type": "boolean"
+                            },
+                            "badge_id": {
+                              "type": "integer"
+                            },
+                            "granted_by_id": {
+                              "type": "integer"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "granted_at",
+                            "grouping_position",
+                            "is_favorite",
+                            "can_favorite",
+                            "badge_id",
+                            "granted_by_id"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "user_badges"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/users.json": {
       "post": {
         "summary": "Creates a user",
@@ -9973,6 +10838,12 @@
                     "silence_reason": {
                       "type": [
                         "string",
+                        "null"
+                      ]
+                    },
+                    "post_edits_count": {
+                      "type": [
+                        "integer",
                         "null"
                       ]
                     },
