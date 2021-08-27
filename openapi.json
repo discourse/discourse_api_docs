@@ -1,5 +1,5 @@
 {
-  "openapi": "3.0.3",
+  "openapi": "3.1.0",
   "info": {
     "title": "Discourse API Documentation",
     "x-logo": {
@@ -2336,8 +2336,10 @@
                           "type": "integer"
                         },
                         "automatic_membership_email_domains": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "automatic_membership_retroactive": {
                           "type": "boolean"
@@ -2346,43 +2348,61 @@
                           "type": "boolean"
                         },
                         "title": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "grant_trust_level": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "incoming_email": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "has_messages": {
                           "type": "boolean"
                         },
                         "flair_url": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "flair_bg_color": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "flair_color": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "bio_raw": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "bio_cooked": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "bio_excerpt": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "public_admission": {
                           "type": "boolean"
@@ -2394,15 +2414,19 @@
                           "type": "boolean"
                         },
                         "full_name": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "default_notification_level": {
                           "type": "integer"
                         },
                         "membership_request_template": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "membership_visibility_level": {
                           "type": "integer"
@@ -2552,9 +2576,7 @@
             }
           }
         }
-      }
-    },
-    "/groups/{name}.json": {
+      },
       "get": {
         "summary": "Get a group",
         "tags": [
@@ -2562,8 +2584,10 @@
         ],
         "parameters": [
           {
-            "name": "name",
+            "name": "id",
             "in": "path",
+            "example": "name",
+            "description": "Use group name instead of id",
             "required": true,
             "schema": {
               "type": "string"
@@ -2948,7 +2972,7 @@
         }
       }
     },
-    "/groups/{name}/members.json": {
+    "/groups/{id}/members.json": {
       "get": {
         "summary": "List group members",
         "tags": [
@@ -2956,8 +2980,10 @@
         ],
         "parameters": [
           {
-            "name": "name",
+            "name": "id",
             "in": "path",
+            "example": "name",
+            "description": "Use group name instead of id",
             "required": true,
             "schema": {
               "type": "string"
@@ -3113,9 +3139,7 @@
             }
           }
         }
-      }
-    },
-    "/groups/{id}/members.json": {
+      },
       "put": {
         "summary": "Add group members",
         "tags": [
@@ -3505,9 +3529,11 @@
                       "example": false
                     },
                     "custom_message": {
-                      "type": "string",
-                      "example": "Hello world!",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "example": "Hello world!"
                     },
                     "topics": {
                       "type": "array",
@@ -3565,12 +3591,10 @@
                     "description": "optional, for link invites"
                   },
                   "topic_id": {
-                    "type": "int"
+                    "type": "integer"
                   },
                   "group_id": {
-                    "type": [
-                      "int"
-                    ],
+                    "type": "integer",
                     "description": "optional, either this or `group_names`"
                   },
                   "group_names": {
@@ -3623,16 +3647,22 @@
                             "type": "string"
                           },
                           "post_number": {
-                            "type": "string",
-                            "nullable": true
+                            "type": [
+                              "string",
+                              "null"
+                            ]
                           },
                           "topic_id": {
-                            "type": "integer",
-                            "nullable": true
+                            "type": [
+                              "integer",
+                              "null"
+                            ]
                           },
                           "slug": {
-                            "type": "string",
-                            "nullable": true
+                            "type": [
+                              "string",
+                              "null"
+                            ]
                           },
                           "data": {
                             "type": "object",
@@ -3783,8 +3813,10 @@
                             "type": "integer"
                           },
                           "reply_to_post_number": {
-                            "type": "string",
-                            "nullable": true
+                            "type": [
+                              "string",
+                              "null"
+                            ]
                           },
                           "quote_count": {
                             "type": "integer"
@@ -3823,24 +3855,34 @@
                             "type": "string"
                           },
                           "primary_group_name": {
-                            "type": "string",
-                            "nullable": true
+                            "type": [
+                              "string",
+                              "null"
+                            ]
                           },
                           "flair_name": {
-                            "type": "string",
-                            "nullable": true
+                            "type": [
+                              "string",
+                              "null"
+                            ]
                           },
                           "flair_url": {
-                            "type": "string",
-                            "nullable": true
+                            "type": [
+                              "string",
+                              "null"
+                            ]
                           },
                           "flair_bg_color": {
-                            "type": "string",
-                            "nullable": true
+                            "type": [
+                              "string",
+                              "null"
+                            ]
                           },
                           "flair_color": {
-                            "type": "string",
-                            "nullable": true
+                            "type": [
+                              "string",
+                              "null"
+                            ]
                           },
                           "version": {
                             "type": "integer"
@@ -3858,8 +3900,10 @@
                             "type": "boolean"
                           },
                           "user_title": {
-                            "type": "string",
-                            "nullable": true
+                            "type": [
+                              "string",
+                              "null"
+                            ]
                           },
                           "raw": {
                             "type": "string"
@@ -3897,15 +3941,19 @@
                             "type": "integer"
                           },
                           "deleted_at": {
-                            "type": "string",
-                            "nullable": true
+                            "type": [
+                              "string",
+                              "null"
+                            ]
                           },
                           "user_deleted": {
                             "type": "boolean"
                           },
                           "edit_reason": {
-                            "type": "string",
-                            "nullable": true
+                            "type": [
+                              "string",
+                              "null"
+                            ]
                           },
                           "can_view_edit_history": {
                             "type": "boolean"
@@ -3914,8 +3962,10 @@
                             "type": "boolean"
                           },
                           "reviewable_id": {
-                            "type": "string",
-                            "nullable": true
+                            "type": [
+                              "string",
+                              "null"
+                            ]
                           },
                           "reviewable_score_count": {
                             "type": "integer"
@@ -4299,8 +4349,10 @@
                       "type": "integer"
                     },
                     "name": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "username": {
                       "type": "string"
@@ -4327,8 +4379,10 @@
                       "type": "integer"
                     },
                     "reply_to_post_number": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "quote_count": {
                       "type": "integer"
@@ -4355,28 +4409,40 @@
                       "type": "string"
                     },
                     "display_username": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "primary_group_name": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "flair_name": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "flair_url": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "flair_bg_color": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "flair_color": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "version": {
                       "type": "integer"
@@ -4394,8 +4460,10 @@
                       "type": "boolean"
                     },
                     "user_title": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "raw": {
                       "type": "string"
@@ -4433,15 +4501,19 @@
                       "type": "integer"
                     },
                     "deleted_at": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "user_deleted": {
                       "type": "boolean"
                     },
                     "edit_reason": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "can_view_edit_history": {
                       "type": "boolean"
@@ -4450,8 +4522,10 @@
                       "type": "boolean"
                     },
                     "reviewable_id": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "reviewable_score_count": {
                       "type": "integer"
@@ -4512,8 +4586,10 @@
                           "type": "integer"
                         },
                         "name": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "username": {
                           "type": "string"
@@ -4540,8 +4616,10 @@
                           "type": "integer"
                         },
                         "reply_to_post_number": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "quote_count": {
                           "type": "integer"
@@ -4568,24 +4646,34 @@
                           "type": "string"
                         },
                         "display_username": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "primary_group_name": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "flair_url": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "flair_bg_color": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "flair_color": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "version": {
                           "type": "integer"
@@ -4603,8 +4691,10 @@
                           "type": "boolean"
                         },
                         "user_title": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "actions_summary": {
                           "type": "array",
@@ -4642,15 +4732,19 @@
                           "type": "integer"
                         },
                         "deleted_at": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "user_deleted": {
                           "type": "boolean"
                         },
                         "edit_reason": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "can_view_edit_history": {
                           "type": "boolean"
@@ -4659,8 +4753,10 @@
                           "type": "boolean"
                         },
                         "reviewable_id": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "reviewable_score_count": {
                           "type": "integer"
@@ -4834,8 +4930,10 @@
                       "type": "integer"
                     },
                     "reply_to_post_number": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "quote_count": {
                       "type": "integer"
@@ -4865,24 +4963,34 @@
                       "type": "string"
                     },
                     "primary_group_name": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "flair_name": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "flair_url": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "flair_bg_color": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "flair_color": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "version": {
                       "type": "integer"
@@ -4900,8 +5008,10 @@
                       "type": "boolean"
                     },
                     "user_title": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "actions_summary": {
                       "type": "array",
@@ -4942,15 +5052,19 @@
                       "type": "integer"
                     },
                     "deleted_at": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "user_deleted": {
                       "type": "boolean"
                     },
                     "edit_reason": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "can_view_edit_history": {
                       "type": "boolean"
@@ -4962,8 +5076,10 @@
                       "type": "object"
                     },
                     "reviewable_id": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "reviewable_score_count": {
                       "type": "integer"
@@ -5058,8 +5174,10 @@
                           "type": "boolean"
                         },
                         "draft": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "draft_key": {
                           "type": "string"
@@ -5097,8 +5215,10 @@
                                 "type": "integer"
                               },
                               "image_url": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "created_at": {
                                 "type": "string"
@@ -5128,8 +5248,10 @@
                                 "type": "boolean"
                               },
                               "unpinned": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "visible": {
                                 "type": "boolean"
@@ -5162,15 +5284,19 @@
                                 "type": "string"
                               },
                               "category_id": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "pinned_globally": {
                                 "type": "boolean"
                               },
                               "featured_link": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "allowed_user_count": {
                                 "type": "integer"
@@ -5190,8 +5316,10 @@
                                       "type": "integer"
                                     },
                                     "primary_group_id": {
-                                      "type": "string",
-                                      "nullable": true
+                                      "type": [
+                                        "string",
+                                        "null"
+                                      ]
                                     }
                                   }
                                 }
@@ -5205,15 +5333,19 @@
                                       "type": "string"
                                     },
                                     "description": {
-                                      "type": "string",
-                                      "nullable": true
+                                      "type": [
+                                        "string",
+                                        "null"
+                                      ]
                                     },
                                     "user_id": {
                                       "type": "integer"
                                     },
                                     "primary_group_id": {
-                                      "type": "string",
-                                      "nullable": true
+                                      "type": [
+                                        "string",
+                                        "null"
+                                      ]
                                     }
                                   }
                                 }
@@ -5267,8 +5399,10 @@
                             "type": "string"
                           },
                           "name": {
-                            "type": "string",
-                            "nullable": true
+                            "type": [
+                              "string",
+                              "null"
+                            ]
                           },
                           "avatar_template": {
                             "type": "string"
@@ -5287,8 +5421,10 @@
                           "type": "boolean"
                         },
                         "draft": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "draft_key": {
                           "type": "string"
@@ -5326,8 +5462,10 @@
                                 "type": "integer"
                               },
                               "image_url": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "created_at": {
                                 "type": "string"
@@ -5357,8 +5495,10 @@
                                 "type": "boolean"
                               },
                               "unpinned": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "visible": {
                                 "type": "boolean"
@@ -5391,15 +5531,19 @@
                                 "type": "string"
                               },
                               "category_id": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "pinned_globally": {
                                 "type": "boolean"
                               },
                               "featured_link": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "allowed_user_count": {
                                 "type": "integer"
@@ -5419,8 +5563,10 @@
                                       "type": "integer"
                                     },
                                     "primary_group_id": {
-                                      "type": "string",
-                                      "nullable": true
+                                      "type": [
+                                        "string",
+                                        "null"
+                                      ]
                                     }
                                   }
                                 }
@@ -5448,7 +5594,25 @@
         "tags": [
           "Search"
         ],
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "example": "api @blake #support tags:api after:2021-06-04 in:unseen in:open\norder:latest_topic",
+            "description": "The query string needs to be url encoded and is made up of the following options:\n- Search term. This is just a string. Usually it would be the first item in the query.\n- `@<username>`: Use the `@` followed by the username to specify posts by this user.\n- `#<category>`: Use the `#` followed by the category slug to search within this category.\n- `tags:`: `api,solved` or for posts that have all the specified tags `api+solved`.\n- `before:`: `yyyy-mm-dd`\n- `after:`: `yyyy-mm-dd`\n- `order:`: `latest`, `likes`, `views`, `latest_topic`\n- `assigned:`: username (without `@`)\n- `in:`: `title`, `likes`, `personal`, `seen`, `unseen`, `posted`, `created`, `watching`, `tracking`, `bookmarks`, `assigned`, `unassigned`, `first`, `pinned`, `open`, `closed`, `public`, `archived`, `noreplies`, `single_user`, `solved`, `unsolved`\n- `min_posts:`: 1\n- `max_posts:`: 10\n- `min_views:`: 1\n- `max_views:`: 10\n\nIf you are using cURL you can use the `-G` and the `--data-urlencode` flags to encode the query:\n\n```\ncurl -i -sS -X GET -G \"http://localhost:4200/search.json\" \\\n--data-urlencode 'q=wordpress @scossar #fun after:2020-01-01'\n```\n",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "example": 1,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "success response",
@@ -5469,15 +5633,16 @@
                       "type": "array",
                       "items": []
                     },
+                    "tags": {
+                      "type": "array",
+                      "items": []
+                    },
                     "groups": {
                       "type": "array",
                       "items": []
                     },
                     "grouped_search_result": {
-                      "type": [
-                        "object",
-                        "null"
-                      ],
+                      "type": "object",
                       "additionalProperties": false,
                       "properties": {
                         "more_posts": {
@@ -5531,6 +5696,10 @@
                           "type": "array",
                           "items": []
                         },
+                        "tag_ids": {
+                          "type": "array",
+                          "items": []
+                        },
                         "group_ids": {
                           "type": "array",
                           "items": []
@@ -5548,31 +5717,20 @@
                         "post_ids",
                         "user_ids",
                         "category_ids",
+                        "tag_ids",
                         "group_ids"
                       ]
                     }
                   },
                   "required": [
+                    "posts",
+                    "users",
+                    "categories",
+                    "tags",
+                    "groups",
                     "grouped_search_result"
                   ]
                 }
-              }
-            }
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "additionalProperties": false,
-                "properties": {
-                  "q": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "q"
-                ]
               }
             }
           }
@@ -5881,8 +6039,10 @@
                             "type": "integer"
                           },
                           "target_tag": {
-                            "type": "string",
-                            "nullable": true
+                            "type": [
+                              "string",
+                              "null"
+                            ]
                           }
                         }
                       }
@@ -5940,8 +6100,10 @@
                             "type": "string"
                           },
                           "name": {
-                            "type": "string",
-                            "nullable": true
+                            "type": [
+                              "string",
+                              "null"
+                            ]
                           },
                           "avatar_template": {
                             "type": "string"
@@ -5960,8 +6122,10 @@
                           "type": "boolean"
                         },
                         "draft": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "draft_key": {
                           "type": "string"
@@ -6019,8 +6183,10 @@
                                 "type": "integer"
                               },
                               "image_url": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "created_at": {
                                 "type": "string"
@@ -6050,8 +6216,10 @@
                                 "type": "boolean"
                               },
                               "unpinned": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "visible": {
                                 "type": "boolean"
@@ -6094,8 +6262,10 @@
                                 "type": "boolean"
                               },
                               "featured_link": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "posters": {
                                 "type": "array",
@@ -6112,8 +6282,10 @@
                                       "type": "integer"
                                     },
                                     "primary_group_id": {
-                                      "type": "string",
-                                      "nullable": true
+                                      "type": [
+                                        "string",
+                                        "null"
+                                      ]
                                     }
                                   }
                                 }
@@ -6183,8 +6355,10 @@
                                 "type": "integer"
                               },
                               "name": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "username": {
                                 "type": "string"
@@ -6211,8 +6385,10 @@
                                 "type": "integer"
                               },
                               "reply_to_post_number": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "quote_count": {
                                 "type": "integer"
@@ -6239,28 +6415,40 @@
                                 "type": "string"
                               },
                               "display_username": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "primary_group_name": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "flair_name": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "flair_url": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "flair_bg_color": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "flair_color": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "version": {
                                 "type": "integer"
@@ -6281,8 +6469,10 @@
                                 "type": "boolean"
                               },
                               "user_title": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "actions_summary": {
                                 "type": "array",
@@ -6317,15 +6507,19 @@
                                 "type": "integer"
                               },
                               "deleted_at": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "user_deleted": {
                                 "type": "boolean"
                               },
                               "edit_reason": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "can_view_edit_history": {
                                 "type": "boolean"
@@ -6454,8 +6648,10 @@
                                 "type": "integer"
                               },
                               "reply_to_post_number": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "quote_count": {
                                 "type": "integer"
@@ -6485,24 +6681,34 @@
                                 "type": "string"
                               },
                               "primary_group_name": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "flair_name": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "flair_url": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "flair_bg_color": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "flair_color": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "version": {
                                 "type": "integer"
@@ -6543,8 +6749,10 @@
                                 "type": "boolean"
                               },
                               "user_title": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "actions_summary": {
                                 "type": "array",
@@ -6579,15 +6787,19 @@
                                 "type": "integer"
                               },
                               "deleted_at": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "user_deleted": {
                                 "type": "boolean"
                               },
                               "edit_reason": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "can_view_edit_history": {
                                 "type": "boolean"
@@ -6644,15 +6856,19 @@
                             "type": "integer"
                           },
                           "image_url": {
-                            "type": "string",
-                            "nullable": true
+                            "type": [
+                              "string",
+                              "null"
+                            ]
                           },
                           "created_at": {
                             "type": "string"
                           },
                           "last_posted_at": {
-                            "type": "string",
-                            "nullable": true
+                            "type": [
+                              "string",
+                              "null"
+                            ]
                           },
                           "bumped": {
                             "type": "boolean"
@@ -6706,8 +6922,10 @@
                             "type": "integer"
                           },
                           "featured_link": {
-                            "type": "string",
-                            "nullable": true
+                            "type": [
+                              "string",
+                              "null"
+                            ]
                           },
                           "posters": {
                             "type": "array",
@@ -6715,8 +6933,10 @@
                               "type": "object",
                               "properties": {
                                 "extras": {
-                                  "type": "string",
-                                  "nullable": true
+                                  "type": [
+                                    "string",
+                                    "null"
+                                  ]
                                 },
                                 "description": {
                                   "type": "string"
@@ -6769,8 +6989,10 @@
                       "type": "integer"
                     },
                     "last_posted_at": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "visible": {
                       "type": "boolean"
@@ -6794,38 +7016,52 @@
                       "type": "integer"
                     },
                     "word_count": {
-                      "type": "integer",
-                      "nullable": true
+                      "type": [
+                        "integer",
+                        "null"
+                      ]
                     },
                     "deleted_at": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "user_id": {
                       "type": "integer"
                     },
                     "featured_link": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "pinned_globally": {
                       "type": "boolean"
                     },
                     "pinned_at": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "pinned_until": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "image_url": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "draft": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "draft_key": {
                       "type": "string"
@@ -6834,8 +7070,10 @@
                       "type": "integer"
                     },
                     "unpinned": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "pinned": {
                       "type": "boolean"
@@ -6844,12 +7082,16 @@
                       "type": "integer"
                     },
                     "highest_post_number": {
-                      "type": "integer",
-                      "nullable": true
+                      "type": [
+                        "integer",
+                        "null"
+                      ]
                     },
                     "deleted_by": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "has_deleted": {
                       "type": "boolean"
@@ -6881,8 +7123,10 @@
                       "type": "boolean"
                     },
                     "topic_timer": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "message_bus_last_id": {
                       "type": "integer"
@@ -6894,8 +7138,10 @@
                       "type": "boolean"
                     },
                     "thumbnails": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "details": {
                       "type": "object",
@@ -6954,24 +7200,34 @@
                                 "type": "integer"
                               },
                               "primary_group_name": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "flair_name": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "flair_url": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "flair_color": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "flair_bg_color": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               }
                             }
                           }
@@ -7314,8 +7570,10 @@
                       "example": "OK"
                     },
                     "topic_status_update": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     }
                   }
                 }
@@ -7422,8 +7680,10 @@
                             "type": "string"
                           },
                           "name": {
-                            "type": "string",
-                            "nullable": true
+                            "type": [
+                              "string",
+                              "null"
+                            ]
                           },
                           "avatar_template": {
                             "type": "string"
@@ -7442,8 +7702,10 @@
                           "type": "boolean"
                         },
                         "draft": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "draft_key": {
                           "type": "string"
@@ -7511,8 +7773,10 @@
                                 "type": "boolean"
                               },
                               "unpinned": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "visible": {
                                 "type": "boolean"
@@ -7554,8 +7818,10 @@
                                 "type": "boolean"
                               },
                               "featured_link": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "posters": {
                                 "type": "array",
@@ -7572,8 +7838,10 @@
                                       "type": "integer"
                                     },
                                     "primary_group_id": {
-                                      "type": "string",
-                                      "nullable": true
+                                      "type": [
+                                        "string",
+                                        "null"
+                                      ]
                                     }
                                   }
                                 }
@@ -7593,223 +7861,7 @@
     },
     "/top.json": {
       "get": {
-        "summary": "Get the top topics",
-        "tags": [
-          "Topics"
-        ],
-        "parameters": [
-          {
-            "name": "Api-Key",
-            "in": "header",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Api-Username",
-            "in": "header",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "topic updated",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "users": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "id": {
-                            "type": "integer"
-                          },
-                          "username": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "avatar_template": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    },
-                    "primary_groups": {
-                      "type": "array",
-                      "items": {}
-                    },
-                    "topic_list": {
-                      "type": "object",
-                      "properties": {
-                        "can_create_topic": {
-                          "type": "boolean"
-                        },
-                        "draft": {
-                          "type": "string",
-                          "nullable": true
-                        },
-                        "draft_key": {
-                          "type": "string"
-                        },
-                        "draft_sequence": {
-                          "type": "integer"
-                        },
-                        "for_period": {
-                          "type": "string"
-                        },
-                        "per_page": {
-                          "type": "integer"
-                        },
-                        "topics": {
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "properties": {
-                              "id": {
-                                "type": "integer"
-                              },
-                              "title": {
-                                "type": "string"
-                              },
-                              "fancy_title": {
-                                "type": "string"
-                              },
-                              "slug": {
-                                "type": "string"
-                              },
-                              "posts_count": {
-                                "type": "integer"
-                              },
-                              "reply_count": {
-                                "type": "integer"
-                              },
-                              "highest_post_number": {
-                                "type": "integer"
-                              },
-                              "image_url": {
-                                "type": "string",
-                                "nullable": true
-                              },
-                              "created_at": {
-                                "type": "string"
-                              },
-                              "last_posted_at": {
-                                "type": "string"
-                              },
-                              "bumped": {
-                                "type": "boolean"
-                              },
-                              "bumped_at": {
-                                "type": "string"
-                              },
-                              "archetype": {
-                                "type": "string"
-                              },
-                              "unseen": {
-                                "type": "boolean"
-                              },
-                              "last_read_post_number": {
-                                "type": "integer"
-                              },
-                              "unread_posts": {
-                                "type": "integer"
-                              },
-                              "pinned": {
-                                "type": "boolean"
-                              },
-                              "unpinned": {
-                                "type": "boolean"
-                              },
-                              "visible": {
-                                "type": "boolean"
-                              },
-                              "closed": {
-                                "type": "boolean"
-                              },
-                              "archived": {
-                                "type": "boolean"
-                              },
-                              "notification_level": {
-                                "type": "integer"
-                              },
-                              "bookmarked": {
-                                "type": "boolean"
-                              },
-                              "liked": {
-                                "type": "boolean"
-                              },
-                              "views": {
-                                "type": "integer"
-                              },
-                              "like_count": {
-                                "type": "integer"
-                              },
-                              "has_summary": {
-                                "type": "boolean"
-                              },
-                              "last_poster_username": {
-                                "type": "string"
-                              },
-                              "category_id": {
-                                "type": "integer"
-                              },
-                              "op_like_count": {
-                                "type": "integer"
-                              },
-                              "pinned_globally": {
-                                "type": "boolean"
-                              },
-                              "featured_link": {
-                                "type": "string",
-                                "nullable": true
-                              },
-                              "posters": {
-                                "type": "array",
-                                "items": {
-                                  "type": "object",
-                                  "properties": {
-                                    "extras": {
-                                      "type": "string",
-                                      "nullable": true
-                                    },
-                                    "description": {
-                                      "type": "string"
-                                    },
-                                    "user_id": {
-                                      "type": "integer"
-                                    },
-                                    "primary_group_id": {
-                                      "type": "string",
-                                      "nullable": true
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/top.json?period={flag}": {
-      "get": {
-        "summary": "Get the top topics filtered by a flag",
+        "summary": "Get the top topics filtered by period",
         "tags": [
           "Topics"
         ],
@@ -7831,10 +7883,9 @@
             }
           },
           {
-            "name": "flag",
-            "in": "path",
+            "name": "period",
+            "in": "query",
             "description": "Enum: `all`, `yearly`, `quarterly`, `monthly`, `weekly`, `daily`",
-            "required": true,
             "schema": {
               "type": "string"
             }
@@ -7879,8 +7930,10 @@
                           "type": "boolean"
                         },
                         "draft": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "draft_key": {
                           "type": "string"
@@ -7921,8 +7974,10 @@
                                 "type": "integer"
                               },
                               "image_url": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "created_at": {
                                 "type": "string"
@@ -7994,8 +8049,10 @@
                                 "type": "boolean"
                               },
                               "featured_link": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "posters": {
                                 "type": "array",
@@ -8003,8 +8060,10 @@
                                   "type": "object",
                                   "properties": {
                                     "extras": {
-                                      "type": "string",
-                                      "nullable": true
+                                      "type": [
+                                        "string",
+                                        "null"
+                                      ]
                                     },
                                     "description": {
                                       "type": "string"
@@ -8013,8 +8072,10 @@
                                       "type": "integer"
                                     },
                                     "primary_group_id": {
-                                      "type": "string",
-                                      "nullable": true
+                                      "type": [
+                                        "string",
+                                        "null"
+                                      ]
                                     }
                                   }
                                 }
@@ -8225,8 +8286,10 @@
                       "type": "string"
                     },
                     "duration": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "based_on_last_post": {
                       "type": "boolean"
@@ -8235,8 +8298,10 @@
                       "type": "boolean"
                     },
                     "category_id": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     }
                   }
                 }
@@ -8765,12 +8830,16 @@
                           "type": "string"
                         },
                         "last_posted_at": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "last_seen_at": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "created_at": {
                           "type": "string"
@@ -8803,8 +8872,10 @@
                           "type": "boolean"
                         },
                         "title": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "badge_count": {
                           "type": "integer"
@@ -8824,28 +8895,40 @@
                           "type": "integer"
                         },
                         "primary_group_id": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "primary_group_name": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "flair_url": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "flair_bg_color": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "flair_color": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "featured_topic": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "staged": {
                           "type": "boolean"
@@ -8863,8 +8946,10 @@
                           "type": "boolean"
                         },
                         "uploaded_avatar_id": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "has_title_badges": {
                           "type": "boolean"
@@ -8894,8 +8979,10 @@
                           "type": "boolean"
                         },
                         "locale": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "muted_category_ids": {
                           "type": "array",
@@ -8934,8 +9021,10 @@
                           "items": {}
                         },
                         "system_avatar_upload_id": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "system_avatar_template": {
                           "type": "string"
@@ -8965,8 +9054,10 @@
                           "type": "boolean"
                         },
                         "user_api_keys": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "user_auth_tokens": {
                           "type": "array",
@@ -9011,8 +9102,10 @@
                           "items": {}
                         },
                         "invited_by": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "groups": {
                           "type": "array",
@@ -9047,43 +9140,61 @@
                                 "type": "boolean"
                               },
                               "title": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "grant_trust_level": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "incoming_email": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "has_messages": {
                                 "type": "boolean"
                               },
                               "flair_url": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "flair_bg_color": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "flair_color": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "bio_raw": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "bio_cooked": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "bio_excerpt": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "public_admission": {
                                 "type": "boolean"
@@ -9095,15 +9206,19 @@
                                 "type": "boolean"
                               },
                               "full_name": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "default_notification_level": {
                                 "type": "integer"
                               },
                               "membership_request_template": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "members_visibility_level": {
                                 "type": "integer"
@@ -9162,12 +9277,16 @@
                               "type": "boolean"
                             },
                             "color_scheme_id": {
-                              "type": "string",
-                              "nullable": true
+                              "type": [
+                                "string",
+                                "null"
+                              ]
                             },
                             "dark_scheme_id": {
-                              "type": "string",
-                              "nullable": true
+                              "type": [
+                                "string",
+                                "null"
+                              ]
                             },
                             "dynamic_favicon": {
                               "type": "boolean"
@@ -9219,8 +9338,10 @@
                               "type": "boolean"
                             },
                             "homepage_id": {
-                              "type": "string",
-                              "nullable": true
+                              "type": [
+                                "string",
+                                "null"
+                              ]
                             },
                             "hide_profile_and_presence": {
                               "type": "boolean"
@@ -9235,8 +9356,10 @@
                               "type": "string"
                             },
                             "timezone": {
-                              "type": "string",
-                              "nullable": true
+                              "type": [
+                                "string",
+                                "null"
+                              ]
                             },
                             "skip_new_user_tips": {
                               "type": "boolean"
@@ -9313,12 +9436,16 @@
                           "type": "string"
                         },
                         "last_posted_at": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "last_seen_at": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "created_at": {
                           "type": "string"
@@ -9351,8 +9478,10 @@
                           "type": "boolean"
                         },
                         "title": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "badge_count": {
                           "type": "integer"
@@ -9372,28 +9501,40 @@
                           "type": "integer"
                         },
                         "primary_group_id": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "primary_group_name": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "flair_url": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "flair_bg_color": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "flair_color": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "featured_topic": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "staged": {
                           "type": "boolean"
@@ -9411,8 +9552,10 @@
                           "type": "boolean"
                         },
                         "uploaded_avatar_id": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "has_title_badges": {
                           "type": "boolean"
@@ -9442,8 +9585,10 @@
                           "type": "boolean"
                         },
                         "locale": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "muted_category_ids": {
                           "type": "array",
@@ -9482,8 +9627,10 @@
                           "items": {}
                         },
                         "system_avatar_upload_id": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "system_avatar_template": {
                           "type": "string"
@@ -9513,8 +9660,10 @@
                           "type": "boolean"
                         },
                         "user_api_keys": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "user_auth_tokens": {
                           "type": "array",
@@ -9559,8 +9708,10 @@
                           "items": {}
                         },
                         "invited_by": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "groups": {
                           "type": "array",
@@ -9595,43 +9746,61 @@
                                 "type": "boolean"
                               },
                               "title": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "grant_trust_level": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "incoming_email": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "has_messages": {
                                 "type": "boolean"
                               },
                               "flair_url": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "flair_bg_color": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "flair_color": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "bio_raw": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "bio_cooked": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "bio_excerpt": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "public_admission": {
                                 "type": "boolean"
@@ -9643,15 +9812,19 @@
                                 "type": "boolean"
                               },
                               "full_name": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "default_notification_level": {
                                 "type": "integer"
                               },
                               "membership_request_template": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "members_visibility_level": {
                                 "type": "integer"
@@ -9710,12 +9883,16 @@
                               "type": "boolean"
                             },
                             "color_scheme_id": {
-                              "type": "string",
-                              "nullable": true
+                              "type": [
+                                "string",
+                                "null"
+                              ]
                             },
                             "dark_scheme_id": {
-                              "type": "string",
-                              "nullable": true
+                              "type": [
+                                "string",
+                                "null"
+                              ]
                             },
                             "dynamic_favicon": {
                               "type": "boolean"
@@ -9767,8 +9944,10 @@
                               "type": "boolean"
                             },
                             "homepage_id": {
-                              "type": "string",
-                              "nullable": true
+                              "type": [
+                                "string",
+                                "null"
+                              ]
                             },
                             "hide_profile_and_presence": {
                               "type": "boolean"
@@ -9783,8 +9962,10 @@
                               "type": "string"
                             },
                             "timezone": {
-                              "type": "string",
-                              "nullable": true
+                              "type": [
+                                "string",
+                                "null"
+                              ]
                             },
                             "skip_new_user_tips": {
                               "type": "boolean"
@@ -9870,12 +10051,16 @@
                           "type": "string"
                         },
                         "last_posted_at": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "last_seen_at": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "created_at": {
                           "type": "string"
@@ -9908,8 +10093,10 @@
                           "type": "boolean"
                         },
                         "title": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "badge_count": {
                           "type": "integer"
@@ -9929,28 +10116,40 @@
                           "type": "integer"
                         },
                         "primary_group_id": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "primary_group_name": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "flair_url": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "flair_bg_color": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "flair_color": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "featured_topic": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "staged": {
                           "type": "boolean"
@@ -9968,8 +10167,10 @@
                           "type": "boolean"
                         },
                         "uploaded_avatar_id": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "has_title_badges": {
                           "type": "boolean"
@@ -9999,8 +10200,10 @@
                           "type": "boolean"
                         },
                         "locale": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "muted_category_ids": {
                           "type": "array",
@@ -10039,8 +10242,10 @@
                           "items": {}
                         },
                         "system_avatar_upload_id": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "system_avatar_template": {
                           "type": "string"
@@ -10070,8 +10275,10 @@
                           "type": "boolean"
                         },
                         "user_api_keys": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "user_auth_tokens": {
                           "type": "array",
@@ -10116,8 +10323,10 @@
                           "items": {}
                         },
                         "invited_by": {
-                          "type": "string",
-                          "nullable": true
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "groups": {
                           "type": "array",
@@ -10152,43 +10361,61 @@
                                 "type": "boolean"
                               },
                               "title": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "grant_trust_level": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "incoming_email": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "has_messages": {
                                 "type": "boolean"
                               },
                               "flair_url": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "flair_bg_color": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "flair_color": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "bio_raw": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "bio_cooked": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "bio_excerpt": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "public_admission": {
                                 "type": "boolean"
@@ -10200,15 +10427,19 @@
                                 "type": "boolean"
                               },
                               "full_name": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "default_notification_level": {
                                 "type": "integer"
                               },
                               "membership_request_template": {
-                                "type": "string",
-                                "nullable": true
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               },
                               "members_visibility_level": {
                                 "type": "integer"
@@ -10267,12 +10498,16 @@
                               "type": "boolean"
                             },
                             "color_scheme_id": {
-                              "type": "string",
-                              "nullable": true
+                              "type": [
+                                "string",
+                                "null"
+                              ]
                             },
                             "dark_scheme_id": {
-                              "type": "string",
-                              "nullable": true
+                              "type": [
+                                "string",
+                                "null"
+                              ]
                             },
                             "dynamic_favicon": {
                               "type": "boolean"
@@ -10324,8 +10559,10 @@
                               "type": "boolean"
                             },
                             "homepage_id": {
-                              "type": "string",
-                              "nullable": true
+                              "type": [
+                                "string",
+                                "null"
+                              ]
                             },
                             "hide_profile_and_presence": {
                               "type": "boolean"
@@ -10340,8 +10577,10 @@
                               "type": "string"
                             },
                             "timezone": {
-                              "type": "string",
-                              "nullable": true
+                              "type": [
+                                "string",
+                                "null"
+                              ]
                             },
                             "skip_new_user_tips": {
                               "type": "boolean"
@@ -10718,13 +10957,22 @@
                       "type": "string"
                     },
                     "last_seen_age": {
-                      "type": ""
+                      "type": [
+                        "number",
+                        "null"
+                      ]
                     },
                     "last_emailed_age": {
-                      "type": ""
+                      "type": [
+                        "number",
+                        "null"
+                      ]
                     },
                     "created_at_age": {
-                      "type": ""
+                      "type": [
+                        "number",
+                        "null"
+                      ]
                     },
                     "trust_level": {
                       "type": "integer"
@@ -10860,7 +11108,10 @@
                       "type": "integer"
                     },
                     "bounce_score": {
-                      "type": ""
+                      "type": [
+                        "integer",
+                        "null"
+                      ]
                     },
                     "reset_bounce_score_after": {
                       "type": [
@@ -11730,13 +11981,22 @@
                         "type": "string"
                       },
                       "last_seen_age": {
-                        "type": ""
+                        "type": [
+                          "number",
+                          "null"
+                        ]
                       },
                       "last_emailed_age": {
-                        "type": ""
+                        "type": [
+                          "number",
+                          "null"
+                        ]
                       },
                       "created_at_age": {
-                        "type": ""
+                        "type": [
+                          "number",
+                          "null"
+                        ]
                       },
                       "trust_level": {
                         "type": "integer"
@@ -12127,12 +12387,16 @@
                 "type": "string"
               },
               "last_posted_at": {
-                "type": "string",
-                "nullable": true
+                "type": [
+                  "string",
+                  "null"
+                ]
               },
               "last_seen_at": {
-                "type": "string",
-                "nullable": true
+                "type": [
+                  "string",
+                  "null"
+                ]
               },
               "created_at": {
                 "type": "string"
@@ -12165,8 +12429,10 @@
                 "type": "boolean"
               },
               "title": {
-                "type": "string",
-                "nullable": true
+                "type": [
+                  "string",
+                  "null"
+                ]
               },
               "badge_count": {
                 "type": "integer"
@@ -12186,28 +12452,40 @@
                 "type": "integer"
               },
               "primary_group_id": {
-                "type": "string",
-                "nullable": true
+                "type": [
+                  "string",
+                  "null"
+                ]
               },
               "primary_group_name": {
-                "type": "string",
-                "nullable": true
+                "type": [
+                  "string",
+                  "null"
+                ]
               },
               "flair_url": {
-                "type": "string",
-                "nullable": true
+                "type": [
+                  "string",
+                  "null"
+                ]
               },
               "flair_bg_color": {
-                "type": "string",
-                "nullable": true
+                "type": [
+                  "string",
+                  "null"
+                ]
               },
               "flair_color": {
-                "type": "string",
-                "nullable": true
+                "type": [
+                  "string",
+                  "null"
+                ]
               },
               "featured_topic": {
-                "type": "string",
-                "nullable": true
+                "type": [
+                  "string",
+                  "null"
+                ]
               },
               "staged": {
                 "type": "boolean"
@@ -12225,8 +12503,10 @@
                 "type": "boolean"
               },
               "uploaded_avatar_id": {
-                "type": "string",
-                "nullable": true
+                "type": [
+                  "string",
+                  "null"
+                ]
               },
               "has_title_badges": {
                 "type": "boolean"
@@ -12256,8 +12536,10 @@
                 "type": "boolean"
               },
               "locale": {
-                "type": "string",
-                "nullable": true
+                "type": [
+                  "string",
+                  "null"
+                ]
               },
               "muted_category_ids": {
                 "type": "array",
@@ -12296,8 +12578,10 @@
                 "items": {}
               },
               "system_avatar_upload_id": {
-                "type": "string",
-                "nullable": true
+                "type": [
+                  "string",
+                  "null"
+                ]
               },
               "system_avatar_template": {
                 "type": "string"
@@ -12327,8 +12611,10 @@
                 "type": "boolean"
               },
               "user_api_keys": {
-                "type": "string",
-                "nullable": true
+                "type": [
+                  "string",
+                  "null"
+                ]
               },
               "user_auth_tokens": {
                 "type": "array",
@@ -12373,8 +12659,10 @@
                 "items": {}
               },
               "invited_by": {
-                "type": "string",
-                "nullable": true
+                "type": [
+                  "string",
+                  "null"
+                ]
               },
               "groups": {
                 "type": "array",
@@ -12409,43 +12697,61 @@
                       "type": "boolean"
                     },
                     "title": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "grant_trust_level": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "incoming_email": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "has_messages": {
                       "type": "boolean"
                     },
                     "flair_url": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "flair_bg_color": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "flair_color": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "bio_raw": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "bio_cooked": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "bio_excerpt": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "public_admission": {
                       "type": "boolean"
@@ -12457,15 +12763,19 @@
                       "type": "boolean"
                     },
                     "full_name": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "default_notification_level": {
                       "type": "integer"
                     },
                     "membership_request_template": {
-                      "type": "string",
-                      "nullable": true
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     },
                     "members_visibility_level": {
                       "type": "integer"
@@ -12524,12 +12834,16 @@
                     "type": "boolean"
                   },
                   "color_scheme_id": {
-                    "type": "string",
-                    "nullable": true
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   },
                   "dark_scheme_id": {
-                    "type": "string",
-                    "nullable": true
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   },
                   "dynamic_favicon": {
                     "type": "boolean"
@@ -12581,8 +12895,10 @@
                     "type": "boolean"
                   },
                   "homepage_id": {
-                    "type": "string",
-                    "nullable": true
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   },
                   "hide_profile_and_presence": {
                     "type": "boolean"
@@ -12597,8 +12913,10 @@
                     "type": "string"
                   },
                   "timezone": {
-                    "type": "string",
-                    "nullable": true
+                    "type": [
+                      "string",
+                      "null"
+                    ]
                   },
                   "skip_new_user_tips": {
                     "type": "boolean"
