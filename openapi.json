@@ -6,7 +6,11 @@
       "url": "https://discourse-meta.s3-us-west-1.amazonaws.com/optimized/3X/9/d/9d543e92b15b06924249654667a81441a55867eb_1_690x184.png"
     },
     "version": "latest",
-    "description": "This page contains the documentation on how to use Discourse through API calls.\n\n> Note: For any endpoints not listed you can follow the\n[reverse engineer the Discourse API](https://meta.discourse.org/t/-/20576)\nguide to figure out how to use an API endpoint.\n\n### Request Content-Type\n\nThe Content-Type for POST and PUT requests can be set to `application/x-www-form-urlencoded`,\n`multipart/form-data`, or `application/json`.\n\n### Endpoint Names and Response Content-Type\n\nMost API endpoints provide the same content as their HTML counterparts. For example\nthe URL `/categories` serves a list of categories, the `/categories.json` API provides the\nsame information in JSON format.\n\nInstead of sending API requests to `/categories.json` you may also send them to `/categories`\nand add an `Accept: application/json` header to the request to get the JSON response.\nSending requests with the `Accept` header is necessary if you want to use URLs\nfor related endpoints returned by the API, such as pagination URLs.\nThese URLs are returned without the `.json` prefix so you need to add the header in\norder to get the correct response format.\n\n### Authentication\n\nSome endpoints do not require any authentication, pretty much anything else will\nrequire you to be authenticated.\n\nTo become authenticated you will need to create an API Key from the admin panel.\n\nOnce you have your API Key you can pass it in along with your API Username\nas an HTTP header like this:\n\n```\ncurl -X GET \"http://127.0.0.1:3000/admin/users/list/active.json\" \\\n-H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\\n-H \"Api-Username: system\"\n```\n\nand this is how POST requests will look:\n\n```\ncurl -X POST \"http://127.0.0.1:3000/categories\" \\\n-H \"Content-Type: multipart/form-data;\" \\\n-H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\\n-H \"Api-Username: system\" \\\n-F \"name=89853c20-4409-e91a-a8ea-f6cdff96aaaa\" \\\n-F \"color=49d9e9\" \\\n-F \"text_color=f0fcfd\"\n```\n\n### Boolean values\n\nIf an endpoint accepts a boolean be sure to specify it as a lowercase\n`true` or `false` value unless noted otherwise.\n"
+    "description": "This page contains the documentation on how to use Discourse through API calls.\n\n> Note: For any endpoints not listed you can follow the\n[reverse engineer the Discourse API](https://meta.discourse.org/t/-/20576)\nguide to figure out how to use an API endpoint.\n\n### Request Content-Type\n\nThe Content-Type for POST and PUT requests can be set to `application/x-www-form-urlencoded`,\n`multipart/form-data`, or `application/json`.\n\n### Endpoint Names and Response Content-Type\n\nMost API endpoints provide the same content as their HTML counterparts. For example\nthe URL `/categories` serves a list of categories, the `/categories.json` API provides the\nsame information in JSON format.\n\nInstead of sending API requests to `/categories.json` you may also send them to `/categories`\nand add an `Accept: application/json` header to the request to get the JSON response.\nSending requests with the `Accept` header is necessary if you want to use URLs\nfor related endpoints returned by the API, such as pagination URLs.\nThese URLs are returned without the `.json` prefix so you need to add the header in\norder to get the correct response format.\n\n### Authentication\n\nSome endpoints do not require any authentication, pretty much anything else will\nrequire you to be authenticated.\n\nTo become authenticated you will need to create an API Key from the admin panel.\n\nOnce you have your API Key you can pass it in along with your API Username\nas an HTTP header like this:\n\n```\ncurl -X GET \"http://127.0.0.1:3000/admin/users/list/active.json\" \\\n-H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\\n-H \"Api-Username: system\"\n```\n\nand this is how POST requests will look:\n\n```\ncurl -X POST \"http://127.0.0.1:3000/categories\" \\\n-H \"Content-Type: multipart/form-data;\" \\\n-H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\\n-H \"Api-Username: system\" \\\n-F \"name=89853c20-4409-e91a-a8ea-f6cdff96aaaa\" \\\n-F \"color=49d9e9\" \\\n-F \"text_color=f0fcfd\"\n```\n\n### Boolean values\n\nIf an endpoint accepts a boolean be sure to specify it as a lowercase\n`true` or `false` value unless noted otherwise.\n",
+    "license": {
+      "name": "MIT",
+      "url": "https://docs.discourse.org/LICENSE.txt"
+    }
   },
   "paths": {
     "/admin/backups.json": {
@@ -15,6 +19,7 @@
         "tags": [
           "Backups"
         ],
+        "operationId": "getBackups",
         "responses": {
           "200": {
             "description": "success response",
@@ -54,6 +59,7 @@
         "tags": [
           "Backups"
         ],
+        "operationId": "createBackup",
         "parameters": [],
         "responses": {
           "200": {
@@ -101,6 +107,7 @@
         "tags": [
           "Backups"
         ],
+        "operationId": "sendDownloadBackupEmail",
         "parameters": [
           {
             "name": "filename",
@@ -122,6 +129,7 @@
         "tags": [
           "Backups"
         ],
+        "operationId": "downloadBackup",
         "parameters": [
           {
             "name": "filename",
@@ -153,6 +161,7 @@
         "tags": [
           "Badges"
         ],
+        "operationId": "adminListBadges",
         "responses": {
           "200": {
             "description": "success response",
@@ -407,6 +416,7 @@
         "tags": [
           "Badges"
         ],
+        "operationId": "createBadge",
         "parameters": [],
         "responses": {
           "200": {
@@ -583,6 +593,7 @@
         "tags": [
           "Badges"
         ],
+        "operationId": "updateBadge",
         "parameters": [
           {
             "name": "id",
@@ -766,6 +777,7 @@
         "tags": [
           "Badges"
         ],
+        "operationId": "deleteBadge",
         "parameters": [
           {
             "name": "id",
@@ -789,6 +801,7 @@
         "tags": [
           "Categories"
         ],
+        "operationId": "createCategory",
         "parameters": [],
         "responses": {
           "200": {
@@ -1127,6 +1140,7 @@
         "tags": [
           "Categories"
         ],
+        "operationId": "listCategories",
         "responses": {
           "200": {
             "description": "success response",
@@ -1352,6 +1366,7 @@
         "tags": [
           "Categories"
         ],
+        "operationId": "updateCategory",
         "parameters": [
           {
             "name": "id",
@@ -1705,6 +1720,7 @@
         "tags": [
           "Categories"
         ],
+        "operationId": "listCategoryTopics",
         "parameters": [
           {
             "name": "slug",
@@ -1978,6 +1994,7 @@
         "tags": [
           "Categories"
         ],
+        "operationId": "getCategory",
         "parameters": [
           {
             "name": "id",
@@ -2302,6 +2319,7 @@
         "tags": [
           "Groups"
         ],
+        "operationId": "createGroup",
         "parameters": [],
         "responses": {
           "200": {
@@ -2484,6 +2502,7 @@
         "tags": [
           "Groups"
         ],
+        "operationId": "deleteGroup",
         "parameters": [
           {
             "name": "id",
@@ -2523,6 +2542,7 @@
         "tags": [
           "Groups"
         ],
+        "operationId": "updateGroup",
         "parameters": [
           {
             "name": "id",
@@ -2582,6 +2602,7 @@
         "tags": [
           "Groups"
         ],
+        "operationId": "getGroup",
         "parameters": [
           {
             "name": "id",
@@ -2978,6 +2999,7 @@
         "tags": [
           "Groups"
         ],
+        "operationId": "listGroupMembers",
         "parameters": [
           {
             "name": "id",
@@ -3145,6 +3167,7 @@
         "tags": [
           "Groups"
         ],
+        "operationId": "addGroupMembers",
         "parameters": [
           {
             "name": "id",
@@ -3207,6 +3230,7 @@
         "tags": [
           "Groups"
         ],
+        "operationId": "removeGroupMembers",
         "parameters": [
           {
             "name": "id",
@@ -3271,6 +3295,7 @@
         "tags": [
           "Groups"
         ],
+        "operationId": "listGroups",
         "responses": {
           "200": {
             "description": "response",
@@ -3486,6 +3511,7 @@
         "tags": [
           "Invites"
         ],
+        "operationId": "createInvite",
         "parameters": [
           {
             "name": "Api-Key",
@@ -3618,6 +3644,7 @@
         "tags": [
           "Notifications"
         ],
+        "operationId": "getNotifications",
         "responses": {
           "200": {
             "description": "notifications",
@@ -3710,6 +3737,7 @@
         "tags": [
           "Notifications"
         ],
+        "operationId": "markNotificationsAsRead",
         "parameters": [],
         "responses": {
           "200": {
@@ -3751,6 +3779,7 @@
         "tags": [
           "Posts"
         ],
+        "operationId": "listPosts",
         "parameters": [
           {
             "name": "Api-Key",
@@ -3990,6 +4019,7 @@
           "Topics",
           "Private Messages"
         ],
+        "operationId": "createTopicPostPM",
         "parameters": [],
         "responses": {
           "200": {
@@ -4311,6 +4341,7 @@
         "tags": [
           "Posts"
         ],
+        "operationId": "getPost",
         "parameters": [
           {
             "name": "Api-Key",
@@ -4545,6 +4576,7 @@
         "tags": [
           "Posts"
         ],
+        "operationId": "updatePost",
         "parameters": [
           {
             "name": "Api-Key",
@@ -4805,6 +4837,7 @@
         "tags": [
           "Posts"
         ],
+        "operationId": "lockPost",
         "parameters": [
           {
             "name": "Api-Key",
@@ -4873,6 +4906,7 @@
         "tags": [
           "Posts"
         ],
+        "operationId": "performPostAction",
         "parameters": [
           {
             "name": "Api-Key",
@@ -5125,6 +5159,7 @@
         "tags": [
           "Private Messages"
         ],
+        "operationId": "listUserPrivateMessages",
         "parameters": [
           {
             "name": "username",
@@ -5369,6 +5404,7 @@
         "tags": [
           "Private Messages"
         ],
+        "operationId": "getUserSentPrivateMessages",
         "parameters": [
           {
             "name": "username",
@@ -5594,6 +5630,7 @@
         "tags": [
           "Search"
         ],
+        "operationId": "search",
         "parameters": [
           {
             "name": "q",
@@ -5743,6 +5780,7 @@
         "tags": [
           "Tags"
         ],
+        "operationId": "listTagGroups",
         "responses": {
           "200": {
             "description": "tags",
@@ -5796,6 +5834,7 @@
         "tags": [
           "Tags"
         ],
+        "operationId": "createTagGroup",
         "parameters": [],
         "responses": {
           "200": {
@@ -5874,6 +5913,7 @@
         "tags": [
           "Tags"
         ],
+        "operationId": "getTagGroup",
         "parameters": [
           {
             "name": "id",
@@ -5934,6 +5974,7 @@
         "tags": [
           "Tags"
         ],
+        "operationId": "updateTagGroup",
         "parameters": [
           {
             "name": "id",
@@ -6013,6 +6054,7 @@
         "tags": [
           "Tags"
         ],
+        "operationId": "listTags",
         "responses": {
           "200": {
             "description": "notifications",
@@ -6070,6 +6112,7 @@
         "tags": [
           "Tags"
         ],
+        "operationId": "getTag",
         "parameters": [
           {
             "name": "name",
@@ -6309,6 +6352,7 @@
         "tags": [
           "Topics"
         ],
+        "operationId": "getSpecificPostsFromTopic",
         "parameters": [
           {
             "name": "Api-Key",
@@ -6575,6 +6619,7 @@
         "tags": [
           "Topics"
         ],
+        "operationId": "getTopic",
         "parameters": [
           {
             "name": "Api-Key",
@@ -7280,6 +7325,7 @@
         "tags": [
           "Topics"
         ],
+        "operationId": "removeTopic",
         "parameters": [
           {
             "name": "Api-Key",
@@ -7319,6 +7365,7 @@
         "tags": [
           "Topics"
         ],
+        "operationId": "updateTopic",
         "parameters": [
           {
             "name": "Api-Key",
@@ -7410,6 +7457,7 @@
           "Topics",
           "Invites"
         ],
+        "operationId": "inviteToTopic",
         "parameters": [
           {
             "name": "Api-Key",
@@ -7492,6 +7540,7 @@
         "tags": [
           "Topics"
         ],
+        "operationId": "bookmarkTopic",
         "parameters": [
           {
             "name": "Api-Key",
@@ -7531,6 +7580,7 @@
         "tags": [
           "Topics"
         ],
+        "operationId": "updateTopicStatus",
         "parameters": [
           {
             "name": "Api-Key",
@@ -7626,6 +7676,7 @@
         "tags": [
           "Topics"
         ],
+        "operationId": "listLatestTopics",
         "parameters": [
           {
             "name": "Api-Key",
@@ -7865,6 +7916,7 @@
         "tags": [
           "Topics"
         ],
+        "operationId": "listTopTopics",
         "parameters": [
           {
             "name": "Api-Key",
@@ -8099,6 +8151,7 @@
         "tags": [
           "Topics"
         ],
+        "operationId": "setNotificationLevel",
         "parameters": [
           {
             "name": "Api-Key",
@@ -8174,6 +8227,7 @@
         "tags": [
           "Topics"
         ],
+        "operationId": "updateTopicTimestamp",
         "parameters": [
           {
             "name": "Api-Key",
@@ -8244,6 +8298,7 @@
         "tags": [
           "Topics"
         ],
+        "operationId": "createTopicTimer",
         "parameters": [
           {
             "name": "Api-Key",
@@ -8341,6 +8396,7 @@
         "tags": [
           "Uploads"
         ],
+        "operationId": "createUpload",
         "parameters": [],
         "responses": {
           "200": {
@@ -8458,6 +8514,7 @@
           "Badges",
           "Users"
         ],
+        "operationId": "listUserBadges",
         "parameters": [
           {
             "name": "username",
@@ -8686,6 +8743,7 @@
         "tags": [
           "Users"
         ],
+        "operationId": "createUser",
         "parameters": [
           {
             "name": "Api-Key",
@@ -8776,6 +8834,7 @@
         "tags": [
           "Users"
         ],
+        "operationId": "getUser",
         "parameters": [
           {
             "name": "Api-Key",
@@ -9382,6 +9441,7 @@
         "tags": [
           "Users"
         ],
+        "operationId": "getUserExternalId",
         "parameters": [
           {
             "name": "Api-Key",
@@ -9988,6 +10048,7 @@
         "tags": [
           "Users"
         ],
+        "operationId": "getUserIdentiyProviderExternalId",
         "parameters": [
           {
             "name": "Api-Key",
@@ -10603,6 +10664,7 @@
         "tags": [
           "Users"
         ],
+        "operationId": "updateAvatar",
         "parameters": [
           {
             "name": "username",
@@ -10669,6 +10731,7 @@
         "tags": [
           "Users"
         ],
+        "operationId": "updateEmail",
         "parameters": [
           {
             "name": "username",
@@ -10710,6 +10773,7 @@
         "tags": [
           "Users"
         ],
+        "operationId": "listUsersPublic",
         "parameters": [
           {
             "name": "period",
@@ -10892,6 +10956,7 @@
           "Users",
           "Admin"
         ],
+        "operationId": "adminGetUser",
         "parameters": [
           {
             "name": "id",
@@ -11576,6 +11641,7 @@
           "Users",
           "Admin"
         ],
+        "operationId": "deleteUser",
         "parameters": [
           {
             "name": "id",
@@ -11638,6 +11704,7 @@
           "Users",
           "Admin"
         ],
+        "operationId": "suspendUser",
         "parameters": [
           {
             "name": "id",
@@ -11728,6 +11795,7 @@
           "Users",
           "Admin"
         ],
+        "operationId": "anonymizeUser",
         "parameters": [
           {
             "name": "id",
@@ -11771,6 +11839,7 @@
           "Users",
           "Admin"
         ],
+        "operationId": "logOutUser",
         "parameters": [
           {
             "name": "id",
@@ -11811,6 +11880,7 @@
           "Users",
           "Admin"
         ],
+        "operationId": "refreshGravatar",
         "parameters": [
           {
             "name": "username",
@@ -11860,6 +11930,7 @@
           "Users",
           "Admin"
         ],
+        "operationId": "adminListUsers",
         "parameters": [
           {
             "name": "flag",
@@ -12074,6 +12145,7 @@
         "tags": [
           "Users"
         ],
+        "operationId": "listUserActions",
         "parameters": [
           {
             "name": "offset",
@@ -12263,6 +12335,7 @@
         "tags": [
           "Users"
         ],
+        "operationId": "sendPasswordResetEmail",
         "parameters": [],
         "responses": {
           "200": {
@@ -12313,6 +12386,7 @@
         "tags": [
           "Users"
         ],
+        "operationId": "changePassword",
         "parameters": [
           {
             "name": "token",
