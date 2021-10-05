@@ -1020,12 +1020,6 @@
                         "can_delete": {
                           "type": "boolean"
                         },
-                        "cannot_delete_reason": {
-                          "type": [
-                            "string",
-                            "null"
-                          ]
-                        },
                         "allow_badges": {
                           "type": "boolean"
                         },
@@ -1092,7 +1086,6 @@
                         "mailinglist_mirror",
                         "all_topics_wiki",
                         "can_delete",
-                        "cannot_delete_reason",
                         "allow_badges",
                         "topic_featured_link_allowed",
                         "search_priority",
@@ -1285,6 +1278,13 @@
                                 },
                                 "subcategory_ids": {
                                   "type": "array",
+                                  "items": []
+                                },
+                                "subcategory_list": {
+                                  "type": [
+                                    "array",
+                                    "null"
+                                  ],
                                   "items": []
                                 },
                                 "uploaded_logo": {
@@ -1597,12 +1597,6 @@
                         "can_delete": {
                           "type": "boolean"
                         },
-                        "cannot_delete_reason": {
-                          "type": [
-                            "string",
-                            "null"
-                          ]
-                        },
                         "allow_badges": {
                           "type": "boolean"
                         },
@@ -1669,7 +1663,6 @@
                         "mailinglist_mirror",
                         "all_topics_wiki",
                         "can_delete",
-                        "cannot_delete_reason",
                         "allow_badges",
                         "topic_featured_link_allowed",
                         "search_priority",
@@ -2222,12 +2215,6 @@
                         "can_delete": {
                           "type": "boolean"
                         },
-                        "cannot_delete_reason": {
-                          "type": [
-                            "string",
-                            "null"
-                          ]
-                        },
                         "allow_badges": {
                           "type": "boolean"
                         },
@@ -2294,7 +2281,6 @@
                         "mailinglist_mirror",
                         "all_topics_wiki",
                         "can_delete",
-                        "cannot_delete_reason",
                         "allow_badges",
                         "topic_featured_link_allowed",
                         "search_priority",

@@ -759,10 +759,6 @@ paths:
                         type: boolean
                       can_delete:
                         type: boolean
-                      cannot_delete_reason:
-                        type:
-                        - string
-                        - 'null'
                       allow_badges:
                         type: boolean
                       topic_featured_link_allowed:
@@ -821,7 +817,6 @@ paths:
                     - mailinglist_mirror
                     - all_topics_wiki
                     - can_delete
-                    - cannot_delete_reason
                     - allow_badges
                     - topic_featured_link_allowed
                     - search_priority
@@ -952,6 +947,11 @@ paths:
                               type: boolean
                             subcategory_ids:
                               type: array
+                              items: []
+                            subcategory_list:
+                              type:
+                              - array
+                              - 'null'
                               items: []
                             uploaded_logo:
                               type:
@@ -1168,10 +1168,6 @@ paths:
                         type: boolean
                       can_delete:
                         type: boolean
-                      cannot_delete_reason:
-                        type:
-                        - string
-                        - 'null'
                       allow_badges:
                         type: boolean
                       topic_featured_link_allowed:
@@ -1230,7 +1226,6 @@ paths:
                     - mailinglist_mirror
                     - all_topics_wiki
                     - can_delete
-                    - cannot_delete_reason
                     - allow_badges
                     - topic_featured_link_allowed
                     - search_priority
@@ -1605,10 +1600,6 @@ paths:
                         type: boolean
                       can_delete:
                         type: boolean
-                      cannot_delete_reason:
-                        type:
-                        - string
-                        - 'null'
                       allow_badges:
                         type: boolean
                       topic_featured_link_allowed:
@@ -1667,7 +1658,6 @@ paths:
                     - mailinglist_mirror
                     - all_topics_wiki
                     - can_delete
-                    - cannot_delete_reason
                     - allow_badges
                     - topic_featured_link_allowed
                     - search_priority
