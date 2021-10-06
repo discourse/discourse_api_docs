@@ -845,6 +845,13 @@ paths:
       tags:
       - Categories
       operationId: listCategories
+      parameters:
+      - name: include_subcategories
+        in: query
+        schema:
+          type: boolean
+          enum:
+          - true
       responses:
         '200':
           description: success response
@@ -7070,6 +7077,8 @@ paths:
                             - 'null'
                           skip_new_user_tips:
                             type: boolean
+                          default_calendar:
+                            type: string
                         required:
                         - user_id
                         - mailing_list_mode
@@ -7728,6 +7737,8 @@ paths:
                             - 'null'
                           skip_new_user_tips:
                             type: boolean
+                          default_calendar:
+                            type: string
                         required:
                         - user_id
                         - mailing_list_mode
@@ -8393,6 +8404,8 @@ paths:
                             - 'null'
                           skip_new_user_tips:
                             type: boolean
+                          default_calendar:
+                            type: string
                         required:
                         - user_id
                         - mailing_list_mode
