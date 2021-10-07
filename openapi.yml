@@ -2579,7 +2579,8 @@ paths:
                   description: optional, either this or `group_id`
                 expires_at:
                   type: string
-                  default: controlled by invite_expiry_days site setting
+                  description: optional, if not supplied, the invite_expiry_days site
+                    setting is used
   "/notifications.json":
     get:
       summary: Get the notifications that belong to the current user
