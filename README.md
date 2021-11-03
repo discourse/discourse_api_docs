@@ -6,9 +6,25 @@ To view the the Discourse API Documentation you can visit:
 
 ### Contributing
 
-Contributions are welcome! Start by cloning the repo.
+Contributions are welcome! Start by cloning this repo as well as the
+[discourse](https://github.com/discourse/discourse) repo.
 
-To edit the api docs, edit the openapi.yml file not the json file.
+
+The API docs are automatically generated from the discourse repo using a tool
+called rswag.
+
+You can generate the openapi.yml file that is located in this repo by running
+this command from inside of your discourse repo directory:
+
+
+```
+rake rswag:specs:swaggerize && cp openapi/openapi.yaml ~/code/discourse_api_docs/openapi.yml
+```
+
+Please do not manually edit the openapi.yml or openapi.json files located in
+this repo. These files must be edited from the rswag files located in
+
+https://github.com/discourse/discourse/tree/main/spec/requests/api
 
 To view your changes locally, run:
 
