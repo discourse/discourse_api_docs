@@ -4322,6 +4322,10 @@
                   },
                   "created_at": {
                     "type": "string"
+                  },
+                  "embed_url": {
+                    "type": "string",
+                    "description": "Provide a URL from a remote system to associate a forum\ntopic with that URL, typically for using Discourse as a comments\nsystem for an external blog."
                   }
                 },
                 "required": [
