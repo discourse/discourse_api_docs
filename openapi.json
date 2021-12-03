@@ -9659,18 +9659,6 @@
                         "badge_count": {
                           "type": "integer"
                         },
-                        "email": {
-                          "type": "string"
-                        },
-                        "secondary_emails": {
-                          "type": "array"
-                        },
-                        "unconfirmed_emails": {
-                          "type": "array"
-                        },
-                        "associated_accounts": {
-                          "type": "array"
-                        },
                         "second_factor_backup_enabled": {
                           "type": "boolean"
                         },
@@ -9788,6 +9776,9 @@
                           "type": "boolean"
                         },
                         "pending_count": {
+                          "type": "integer"
+                        },
+                        "pending_posts_count": {
                           "type": "integer"
                         },
                         "profile_view_count": {
@@ -10334,6 +10325,12 @@
                             },
                             "default_calendar": {
                               "type": "string"
+                            },
+                            "oldest_search_log_date": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
                             }
                           },
                           "required": [
@@ -10572,18 +10569,6 @@
                         "badge_count": {
                           "type": "integer"
                         },
-                        "email": {
-                          "type": "string"
-                        },
-                        "secondary_emails": {
-                          "type": "array"
-                        },
-                        "unconfirmed_emails": {
-                          "type": "array"
-                        },
-                        "associated_accounts": {
-                          "type": "array"
-                        },
                         "second_factor_backup_enabled": {
                           "type": "boolean"
                         },
@@ -10701,6 +10686,9 @@
                           "type": "boolean"
                         },
                         "pending_count": {
+                          "type": "integer"
+                        },
+                        "pending_posts_count": {
                           "type": "integer"
                         },
                         "profile_view_count": {
@@ -11247,6 +11235,12 @@
                             },
                             "default_calendar": {
                               "type": "string"
+                            },
+                            "oldest_search_log_date": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
                             }
                           },
                           "required": [
@@ -11494,18 +11488,6 @@
                         "badge_count": {
                           "type": "integer"
                         },
-                        "email": {
-                          "type": "string"
-                        },
-                        "secondary_emails": {
-                          "type": "array"
-                        },
-                        "unconfirmed_emails": {
-                          "type": "array"
-                        },
-                        "associated_accounts": {
-                          "type": "array"
-                        },
                         "second_factor_backup_enabled": {
                           "type": "boolean"
                         },
@@ -11623,6 +11605,9 @@
                           "type": "boolean"
                         },
                         "pending_count": {
+                          "type": "integer"
+                        },
+                        "pending_posts_count": {
                           "type": "integer"
                         },
                         "profile_view_count": {
@@ -12169,6 +12154,12 @@
                             },
                             "default_calendar": {
                               "type": "string"
+                            },
+                            "oldest_search_log_date": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
                             }
                           },
                           "required": [
@@ -12626,13 +12617,6 @@
                     },
                     "avatar_template": {
                       "type": "string"
-                    },
-                    "email": {
-                      "type": "string"
-                    },
-                    "secondary_emails": {
-                      "type": "array",
-                      "items": []
                     },
                     "active": {
                       "type": "boolean"
@@ -14056,6 +14040,60 @@
                   "username",
                   "password"
                 ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/u/{username}/emails.json": {
+      "get": {
+        "summary": "Get email addresses belonging to a user",
+        "tags": [
+          "Users"
+        ],
+        "operationId": "getUserEmails",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "email": {
+                      "type": "string"
+                    },
+                    "secondary_emails": {
+                      "type": "array",
+                      "items": []
+                    },
+                    "unconfirmed_emails": {
+                      "type": "array",
+                      "items": []
+                    },
+                    "associated_accounts": {
+                      "type": "array",
+                      "items": []
+                    }
+                  },
+                  "required": [
+                    "email",
+                    "secondary_emails",
+                    "unconfirmed_emails",
+                    "associated_accounts"
+                  ]
+                }
               }
             }
           }
