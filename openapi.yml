@@ -2042,6 +2042,9 @@ paths:
                         type: integer
                       allow_unknown_sender_topic_replies:
                         type: boolean
+                      associated_group_ids:
+                        type: array
+                        items: []
                       watching_category_ids:
                         type: array
                         items: []
@@ -4113,6 +4116,8 @@ paths:
                         type: integer
                       chat_message:
                         type: integer
+                      chat_invitation:
+                        type: integer
                     required:
                     - mentioned
                     - replied
@@ -4292,6 +4297,8 @@ paths:
                     type: array
                     items: []
                   wizard_required:
+                    type: boolean
+                  can_associate_groups:
                     type: boolean
                   topic_featured_link_allowed_category_ids:
                     type: array
@@ -6317,6 +6324,484 @@ paths:
                   format: binary
               required:
               - type
+  "/uploads/generate-presigned-put.json":
+    post:
+      summary: Initiates a direct external upload
+      tags:
+      - Uploads
+      operationId: generatePresignedPut
+      description: |+
+        Direct external uploads bypass the usual method of creating uploads
+        via the POST /uploads route, and upload directly to an external provider,
+        which by default is S3. This route begins the process, and will return
+        a unique identifier for the external upload as well as a presigned URL
+        which is where the file binary blob should be uploaded to.
+
+        Once the upload is complete to the external service, you must call the
+        POST /complete-external-upload route using the unique identifier returned
+        by this route, which will create any required Upload record in the Discourse
+        database and also move file from its temporary location to the final
+        destination in the external storage service.
+
+        You must have the correct permissions and CORS settings configured in your
+        external provider. We support AWS S3 as the default. See:
+
+        https://meta.discourse.org/t/-/210469#s3-multipart-direct-uploads-4.
+
+        An external file store must be set up and `enable_direct_s3_uploads` must
+        be set to true for this endpoint to function.
+
+      parameters: []
+      responses:
+        '200':
+          description: external upload initialized
+          content:
+            application/json:
+              schema:
+                additionalProperties: false
+                properties:
+                  key:
+                    type: string
+                    description: The path of the temporary file on the external storage
+                      service.
+                    example: temp/site/uploads/default/12345/67890.jpg
+                  url:
+                    type: string
+                    description: A presigned PUT URL which must be used to upload
+                      the file binary blob to.
+                    example: https://file-uploads.s3.us-west-2.amazonaws.com/temp/site/uploads/default/123/456.jpg?x-amz-acl=private&x-amz-meta-sha1-checksum=sha1&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AAAAus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211221T011246Z&X-Amz-Expires=600&X-Amz-SignedHeaders=host&X-Amz-Signature=12345678
+                  unique_identifier:
+                    type: string
+                    description: A unique string that identifies the external upload.
+                      This must be stored and then sent in the /complete-external-upload
+                      endpoint to complete the direct upload.
+                    example: 66e86218-80d9-4bda-b4d5-2b6def968705
+      requestBody:
+        content:
+          application/json:
+            schema:
+              additionalProperties: false
+              properties:
+                type:
+                  type: string
+                  enum:
+                  - avatar
+                  - profile_background
+                  - card_background
+                  - custom_emoji
+                  - composer
+                file_name:
+                  type: string
+                  example: IMG_2021.jpeg
+                file_size:
+                  type: integer
+                  description: File size should be represented in bytes.
+                  example: 4096
+                metadata:
+                  type: object
+                  additionalProperties: false
+                  properties:
+                    sha1-checksum:
+                      type: string
+                      description: The SHA1 checksum of the upload binary blob. Optionally
+                        be provided and serves as an additional security check when
+                        later processing the file in complete-external-upload endpoint.
+              required:
+              - type
+              - file_name
+              - file_size
+  "/uploads/complete-external-upload.json":
+    post:
+      summary: Completes a direct external upload
+      tags:
+      - Uploads
+      operationId: completeExternalUpload
+      description: |+
+        Completes an external upload initialized with /get-presigned-put. The
+        file will be moved from its temporary location in external storage to
+        a final destination in the S3 bucket. An Upload record will also be
+        created in the database in most cases.
+
+        If a sha1-checksum was provided in the initial request it will also
+        be compared with the uploaded file in storage to make sure the same
+        file was uploaded. The file size will be compared for the same reason.
+
+        You must have the correct permissions and CORS settings configured in your
+        external provider. We support AWS S3 as the default. See:
+
+        https://meta.discourse.org/t/-/210469#s3-multipart-direct-uploads-4.
+
+        An external file store must be set up and `enable_direct_s3_uploads` must
+        be set to true for this endpoint to function.
+
+      parameters: []
+      responses:
+        '200':
+          description: external upload initialized
+          content:
+            application/json:
+              schema:
+                additionalProperties: false
+                properties:
+                  id:
+                    type: integer
+                  url:
+                    type: string
+                  original_filename:
+                    type: string
+                  filesize:
+                    type: integer
+                  width:
+                    type: integer
+                  height:
+                    type: integer
+                  thumbnail_width:
+                    type: integer
+                  thumbnail_height:
+                    type: integer
+                  extension:
+                    type: string
+                  short_url:
+                    type: string
+                  short_path:
+                    type: string
+                  retain_hours:
+                    type:
+                    - string
+                    - 'null'
+                  human_filesize:
+                    type: string
+                required:
+                - id
+                - url
+                - original_filename
+                - filesize
+                - width
+                - height
+                - thumbnail_width
+                - thumbnail_height
+                - extension
+                - short_url
+                - short_path
+                - retain_hours
+                - human_filesize
+      requestBody:
+        content:
+          application/json:
+            schema:
+              additionalProperties: false
+              properties:
+                unique_identifier:
+                  type: string
+                  example: 66e86218-80d9-4bda-b4d5-2b6def968705
+                  description: The unique identifier returned in the original /generate-presigned-put
+                    request.
+                for_private_message:
+                  type: string
+                  example: 'true'
+                  description: Optionally set this to true if the upload is for a
+                    private message.
+                for_site_setting:
+                  type: string
+                  example: 'true'
+                  description: Optionally set this to true if the upload is for a
+                    site setting.
+                pasted:
+                  type: string
+                  example: 'true'
+                  description: Optionally set this to true if the upload was pasted
+                    into the upload area. This will convert PNG files to JPEG.
+              required:
+              - unique_identifier
+  "/uploads/create-multipart.json":
+    post:
+      summary: Creates a multipart external upload
+      tags:
+      - Uploads
+      operationId: createMultipartUpload
+      description: |+
+        Creates a multipart upload in the external storage provider, storing
+        a temporary reference to the external upload similar to /get-presigned-put.
+
+        You must have the correct permissions and CORS settings configured in your
+        external provider. We support AWS S3 as the default. See:
+
+        https://meta.discourse.org/t/-/210469#s3-multipart-direct-uploads-4.
+
+        An external file store must be set up and `enable_direct_s3_uploads` must
+        be set to true for this endpoint to function.
+
+      parameters: []
+      responses:
+        '200':
+          description: external upload initialized
+          content:
+            application/json:
+              schema:
+                additionalProperties: false
+                properties:
+                  key:
+                    type: string
+                    description: The path of the temporary file on the external storage
+                      service.
+                    example: temp/site/uploads/default/12345/67890.jpg
+                  external_upload_identifier:
+                    type: string
+                    description: The identifier of the multipart upload in the external
+                      storage provider. This is the multipart upload_id in AWS S3.
+                    example: 84x83tmxy398t3y._Q_z8CoJYVr69bE6D7f8J6Oo0434QquLFoYdGVerWFx9X5HDEI_TP_95c34n853495x35345394.d.ghQ
+                  unique_identifier:
+                    type: string
+                    description: A unique string that identifies the external upload.
+                      This must be stored and then sent in the /complete-multipart
+                      and /batch-presign-multipart-parts endpoints.
+                    example: 66e86218-80d9-4bda-b4d5-2b6def968705
+                required:
+                - external_upload_identifier
+                - key
+                - unique_identifier
+      requestBody:
+        content:
+          application/json:
+            schema:
+              additionalProperties: false
+              properties:
+                upload_type:
+                  type: string
+                  enum:
+                  - avatar
+                  - profile_background
+                  - card_background
+                  - custom_emoji
+                  - composer
+                file_name:
+                  type: string
+                  example: IMG_2021.jpeg
+                file_size:
+                  type: integer
+                  description: File size should be represented in bytes.
+                  example: 4096
+                metadata:
+                  type: object
+                  additionalProperties: false
+                  properties:
+                    sha1-checksum:
+                      type: string
+                      description: The SHA1 checksum of the upload binary blob. Optionally
+                        be provided and serves as an additional security check when
+                        later processing the file in complete-external-upload endpoint.
+              required:
+              - upload_type
+              - file_name
+              - file_size
+  "/uploads/batch-presign-multipart-parts.json":
+    post:
+      summary: Generates batches of presigned URLs for multipart parts
+      tags:
+      - Uploads
+      operationId: batchPresignMultipartParts
+      description: |+
+        Multipart uploads are uploaded in chunks or parts to individual presigned
+        URLs, similar to the one genreated by /generate-presigned-put. The part
+        numbers provided must be between 1 and 10000. The total number of parts
+        will depend on the chunk size in bytes that you intend to use to upload
+        each chunk. For example a 12MB file may have 2 5MB chunks and a final
+        2MB chunk, for part numbers 1, 2, and 3.
+
+        This endpoint will return a presigned URL for each part number provided,
+        which you can then use to send PUT requests for the binary chunk corresponding
+        to that part. When the part is uploaded, the provider should return an
+        ETag for the part, and this should be stored along with the part number,
+        because this is needed to complete the multipart upload.
+
+        You must have the correct permissions and CORS settings configured in your
+        external provider. We support AWS S3 as the default. See:
+
+        https://meta.discourse.org/t/-/210469#s3-multipart-direct-uploads-4.
+
+        An external file store must be set up and `enable_direct_s3_uploads` must
+        be set to true for this endpoint to function.
+
+      parameters: []
+      responses:
+        '200':
+          description: external upload initialized
+          content:
+            application/json:
+              schema:
+                additionalProperties: false
+                properties:
+                  presigned_urls:
+                    type: object
+                    description: The presigned URLs for each part number, which has
+                      the part numbers as keys.
+                    example:
+                      '1': https://discourse-martin-uploads-test.s3.us-east-2.amazonaws.com/temp/uploads/default/123abc/123abc.jpg?partNumber=1&uploadId=123456abcd&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=test&X-Amz-Date=20211222T012336Z&X-Amz-Expires=600&X-Amz-SignedHeaders=host&X-Amz-Signature=abc123
+                required:
+                - presigned_urls
+      requestBody:
+        content:
+          application/json:
+            schema:
+              additionalProperties: false
+              properties:
+                part_numbers:
+                  type: array
+                  description: The part numbers to generate the presigned URLs for,
+                    must be between 1 and 10000.
+                  example:
+                  - 1
+                  - 2
+                  - 3
+                unique_identifier:
+                  type: string
+                  description: The unique identifier returned in the original /create-multipart
+                    request.
+                  example: 66e86218-80d9-4bda-b4d5-2b6def968705
+              required:
+              - part_numbers
+              - unique_identifier
+  "/uploads/abort-multipart.json":
+    post:
+      summary: Abort multipart upload
+      tags:
+      - Uploads
+      operationId: abortMultipart
+      description: |+
+        This endpoint aborts the multipart upload initiated with /create-multipart.
+        This should be used when cancelling the upload. It does not matter if parts
+        were already uploaded into the external storage provider.
+
+        You must have the correct permissions and CORS settings configured in your
+        external provider. We support AWS S3 as the default. See:
+
+        https://meta.discourse.org/t/-/210469#s3-multipart-direct-uploads-4.
+
+        An external file store must be set up and `enable_direct_s3_uploads` must
+        be set to true for this endpoint to function.
+
+      parameters: []
+      responses:
+        '200':
+          description: external upload initialized
+          content:
+            application/json:
+              schema:
+                additionalProperties: false
+                properties:
+                  success:
+                    type: string
+                    example: OK
+                required:
+                - success
+      requestBody:
+        content:
+          application/json:
+            schema:
+              additionalProperties: false
+              properties:
+                external_upload_identifier:
+                  type: string
+                  description: The identifier of the multipart upload in the external
+                    storage provider. This is the multipart upload_id in AWS S3.
+                  example: 84x83tmxy398t3y._Q_z8CoJYVr69bE6D7f8J6Oo0434QquLFoYdGVerWFx9X5HDEI_TP_95c34n853495x35345394.d.ghQ
+              required:
+              - external_upload_identifier
+  "/uploads/complete-multipart.json":
+    post:
+      summary: Complete multipart upload
+      tags:
+      - Uploads
+      operationId: completeMultipart
+      description: |+
+        Completes the multipart upload in the external store, and copies the
+        file from its temporary location to its final location in the store.
+        All of the parts must have been uploaded to the external storage provider.
+        An Upload record will be completed in most cases once the file is copied
+        to its final location.
+
+        You must have the correct permissions and CORS settings configured in your
+        external provider. We support AWS S3 as the default. See:
+
+        https://meta.discourse.org/t/-/210469#s3-multipart-direct-uploads-4.
+
+        An external file store must be set up and `enable_direct_s3_uploads` must
+        be set to true for this endpoint to function.
+
+      parameters: []
+      responses:
+        '200':
+          description: external upload initialized
+          content:
+            application/json:
+              schema:
+                additionalProperties: false
+                properties:
+                  id:
+                    type: integer
+                  url:
+                    type: string
+                  original_filename:
+                    type: string
+                  filesize:
+                    type: integer
+                  width:
+                    type: integer
+                  height:
+                    type: integer
+                  thumbnail_width:
+                    type: integer
+                  thumbnail_height:
+                    type: integer
+                  extension:
+                    type: string
+                  short_url:
+                    type: string
+                  short_path:
+                    type: string
+                  retain_hours:
+                    type:
+                    - string
+                    - 'null'
+                  human_filesize:
+                    type: string
+                required:
+                - id
+                - url
+                - original_filename
+                - filesize
+                - width
+                - height
+                - thumbnail_width
+                - thumbnail_height
+                - extension
+                - short_url
+                - short_path
+                - retain_hours
+                - human_filesize
+      requestBody:
+        content:
+          application/json:
+            schema:
+              additionalProperties: false
+              properties:
+                unique_identifier:
+                  type: string
+                  example: 66e86218-80d9-4bda-b4d5-2b6def968705
+                  description: The unique identifier returned in the original /create-multipart
+                    request.
+                parts:
+                  type: array
+                  example:
+                  - part_number: 1
+                    etag: 0c376dcfcc2606f4335bbc732de93344
+                  - part_number: 2
+                    etag: '09ert8cfcc2606f4335bbc732de91122'
+                  description: All of the part numbers and their corresponding ETags
+                    that have been uploaded must be provided.
+              required:
+              - unique_identifier
+              - parts
   "/user-badges/{username}.json":
     get:
       summary: List badges for a user
@@ -9772,3 +10257,4 @@ servers:
       default: discourse.example.com
 components:
   schemas: {}
+...
