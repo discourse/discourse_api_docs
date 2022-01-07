@@ -3388,6 +3388,34 @@ paths:
                       type: string
                   required:
                   - raw
+    delete:
+      summary: delete a single post
+      tags:
+      - Posts
+      operationId: deletePost
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: integer
+        required: true
+      responses:
+        '200':
+          description: success response
+      requestBody:
+        content:
+          application/json:
+            schema:
+              additionalProperties: false
+              properties:
+                force_destroy:
+                  type: boolean
+                  example: true
+                  description: The `SiteSetting.can_permanently_delete` needs to be
+                    enabled first before this param can be used. Also this endpoint
+                    needs to be called first without `force_destroy` and then followed
+                    up with a second call 5 minutes later with `force_destroy` to
+                    permanently delete.
   "/posts/{id}/locked.json":
     put:
       summary: Lock a post from being edited
@@ -10257,4 +10285,3 @@ servers:
       default: discourse.example.com
 components:
   schemas: {}
-...
