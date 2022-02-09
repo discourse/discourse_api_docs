@@ -2022,6 +2022,10 @@ paths:
                         type:
                         - string
                         - 'null'
+                      email_from_alias:
+                        type:
+                        - string
+                        - 'null'
                       email_password:
                         type:
                         - string
@@ -4146,6 +4150,8 @@ paths:
                         type: integer
                       chat_invitation:
                         type: integer
+                      chat_group_mention:
+                        type: integer
                     required:
                     - mentioned
                     - replied
@@ -4176,6 +4182,9 @@ paths:
                     - event_reminder
                     - event_invitation
                     - chat_mention
+                    - chat_message
+                    - chat_invitation
+                    - chat_group_mention
                   post_types:
                     type: object
                     additionalProperties: false
@@ -4389,6 +4398,8 @@ paths:
                     type:
                     - string
                     - 'null'
+                  markdown_additional_options:
+                    type: object
                   categories:
                     type: array
                     items:
@@ -10285,3 +10296,4 @@ servers:
       default: discourse.example.com
 components:
   schemas: {}
+...
