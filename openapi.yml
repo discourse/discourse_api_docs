@@ -3067,6 +3067,10 @@ paths:
                   description: Provide a URL from a remote system to associate a forum
                     topic with that URL, typically for using Discourse as a comments
                     system for an external blog.
+                external_id:
+                  type: string
+                  description: Provide an external_id from a remote system to associate
+                    a forum topic with that id.
               required:
               - raw
   "/posts/{id}.json":
@@ -5370,15 +5374,17 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                additionalProperties: false
                 properties:
                   post_stream:
                     type: object
+                    additionalProperties: false
                     properties:
                       posts:
                         type: array
                         items:
-                          type: object
+                        - type: object
+                          additionalProperties: false
                           properties:
                             id:
                               type: integer
@@ -5413,7 +5419,7 @@ paths:
                             readers_count:
                               type: integer
                             score:
-                              type: number
+                              type: ''
                             yours:
                               type: boolean
                             topic_id:
@@ -5455,7 +5461,8 @@ paths:
                             link_counts:
                               type: array
                               items:
-                                type: object
+                              - type: object
+                                additionalProperties: false
                                 properties:
                                   url:
                                     type: string
@@ -5463,23 +5470,37 @@ paths:
                                     type: boolean
                                   reflection:
                                     type: boolean
+                                  title:
+                                    type: string
                                   clicks:
                                     type: integer
+                                required:
+                                - url
+                                - internal
+                                - reflection
+                                - title
+                                - clicks
                             read:
                               type: boolean
                             user_title:
                               type:
                               - string
                               - 'null'
+                            bookmarked:
+                              type: boolean
                             actions_summary:
                               type: array
                               items:
-                                type: object
+                              - type: object
+                                additionalProperties: false
                                 properties:
                                   id:
                                     type: integer
                                   can_act:
                                     type: boolean
+                                required:
+                                - id
+                                - can_act
                             moderator:
                               type: boolean
                             admin:
@@ -5512,16 +5533,70 @@ paths:
                               type: integer
                             reviewable_score_pending_count:
                               type: integer
+                          required:
+                          - id
+                          - name
+                          - username
+                          - avatar_template
+                          - created_at
+                          - cooked
+                          - post_number
+                          - post_type
+                          - updated_at
+                          - reply_count
+                          - reply_to_post_number
+                          - quote_count
+                          - incoming_link_count
+                          - reads
+                          - readers_count
+                          - score
+                          - yours
+                          - topic_id
+                          - topic_slug
+                          - display_username
+                          - primary_group_name
+                          - flair_name
+                          - flair_url
+                          - flair_bg_color
+                          - flair_color
+                          - version
+                          - can_edit
+                          - can_delete
+                          - can_recover
+                          - can_wiki
+                          - link_counts
+                          - read
+                          - user_title
+                          - bookmarked
+                          - actions_summary
+                          - moderator
+                          - admin
+                          - staff
+                          - user_id
+                          - hidden
+                          - trust_level
+                          - deleted_at
+                          - user_deleted
+                          - edit_reason
+                          - can_view_edit_history
+                          - wiki
+                          - reviewable_id
+                          - reviewable_score_count
+                          - reviewable_score_pending_count
                       stream:
                         type: array
-                        items: {}
+                        items: []
+                    required:
+                    - posts
+                    - stream
                   timeline_lookup:
                     type: array
-                    items: {}
+                    items: []
                   suggested_topics:
                     type: array
                     items:
-                      type: object
+                    - type: object
+                      additionalProperties: false
                       properties:
                         id:
                           type: integer
@@ -5555,26 +5630,36 @@ paths:
                           type: string
                         unseen:
                           type: boolean
-                        last_read_post_number:
-                          type: integer
-                        unread_posts:
-                          type: integer
                         pinned:
                           type: boolean
                         unpinned:
-                          type: boolean
+                          type:
+                          - string
+                          - 'null'
+                        excerpt:
+                          type: string
                         visible:
                           type: boolean
                         closed:
                           type: boolean
                         archived:
                           type: boolean
-                        notification_level:
-                          type: integer
                         bookmarked:
-                          type: boolean
+                          type:
+                          - string
+                          - 'null'
                         liked:
-                          type: boolean
+                          type:
+                          - string
+                          - 'null'
+                        tags:
+                          type: array
+                          items: []
+                        tags_descriptions:
+                          type: object
+                          additionalProperties: false
+                          properties: {}
+                          required: []
                         like_count:
                           type: integer
                         views:
@@ -5588,16 +5673,16 @@ paths:
                         posters:
                           type: array
                           items:
-                            type: object
+                          - type: object
+                            additionalProperties: false
                             properties:
                               extras:
-                                type:
-                                - string
-                                - 'null'
+                                type: string
                               description:
                                 type: string
                               user:
                                 type: object
+                                additionalProperties: false
                                 properties:
                                   id:
                                     type: integer
@@ -5607,6 +5692,53 @@ paths:
                                     type: string
                                   avatar_template:
                                     type: string
+                                required:
+                                - id
+                                - username
+                                - name
+                                - avatar_template
+                            required:
+                            - extras
+                            - description
+                            - user
+                      required:
+                      - id
+                      - title
+                      - fancy_title
+                      - slug
+                      - posts_count
+                      - reply_count
+                      - highest_post_number
+                      - image_url
+                      - created_at
+                      - last_posted_at
+                      - bumped
+                      - bumped_at
+                      - archetype
+                      - unseen
+                      - pinned
+                      - unpinned
+                      - excerpt
+                      - visible
+                      - closed
+                      - archived
+                      - bookmarked
+                      - liked
+                      - tags
+                      - tags_descriptions
+                      - like_count
+                      - views
+                      - category_id
+                      - featured_link
+                      - posters
+                  tags:
+                    type: array
+                    items: []
+                  tags_descriptions:
+                    type: object
+                    additionalProperties: false
+                    properties: {}
+                    required: []
                   id:
                     type: integer
                   title:
@@ -5669,6 +5801,8 @@ paths:
                     type:
                     - string
                     - 'null'
+                  slow_mode_seconds:
+                    type: integer
                   draft:
                     type:
                     - string
@@ -5698,7 +5832,8 @@ paths:
                   actions_summary:
                     type: array
                     items:
-                      type: object
+                    - type: object
+                      additionalProperties: false
                       properties:
                         id:
                           type: integer
@@ -5708,10 +5843,18 @@ paths:
                           type: boolean
                         can_act:
                           type: boolean
+                      required:
+                      - id
+                      - count
+                      - hidden
+                      - can_act
                   chunk_size:
                     type: integer
                   bookmarked:
                     type: boolean
+                  bookmarks:
+                    type: array
+                    items: []
                   topic_timer:
                     type:
                     - string
@@ -5726,14 +5869,19 @@ paths:
                     type:
                     - string
                     - 'null'
+                  slow_mode_enabled_until:
+                    type:
+                    - string
+                    - 'null'
                   details:
                     type: object
+                    additionalProperties: false
                     properties:
+                      can_edit:
+                        type: boolean
                       notification_level:
                         type: integer
                       can_move_posts:
-                        type: boolean
-                      can_edit:
                         type: boolean
                       can_delete:
                         type: boolean
@@ -5743,18 +5891,37 @@ paths:
                         type: boolean
                       can_reply_as_new_topic:
                         type: boolean
+                      can_invite_to:
+                        type: boolean
+                      can_invite_via_email:
+                        type: boolean
                       can_flag_topic:
                         type: boolean
                       can_convert_topic:
                         type: boolean
                       can_review_topic:
                         type: boolean
+                      can_close_topic:
+                        type: boolean
+                      can_archive_topic:
+                        type: boolean
+                      can_split_merge_topic:
+                        type: boolean
+                      can_edit_staff_notes:
+                        type: boolean
+                      can_toggle_topic_visibility:
+                        type: boolean
+                      can_pin_unpin_topic:
+                        type: boolean
+                      can_moderate_category:
+                        type: boolean
                       can_remove_self_id:
                         type: integer
                       participants:
                         type: array
                         items:
-                          type: object
+                        - type: object
+                          additionalProperties: false
                           properties:
                             id:
                               type: integer
@@ -5786,8 +5953,29 @@ paths:
                               type:
                               - string
                               - 'null'
+                            admin:
+                              type: boolean
+                            moderator:
+                              type: boolean
+                            trust_level:
+                              type: integer
+                          required:
+                          - id
+                          - username
+                          - name
+                          - avatar_template
+                          - post_count
+                          - primary_group_name
+                          - flair_name
+                          - flair_url
+                          - flair_color
+                          - flair_bg_color
+                          - admin
+                          - moderator
+                          - trust_level
                       created_by:
                         type: object
+                        additionalProperties: false
                         properties:
                           id:
                             type: integer
@@ -5797,8 +5985,14 @@ paths:
                             type: string
                           avatar_template:
                             type: string
+                        required:
+                        - id
+                        - username
+                        - name
+                        - avatar_template
                       last_poster:
                         type: object
+                        additionalProperties: false
                         properties:
                           id:
                             type: integer
@@ -5808,6 +6002,81 @@ paths:
                             type: string
                           avatar_template:
                             type: string
+                        required:
+                        - id
+                        - username
+                        - name
+                        - avatar_template
+                    required:
+                    - can_edit
+                    - notification_level
+                    - can_move_posts
+                    - can_delete
+                    - can_remove_allowed_users
+                    - can_create_post
+                    - can_reply_as_new_topic
+                    - can_convert_topic
+                    - can_review_topic
+                    - can_close_topic
+                    - can_archive_topic
+                    - can_split_merge_topic
+                    - can_edit_staff_notes
+                    - can_toggle_topic_visibility
+                    - can_pin_unpin_topic
+                    - can_moderate_category
+                    - can_remove_self_id
+                    - created_by
+                    - last_poster
+                required:
+                - post_stream
+                - timeline_lookup
+                - suggested_topics
+                - tags
+                - tags_descriptions
+                - id
+                - title
+                - fancy_title
+                - posts_count
+                - created_at
+                - views
+                - reply_count
+                - like_count
+                - last_posted_at
+                - visible
+                - closed
+                - archived
+                - has_summary
+                - archetype
+                - slug
+                - category_id
+                - word_count
+                - deleted_at
+                - user_id
+                - featured_link
+                - pinned_globally
+                - pinned_at
+                - pinned_until
+                - image_url
+                - slow_mode_seconds
+                - draft
+                - draft_key
+                - draft_sequence
+                - unpinned
+                - pinned
+                - highest_post_number
+                - deleted_by
+                - has_deleted
+                - actions_summary
+                - chunk_size
+                - bookmarked
+                - bookmarks
+                - topic_timer
+                - message_bus_last_id
+                - participant_count
+                - show_read_indicator
+                - thumbnails
+                - slow_mode_enabled_until
+                - details
     delete:
       summary: Remove a topic
       tags:
@@ -6492,6 +6761,21 @@ paths:
                   type: boolean
                 category_id:
                   type: integer
+  "/t/external_id/{external_id}.json":
+    get:
+      summary: Get topic by external_id
+      tags:
+      - Topics
+      operationId: getTopicByExternalId
+      parameters:
+      - name: external_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '301':
+          description: redirects to /t/{topic_id}.json
   "/uploads.json":
     post:
       summary: Creates an upload
