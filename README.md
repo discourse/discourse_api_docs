@@ -54,6 +54,12 @@ okay.
 Then you can commit your changes and create a PR. This is because we are using
 github pages to host the static doc website.
 
+### Automatic openapi.yml generation
+
+If you are changing multiple API specs in the core Discourse repo, then you can use the `bundle exec rake autospec:swagger` rake task to watch for changes to files in the `spec/requests/api` directory. When a change is detected the swaggerize rake task command is run, the openapi.yml file is generated, and node tojson.js is run.
+
+This can all be done while the local API docs server is running for live updates every time API spec files are changed.
+
 ### Schema Generator
 
 To aid in writing the yml responses in the swagger.yml file use this command to
