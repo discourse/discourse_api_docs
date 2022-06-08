@@ -65,17 +65,17 @@ jobs:
           bin/rake db:create
           bin/rake db:migrate
 
-      - name: "generate swagger"
-        run: "bin/rake rswag:specs:swaggerize"
+      - name: Generate swagger
+        run: bin/rake rswag:specs:swaggerize
 
-      - name: "move definition to discourse_api_docs"
-        run: 'mv openapi/openapi.yaml discourse_api_docs/openapi.yml'
+      - name: Move definition to discourse_api_docs
+        run: mv openapi/openapi.yaml discourse_api_docs/openapi.yml
 
-      - name: "convert to json"
+      - name: Convert to json
         working-directory: discourse_api_docs
-        run: "yarn install && yarn node tojson.js"
+        run: yarn install && yarn node tojson.js
 
-      - name: create PR
+      - name: Create PR
         uses: peter-evans/create-pull-request@v4.0.4
         with:
           path: discourse_api_docs
