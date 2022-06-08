@@ -1,0 +1,88 @@
+name: Update Docs
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '0 0 * * *'
+  push:
+
+jobs:
+  update-docs:
+    runs-on: ubuntu-latest
+    container: discourse/discourse_test:slim
+    timeout-minutes: 30
+
+    env:
+      DISCOURSE_HOSTNAME: www.example.com
+      RUBY_GLOBAL_METHOD_CACHE_SIZE: 131072
+      RAILS_ENV: test
+      PGUSER: discourse
+      PGPASSWORD: discourse
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: discourse/discourse
+          fetch-depth: 1
+
+      - name: checkout documentation
+        uses: actions/checkout@v3
+        with:
+          path: discourse_api_docs
+
+      - name: setup git
+        run: |
+          git config --global user.name discoursebuild
+          git config --global user.email build@discourse.org
+
+      - name: Start redis
+        run: |
+          redis-server /etc/redis/redis.conf &
+
+      - name: Start Postgres
+        run: |
+          chown -R postgres /var/run/postgresql
+          sudo -E -u postgres script/start_test_db.rb
+          sudo -u postgres psql -c "CREATE ROLE $PGUSER LOGIN SUPERUSER PASSWORD '$PGPASSWORD';"
+
+      - name: Bundler cache
+        uses: actions/cache@v3
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gem-
+
+      - name: Setup gems
+        run: |
+          bundle config --local path vendor/bundle
+          bundle config --local deployment true
+          bundle config --local without development
+          bundle install --jobs 4
+          bundle clean
+
+      - name: Create and migrate database
+        run: |
+          bin/rake db:create
+          bin/rake db:migrate
+
+      - name: "generate swagger"
+        run: "bin/rake rswag:specs:swaggerize"
+
+      - name: "move definition to discourse_api_docs"
+        run: 'mv openapi/openapi.yaml discourse_api_docs/openapi.yml'
+
+      - name: "convert to json"
+        working-directory: discourse_api_docs
+        run: "yarn install && yarn node tojson.js"
+
+      - name: create PR
+        uses: peter-evans/create-pull-request@v4.0.4
+        with:
+          path: discourse_api_docs
+          add-paths: "openapi.yml,openapi.json"
+          branch: update-documentation
+          commit-message: "Update Documentation with core changes"
+          title: "Update documentation"
+          body: |
+            Updates Documentation with changes from Discourse core
