@@ -3,7 +3,7 @@
   "info": {
     "title": "Discourse API Documentation",
     "x-logo": {
-      "url": "https://discourse-meta.s3-us-west-1.amazonaws.com/optimized/3X/9/d/9d543e92b15b06924249654667a81441a55867eb_1_690x184.png"
+      "url": "https://docs.discourse.org/logo.svg"
     },
     "version": "latest",
     "description": "This page contains the documentation on how to use Discourse through API calls.\n\n> Note: For any endpoints not listed you can follow the\n[reverse engineer the Discourse API](https://meta.discourse.org/t/-/20576)\nguide to figure out how to use an API endpoint.\n\n### Request Content-Type\n\nThe Content-Type for POST and PUT requests can be set to `application/x-www-form-urlencoded`,\n`multipart/form-data`, or `application/json`.\n\n### Endpoint Names and Response Content-Type\n\nMost API endpoints provide the same content as their HTML counterparts. For example\nthe URL `/categories` serves a list of categories, the `/categories.json` API provides the\nsame information in JSON format.\n\nInstead of sending API requests to `/categories.json` you may also send them to `/categories`\nand add an `Accept: application/json` header to the request to get the JSON response.\nSending requests with the `Accept` header is necessary if you want to use URLs\nfor related endpoints returned by the API, such as pagination URLs.\nThese URLs are returned without the `.json` prefix so you need to add the header in\norder to get the correct response format.\n\n### Authentication\n\nSome endpoints do not require any authentication, pretty much anything else will\nrequire you to be authenticated.\n\nTo become authenticated you will need to create an API Key from the admin panel.\n\nOnce you have your API Key you can pass it in along with your API Username\nas an HTTP header like this:\n\n```\ncurl -X GET \"http://127.0.0.1:3000/admin/users/list/active.json\" \\\n-H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\\n-H \"Api-Username: system\"\n```\n\nand this is how POST requests will look:\n\n```\ncurl -X POST \"http://127.0.0.1:3000/categories\" \\\n-H \"Content-Type: multipart/form-data;\" \\\n-H \"Api-Key: 714552c6148e1617aeab526d0606184b94a80ec048fc09894ff1a72b740c5f19\" \\\n-H \"Api-Username: system\" \\\n-F \"name=89853c20-4409-e91a-a8ea-f6cdff96aaaa\" \\\n-F \"color=49d9e9\" \\\n-F \"text_color=f0fcfd\"\n```\n\n### Boolean values\n\nIf an endpoint accepts a boolean be sure to specify it as a lowercase\n`true` or `false` value unless noted otherwise.\n",
@@ -935,9 +935,6 @@
                           "properties": {},
                           "required": []
                         },
-                        "min_tags_from_required_group": {
-                          "type": "integer"
-                        },
                         "allowed_tags": {
                           "type": "array"
                         },
@@ -947,10 +944,25 @@
                         "allow_global_tags": {
                           "type": "boolean"
                         },
-                        "required_tag_group_name": {
-                          "type": [
-                            "string",
-                            "null"
+                        "required_tag_groups": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "properties": {
+                                "name": {
+                                  "type": "string"
+                                },
+                                "min_count": {
+                                  "type": "integer"
+                                }
+                              },
+                              "required": [
+                                "name",
+                                "min_count"
+                              ]
+                            }
                           ]
                         },
                         "read_only_banner": {
@@ -1072,8 +1084,7 @@
                         "minimum_required_tags",
                         "navigate_to_first_post_after_read",
                         "custom_fields",
-                        "min_tags_from_required_group",
-                        "required_tag_group_name",
+                        "required_tag_groups",
                         "read_only_banner",
                         "available_groups",
                         "auto_close_hours",
@@ -1524,9 +1535,6 @@
                           "properties": {},
                           "required": []
                         },
-                        "min_tags_from_required_group": {
-                          "type": "integer"
-                        },
                         "allowed_tags": {
                           "type": "array"
                         },
@@ -1536,10 +1544,25 @@
                         "allow_global_tags": {
                           "type": "boolean"
                         },
-                        "required_tag_group_name": {
-                          "type": [
-                            "string",
-                            "null"
+                        "required_tag_groups": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "properties": {
+                                "name": {
+                                  "type": "string"
+                                },
+                                "min_count": {
+                                  "type": "integer"
+                                }
+                              },
+                              "required": [
+                                "name",
+                                "min_count"
+                              ]
+                            }
                           ]
                         },
                         "read_only_banner": {
@@ -1661,8 +1684,7 @@
                         "minimum_required_tags",
                         "navigate_to_first_post_after_read",
                         "custom_fields",
-                        "min_tags_from_required_group",
-                        "required_tag_group_name",
+                        "required_tag_groups",
                         "read_only_banner",
                         "available_groups",
                         "auto_close_hours",
@@ -2142,9 +2164,6 @@
                           "properties": {},
                           "required": []
                         },
-                        "min_tags_from_required_group": {
-                          "type": "integer"
-                        },
                         "allowed_tags": {
                           "type": "array"
                         },
@@ -2154,10 +2173,25 @@
                         "allow_global_tags": {
                           "type": "boolean"
                         },
-                        "required_tag_group_name": {
-                          "type": [
-                            "string",
-                            "null"
+                        "required_tag_groups": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "properties": {
+                                "name": {
+                                  "type": "string"
+                                },
+                                "min_count": {
+                                  "type": "integer"
+                                }
+                              },
+                              "required": [
+                                "name",
+                                "min_count"
+                              ]
+                            }
                           ]
                         },
                         "read_only_banner": {
@@ -2279,8 +2313,7 @@
                         "minimum_required_tags",
                         "navigate_to_first_post_after_read",
                         "custom_fields",
-                        "min_tags_from_required_group",
-                        "required_tag_group_name",
+                        "required_tag_groups",
                         "read_only_banner",
                         "available_groups",
                         "auto_close_hours",
@@ -5038,6 +5071,9 @@
                           "username": {
                             "type": "string"
                           },
+                          "name": {
+                            "type": "string"
+                          },
                           "avatar_template": {
                             "type": "string"
                           }
@@ -5238,7 +5274,7 @@
                 "type": "object",
                 "properties": {
                   "locked": {
-                    "type": "boolean"
+                    "type": "string"
                   }
                 },
                 "required": [
@@ -5986,7 +6022,7 @@
             "name": "q",
             "in": "query",
             "example": "api @blake #support tags:api after:2021-06-04 in:unseen in:open\norder:latest_topic",
-            "description": "The query string needs to be url encoded and is made up of the following options:\n- Search term. This is just a string. Usually it would be the first item in the query.\n- `@<username>`: Use the `@` followed by the username to specify posts by this user.\n- `#<category>`: Use the `#` followed by the category slug to search within this category.\n- `tags:`: `api,solved` or for posts that have all the specified tags `api+solved`.\n- `before:`: `yyyy-mm-dd`\n- `after:`: `yyyy-mm-dd`\n- `order:`: `latest`, `likes`, `views`, `latest_topic`\n- `assigned:`: username (without `@`)\n- `in:`: `title`, `likes`, `personal`, `seen`, `unseen`, `posted`, `created`, `watching`, `tracking`, `bookmarks`, `assigned`, `unassigned`, `first`, `pinned`, `wiki`\n- `with:`: `images`\n- `status:`: `open`, `closed`, `public`, `archived`, `noreplies`, `single_user`, `solved`, `unsolved`\n- `min_posts:`: 1\n- `max_posts:`: 10\n- `min_views:`: 1\n- `max_views:`: 10\n\nIf you are using cURL you can use the `-G` and the `--data-urlencode` flags to encode the query:\n\n```\ncurl -i -sS -X GET -G \"http://localhost:4200/search.json\" \\\n--data-urlencode 'q=wordpress @scossar #fun after:2020-01-01'\n```\n",
+            "description": "The query string needs to be url encoded and is made up of the following options:\n- Search term. This is just a string. Usually it would be the first item in the query.\n- `@<username>`: Use the `@` followed by the username to specify posts by this user.\n- `#<category>`: Use the `#` followed by the category slug to search within this category.\n- `tags:`: `api,solved` or for posts that have all the specified tags `api+solved`.\n- `before:`: `yyyy-mm-dd`\n- `after:`: `yyyy-mm-dd`\n- `order:`: `latest`, `likes`, `views`, `latest_topic`\n- `assigned:`: username (without `@`)\n- `in:`: `title`, `likes`, `personal`, `messages`, `seen`, `unseen`, `posted`, `created`, `watching`, `tracking`, `bookmarks`, `assigned`, `unassigned`, `first`, `pinned`, `wiki`\n- `with:`: `images`\n- `status:`: `open`, `closed`, `public`, `archived`, `noreplies`, `single_user`, `solved`, `unsolved`\n- `group_messages:`: groupname\n- `min_posts:`: 1\n- `max_posts:`: 10\n- `min_views:`: 1\n- `max_views:`: 10\n\nIf you are using cURL you can use the `-G` and the `--data-urlencode` flags to encode the query:\n\n```\ncurl -i -sS -X GET -G \"http://localhost:4200/search.json\" \\\n--data-urlencode 'q=wordpress @scossar #fun after:2020-01-01'\n```\n",
             "schema": {
               "type": "string"
             }
@@ -6242,6 +6278,15 @@
                           "type": "integer"
                         },
                         "chat_group_mention": {
+                          "type": "integer"
+                        },
+                        "chat_quoted": {
+                          "type": "integer"
+                        },
+                        "assigned": {
+                          "type": "integer"
+                        },
+                        "question_answer_user_commented": {
                           "type": "integer"
                         }
                       },
@@ -6705,13 +6750,25 @@
                             "allow_global_tags": {
                               "type": "boolean"
                             },
-                            "min_tags_from_required_group": {
-                              "type": "integer"
-                            },
-                            "required_tag_group_name": {
-                              "type": [
-                                "string",
-                                "null"
+                            "required_tag_groups": {
+                              "type": "array",
+                              "items": [
+                                {
+                                  "type": "object",
+                                  "additionalProperties": false,
+                                  "properties": {
+                                    "name": {
+                                      "type": "string"
+                                    },
+                                    "min_count": {
+                                      "type": "integer"
+                                    }
+                                  },
+                                  "required": [
+                                    "name",
+                                    "min_count"
+                                  ]
+                                }
                               ]
                             },
                             "read_only_banner": {
@@ -6767,8 +6824,7 @@
                             "allowed_tags",
                             "allowed_tag_groups",
                             "allow_global_tags",
-                            "min_tags_from_required_group",
-                            "required_tag_group_name",
+                            "required_tag_groups",
                             "read_only_banner",
                             "uploaded_logo",
                             "uploaded_background",
@@ -10220,7 +10276,7 @@
           "Uploads"
         ],
         "operationId": "batchPresignMultipartParts",
-        "description": "Multipart uploads are uploaded in chunks or parts to individual presigned\nURLs, similar to the one genreated by /generate-presigned-put. The part\nnumbers provided must be between 1 and 10000. The total number of parts\nwill depend on the chunk size in bytes that you intend to use to upload\neach chunk. For example a 12MB file may have 2 5MB chunks and a final\n2MB chunk, for part numbers 1, 2, and 3.\n\nThis endpoint will return a presigned URL for each part number provided,\nwhich you can then use to send PUT requests for the binary chunk corresponding\nto that part. When the part is uploaded, the provider should return an\nETag for the part, and this should be stored along with the part number,\nbecause this is needed to complete the multipart upload.\n\nYou must have the correct permissions and CORS settings configured in your\nexternal provider. We support AWS S3 as the default. See:\n\nhttps://meta.discourse.org/t/-/210469#s3-multipart-direct-uploads-4.\n\nAn external file store must be set up and `enable_direct_s3_uploads` must\nbe set to true for this endpoint to function.\n\n",
+        "description": "Multipart uploads are uploaded in chunks or parts to individual presigned\nURLs, similar to the one generated by /generate-presigned-put. The part\nnumbers provided must be between 1 and 10000. The total number of parts\nwill depend on the chunk size in bytes that you intend to use to upload\neach chunk. For example a 12MB file may have 2 5MB chunks and a final\n2MB chunk, for part numbers 1, 2, and 3.\n\nThis endpoint will return a presigned URL for each part number provided,\nwhich you can then use to send PUT requests for the binary chunk corresponding\nto that part. When the part is uploaded, the provider should return an\nETag for the part, and this should be stored along with the part number,\nbecause this is needed to complete the multipart upload.\n\nYou must have the correct permissions and CORS settings configured in your\nexternal provider. We support AWS S3 as the default. See:\n\nhttps://meta.discourse.org/t/-/210469#s3-multipart-direct-uploads-4.\n\nAn external file store must be set up and `enable_direct_s3_uploads` must\nbe set to true for this endpoint to function.\n\n",
         "parameters": [],
         "responses": {
           "200": {
@@ -10756,6 +10812,9 @@
                   },
                   "user_fields[1]": {
                     "type": "boolean"
+                  },
+                  "external_ids": {
+                    "type": "object"
                   }
                 },
                 "required": [
@@ -11673,6 +11732,86 @@
                     "user_badges",
                     "user"
                   ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a user",
+        "tags": [
+          "Users"
+        ],
+        "operationId": "updateUser",
+        "parameters": [
+          {
+            "name": "Api-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Api-Username",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "username",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "user updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "success": {
+                      "type": "string"
+                    },
+                    "user": {
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "success",
+                    "user"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "external_ids": {
+                    "type": "object"
+                  }
                 }
               }
             }
@@ -14451,6 +14590,9 @@
                           ]
                         }
                       ]
+                    },
+                    "external_ids": {
+                      "type": "object"
                     }
                   },
                   "required": [
@@ -14512,7 +14654,8 @@
                     "approved_by",
                     "suspended_by",
                     "silenced_by",
-                    "groups"
+                    "groups",
+                    "external_ids"
                   ]
                 }
               }
@@ -14623,13 +14766,38 @@
                         },
                         "suspended_at": {
                           "type": "string"
+                        },
+                        "suspended_by": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "username": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "avatar_template": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "username",
+                            "name",
+                            "avatar_template"
+                          ]
                         }
                       },
                       "required": [
                         "suspend_reason",
                         "full_suspend_reason",
                         "suspended_till",
-                        "suspended_at"
+                        "suspended_at",
+                        "suspended_by"
                       ]
                     }
                   },
@@ -14667,6 +14835,118 @@
                   "suspend_until",
                   "reason"
                 ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/users/{id}/silence.json": {
+      "put": {
+        "summary": "Silence a user",
+        "tags": [
+          "Users",
+          "Admin"
+        ],
+        "operationId": "silenceUser",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "silence": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "silenced": {
+                          "type": "boolean"
+                        },
+                        "silence_reason": {
+                          "type": "string"
+                        },
+                        "silenced_till": {
+                          "type": "string"
+                        },
+                        "silenced_at": {
+                          "type": "string"
+                        },
+                        "silenced_by": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "username": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "avatar_template": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "username",
+                            "name",
+                            "avatar_template"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "silenced",
+                        "silence_reason",
+                        "silenced_till",
+                        "silenced_at",
+                        "silenced_by"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "silence"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "silenced_till": {
+                    "type": "string",
+                    "example": "2022-06-01T08:00:00.000Z"
+                  },
+                  "reason": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string",
+                    "description": "Will send an email with this message when present"
+                  },
+                  "post_action": {
+                    "type": "string",
+                    "example": "delete"
+                  }
+                }
               }
             }
           }
