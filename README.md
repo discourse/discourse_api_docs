@@ -1,5 +1,7 @@
 # Discourse API Documentation
 
+![automatic updates](https://github.com/discourse/discourse_api_docs/actions/workflows/update_docs.yml/badge.svg)
+
 To view the the Discourse API Documentation you can visit:
 
   https://docs.discourse.org/
