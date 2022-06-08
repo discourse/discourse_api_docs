@@ -3,7 +3,7 @@ openapi: 3.1.0
 info:
   title: Discourse API Documentation
   x-logo:
-    url: https://discourse-meta.s3-us-west-1.amazonaws.com/optimized/3X/9/d/9d543e92b15b06924249654667a81441a55867eb_1_690x184.png
+    url: https://docs.discourse.org/logo.svg
   version: latest
   description: |
     This page contains the documentation on how to use Discourse through API calls.
@@ -703,18 +703,25 @@ paths:
                         additionalProperties: false
                         properties: {}
                         required: []
-                      min_tags_from_required_group:
-                        type: integer
                       allowed_tags:
                         type: array
                       allowed_tag_groups:
                         type: array
                       allow_global_tags:
                         type: boolean
-                      required_tag_group_name:
-                        type:
-                        - string
-                        - 'null'
+                      required_tag_groups:
+                        type: array
+                        items:
+                        - type: object
+                          additionalProperties: false
+                          properties:
+                            name:
+                              type: string
+                            min_count:
+                              type: integer
+                          required:
+                          - name
+                          - min_count
                       read_only_banner:
                         type:
                         - string
@@ -803,8 +810,7 @@ paths:
                     - minimum_required_tags
                     - navigate_to_first_post_after_read
                     - custom_fields
-                    - min_tags_from_required_group
-                    - required_tag_group_name
+                    - required_tag_groups
                     - read_only_banner
                     - available_groups
                     - auto_close_hours
@@ -1119,18 +1125,25 @@ paths:
                         additionalProperties: false
                         properties: {}
                         required: []
-                      min_tags_from_required_group:
-                        type: integer
                       allowed_tags:
                         type: array
                       allowed_tag_groups:
                         type: array
                       allow_global_tags:
                         type: boolean
-                      required_tag_group_name:
-                        type:
-                        - string
-                        - 'null'
+                      required_tag_groups:
+                        type: array
+                        items:
+                        - type: object
+                          additionalProperties: false
+                          properties:
+                            name:
+                              type: string
+                            min_count:
+                              type: integer
+                          required:
+                          - name
+                          - min_count
                       read_only_banner:
                         type:
                         - string
@@ -1219,8 +1232,7 @@ paths:
                     - minimum_required_tags
                     - navigate_to_first_post_after_read
                     - custom_fields
-                    - min_tags_from_required_group
-                    - required_tag_group_name
+                    - required_tag_groups
                     - read_only_banner
                     - available_groups
                     - auto_close_hours
@@ -1551,18 +1563,25 @@ paths:
                         additionalProperties: false
                         properties: {}
                         required: []
-                      min_tags_from_required_group:
-                        type: integer
                       allowed_tags:
                         type: array
                       allowed_tag_groups:
                         type: array
                       allow_global_tags:
                         type: boolean
-                      required_tag_group_name:
-                        type:
-                        - string
-                        - 'null'
+                      required_tag_groups:
+                        type: array
+                        items:
+                        - type: object
+                          additionalProperties: false
+                          properties:
+                            name:
+                              type: string
+                            min_count:
+                              type: integer
+                          required:
+                          - name
+                          - min_count
                       read_only_banner:
                         type:
                         - string
@@ -1651,8 +1670,7 @@ paths:
                     - minimum_required_tags
                     - navigate_to_first_post_after_read
                     - custom_fields
-                    - min_tags_from_required_group
-                    - required_tag_group_name
+                    - required_tag_groups
                     - read_only_banner
                     - available_groups
                     - auto_close_hours
@@ -3532,6 +3550,8 @@ paths:
                       properties:
                         username:
                           type: string
+                        name:
+                          type: string
                         avatar_template:
                           type: string
                       required:
@@ -3674,7 +3694,7 @@ paths:
               type: object
               properties:
                 locked:
-                  type: boolean
+                  type: string
               required:
               - locked
   "/post_actions.json":
@@ -4171,9 +4191,10 @@ paths:
           - `after:`: `yyyy-mm-dd`
           - `order:`: `latest`, `likes`, `views`, `latest_topic`
           - `assigned:`: username (without `@`)
-          - `in:`: `title`, `likes`, `personal`, `seen`, `unseen`, `posted`, `created`, `watching`, `tracking`, `bookmarks`, `assigned`, `unassigned`, `first`, `pinned`, `wiki`
+          - `in:`: `title`, `likes`, `personal`, `messages`, `seen`, `unseen`, `posted`, `created`, `watching`, `tracking`, `bookmarks`, `assigned`, `unassigned`, `first`, `pinned`, `wiki`
           - `with:`: `images`
           - `status:`: `open`, `closed`, `public`, `archived`, `noreplies`, `single_user`, `solved`, `unsolved`
+          - `group_messages:`: groupname
           - `min_posts:`: 1
           - `max_posts:`: 10
           - `min_views:`: 1
@@ -4366,6 +4387,12 @@ paths:
                       chat_invitation:
                         type: integer
                       chat_group_mention:
+                        type: integer
+                      chat_quoted:
+                        type: integer
+                      assigned:
+                        type: integer
+                      question_answer_user_commented:
                         type: integer
                     required:
                     - mentioned
@@ -4691,12 +4718,19 @@ paths:
                           items: []
                         allow_global_tags:
                           type: boolean
-                        min_tags_from_required_group:
-                          type: integer
-                        required_tag_group_name:
-                          type:
-                          - string
-                          - 'null'
+                        required_tag_groups:
+                          type: array
+                          items:
+                          - type: object
+                            additionalProperties: false
+                            properties:
+                              name:
+                                type: string
+                              min_count:
+                                type: integer
+                            required:
+                            - name
+                            - min_count
                         read_only_banner:
                           type:
                           - string
@@ -4742,8 +4776,7 @@ paths:
                       - allowed_tags
                       - allowed_tag_groups
                       - allow_global_tags
-                      - min_tags_from_required_group
-                      - required_tag_group_name
+                      - required_tag_groups
                       - read_only_banner
                       - uploaded_logo
                       - uploaded_background
@@ -7136,7 +7169,7 @@ paths:
       operationId: batchPresignMultipartParts
       description: |+
         Multipart uploads are uploaded in chunks or parts to individual presigned
-        URLs, similar to the one genreated by /generate-presigned-put. The part
+        URLs, similar to the one generated by /generate-presigned-put. The part
         numbers provided must be between 1 and 10000. The total number of parts
         will depend on the chunk size in bytes that you intend to use to upload
         each chunk. For example a 12MB file may have 2 5MB chunks and a final
@@ -7549,6 +7582,8 @@ paths:
                   type: boolean
                 user_fields[1]:
                   type: boolean
+                external_ids:
+                  type: object
               required:
               - name
               - email
@@ -8212,6 +8247,56 @@ paths:
                 required:
                 - user_badges
                 - user
+    put:
+      summary: Update a user
+      tags:
+      - Users
+      operationId: updateUser
+      parameters:
+      - name: Api-Key
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: Api-Username
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: username
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: user updated
+          content:
+            application/json:
+              schema:
+                additionalProperties: false
+                properties:
+                  success:
+                    type: string
+                  user:
+                    type: object
+                required:
+                - success
+                - user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              additionalProperties: false
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+                external_ids:
+                  type: object
   "/u/by-external/{external_id}.json":
     get:
       summary: Get a user by external_id
@@ -10185,6 +10270,8 @@ paths:
                       - can_see_members
                       - can_admin_group
                       - publish_read_state
+                  external_ids:
+                    type: object
                 required:
                 - id
                 - username
@@ -10245,6 +10332,7 @@ paths:
                 - suspended_by
                 - silenced_by
                 - groups
+                - external_ids
     delete:
       summary: Delete a user
       tags:
@@ -10316,11 +10404,29 @@ paths:
                         type: string
                       suspended_at:
                         type: string
+                      suspended_by:
+                        type: object
+                        additionalProperties: false
+                        properties:
+                          id:
+                            type: integer
+                          username:
+                            type: string
+                          name:
+                            type: string
+                          avatar_template:
+                            type: string
+                        required:
+                        - id
+                        - username
+                        - name
+                        - avatar_template
                     required:
                     - suspend_reason
                     - full_suspend_reason
                     - suspended_till
                     - suspended_at
+                    - suspended_by
                 required:
                 - suspension
       requestBody:
@@ -10343,6 +10449,81 @@ paths:
               required:
               - suspend_until
               - reason
+  "/admin/users/{id}/silence.json":
+    put:
+      summary: Silence a user
+      tags:
+      - Users
+      - Admin
+      operationId: silenceUser
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: response
+          content:
+            application/json:
+              schema:
+                additionalProperties: false
+                properties:
+                  silence:
+                    type: object
+                    additionalProperties: false
+                    properties:
+                      silenced:
+                        type: boolean
+                      silence_reason:
+                        type: string
+                      silenced_till:
+                        type: string
+                      silenced_at:
+                        type: string
+                      silenced_by:
+                        type: object
+                        additionalProperties: false
+                        properties:
+                          id:
+                            type: integer
+                          username:
+                            type: string
+                          name:
+                            type: string
+                          avatar_template:
+                            type: string
+                        required:
+                        - id
+                        - username
+                        - name
+                        - avatar_template
+                    required:
+                    - silenced
+                    - silence_reason
+                    - silenced_till
+                    - silenced_at
+                    - silenced_by
+                required:
+                - silence
+      requestBody:
+        content:
+          application/json:
+            schema:
+              additionalProperties: false
+              properties:
+                silenced_till:
+                  type: string
+                  example: '2022-06-01T08:00:00.000Z'
+                reason:
+                  type: string
+                message:
+                  type: string
+                  description: Will send an email with this message when present
+                post_action:
+                  type: string
+                  example: delete
   "/admin/users/{id}/anonymize.json":
     put:
       summary: Anonymize a user
@@ -10816,4 +10997,3 @@ servers:
       default: discourse.example.com
 components:
   schemas: {}
-...
