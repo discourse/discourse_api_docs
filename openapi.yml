@@ -174,7 +174,7 @@ paths:
                   badges:
                     type: array
                     items:
-                    - type: object
+                      type: object
                       additionalProperties: false
                       properties:
                         id:
@@ -253,7 +253,7 @@ paths:
                   badge_types:
                     type: array
                     items:
-                    - type: object
+                      type: object
                       additionalProperties: false
                       properties:
                         id:
@@ -269,7 +269,7 @@ paths:
                   badge_groupings:
                     type: array
                     items:
-                    - type: object
+                      type: object
                       additionalProperties: false
                       properties:
                         id:
@@ -296,7 +296,7 @@ paths:
                     properties:
                       protected_system_fields:
                         type: array
-                        items: []
+                        items: {}
                       triggers:
                         type: object
                         additionalProperties: false
@@ -319,13 +319,13 @@ paths:
                         - post_action
                       badge_ids:
                         type: array
-                        items: []
+                        items: {}
                       badge_grouping_ids:
                         type: array
-                        items: []
+                        items: {}
                       badge_type_ids:
                         type: array
-                        items: []
+                        items: {}
                     required:
                     - protected_system_fields
                     - triggers
@@ -354,7 +354,7 @@ paths:
                   badge_types:
                     type: array
                     items:
-                    - type: object
+                      type: object
                       additionalProperties: false
                       properties:
                         id:
@@ -483,7 +483,7 @@ paths:
                   badge_types:
                     type: array
                     items:
-                    - type: object
+                      type: object
                       additionalProperties: false
                       properties:
                         id:
@@ -702,17 +702,18 @@ paths:
                         type: object
                         additionalProperties: false
                         properties: {}
-                        required: []
                       allowed_tags:
                         type: array
+                        items: {}
                       allowed_tag_groups:
                         type: array
+                        items: {}
                       allow_global_tags:
                         type: boolean
                       required_tag_groups:
                         type: array
                         items:
-                        - type: object
+                          type: object
                           additionalProperties: false
                           properties:
                             name:
@@ -728,7 +729,7 @@ paths:
                         - 'null'
                       available_groups:
                         type: array
-                        items: []
+                        items: {}
                       auto_close_hours:
                         type:
                         - string
@@ -744,7 +745,7 @@ paths:
                       group_permissions:
                         type: array
                         items:
-                        - type: object
+                          type: object
                           additionalProperties: false
                           properties:
                             permission_type:
@@ -877,7 +878,7 @@ paths:
                       categories:
                         type: array
                         items:
-                        - type: object
+                          type: object
                           additionalProperties: false
                           properties:
                             id:
@@ -897,11 +898,17 @@ paths:
                             position:
                               type: integer
                             description:
-                              type: string
+                              type:
+                              - string
+                              - 'null'
                             description_text:
-                              type: string
+                              type:
+                              - string
+                              - 'null'
                             description_excerpt:
-                              type: string
+                              type:
+                              - string
+                              - 'null'
                             topic_url:
                               type:
                               - string
@@ -960,12 +967,12 @@ paths:
                               type: boolean
                             subcategory_ids:
                               type: array
-                              items: []
+                              items: {}
                             subcategory_list:
                               type:
                               - array
                               - 'null'
-                              items: []
+                              items: {}
                             uploaded_logo:
                               type:
                               - string
@@ -1008,7 +1015,6 @@ paths:
                           - topics_month
                           - topics_year
                           - topics_all_time
-                          - is_uncategorized
                           - subcategory_ids
                           - uploaded_logo
                           - uploaded_background
@@ -1124,17 +1130,18 @@ paths:
                         type: object
                         additionalProperties: false
                         properties: {}
-                        required: []
                       allowed_tags:
                         type: array
+                        items: {}
                       allowed_tag_groups:
                         type: array
+                        items: {}
                       allow_global_tags:
                         type: boolean
                       required_tag_groups:
                         type: array
                         items:
-                        - type: object
+                          type: object
                           additionalProperties: false
                           properties:
                             name:
@@ -1150,7 +1157,7 @@ paths:
                         - 'null'
                       available_groups:
                         type: array
-                        items: []
+                        items: {}
                       auto_close_hours:
                         type:
                         - string
@@ -1166,7 +1173,7 @@ paths:
                       group_permissions:
                         type: array
                         items:
-                        - type: object
+                          type: object
                           additionalProperties: false
                           properties:
                             permission_type:
@@ -1297,7 +1304,7 @@ paths:
                   users:
                     type: array
                     items:
-                    - type: object
+                      type: object
                       additionalProperties: false
                       properties:
                         id:
@@ -1315,7 +1322,7 @@ paths:
                       - avatar_template
                   primary_groups:
                     type: array
-                    items: []
+                    items: {}
                   topic_list:
                     type: object
                     additionalProperties: false
@@ -1326,10 +1333,11 @@ paths:
                         type: integer
                       top_tags:
                         type: array
+                        items: {}
                       topics:
                         type: array
                         items:
-                        - type: object
+                          type: object
                           additionalProperties: false
                           properties:
                             id:
@@ -1403,7 +1411,7 @@ paths:
                             posters:
                               type: array
                               items:
-                              - type: object
+                                type: object
                                 additionalProperties: false
                                 properties:
                                   extras:
@@ -1562,17 +1570,18 @@ paths:
                         type: object
                         additionalProperties: false
                         properties: {}
-                        required: []
                       allowed_tags:
                         type: array
+                        items: {}
                       allowed_tag_groups:
                         type: array
+                        items: {}
                       allow_global_tags:
                         type: boolean
                       required_tag_groups:
                         type: array
                         items:
-                        - type: object
+                          type: object
                           additionalProperties: false
                           properties:
                             name:
@@ -1588,7 +1597,7 @@ paths:
                         - 'null'
                       available_groups:
                         type: array
-                        items: []
+                        items: {}
                       auto_close_hours:
                         type:
                         - string
@@ -1604,7 +1613,7 @@ paths:
                       group_permissions:
                         type: array
                         items:
-                        - type: object
+                          type: object
                           additionalProperties: false
                           properties:
                             permission_type:
@@ -2035,7 +2044,7 @@ paths:
                         type: string
                       imap_mailboxes:
                         type: array
-                        items: []
+                        items: {}
                       email_username:
                         type:
                         - string
@@ -2066,37 +2075,37 @@ paths:
                         type: boolean
                       associated_group_ids:
                         type: array
-                        items: []
+                        items: {}
                       watching_category_ids:
                         type: array
-                        items: []
+                        items: {}
                       tracking_category_ids:
                         type: array
-                        items: []
+                        items: {}
                       watching_first_post_category_ids:
                         type: array
-                        items: []
+                        items: {}
                       regular_category_ids:
                         type: array
-                        items: []
+                        items: {}
                       muted_category_ids:
                         type: array
-                        items: []
+                        items: {}
                       watching_tags:
                         type: array
-                        items: []
+                        items: {}
                       watching_first_post_tags:
                         type: array
-                        items: []
+                        items: {}
                       tracking_tags:
                         type: array
-                        items: []
+                        items: {}
                       regular_tags:
                         type: array
-                        items: []
+                        items: {}
                       muted_tags:
                         type: array
-                        items: []
+                        items: {}
                     required:
                     - id
                     - automatic
@@ -2157,7 +2166,7 @@ paths:
                     properties:
                       visible_group_names:
                         type: array
-                        items: []
+                        items: {}
                     required:
                     - visible_group_names
                 required:
@@ -2188,7 +2197,7 @@ paths:
                   members:
                     type: array
                     items:
-                    - type: object
+                      type: object
                       additionalProperties: false
                       properties:
                         id:
@@ -2226,7 +2235,7 @@ paths:
                   owners:
                     type: array
                     items:
-                    - type: object
+                      type: object
                       additionalProperties: false
                       properties:
                         id:
@@ -2302,10 +2311,10 @@ paths:
                     type: string
                   usernames:
                     type: array
-                    items: []
+                    items: {}
                   emails:
                     type: array
-                    items: []
+                    items: {}
                 required:
                 - success
                 - usernames
@@ -2343,10 +2352,10 @@ paths:
                     type: string
                   usernames:
                     type: array
-                    items: []
+                    items: {}
                   skipped_usernames:
                     type: array
-                    items: []
+                    items: {}
                 required:
                 - success
                 - usernames
@@ -2378,7 +2387,7 @@ paths:
                   groups:
                     type: array
                     items:
-                    - type: object
+                      type: object
                       additionalProperties: false
                       properties:
                         id:
@@ -2501,7 +2510,7 @@ paths:
                     properties:
                       type_filters:
                         type: array
-                        items: []
+                        items: {}
                     required:
                     - type_filters
                   total_rows_groups:
@@ -2557,9 +2566,11 @@ paths:
                     example: Hello world!
                   topics:
                     type: array
+                    items: {}
                     example: []
                   groups:
                     type: array
+                    items: {}
                     example: []
                   created_at:
                     type: string
@@ -2953,7 +2964,7 @@ paths:
                   actions_summary:
                     type: array
                     items:
-                    - type: object
+                      type: object
                       additionalProperties: false
                       properties:
                         id:
@@ -3562,7 +3573,7 @@ paths:
                     actions_summary:
                       type: array
                       items:
-                      - type: object
+                        type: object
                         additionalProperties: false
                         properties:
                           id:
@@ -4223,19 +4234,19 @@ paths:
                 properties:
                   posts:
                     type: array
-                    items: []
+                    items: {}
                   users:
                     type: array
-                    items: []
+                    items: {}
                   categories:
                     type: array
-                    items: []
+                    items: {}
                   tags:
                     type: array
-                    items: []
+                    items: {}
                   groups:
                     type: array
-                    items: []
+                    items: {}
                   grouped_search_result:
                     type: object
                     additionalProperties: false
@@ -4268,19 +4279,19 @@ paths:
                         - 'null'
                       post_ids:
                         type: array
-                        items: []
+                        items: {}
                       user_ids:
                         type: array
-                        items: []
+                        items: {}
                       category_ids:
                         type: array
-                        items: []
+                        items: {}
                       tag_ids:
                         type: array
-                        items: []
+                        items: {}
                       group_ids:
                         type: array
-                        items: []
+                        items: {}
                     required:
                     - more_posts
                     - more_users
@@ -4467,7 +4478,7 @@ paths:
                   groups:
                     type: array
                     items:
-                    - type: object
+                      type: object
                       additionalProperties: false
                       properties:
                         id:
@@ -4494,16 +4505,16 @@ paths:
                       - flair_color
                   filters:
                     type: array
-                    items: []
+                    items: {}
                   periods:
                     type: array
-                    items: []
+                    items: {}
                   top_menu_items:
                     type: array
-                    items: []
+                    items: {}
                   anonymous_top_menu_items:
                     type: array
-                    items: []
+                    items: {}
                   uncategorized_category_id:
                     type: integer
                   user_field_max_length:
@@ -4511,13 +4522,17 @@ paths:
                   post_action_types:
                     type: array
                     items:
-                    - type: object
+                      type: object
                       additionalProperties: false
                       properties:
                         id:
-                          type: integer
+                          type:
+                          - integer
+                          - 'null'
                         name_key:
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                         name:
                           type: string
                         description:
@@ -4539,13 +4554,17 @@ paths:
                   topic_flag_types:
                     type: array
                     items:
-                    - type: object
+                      type: object
                       additionalProperties: false
                       properties:
                         id:
-                          type: integer
+                          type:
+                          - integer
+                          - 'null'
                         name_key:
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                         name:
                           type: string
                         description:
@@ -4574,18 +4593,18 @@ paths:
                     type: string
                   top_tags:
                     type: array
-                    items: []
+                    items: {}
                   wizard_required:
                     type: boolean
                   can_associate_groups:
                     type: boolean
                   topic_featured_link_allowed_category_ids:
                     type: array
-                    items: []
+                    items: {}
                   user_themes:
                     type: array
                     items:
-                    - type: object
+                      type: object
                       additionalProperties: false
                       properties:
                         theme_id:
@@ -4606,7 +4625,7 @@ paths:
                   user_color_schemes:
                     type: array
                     items:
-                    - type: object
+                      type: object
                       additionalProperties: false
                       properties:
                         id:
@@ -4631,7 +4650,6 @@ paths:
                     type: object
                     additionalProperties: false
                     properties: {}
-                    required: []
                   watched_words_replace:
                     type:
                     - string
@@ -4645,7 +4663,7 @@ paths:
                   categories:
                     type: array
                     items:
-                    - type: object
+                      type: object
                       additionalProperties: false
                       properties:
                         id:
@@ -4712,16 +4730,16 @@ paths:
                           type: boolean
                         allowed_tags:
                           type: array
-                          items: []
+                          items: {}
                         allowed_tag_groups:
                           type: array
-                          items: []
+                          items: {}
                         allow_global_tags:
                           type: boolean
                         required_tag_groups:
                           type: array
                           items:
-                          - type: object
+                            type: object
                             additionalProperties: false
                             properties:
                               name:
@@ -4784,7 +4802,7 @@ paths:
                   archetypes:
                     type: array
                     items:
-                    - type: object
+                      type: object
                       additionalProperties: false
                       properties:
                         id:
@@ -4793,17 +4811,17 @@ paths:
                           type: string
                         options:
                           type: array
-                          items: []
+                          items: {}
                       required:
                       - id
                       - name
                       - options
                   user_fields:
                     type: array
-                    items: []
+                    items: {}
                   auth_providers:
                     type: array
-                    items: []
+                    items: {}
                 required:
                 - default_archetype
                 - notification_types
@@ -4895,10 +4913,10 @@ paths:
                         type: string
                       tag_names:
                         type: array
-                        items: []
+                        items: {}
                       parent_tag_name:
                         type: array
-                        items: []
+                        items: {}
                       one_per_topic:
                         type: boolean
                       permissions:
@@ -5416,7 +5434,7 @@ paths:
                       posts:
                         type: array
                         items:
-                        - type: object
+                          type: object
                           additionalProperties: false
                           properties:
                             id:
@@ -5452,7 +5470,7 @@ paths:
                             readers_count:
                               type: integer
                             score:
-                              type: ''
+                              type: integer
                             yours:
                               type: boolean
                             topic_id:
@@ -5494,7 +5512,7 @@ paths:
                             link_counts:
                               type: array
                               items:
-                              - type: object
+                                type: object
                                 additionalProperties: false
                                 properties:
                                   url:
@@ -5524,7 +5542,7 @@ paths:
                             actions_summary:
                               type: array
                               items:
-                              - type: object
+                                type: object
                                 additionalProperties: false
                                 properties:
                                   id:
@@ -5618,17 +5636,17 @@ paths:
                           - reviewable_score_pending_count
                       stream:
                         type: array
-                        items: []
+                        items: {}
                     required:
                     - posts
                     - stream
                   timeline_lookup:
                     type: array
-                    items: []
+                    items: {}
                   suggested_topics:
                     type: array
                     items:
-                    - type: object
+                      type: object
                       additionalProperties: false
                       properties:
                         id:
@@ -5687,12 +5705,11 @@ paths:
                           - 'null'
                         tags:
                           type: array
-                          items: []
+                          items: {}
                         tags_descriptions:
                           type: object
                           additionalProperties: false
                           properties: {}
-                          required: []
                         like_count:
                           type: integer
                         views:
@@ -5706,7 +5723,7 @@ paths:
                         posters:
                           type: array
                           items:
-                          - type: object
+                            type: object
                             additionalProperties: false
                             properties:
                               extras:
@@ -5766,12 +5783,11 @@ paths:
                       - posters
                   tags:
                     type: array
-                    items: []
+                    items: {}
                   tags_descriptions:
                     type: object
                     additionalProperties: false
                     properties: {}
-                    required: []
                   id:
                     type: integer
                   title:
@@ -5865,7 +5881,7 @@ paths:
                   actions_summary:
                     type: array
                     items:
-                    - type: object
+                      type: object
                       additionalProperties: false
                       properties:
                         id:
@@ -5887,7 +5903,7 @@ paths:
                     type: boolean
                   bookmarks:
                     type: array
-                    items: []
+                    items: {}
                   topic_timer:
                     type:
                     - string
@@ -5953,7 +5969,7 @@ paths:
                       participants:
                         type: array
                         items:
-                        - type: object
+                          type: object
                           additionalProperties: false
                           properties:
                             id:
@@ -7393,7 +7409,7 @@ paths:
                   badges:
                     type: array
                     items:
-                    - type: object
+                      type: object
                       additionalProperties: false
                       properties:
                         id:
@@ -7447,7 +7463,7 @@ paths:
                   badge_types:
                     type: array
                     items:
-                    - type: object
+                      type: object
                       additionalProperties: false
                       properties:
                         id:
@@ -7463,7 +7479,7 @@ paths:
                   granted_bies:
                     type: array
                     items:
-                    - type: object
+                      type: object
                       additionalProperties: false
                       properties:
                         id:
@@ -7496,7 +7512,7 @@ paths:
                   user_badges:
                     type: array
                     items:
-                    - type: object
+                      type: object
                       additionalProperties: false
                       properties:
                         id:
@@ -7621,7 +7637,7 @@ paths:
                 properties:
                   user_badges:
                     type: array
-                    items: []
+                    items: {}
                   user:
                     type: object
                     additionalProperties: false
@@ -7693,7 +7709,6 @@ paths:
                             type:
                             - string
                             - 'null'
-                        required: []
                       time_read:
                         type: integer
                       recent_time_read:
@@ -7770,31 +7785,31 @@ paths:
                         - 'null'
                       muted_category_ids:
                         type: array
-                        items: []
+                        items: {}
                       regular_category_ids:
                         type: array
-                        items: []
+                        items: {}
                       watched_tags:
                         type: array
-                        items: []
+                        items: {}
                       watching_first_post_tags:
                         type: array
-                        items: []
+                        items: {}
                       tracked_tags:
                         type: array
-                        items: []
+                        items: {}
                       muted_tags:
                         type: array
-                        items: []
+                        items: {}
                       tracked_category_ids:
                         type: array
-                        items: []
+                        items: {}
                       watched_category_ids:
                         type: array
-                        items: []
+                        items: {}
                       watched_first_post_category_ids:
                         type: array
-                        items: []
+                        items: {}
                       system_avatar_upload_id:
                         type:
                         - string
@@ -7803,13 +7818,13 @@ paths:
                         type: string
                       muted_usernames:
                         type: array
-                        items: []
+                        items: {}
                       ignored_usernames:
                         type: array
-                        items: []
+                        items: {}
                       allowed_pm_usernames:
                         type: array
-                        items: []
+                        items: {}
                       mailing_list_posts_per_day:
                         type: integer
                       can_change_bio:
@@ -7827,7 +7842,7 @@ paths:
                       user_auth_tokens:
                         type: array
                         items:
-                        - type: object
+                          type: object
                           additionalProperties: false
                           properties:
                             id:
@@ -7915,7 +7930,7 @@ paths:
                         type: boolean
                       featured_user_badge_ids:
                         type: array
-                        items: []
+                        items: {}
                       invited_by:
                         type:
                         - string
@@ -7923,7 +7938,7 @@ paths:
                       groups:
                         type: array
                         items:
-                        - type: object
+                          type: object
                           additionalProperties: false
                           properties:
                             id:
@@ -8039,7 +8054,7 @@ paths:
                       group_users:
                         type: array
                         items:
-                        - type: object
+                          type: object
                           additionalProperties: false
                           properties:
                             group_id:
@@ -8106,7 +8121,7 @@ paths:
                             type: boolean
                           theme_ids:
                             type: array
-                            items: []
+                            items: {}
                           theme_key_seq:
                             type: integer
                           allow_private_messages:
@@ -8329,7 +8344,7 @@ paths:
                 properties:
                   user_badges:
                     type: array
-                    items: []
+                    items: {}
                   user:
                     type: object
                     additionalProperties: false
@@ -8401,7 +8416,6 @@ paths:
                             type:
                             - string
                             - 'null'
-                        required: []
                       time_read:
                         type: integer
                       recent_time_read:
@@ -8478,31 +8492,31 @@ paths:
                         - 'null'
                       muted_category_ids:
                         type: array
-                        items: []
+                        items: {}
                       regular_category_ids:
                         type: array
-                        items: []
+                        items: {}
                       watched_tags:
                         type: array
-                        items: []
+                        items: {}
                       watching_first_post_tags:
                         type: array
-                        items: []
+                        items: {}
                       tracked_tags:
                         type: array
-                        items: []
+                        items: {}
                       muted_tags:
                         type: array
-                        items: []
+                        items: {}
                       tracked_category_ids:
                         type: array
-                        items: []
+                        items: {}
                       watched_category_ids:
                         type: array
-                        items: []
+                        items: {}
                       watched_first_post_category_ids:
                         type: array
-                        items: []
+                        items: {}
                       system_avatar_upload_id:
                         type:
                         - string
@@ -8511,13 +8525,13 @@ paths:
                         type: string
                       muted_usernames:
                         type: array
-                        items: []
+                        items: {}
                       ignored_usernames:
                         type: array
-                        items: []
+                        items: {}
                       allowed_pm_usernames:
                         type: array
-                        items: []
+                        items: {}
                       mailing_list_posts_per_day:
                         type: integer
                       can_change_bio:
@@ -8535,7 +8549,7 @@ paths:
                       user_auth_tokens:
                         type: array
                         items:
-                        - type: object
+                          type: object
                           additionalProperties: false
                           properties:
                             id:
@@ -8623,7 +8637,7 @@ paths:
                         type: boolean
                       featured_user_badge_ids:
                         type: array
-                        items: []
+                        items: {}
                       invited_by:
                         type:
                         - string
@@ -8631,7 +8645,7 @@ paths:
                       groups:
                         type: array
                         items:
-                        - type: object
+                          type: object
                           additionalProperties: false
                           properties:
                             id:
@@ -8747,7 +8761,7 @@ paths:
                       group_users:
                         type: array
                         items:
-                        - type: object
+                          type: object
                           additionalProperties: false
                           properties:
                             group_id:
@@ -8814,7 +8828,7 @@ paths:
                             type: boolean
                           theme_ids:
                             type: array
-                            items: []
+                            items: {}
                           theme_key_seq:
                             type: integer
                           allow_private_messages:
@@ -8994,7 +9008,7 @@ paths:
                 properties:
                   user_badges:
                     type: array
-                    items: []
+                    items: {}
                   user:
                     type: object
                     additionalProperties: false
@@ -9066,7 +9080,6 @@ paths:
                             type:
                             - string
                             - 'null'
-                        required: []
                       time_read:
                         type: integer
                       recent_time_read:
@@ -9143,31 +9156,31 @@ paths:
                         - 'null'
                       muted_category_ids:
                         type: array
-                        items: []
+                        items: {}
                       regular_category_ids:
                         type: array
-                        items: []
+                        items: {}
                       watched_tags:
                         type: array
-                        items: []
+                        items: {}
                       watching_first_post_tags:
                         type: array
-                        items: []
+                        items: {}
                       tracked_tags:
                         type: array
-                        items: []
+                        items: {}
                       muted_tags:
                         type: array
-                        items: []
+                        items: {}
                       tracked_category_ids:
                         type: array
-                        items: []
+                        items: {}
                       watched_category_ids:
                         type: array
-                        items: []
+                        items: {}
                       watched_first_post_category_ids:
                         type: array
-                        items: []
+                        items: {}
                       system_avatar_upload_id:
                         type:
                         - string
@@ -9176,13 +9189,13 @@ paths:
                         type: string
                       muted_usernames:
                         type: array
-                        items: []
+                        items: {}
                       ignored_usernames:
                         type: array
-                        items: []
+                        items: {}
                       allowed_pm_usernames:
                         type: array
-                        items: []
+                        items: {}
                       mailing_list_posts_per_day:
                         type: integer
                       can_change_bio:
@@ -9200,7 +9213,7 @@ paths:
                       user_auth_tokens:
                         type: array
                         items:
-                        - type: object
+                          type: object
                           additionalProperties: false
                           properties:
                             id:
@@ -9288,7 +9301,7 @@ paths:
                         type: boolean
                       featured_user_badge_ids:
                         type: array
-                        items: []
+                        items: {}
                       invited_by:
                         type:
                         - string
@@ -9296,7 +9309,7 @@ paths:
                       groups:
                         type: array
                         items:
-                        - type: object
+                          type: object
                           additionalProperties: false
                           properties:
                             id:
@@ -9412,7 +9425,7 @@ paths:
                       group_users:
                         type: array
                         items:
-                        - type: object
+                          type: object
                           additionalProperties: false
                           properties:
                             group_id:
@@ -9479,7 +9492,7 @@ paths:
                             type: boolean
                           theme_ids:
                             type: array
-                            items: []
+                            items: {}
                           theme_key_seq:
                             type: integer
                           allow_private_messages:
@@ -9767,7 +9780,7 @@ paths:
                   directory_items:
                     type: array
                     items:
-                    - type: object
+                      type: object
                       additionalProperties: false
                       properties:
                         id:
@@ -9924,7 +9937,7 @@ paths:
                     type: integer
                   associated_accounts:
                     type: array
-                    items: []
+                    items: {}
                   can_send_activation_email:
                     type: boolean
                   can_activate:
@@ -10157,7 +10170,7 @@ paths:
                   groups:
                     type: array
                     items:
-                    - type: object
+                      type: object
                       additionalProperties: false
                       properties:
                         id:
@@ -10686,7 +10699,7 @@ paths:
                       type: string
                     secondary_emails:
                       type: array
-                      items: []
+                      items: {}
                     active:
                       type: boolean
                     admin:
@@ -10796,7 +10809,7 @@ paths:
                   user_actions:
                     type: array
                     items:
-                    - type: object
+                      type: object
                       additionalProperties: false
                       properties:
                         excerpt:
@@ -10978,13 +10991,13 @@ paths:
                     type: string
                   secondary_emails:
                     type: array
-                    items: []
+                    items: {}
                   unconfirmed_emails:
                     type: array
-                    items: []
+                    items: {}
                   associated_accounts:
                     type: array
-                    items: []
+                    items: {}
                 required:
                 - email
                 - secondary_emails
