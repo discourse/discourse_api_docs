@@ -224,7 +224,9 @@ paths:
                         show_posts:
                           type: boolean
                         i18n_name:
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                         badge_type_id:
                           type: integer
                       required:
@@ -248,7 +250,6 @@ paths:
                       - target_posts
                       - auto_revoke
                       - show_posts
-                      - i18n_name
                       - badge_type_id
                   badge_types:
                     type: array
@@ -4683,11 +4684,17 @@ paths:
                         position:
                           type: integer
                         description:
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                         description_text:
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                         description_excerpt:
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                         topic_url:
                           type: string
                         read_restricted:
@@ -4772,9 +4779,6 @@ paths:
                       - topic_count
                       - post_count
                       - position
-                      - description
-                      - description_text
-                      - description_excerpt
                       - topic_url
                       - read_restricted
                       - permission
