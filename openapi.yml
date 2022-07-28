@@ -1713,10 +1713,11 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                additionalProperties: false
                 properties:
                   basic_group:
                     type: object
+                    additionalProperties: false
                     properties:
                       id:
                         type: integer
@@ -1732,12 +1733,6 @@ paths:
                         type: integer
                       visibility_level:
                         type: integer
-                      automatic_membership_email_domains:
-                        type:
-                        - string
-                        - 'null'
-                      automatic_membership_retroactive:
-                        type: boolean
                       primary_group:
                         type: boolean
                       title:
@@ -1794,24 +1789,54 @@ paths:
                         type:
                         - string
                         - 'null'
-                      membership_visibility_level:
+                      members_visibility_level:
                         type: integer
                       can_see_members:
+                        type: boolean
+                      can_admin_group:
                         type: boolean
                       publish_read_state:
                         type: boolean
                     required:
                     - id
+                    - automatic
+                    - name
+                    - user_count
+                    - mentionable_level
+                    - messageable_level
+                    - visibility_level
+                    - primary_group
+                    - title
+                    - grant_trust_level
+                    - incoming_email
+                    - has_messages
+                    - flair_url
+                    - flair_bg_color
+                    - flair_color
+                    - bio_raw
+                    - bio_cooked
+                    - bio_excerpt
+                    - public_admission
+                    - public_exit
+                    - allow_membership_requests
+                    - full_name
+                    - default_notification_level
+                    - membership_request_template
+                    - members_visibility_level
+                    - can_see_members
+                    - can_admin_group
+                    - publish_read_state
                 required:
                 - basic_group
       requestBody:
         content:
           application/json:
             schema:
-              type: object
+              additionalProperties: false
               properties:
                 group:
                   type: object
+                  additionalProperties: false
                   properties:
                     name:
                       type: string
@@ -4661,6 +4686,8 @@ paths:
                     - 'null'
                   markdown_additional_options:
                     type: object
+                  displayed_about_plugin_stat_groups:
+                    type: array
                   categories:
                     type: array
                     items:
@@ -4770,6 +4797,13 @@ paths:
                           - 'null'
                         can_edit:
                           type: boolean
+                        custom_fields:
+                          type:
+                          - object
+                          - 'null'
+                          additionalProperties: true
+                        parent_category_id:
+                          type: integer
                       required:
                       - id
                       - name
