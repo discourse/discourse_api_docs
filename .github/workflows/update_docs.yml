@@ -99,5 +99,6 @@ jobs:
           branch: update-documentation
           commit-message: "Update Documentation with core changes"
           title: "Update documentation"
+          author: discoursebuild <build@discourse.org>
           body: |
             Updates Documentation with changes from Discourse core
