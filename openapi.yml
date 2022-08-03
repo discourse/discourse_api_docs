@@ -4669,9 +4669,9 @@ paths:
                     - object
                     - 'null'
                   censored_regexp:
-                    type:
-                    - string
-                    - 'null'
+                    type: array
+                    items:
+                      type: object
                   custom_emoji_translation:
                     type: object
                     additionalProperties: false
