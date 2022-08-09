@@ -2613,10 +2613,11 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
+                "additionalProperties": false,
                 "properties": {
                   "group": {
                     "type": "object",
+                    "additionalProperties": false,
                     "properties": {
                       "name": {
                         "type": "string"
