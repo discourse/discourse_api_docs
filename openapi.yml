@@ -4838,6 +4838,8 @@ paths:
                       - uploaded_logo
                       - uploaded_background
                       - can_edit
+                  show_welcome_topic_banner:
+                    type: boolean
                   archetypes:
                     type: array
                     items:
