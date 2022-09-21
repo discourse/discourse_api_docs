@@ -9928,6 +9928,12 @@
                     },
                     "human_filesize": {
                       "type": "string"
+                    },
+                    "dominant_color": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     }
                   },
                   "required": [
@@ -10131,6 +10137,12 @@
                     },
                     "human_filesize": {
                       "type": "string"
+                    },
+                    "dominant_color": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     }
                   },
                   "required": [
@@ -10452,6 +10464,12 @@
                     },
                     "human_filesize": {
                       "type": "string"
+                    },
+                    "dominant_color": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     }
                   },
                   "required": [
