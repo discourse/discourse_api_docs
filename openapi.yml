@@ -778,6 +778,10 @@ paths:
                         type:
                         - string
                         - 'null'
+                      uploaded_logo_dark:
+                        type:
+                        - string
+                        - 'null'
                       uploaded_background:
                         type:
                         - string
@@ -829,6 +833,7 @@ paths:
                     - topic_featured_link_allowed
                     - search_priority
                     - uploaded_logo
+                    - uploaded_logo_dark
                     - uploaded_background
                 required:
                 - category
@@ -978,6 +983,10 @@ paths:
                               type:
                               - string
                               - 'null'
+                            uploaded_logo_dark:
+                              type:
+                              - string
+                              - 'null'
                             uploaded_background:
                               type:
                               - string
@@ -1018,6 +1027,7 @@ paths:
                           - topics_all_time
                           - subcategory_ids
                           - uploaded_logo
+                          - uploaded_logo_dark
                           - uploaded_background
                     required:
                     - can_create_category
@@ -1206,6 +1216,10 @@ paths:
                         type:
                         - string
                         - 'null'
+                      uploaded_logo_dark:
+                        type:
+                        - string
+                        - 'null'
                       uploaded_background:
                         type:
                         - string
@@ -1257,6 +1271,7 @@ paths:
                     - topic_featured_link_allowed
                     - search_priority
                     - uploaded_logo
+                    - uploaded_logo_dark
                     - uploaded_background
                 required:
                 - success
@@ -1646,6 +1661,10 @@ paths:
                         type:
                         - string
                         - 'null'
+                      uploaded_logo_dark:
+                        type:
+                        - string
+                        - 'null'
                       uploaded_background:
                         type:
                         - string
@@ -1697,6 +1716,7 @@ paths:
                     - topic_featured_link_allowed
                     - search_priority
                     - uploaded_logo
+                    - uploaded_logo_dark
                     - uploaded_background
                 required:
                 - category
@@ -4798,6 +4818,10 @@ paths:
                           type:
                           - string
                           - 'null'
+                        uploaded_logo_dark:
+                          type:
+                          - string
+                          - 'null'
                         uploaded_background:
                           type:
                           - string
@@ -4842,6 +4866,7 @@ paths:
                       - required_tag_groups
                       - read_only_banner
                       - uploaded_logo
+                      - uploaded_logo_dark
                       - uploaded_background
                       - can_edit
                   show_welcome_topic_banner:
@@ -8211,6 +8236,8 @@ paths:
                             type:
                             - string
                             - 'null'
+                          sidebar_list_destination:
+                            type: string
                         required:
                         - user_id
                         - mailing_list_mode
@@ -8918,6 +8945,8 @@ paths:
                             type:
                             - string
                             - 'null'
+                          sidebar_list_destination:
+                            type: string
                         required:
                         - user_id
                         - mailing_list_mode
@@ -9582,6 +9611,8 @@ paths:
                             type:
                             - string
                             - 'null'
+                          sidebar_list_destination:
+                            type: string
                         required:
                         - user_id
                         - mailing_list_mode
