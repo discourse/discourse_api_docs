@@ -1036,6 +1036,12 @@
                             "null"
                           ]
                         },
+                        "uploaded_logo_dark": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
                         "uploaded_background": {
                           "type": [
                             "string",
@@ -1090,6 +1096,7 @@
                         "topic_featured_link_allowed",
                         "search_priority",
                         "uploaded_logo",
+                        "uploaded_logo_dark",
                         "uploaded_background"
                       ]
                     }
@@ -1313,6 +1320,12 @@
                                   "null"
                                 ]
                               },
+                              "uploaded_logo_dark": {
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
+                              },
                               "uploaded_background": {
                                 "type": [
                                   "string",
@@ -1356,6 +1369,7 @@
                               "topics_all_time",
                               "subcategory_ids",
                               "uploaded_logo",
+                              "uploaded_logo_dark",
                               "uploaded_background"
                             ]
                           }
@@ -1639,6 +1653,12 @@
                             "null"
                           ]
                         },
+                        "uploaded_logo_dark": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
                         "uploaded_background": {
                           "type": [
                             "string",
@@ -1693,6 +1713,7 @@
                         "topic_featured_link_allowed",
                         "search_priority",
                         "uploaded_logo",
+                        "uploaded_logo_dark",
                         "uploaded_background"
                       ]
                     }
@@ -2260,6 +2281,12 @@
                             "null"
                           ]
                         },
+                        "uploaded_logo_dark": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
                         "uploaded_background": {
                           "type": [
                             "string",
@@ -2314,6 +2341,7 @@
                         "topic_featured_link_allowed",
                         "search_priority",
                         "uploaded_logo",
+                        "uploaded_logo_dark",
                         "uploaded_background"
                       ]
                     }
@@ -6802,6 +6830,12 @@
                               "null"
                             ]
                           },
+                          "uploaded_logo_dark": {
+                            "type": [
+                              "string",
+                              "null"
+                            ]
+                          },
                           "uploaded_background": {
                             "type": [
                               "string",
@@ -6853,6 +6887,7 @@
                           "required_tag_groups",
                           "read_only_banner",
                           "uploaded_logo",
+                          "uploaded_logo_dark",
                           "uploaded_background",
                           "can_edit"
                         ]
@@ -11626,6 +11661,9 @@
                                 "string",
                                 "null"
                               ]
+                            },
+                            "sidebar_list_destination": {
+                              "type": "string"
                             }
                           },
                           "required": [
@@ -12609,6 +12647,9 @@
                                 "string",
                                 "null"
                               ]
+                            },
+                            "sidebar_list_destination": {
+                              "type": "string"
                             }
                           },
                           "required": [
@@ -13521,6 +13562,9 @@
                                 "string",
                                 "null"
                               ]
+                            },
+                            "sidebar_list_destination": {
+                              "type": "string"
                             }
                           },
                           "required": [
