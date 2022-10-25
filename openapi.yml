@@ -8238,6 +8238,10 @@ paths:
                             - 'null'
                           sidebar_list_destination:
                             type: string
+                          seen_popups:
+                            type:
+                            - array
+                            - 'null'
                         required:
                         - user_id
                         - mailing_list_mode
@@ -8947,6 +8951,10 @@ paths:
                             - 'null'
                           sidebar_list_destination:
                             type: string
+                          seen_popups:
+                            type:
+                            - array
+                            - 'null'
                         required:
                         - user_id
                         - mailing_list_mode
@@ -9613,6 +9621,10 @@ paths:
                             - 'null'
                           sidebar_list_destination:
                             type: string
+                          seen_popups:
+                            type:
+                            - array
+                            - 'null'
                         required:
                         - user_id
                         - mailing_list_mode
