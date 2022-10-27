@@ -11006,7 +11006,8 @@
                     "type": "string"
                   },
                   "active": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "This param requires an api key in the request header\nor it will be ignored"
                   },
                   "approved": {
                     "type": "boolean"
