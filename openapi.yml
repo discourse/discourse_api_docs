@@ -851,6 +851,25 @@ paths:
                 text_color:
                   type: string
                   example: f0fcfd
+                parent_category_id:
+                  type: integer
+                allow_badges:
+                  type: boolean
+                slug:
+                  type: string
+                topic_featured_links_allowed:
+                  type: boolean
+                permissions:
+                  type: object
+                  additionalProperties: true
+                  properties:
+                    everyone:
+                      type: integer
+                      example: 1
+                    staff:
+                      type: integer
+                search_priority:
+                  type: integer
               required:
               - name
     get:
@@ -1290,6 +1309,25 @@ paths:
                 text_color:
                   type: string
                   example: f0fcfd
+                parent_category_id:
+                  type: integer
+                allow_badges:
+                  type: boolean
+                slug:
+                  type: string
+                topic_featured_links_allowed:
+                  type: boolean
+                permissions:
+                  type: object
+                  additionalProperties: true
+                  properties:
+                    everyone:
+                      type: integer
+                      example: 1
+                    staff:
+                      type: integer
+                search_priority:
+                  type: integer
               required:
               - name
   "/c/{slug}/{id}.json":
