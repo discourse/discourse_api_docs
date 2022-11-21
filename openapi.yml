@@ -4851,6 +4851,10 @@ paths:
                     - 'null'
                   markdown_additional_options:
                     type: object
+                  hashtag_configurations:
+                    type: object
+                  hashtag_icons:
+                    type: array
                   displayed_about_plugin_stat_groups:
                     type: array
                   categories:
