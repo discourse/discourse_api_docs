@@ -4547,6 +4547,8 @@ paths:
                         type: integer
                       posted:
                         type: integer
+                      watching_category_or_tag:
+                        type: integer
                       moved_post:
                         type: integer
                       linked:
@@ -4609,6 +4611,7 @@ paths:
                     - invited_to_private_message
                     - invitee_accepted
                     - posted
+                    - watching_category_or_tag
                     - moved_post
                     - linked
                     - granted_badge
