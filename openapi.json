@@ -6457,6 +6457,9 @@
                         "watching_category_or_tag": {
                           "type": "integer"
                         },
+                        "new_features": {
+                          "type": "integer"
+                        },
                         "moved_post": {
                           "type": "integer"
                         },
@@ -11782,6 +11785,9 @@
                             "external_links_in_new_tab": {
                               "type": "boolean"
                             },
+                            "bookmark_auto_delete_preference": {
+                              "type": "integer"
+                            },
                             "color_scheme_id": {
                               "type": [
                                 "string",
@@ -12774,6 +12780,9 @@
                             "external_links_in_new_tab": {
                               "type": "boolean"
                             },
+                            "bookmark_auto_delete_preference": {
+                              "type": "integer"
+                            },
                             "color_scheme_id": {
                               "type": [
                                 "string",
@@ -13694,6 +13703,9 @@
                             },
                             "external_links_in_new_tab": {
                               "type": "boolean"
+                            },
+                            "bookmark_auto_delete_preference": {
+                              "type": "integer"
                             },
                             "color_scheme_id": {
                               "type": [
