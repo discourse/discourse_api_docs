@@ -7155,6 +7155,9 @@
                     "auth_providers": {
                       "type": "array",
                       "items": {}
+                    },
+                    "whispers_allowed_groups_names": {
+                      "type": "array"
                     }
                   },
                   "required": [
