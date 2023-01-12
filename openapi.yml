@@ -1853,6 +1853,8 @@ paths:
                         type: boolean
                       can_admin_group:
                         type: boolean
+                      can_edit_group:
+                        type: boolean
                       publish_read_state:
                         type: boolean
                     required:
@@ -2168,6 +2170,8 @@ paths:
                       can_see_members:
                         type: boolean
                       can_admin_group:
+                        type: boolean
+                      can_edit_group:
                         type: boolean
                       publish_read_state:
                         type: boolean
@@ -2656,6 +2660,8 @@ paths:
                         can_see_members:
                           type: boolean
                         can_admin_group:
+                          type: boolean
+                        can_edit_group:
                           type: boolean
                         publish_read_state:
                           type: boolean
