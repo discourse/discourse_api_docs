@@ -4616,6 +4616,8 @@ paths:
                         type: integer
                       following_replied:
                         type: integer
+                      circles_activity:
+                        type: integer
                     required:
                     - mentioned
                     - replied
