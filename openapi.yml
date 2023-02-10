@@ -36,6 +36,8 @@ info:
     require you to be authenticated.
 
     To become authenticated you will need to create an API Key from the admin panel.
+    (See also <a href="https://meta.discourse.org/t/user-api-keys-specification/48536">per-user API keys</a>.)
+    
 
     Once you have your API Key you can pass it in along with your API Username
     as an HTTP header like this:
