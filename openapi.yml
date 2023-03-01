@@ -669,6 +669,9 @@ paths:
                         type:
                         - string
                         - 'null'
+                      form_template_ids:
+                        type: array
+                        items: []
                       has_children:
                         type:
                         - string
@@ -870,6 +873,9 @@ paths:
                       type: integer
                 search_priority:
                   type: integer
+                form_template_ids:
+                  type: array
+                  items: []
               required:
               - name
     get:
@@ -1126,6 +1132,9 @@ paths:
                         type:
                         - string
                         - 'null'
+                      form_template_ids:
+                        type: array
+                        items: []
                       has_children:
                         type:
                         - string
@@ -1261,6 +1270,7 @@ paths:
                     - notification_level
                     - can_edit
                     - topic_template
+                    - form_template_ids
                     - has_children
                     - sort_order
                     - sort_ascending
@@ -1328,6 +1338,9 @@ paths:
                       type: integer
                 search_priority:
                   type: integer
+                form_template_ids:
+                  type: array
+                  items: []
               required:
               - name
   "/c/{slug}/{id}.json":
@@ -1590,6 +1603,9 @@ paths:
                         type:
                         - string
                         - 'null'
+                      form_template_ids:
+                        type: array
+                        items: []
                       has_children:
                         type:
                         - string
@@ -5000,6 +5016,9 @@ paths:
                           additionalProperties: true
                         parent_category_id:
                           type: integer
+                        form_template_ids:
+                          type: array
+                          items: []
                       required:
                       - id
                       - name

@@ -876,6 +876,10 @@
                             "null"
                           ]
                         },
+                        "form_template_ids": {
+                          "type": "array",
+                          "items": []
+                        },
                         "has_children": {
                           "type": [
                             "string",
@@ -1153,6 +1157,10 @@
                   },
                   "search_priority": {
                     "type": "integer"
+                  },
+                  "form_template_ids": {
+                    "type": "array",
+                    "items": []
                   }
                 },
                 "required": [
@@ -1521,6 +1529,10 @@
                             "null"
                           ]
                         },
+                        "form_template_ids": {
+                          "type": "array",
+                          "items": []
+                        },
                         "has_children": {
                           "type": [
                             "string",
@@ -1712,6 +1724,7 @@
                         "notification_level",
                         "can_edit",
                         "topic_template",
+                        "form_template_ids",
                         "has_children",
                         "sort_order",
                         "sort_ascending",
@@ -1799,6 +1812,10 @@
                   },
                   "search_priority": {
                     "type": "integer"
+                  },
+                  "form_template_ids": {
+                    "type": "array",
+                    "items": []
                   }
                 },
                 "required": [
@@ -2176,6 +2193,10 @@
                             "string",
                             "null"
                           ]
+                        },
+                        "form_template_ids": {
+                          "type": "array",
+                          "items": []
                         },
                         "has_children": {
                           "type": [
@@ -7094,6 +7115,10 @@
                           },
                           "parent_category_id": {
                             "type": "integer"
+                          },
+                          "form_template_ids": {
+                            "type": "array",
+                            "items": []
                           }
                         },
                         "required": [
