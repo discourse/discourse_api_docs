@@ -727,6 +727,11 @@ paths:
                           required:
                           - name
                           - min_count
+                      category_setting:
+                        auto_bump_cooldown_days: 1
+                        num_auto_bump_daily: 
+                        require_reply_approval: 
+                        require_topic_approval: 
                       read_only_banner:
                         type:
                         - string
@@ -1190,6 +1195,11 @@ paths:
                           required:
                           - name
                           - min_count
+                      category_setting:
+                        auto_bump_cooldown_days: 1
+                        num_auto_bump_daily: 
+                        require_reply_approval: 
+                        require_topic_approval: 
                       read_only_banner:
                         type:
                         - string
@@ -1661,6 +1671,11 @@ paths:
                           required:
                           - name
                           - min_count
+                      category_setting:
+                        auto_bump_cooldown_days: 1
+                        num_auto_bump_daily: 
+                        require_reply_approval: 
+                        require_topic_approval: 
                       read_only_banner:
                         type:
                         - string
