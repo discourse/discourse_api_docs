@@ -4684,23 +4684,8 @@
           "Posts"
         ],
         "operationId": "getPost",
+        "description": "This endpoint can be used to get the number of likes on a post using the\n`actions_summary` property in the response. `actions_summary` responses\nwith the id of `2` signify a `like`. If there are no `actions_summary`\nitems with the id of `2`, that means there are 0 likes. Other ids likely\nrefer to various different flag types.\n",
         "parameters": [
-          {
-            "name": "Api-Key",
-            "in": "header",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Api-Username",
-            "in": "header",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
           {
             "name": "id",
             "in": "path",
@@ -4712,20 +4697,14 @@
         ],
         "responses": {
           "200": {
-            "description": "latest posts",
+            "description": "single post",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
+                  "additionalProperties": true,
                   "properties": {
                     "id": {
                       "type": "integer"
-                    },
-                    "name": {
-                      "type": [
-                        "string",
-                        "null"
-                      ]
                     },
                     "username": {
                       "type": "string"
@@ -4770,7 +4749,7 @@
                       "type": "integer"
                     },
                     "score": {
-                      "type": "integer"
+                      "type": ""
                     },
                     "yours": {
                       "type": "boolean"
@@ -4780,12 +4759,6 @@
                     },
                     "topic_slug": {
                       "type": "string"
-                    },
-                    "display_username": {
-                      "type": [
-                        "string",
-                        "null"
-                      ]
                     },
                     "primary_group_name": {
                       "type": [
@@ -4838,22 +4811,41 @@
                         "null"
                       ]
                     },
+                    "bookmarked": {
+                      "type": "boolean"
+                    },
                     "raw": {
                       "type": "string"
                     },
                     "actions_summary": {
                       "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "id": {
-                            "type": "integer"
+                      "items": [
+                        {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "id": {
+                              "type": "integer",
+                              "description": "`2`: like, `3`, `4`, `6`, `7`, `8`: flag"
+                            },
+                            "count": {
+                              "type": "integer"
+                            },
+                            "acted": {
+                              "type": "boolean"
+                            },
+                            "can_undo": {
+                              "type": "boolean"
+                            },
+                            "can_act": {
+                              "type": "boolean"
+                            }
                           },
-                          "can_act": {
-                            "type": "boolean"
-                          }
+                          "required": [
+                            "id"
+                          ]
                         }
-                      }
+                      ]
                     },
                     "moderator": {
                       "type": "boolean"
@@ -4905,8 +4897,72 @@
                     },
                     "reviewable_score_pending_count": {
                       "type": "integer"
+                    },
+                    "mentioned_users": {
+                      "type": "array",
+                      "items": []
+                    },
+                    "name": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "display_username": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
                     }
-                  }
+                  },
+                  "required": [
+                    "id",
+                    "username",
+                    "avatar_template",
+                    "created_at",
+                    "cooked",
+                    "post_number",
+                    "post_type",
+                    "updated_at",
+                    "reply_count",
+                    "reply_to_post_number",
+                    "quote_count",
+                    "incoming_link_count",
+                    "reads",
+                    "readers_count",
+                    "score",
+                    "yours",
+                    "topic_id",
+                    "topic_slug",
+                    "primary_group_name",
+                    "flair_name",
+                    "flair_url",
+                    "flair_bg_color",
+                    "flair_color",
+                    "version",
+                    "can_edit",
+                    "can_delete",
+                    "can_recover",
+                    "can_wiki",
+                    "user_title",
+                    "bookmarked",
+                    "raw",
+                    "actions_summary",
+                    "moderator",
+                    "admin",
+                    "staff",
+                    "user_id",
+                    "hidden",
+                    "trust_level",
+                    "deleted_at",
+                    "user_deleted",
+                    "edit_reason",
+                    "can_view_edit_history",
+                    "wiki",
+                    "reviewable_id",
+                    "reviewable_score_count",
+                    "reviewable_score_pending_count"
+                  ]
                 }
               }
             }
@@ -4920,22 +4976,6 @@
         ],
         "operationId": "updatePost",
         "parameters": [
-          {
-            "name": "Api-Key",
-            "in": "header",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Api-Username",
-            "in": "header",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
           {
             "name": "id",
             "in": "path",
@@ -4951,19 +4991,14 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
+                  "additionalProperties": false,
                   "properties": {
                     "post": {
                       "type": "object",
+                      "additionalProperties": false,
                       "properties": {
                         "id": {
                           "type": "integer"
-                        },
-                        "name": {
-                          "type": [
-                            "string",
-                            "null"
-                          ]
                         },
                         "username": {
                           "type": "string"
@@ -5008,7 +5043,7 @@
                           "type": "integer"
                         },
                         "score": {
-                          "type": "number"
+                          "type": ""
                         },
                         "yours": {
                           "type": "boolean"
@@ -5019,13 +5054,13 @@
                         "topic_slug": {
                           "type": "string"
                         },
-                        "display_username": {
+                        "primary_group_name": {
                           "type": [
                             "string",
                             "null"
                           ]
                         },
-                        "primary_group_name": {
+                        "flair_name": {
                           "type": [
                             "string",
                             "null"
@@ -5070,19 +5105,32 @@
                             "null"
                           ]
                         },
+                        "bookmarked": {
+                          "type": "boolean"
+                        },
+                        "raw": {
+                          "type": "string"
+                        },
                         "actions_summary": {
                           "type": "array",
-                          "items": {
-                            "type": "object",
-                            "properties": {
-                              "id": {
-                                "type": "integer"
+                          "items": [
+                            {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "properties": {
+                                "id": {
+                                  "type": "integer"
+                                },
+                                "can_act": {
+                                  "type": "boolean"
+                                }
                               },
-                              "can_act": {
-                                "type": "boolean"
-                              }
+                              "required": [
+                                "id",
+                                "can_act"
+                              ]
                             }
-                          }
+                          ]
                         },
                         "moderator": {
                           "type": "boolean"
@@ -5137,10 +5185,78 @@
                         },
                         "reviewable_score_pending_count": {
                           "type": "integer"
+                        },
+                        "mentioned_users": {
+                          "type": "array",
+                          "items": []
+                        },
+                        "name": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
+                        "display_username": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         }
-                      }
+                      },
+                      "required": [
+                        "id",
+                        "username",
+                        "avatar_template",
+                        "created_at",
+                        "cooked",
+                        "post_number",
+                        "post_type",
+                        "updated_at",
+                        "reply_count",
+                        "reply_to_post_number",
+                        "quote_count",
+                        "incoming_link_count",
+                        "reads",
+                        "readers_count",
+                        "score",
+                        "yours",
+                        "topic_id",
+                        "topic_slug",
+                        "primary_group_name",
+                        "flair_name",
+                        "flair_url",
+                        "flair_bg_color",
+                        "flair_color",
+                        "version",
+                        "can_edit",
+                        "can_delete",
+                        "can_recover",
+                        "can_wiki",
+                        "user_title",
+                        "bookmarked",
+                        "raw",
+                        "actions_summary",
+                        "moderator",
+                        "admin",
+                        "staff",
+                        "user_id",
+                        "draft_sequence",
+                        "hidden",
+                        "trust_level",
+                        "deleted_at",
+                        "user_deleted",
+                        "edit_reason",
+                        "can_view_edit_history",
+                        "wiki",
+                        "reviewable_id",
+                        "reviewable_score_count",
+                        "reviewable_score_pending_count"
+                      ]
                     }
-                  }
+                  },
+                  "required": [
+                    "post"
+                  ]
                 }
               }
             }
@@ -5150,10 +5266,11 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
+                "additionalProperties": false,
                 "properties": {
                   "post": {
                     "type": "object",
+                    "additionalProperties": false,
                     "properties": {
                       "raw": {
                         "type": "string"
