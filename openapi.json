@@ -4245,6 +4245,12 @@
                               "null"
                             ]
                           },
+                          "flair_group_id": {
+                            "type": [
+                              "string",
+                              "null"
+                            ]
+                          },
                           "version": {
                             "type": "integer"
                           },
@@ -4463,6 +4469,12 @@
                         "null"
                       ]
                     },
+                    "flair_group_id": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
                     "version": {
                       "type": "integer"
                     },
@@ -4659,6 +4671,10 @@
                   "created_at": {
                     "type": "string"
                   },
+                  "reply_to_post_number": {
+                    "type": "integer",
+                    "description": "Optional, the post number to reply to inside a topic."
+                  },
                   "embed_url": {
                     "type": "string",
                     "description": "Provide a URL from a remote system to associate a forum\ntopic with that URL, typically for using Discourse as a comments\nsystem for an external blog."
@@ -4785,6 +4801,12 @@
                       ]
                     },
                     "flair_color": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "flair_group_id": {
                       "type": [
                         "string",
                         "null"
@@ -5079,6 +5101,12 @@
                           ]
                         },
                         "flair_color": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
+                        "flair_group_id": {
                           "type": [
                             "string",
                             "null"
@@ -5448,6 +5476,12 @@
                         ]
                       },
                       "flair_color": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "flair_group_id": {
                         "type": [
                           "string",
                           "null"
@@ -6623,6 +6657,9 @@
                           "type": "integer"
                         },
                         "new_features": {
+                          "type": "integer"
+                        },
+                        "admin_problems": {
                           "type": "integer"
                         },
                         "moved_post": {
@@ -9057,6 +9094,12 @@
                                 ]
                               },
                               "flair_bg_color": {
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
+                              },
+                              "flair_group_id": {
                                 "type": [
                                   "string",
                                   "null"
@@ -14971,6 +15014,12 @@
                             ]
                           },
                           "flair_color": {
+                            "type": [
+                              "string",
+                              "null"
+                            ]
+                          },
+                          "flair_group_id": {
                             "type": [
                               "string",
                               "null"
