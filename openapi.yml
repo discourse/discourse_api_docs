@@ -3030,6 +3030,10 @@ paths:
                           type:
                           - string
                           - 'null'
+                        flair_group_id:
+                          type:
+                          - string
+                          - 'null'
                         version:
                           type: integer
                         can_edit:
@@ -3170,6 +3174,10 @@ paths:
                     - string
                     - 'null'
                   flair_color:
+                    type:
+                    - string
+                    - 'null'
+                  flair_group_id:
                     type:
                     - string
                     - 'null'
@@ -3322,6 +3330,9 @@ paths:
                   example: private_message
                 created_at:
                   type: string
+                reply_to_post_number:
+                  type: integer
+                  description: Optional, the post number to reply to inside a topic.
                 embed_url:
                   type: string
                   description: Provide a URL from a remote system to associate a forum
@@ -3414,6 +3425,10 @@ paths:
                     - string
                     - 'null'
                   flair_color:
+                    type:
+                    - string
+                    - 'null'
+                  flair_group_id:
                     type:
                     - string
                     - 'null'
@@ -3624,6 +3639,10 @@ paths:
                         - string
                         - 'null'
                       flair_color:
+                        type:
+                        - string
+                        - 'null'
+                      flair_group_id:
                         type:
                         - string
                         - 'null'
@@ -3884,6 +3903,10 @@ paths:
                       - string
                       - 'null'
                     flair_color:
+                      type:
+                      - string
+                      - 'null'
+                    flair_group_id:
                       type:
                       - string
                       - 'null'
@@ -4703,6 +4726,8 @@ paths:
                       watching_category_or_tag:
                         type: integer
                       new_features:
+                        type: integer
+                      admin_problems:
                         type: integer
                       moved_post:
                         type: integer
@@ -6389,6 +6414,10 @@ paths:
                               - string
                               - 'null'
                             flair_bg_color:
+                              type:
+                              - string
+                              - 'null'
+                            flair_group_id:
                               type:
                               - string
                               - 'null'
@@ -10642,6 +10671,10 @@ paths:
                           - string
                           - 'null'
                         flair_color:
+                          type:
+                          - string
+                          - 'null'
+                        flair_group_id:
                           type:
                           - string
                           - 'null'
