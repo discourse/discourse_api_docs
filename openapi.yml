@@ -4878,6 +4878,8 @@ paths:
                         type: integer
                       suggested_topics:
                         type: integer
+                      welcome_topic:
+                        type: integer
                     required:
                     - first_notification
                     - topic_timeline
@@ -5232,8 +5234,6 @@ paths:
                       - uploaded_logo_dark
                       - uploaded_background
                       - can_edit
-                  show_welcome_topic_banner:
-                    type: boolean
                   archetypes:
                     type: array
                     items:
