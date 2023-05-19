@@ -6861,9 +6861,6 @@
                         },
                         "suggested_topics": {
                           "type": "integer"
-                        },
-                        "welcome_topic": {
-                          "type": "integer"
                         }
                       },
                       "required": [
