@@ -4878,8 +4878,6 @@ paths:
                         type: integer
                       suggested_topics:
                         type: integer
-                      welcome_topic:
-                        type: integer
                     required:
                     - first_notification
                     - topic_timeline
