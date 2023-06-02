@@ -3046,6 +3046,8 @@ paths:
                           type: boolean
                         can_recover:
                           type: boolean
+                        can_see_hidden_post:
+                          type: boolean
                         can_wiki:
                           type: boolean
                         user_title:
@@ -3192,6 +3194,8 @@ paths:
                   can_delete:
                     type: boolean
                   can_recover:
+                    type: boolean
+                  can_see_hidden_post:
                     type: boolean
                   can_wiki:
                     type: boolean
@@ -3444,6 +3448,8 @@ paths:
                     type: boolean
                   can_recover:
                     type: boolean
+                  can_see_hidden_post:
+                    type: boolean
                   can_wiki:
                     type: boolean
                   user_title:
@@ -3657,6 +3663,8 @@ paths:
                       can_delete:
                         type: boolean
                       can_recover:
+                        type: boolean
+                      can_see_hidden_post:
                         type: boolean
                       can_wiki:
                         type: boolean
@@ -3922,6 +3930,8 @@ paths:
                       type: boolean
                     can_recover:
                       type: boolean
+                    can_see_hidden_post:
+                      type: boolean
                     can_wiki:
                       type: boolean
                     user_title:
@@ -4020,6 +4030,7 @@ paths:
                   - can_edit
                   - can_delete
                   - can_recover
+                  - can_see_hidden_post
                   - can_wiki
                   - user_title
                   - reply_to_user
@@ -5943,6 +5954,8 @@ paths:
                             can_delete:
                               type: boolean
                             can_recover:
+                              type: boolean
+                            can_see_hidden_post:
                               type: boolean
                             can_wiki:
                               type: boolean
