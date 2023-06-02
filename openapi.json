@@ -4265,6 +4265,9 @@
                           "can_recover": {
                             "type": "boolean"
                           },
+                          "can_see_hidden_post": {
+                            "type": "boolean"
+                          },
                           "can_wiki": {
                             "type": "boolean"
                           },
@@ -4487,6 +4490,9 @@
                       "type": "boolean"
                     },
                     "can_recover": {
+                      "type": "boolean"
+                    },
+                    "can_see_hidden_post": {
                       "type": "boolean"
                     },
                     "can_wiki": {
@@ -4826,6 +4832,9 @@
                     "can_recover": {
                       "type": "boolean"
                     },
+                    "can_see_hidden_post": {
+                      "type": "boolean"
+                    },
                     "can_wiki": {
                       "type": "boolean"
                     },
@@ -5124,6 +5133,9 @@
                           "type": "boolean"
                         },
                         "can_recover": {
+                          "type": "boolean"
+                        },
+                        "can_see_hidden_post": {
                           "type": "boolean"
                         },
                         "can_wiki": {
@@ -5501,6 +5513,9 @@
                       "can_recover": {
                         "type": "boolean"
                       },
+                      "can_see_hidden_post": {
+                        "type": "boolean"
+                      },
                       "can_wiki": {
                         "type": "boolean"
                       },
@@ -5633,6 +5648,7 @@
                       "can_edit",
                       "can_delete",
                       "can_recover",
+                      "can_see_hidden_post",
                       "can_wiki",
                       "user_title",
                       "reply_to_user",
@@ -8431,6 +8447,9 @@
                                 "type": "boolean"
                               },
                               "can_recover": {
+                                "type": "boolean"
+                              },
+                              "can_see_hidden_post": {
                                 "type": "boolean"
                               },
                               "can_wiki": {
