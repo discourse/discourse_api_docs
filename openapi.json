@@ -12161,8 +12161,11 @@
                                 "null"
                               ]
                             },
-                            "sidebar_list_destination": {
-                              "type": "string"
+                            "sidebar_link_to_filtered_list": {
+                              "type": "boolean"
+                            },
+                            "sidebar_show_count_of_new_items": {
+                              "type": "boolean"
                             },
                             "seen_popups": {
                               "type": [
@@ -13156,8 +13159,11 @@
                                 "null"
                               ]
                             },
-                            "sidebar_list_destination": {
-                              "type": "string"
+                            "sidebar_link_to_filtered_list": {
+                              "type": "boolean"
+                            },
+                            "sidebar_show_count_of_new_items": {
+                              "type": "boolean"
                             },
                             "seen_popups": {
                               "type": [
@@ -14080,8 +14086,11 @@
                                 "null"
                               ]
                             },
-                            "sidebar_list_destination": {
-                              "type": "string"
+                            "sidebar_link_to_filtered_list": {
+                              "type": "boolean"
+                            },
+                            "sidebar_show_count_of_new_items": {
+                              "type": "boolean"
                             },
                             "seen_popups": {
                               "type": [
