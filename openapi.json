@@ -878,7 +878,7 @@
                         },
                         "form_template_ids": {
                           "type": "array",
-                          "items": []
+                          "items": {}
                         },
                         "has_children": {
                           "type": [
@@ -1166,7 +1166,7 @@
                   },
                   "form_template_ids": {
                     "type": "array",
-                    "items": []
+                    "items": {}
                   }
                 },
                 "required": [
@@ -1537,7 +1537,7 @@
                         },
                         "form_template_ids": {
                           "type": "array",
-                          "items": []
+                          "items": {}
                         },
                         "has_children": {
                           "type": [
@@ -1827,7 +1827,7 @@
                   },
                   "form_template_ids": {
                     "type": "array",
-                    "items": []
+                    "items": {}
                   }
                 },
                 "required": [
@@ -2208,7 +2208,7 @@
                         },
                         "form_template_ids": {
                           "type": "array",
-                          "items": []
+                          "items": {}
                         },
                         "has_children": {
                           "type": [
@@ -4852,33 +4852,31 @@
                     },
                     "actions_summary": {
                       "type": "array",
-                      "items": [
-                        {
-                          "type": "object",
-                          "additionalProperties": false,
-                          "properties": {
-                            "id": {
-                              "type": "integer",
-                              "description": "`2`: like, `3`, `4`, `6`, `7`, `8`: flag"
-                            },
-                            "count": {
-                              "type": "integer"
-                            },
-                            "acted": {
-                              "type": "boolean"
-                            },
-                            "can_undo": {
-                              "type": "boolean"
-                            },
-                            "can_act": {
-                              "type": "boolean"
-                            }
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "id": {
+                            "type": "integer",
+                            "description": "`2`: like, `3`, `4`, `6`, `7`, `8`: flag"
                           },
-                          "required": [
-                            "id"
-                          ]
-                        }
-                      ]
+                          "count": {
+                            "type": "integer"
+                          },
+                          "acted": {
+                            "type": "boolean"
+                          },
+                          "can_undo": {
+                            "type": "boolean"
+                          },
+                          "can_act": {
+                            "type": "boolean"
+                          }
+                        },
+                        "required": [
+                          "id"
+                        ]
+                      }
                     },
                     "moderator": {
                       "type": "boolean"
@@ -4933,7 +4931,7 @@
                     },
                     "mentioned_users": {
                       "type": "array",
-                      "items": []
+                      "items": {}
                     },
                     "name": {
                       "type": [
@@ -5155,24 +5153,22 @@
                         },
                         "actions_summary": {
                           "type": "array",
-                          "items": [
-                            {
-                              "type": "object",
-                              "additionalProperties": false,
-                              "properties": {
-                                "id": {
-                                  "type": "integer"
-                                },
-                                "can_act": {
-                                  "type": "boolean"
-                                }
+                          "items": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                              "id": {
+                                "type": "integer"
                               },
-                              "required": [
-                                "id",
-                                "can_act"
-                              ]
-                            }
-                          ]
+                              "can_act": {
+                                "type": "boolean"
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "can_act"
+                            ]
+                          }
                         },
                         "moderator": {
                           "type": "boolean"
@@ -5230,7 +5226,7 @@
                         },
                         "mentioned_users": {
                           "type": "array",
-                          "items": []
+                          "items": {}
                         },
                         "name": {
                           "type": [
@@ -7336,7 +7332,7 @@
                           },
                           "form_template_ids": {
                             "type": "array",
-                            "items": []
+                            "items": {}
                           }
                         },
                         "required": [
