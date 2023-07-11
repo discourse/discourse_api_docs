@@ -4889,12 +4889,15 @@ paths:
                         type: integer
                       suggested_topics:
                         type: integer
+                      admin_guide:
+                        type: integer
                     required:
                     - first_notification
                     - topic_timeline
                     - post_menu
                     - topic_notification_levels
                     - suggested_topics
+                    - admin_guide
                   groups:
                     type: array
                     items:
