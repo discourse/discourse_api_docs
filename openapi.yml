@@ -6375,6 +6375,8 @@ paths:
                     type:
                     - string
                     - 'null'
+                  summarizable:
+                    type: boolean
                   details:
                     type: object
                     additionalProperties: false
@@ -6582,6 +6584,7 @@ paths:
                 - show_read_indicator
                 - thumbnails
                 - slow_mode_enabled_until
+                - summarizable
                 - details
     delete:
       summary: Remove a topic
