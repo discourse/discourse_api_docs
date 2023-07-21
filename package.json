@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/oblakeerickson/discourse_api_docs.git"
+    "url": "git+https://github.com/discourse/discourse_api_docs.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/oblakeerickson/discourse_api_docs/issues"
+    "url": "https://meta.discourse.org"
   },
-  "homepage": "https://github.com/oblakeerickson/discourse_api_docs#readme",
+  "homepage": "https://github.com/discourse/discourse_api_docs#readme",
   "dependencies": {
     "express": "^4.18.2",
     "json-schema-generator": "^2.0.6",
