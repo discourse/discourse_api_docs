@@ -11245,8 +11245,25 @@ paths:
           type: integer
       - name: show_emails
         in: query
+        description: Include user email addresses in response. These requests will
+          be logged in the staff action logs.
         schema:
           type: boolean
+      - name: stats
+        in: query
+        description: Include user stats information
+        schema:
+          type: boolean
+      - name: email
+        in: query
+        description: Filter to the user with this email address
+        schema:
+          type: string
+      - name: ip
+        in: query
+        description: Filter to users with this IP address
+        schema:
+          type: string
       responses:
         '200':
           description: response
