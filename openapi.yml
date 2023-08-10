@@ -8796,10 +8796,6 @@ paths:
               properties:
                 name:
                   type: string
-                email:
-                  type: string
-                password:
-                  type: string
                 external_ids:
                   type: object
   "/u/by-external/{external_id}.json":
