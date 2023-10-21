@@ -794,6 +794,10 @@ paths:
                         type:
                         - string
                         - 'null'
+                      uploaded_background_dark:
+                        type:
+                        - string
+                        - 'null'
                     required:
                     - id
                     - name
@@ -843,6 +847,7 @@ paths:
                     - uploaded_logo
                     - uploaded_logo_dark
                     - uploaded_background
+                    - uploaded_background_dark
                 required:
                 - category
       requestBody:
@@ -1021,6 +1026,10 @@ paths:
                               type:
                               - string
                               - 'null'
+                            uploaded_background_dark:
+                              type:
+                              - string
+                              - 'null'
                           required:
                           - id
                           - name
@@ -1059,6 +1068,7 @@ paths:
                           - uploaded_logo
                           - uploaded_logo_dark
                           - uploaded_background
+                          - uploaded_background_dark
                     required:
                     - can_create_category
                     - can_create_topic
@@ -1262,6 +1272,10 @@ paths:
                         type:
                         - string
                         - 'null'
+                      uploaded_background_dark:
+                        type:
+                        - string
+                        - 'null'
                     required:
                     - id
                     - name
@@ -1312,6 +1326,7 @@ paths:
                     - uploaded_logo
                     - uploaded_logo_dark
                     - uploaded_background
+                    - uploaded_background_dark
                 required:
                 - success
                 - category
@@ -1738,6 +1753,10 @@ paths:
                         type:
                         - string
                         - 'null'
+                      uploaded_background_dark:
+                        type:
+                        - string
+                        - 'null'
                     required:
                     - id
                     - name
@@ -1787,6 +1806,7 @@ paths:
                     - uploaded_logo
                     - uploaded_logo_dark
                     - uploaded_background
+                    - uploaded_background_dark
                 required:
                 - category
   "/admin/groups.json":
@@ -5200,6 +5220,10 @@ paths:
                           type:
                           - string
                           - 'null'
+                        uploaded_background_dark:
+                          type:
+                          - string
+                          - 'null'
                         can_edit:
                           type: boolean
                         custom_fields:
@@ -5245,6 +5269,7 @@ paths:
                       - uploaded_logo
                       - uploaded_logo_dark
                       - uploaded_background
+                      - uploaded_background_dark
                       - can_edit
                   archetypes:
                     type: array
