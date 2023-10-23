@@ -1057,6 +1057,12 @@
                             "string",
                             "null"
                           ]
+                        },
+                        "uploaded_background_dark": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         }
                       },
                       "required": [
@@ -1107,7 +1113,8 @@
                         "search_priority",
                         "uploaded_logo",
                         "uploaded_logo_dark",
-                        "uploaded_background"
+                        "uploaded_background",
+                        "uploaded_background_dark"
                       ]
                     }
                   },
@@ -1373,6 +1380,12 @@
                                   "string",
                                   "null"
                                 ]
+                              },
+                              "uploaded_background_dark": {
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
                               }
                             },
                             "required": [
@@ -1412,7 +1425,8 @@
                               "subcategory_ids",
                               "uploaded_logo",
                               "uploaded_logo_dark",
-                              "uploaded_background"
+                              "uploaded_background",
+                              "uploaded_background_dark"
                             ]
                           }
                         }
@@ -1716,6 +1730,12 @@
                             "string",
                             "null"
                           ]
+                        },
+                        "uploaded_background_dark": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         }
                       },
                       "required": [
@@ -1767,7 +1787,8 @@
                         "search_priority",
                         "uploaded_logo",
                         "uploaded_logo_dark",
-                        "uploaded_background"
+                        "uploaded_background",
+                        "uploaded_background_dark"
                       ]
                     }
                   },
@@ -2387,6 +2408,12 @@
                             "string",
                             "null"
                           ]
+                        },
+                        "uploaded_background_dark": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         }
                       },
                       "required": [
@@ -2437,7 +2464,8 @@
                         "search_priority",
                         "uploaded_logo",
                         "uploaded_logo_dark",
-                        "uploaded_background"
+                        "uploaded_background",
+                        "uploaded_background_dark"
                       ]
                     }
                   },
@@ -7321,6 +7349,12 @@
                               "null"
                             ]
                           },
+                          "uploaded_background_dark": {
+                            "type": [
+                              "string",
+                              "null"
+                            ]
+                          },
                           "can_edit": {
                             "type": "boolean"
                           },
@@ -7372,6 +7406,7 @@
                           "uploaded_logo",
                           "uploaded_logo_dark",
                           "uploaded_background",
+                          "uploaded_background_dark",
                           "can_edit"
                         ]
                       }
