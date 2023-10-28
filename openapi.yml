@@ -10480,8 +10480,6 @@ paths:
                     type:
                     - string
                     - 'null'
-                  flag_level:
-                    type: integer
                   title:
                     type:
                     - string
@@ -10868,7 +10866,6 @@ paths:
                 - created_at_age
                 - trust_level
                 - manual_locked_trust_level
-                - flag_level
                 - title
                 - time_read
                 - staged
@@ -11370,8 +11367,6 @@ paths:
                       type:
                       - string
                       - 'null'
-                    flag_level:
-                      type: integer
                     title:
                       type:
                       - string
@@ -11404,7 +11399,6 @@ paths:
                   - created_at_age
                   - trust_level
                   - manual_locked_trust_level
-                  - flag_level
                   - title
                   - time_read
                   - staged
