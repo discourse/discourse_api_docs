@@ -673,7 +673,9 @@ paths:
                         type: array
                         items: {}
                       has_children:
-                        type: boolean
+                        type:
+                        - boolean
+                        - 'null'
                       sort_order:
                         type:
                         - string
@@ -1135,7 +1137,7 @@ paths:
                         type: boolean
                       permission:
                         type:
-                        - string
+                        - integer
                         - 'null'
                       notification_level:
                         type: integer
@@ -1149,7 +1151,9 @@ paths:
                         type: array
                         items: {}
                       has_children:
-                        type: boolean
+                        type:
+                        - boolean
+                        - 'null'
                       sort_order:
                         type:
                         - string
@@ -1628,7 +1632,9 @@ paths:
                         type: array
                         items: {}
                       has_children:
-                        type: boolean
+                        type:
+                        - boolean
+                        - 'null'
                       sort_order:
                         type:
                         - string
