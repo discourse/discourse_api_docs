@@ -11903,6 +11903,9 @@
                             "null"
                           ]
                         },
+                        "user_passkeys": {
+                          "type": "array"
+                        },
                         "sidebar_tags": {
                           "type": "array"
                         },
@@ -12910,6 +12913,9 @@
                             "null"
                           ]
                         },
+                        "user_passkeys": {
+                          "type": "array"
+                        },
                         "sidebar_tags": {
                           "type": "array"
                         },
@@ -13851,6 +13857,9 @@
                             "string",
                             "null"
                           ]
+                        },
+                        "user_passkeys": {
+                          "type": "array"
                         },
                         "sidebar_tags": {
                           "type": "array"
