@@ -8788,6 +8788,8 @@ paths:
                             type:
                             - array
                             - 'null'
+                          topics_unread_when_closed:
+                            type: boolean
                         required:
                         - user_id
                         - mailing_list_mode
@@ -8821,6 +8823,7 @@ paths:
                         - title_count_mode
                         - timezone
                         - skip_new_user_tips
+                        - topics_unread_when_closed
                     required:
                     - id
                     - username
@@ -9513,6 +9516,8 @@ paths:
                             type:
                             - array
                             - 'null'
+                          topics_unread_when_closed:
+                            type: boolean
                         required:
                         - user_id
                         - mailing_list_mode
@@ -9546,6 +9551,7 @@ paths:
                         - title_count_mode
                         - timezone
                         - skip_new_user_tips
+                        - topics_unread_when_closed
                     required:
                     - id
                     - username
@@ -10199,6 +10205,8 @@ paths:
                             type:
                             - array
                             - 'null'
+                          topics_unread_when_closed:
+                            type: boolean
                         required:
                         - user_id
                         - mailing_list_mode
@@ -10232,6 +10240,7 @@ paths:
                         - title_count_mode
                         - timezone
                         - skip_new_user_tips
+                        - topics_unread_when_closed
                     required:
                     - id
                     - username
