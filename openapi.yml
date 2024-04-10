@@ -4891,6 +4891,8 @@ paths:
                         type: integer
                       liked_consolidated:
                         type: integer
+                      linked_consolidated:
+                        type: integer
                       post_approved:
                         type: integer
                       code_review_commit_approved:
@@ -4952,6 +4954,7 @@ paths:
                     - watching_first_post
                     - topic_reminder
                     - liked_consolidated
+                    - linked_consolidated
                     - post_approved
                     - code_review_commit_approved
                     - membership_request_accepted
