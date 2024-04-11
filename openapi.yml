@@ -2994,7 +2994,7 @@ paths:
                           type: string
                         post_number:
                           type:
-                          - string
+                          - integer
                           - 'null'
                         topic_id:
                           type:
