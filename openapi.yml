@@ -5019,15 +5019,12 @@ paths:
                         type: integer
                       suggested_topics:
                         type: integer
-                      admin_guide:
-                        type: integer
                     required:
                     - first_notification
                     - topic_timeline
                     - post_menu
                     - topic_notification_levels
                     - suggested_topics
-                    - admin_guide
                   groups:
                     type: array
                     items:
@@ -5474,6 +5471,10 @@ paths:
                     type: string
                   login_required:
                     type: boolean
+                  locale:
+                    type: string
+                  include_in_discourse_discover:
+                    type: boolean
                   mobile_logo_url:
                     type: string
                 required:
@@ -5486,6 +5487,8 @@ paths:
                 - header_primary_color
                 - header_background_color
                 - login_required
+                - locale
+                - include_in_discourse_discover
                 - mobile_logo_url
   "/tag_groups.json":
     get:
