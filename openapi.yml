@@ -676,6 +676,10 @@ paths:
                         type:
                         - boolean
                         - 'null'
+                      subcategory_count:
+                        type:
+                        - integer
+                        - 'null'
                       sort_order:
                         type:
                         - string
@@ -817,6 +821,7 @@ paths:
                     - can_edit
                     - topic_template
                     - has_children
+                    - subcategory_count
                     - sort_order
                     - sort_ascending
                     - show_subcategory_list
@@ -968,6 +973,10 @@ paths:
                               - 'null'
                             has_children:
                               type: boolean
+                            subcategory_count:
+                              type:
+                              - integer
+                              - 'null'
                             sort_order:
                               type:
                               - string
@@ -1049,6 +1058,7 @@ paths:
                           - can_edit
                           - topic_template
                           - has_children
+                          - subcategory_count
                           - sort_order
                           - sort_ascending
                           - show_subcategory_list
@@ -1153,6 +1163,10 @@ paths:
                       has_children:
                         type:
                         - boolean
+                        - 'null'
+                      subcategory_count:
+                        type:
+                        - integer
                         - 'null'
                       sort_order:
                         type:
@@ -1296,6 +1310,7 @@ paths:
                     - topic_template
                     - form_template_ids
                     - has_children
+                    - subcategory_count
                     - sort_order
                     - sort_ascending
                     - show_subcategory_list
@@ -1635,6 +1650,10 @@ paths:
                         type:
                         - boolean
                         - 'null'
+                      subcategory_count:
+                        type:
+                        - integer
+                        - 'null'
                       sort_order:
                         type:
                         - string
@@ -1776,6 +1795,7 @@ paths:
                     - can_edit
                     - topic_template
                     - has_children
+                    - subcategory_count
                     - sort_order
                     - sort_ascending
                     - show_subcategory_list
@@ -5264,6 +5284,10 @@ paths:
                           - 'null'
                         has_children:
                           type: boolean
+                        subcategory_count:
+                          type:
+                          - integer
+                          - 'null'
                         sort_order:
                           type:
                           - string
@@ -5358,6 +5382,7 @@ paths:
                       - notification_level
                       - topic_template
                       - has_children
+                      - subcategory_count
                       - sort_order
                       - sort_ascending
                       - show_subcategory_list
