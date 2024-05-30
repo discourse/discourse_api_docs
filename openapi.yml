@@ -5113,6 +5113,8 @@ paths:
                           type: boolean
                         is_custom_flag:
                           type: boolean
+                        enabled:
+                          type: boolean
                       required:
                       - id
                       - name_key
@@ -5121,6 +5123,7 @@ paths:
                       - short_description
                       - is_flag
                       - is_custom_flag
+                      - enabled
                   topic_flag_types:
                     type: array
                     items:
@@ -5145,6 +5148,8 @@ paths:
                           type: boolean
                         is_custom_flag:
                           type: boolean
+                        enabled:
+                          type: boolean
                       required:
                       - id
                       - name_key
@@ -5153,6 +5158,7 @@ paths:
                       - short_description
                       - is_flag
                       - is_custom_flag
+                      - enabled
                   can_create_tag:
                     type: boolean
                   can_tag_topics:
