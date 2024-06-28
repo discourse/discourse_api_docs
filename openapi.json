@@ -2084,7 +2084,7 @@
                                     },
                                     "primary_group_id": {
                                       "type": [
-                                        "string",
+                                        "integer",
                                         "null"
                                       ]
                                     }
@@ -4440,7 +4440,7 @@
                           },
                           "flair_group_id": {
                             "type": [
-                              "string",
+                              "integer",
                               "null"
                             ]
                           },
@@ -4526,7 +4526,7 @@
                           },
                           "reviewable_id": {
                             "type": [
-                              "string",
+                              "integer",
                               "null"
                             ]
                           },
@@ -4667,7 +4667,7 @@
                     },
                     "flair_group_id": {
                       "type": [
-                        "string",
+                        "integer",
                         "null"
                       ]
                     },
@@ -4761,7 +4761,7 @@
                     },
                     "reviewable_id": {
                       "type": [
-                        "string",
+                        "integer",
                         "null"
                       ]
                     },
@@ -4912,7 +4912,7 @@
         ],
         "responses": {
           "200": {
-            "description": "single post",
+            "description": "single reviewable post",
             "content": {
               "application/json": {
                 "schema": {
@@ -5007,7 +5007,7 @@
                     },
                     "flair_group_id": {
                       "type": [
-                        "string",
+                        "integer",
                         "null"
                       ]
                     },
@@ -5110,7 +5110,7 @@
                     },
                     "reviewable_id": {
                       "type": [
-                        "string",
+                        "integer",
                         "null"
                       ]
                     },
@@ -5308,7 +5308,7 @@
                         },
                         "flair_group_id": {
                           "type": [
-                            "string",
+                            "integer",
                             "null"
                           ]
                         },
@@ -5405,7 +5405,7 @@
                         },
                         "reviewable_id": {
                           "type": [
-                            "string",
+                            "integer",
                             "null"
                           ]
                         },
@@ -5684,7 +5684,7 @@
                       },
                       "flair_group_id": {
                         "type": [
-                          "string",
+                          "integer",
                           "null"
                         ]
                       },
@@ -5794,7 +5794,7 @@
                       },
                       "reviewable_id": {
                         "type": [
-                          "string",
+                          "integer",
                           "null"
                         ]
                       },
@@ -6144,7 +6144,7 @@
                     },
                     "reviewable_id": {
                       "type": [
-                        "string",
+                        "integer",
                         "null"
                       ]
                     },
@@ -6385,7 +6385,7 @@
                                     },
                                     "primary_group_id": {
                                       "type": [
-                                        "string",
+                                        "integer",
                                         "null"
                                       ]
                                     }
@@ -6411,7 +6411,7 @@
                                     },
                                     "primary_group_id": {
                                       "type": [
-                                        "string",
+                                        "integer",
                                         "null"
                                       ]
                                     }
@@ -6633,7 +6633,7 @@
                                     },
                                     "primary_group_id": {
                                       "type": [
-                                        "string",
+                                        "integer",
                                         "null"
                                       ]
                                     }
@@ -8307,7 +8307,7 @@
                                     },
                                     "primary_group_id": {
                                       "type": [
-                                        "string",
+                                        "integer",
                                         "null"
                                       ]
                                     }
@@ -9451,7 +9451,7 @@
                               },
                               "flair_group_id": {
                                 "type": [
-                                  "string",
+                                  "integer",
                                   "null"
                                 ]
                               },
@@ -10182,7 +10182,7 @@
                                     },
                                     "primary_group_id": {
                                       "type": [
-                                        "string",
+                                        "integer",
                                         "null"
                                       ]
                                     }
@@ -10417,7 +10417,7 @@
                                     },
                                     "primary_group_id": {
                                       "type": [
-                                        "string",
+                                        "integer",
                                         "null"
                                       ]
                                     }
@@ -10646,7 +10646,7 @@
                     },
                     "category_id": {
                       "type": [
-                        "string",
+                        "integer",
                         "null"
                       ]
                     }
@@ -11728,7 +11728,7 @@
         ],
         "responses": {
           "200": {
-            "description": "user response",
+            "description": "user with primary group response",
             "content": {
               "application/json": {
                 "schema": {
@@ -11850,7 +11850,7 @@
                         },
                         "primary_group_id": {
                           "type": [
-                            "string",
+                            "integer",
                             "null"
                           ]
                         },
@@ -11862,7 +11862,7 @@
                         },
                         "flair_group_id": {
                           "type": [
-                            "string",
+                            "integer",
                             "null"
                           ]
                         },
@@ -11913,7 +11913,7 @@
                         },
                         "uploaded_avatar_id": {
                           "type": [
-                            "string",
+                            "integer",
                             "null"
                           ]
                         },
@@ -12867,7 +12867,7 @@
                         },
                         "primary_group_id": {
                           "type": [
-                            "string",
+                            "integer",
                             "null"
                           ]
                         },
@@ -12879,7 +12879,7 @@
                         },
                         "flair_group_id": {
                           "type": [
-                            "string",
+                            "integer",
                             "null"
                           ]
                         },
@@ -12930,7 +12930,7 @@
                         },
                         "uploaded_avatar_id": {
                           "type": [
-                            "string",
+                            "integer",
                             "null"
                           ]
                         },
@@ -13819,7 +13819,7 @@
                         },
                         "primary_group_id": {
                           "type": [
-                            "string",
+                            "integer",
                             "null"
                           ]
                         },
@@ -13831,7 +13831,7 @@
                         },
                         "flair_group_id": {
                           "type": [
-                            "string",
+                            "integer",
                             "null"
                           ]
                         },
@@ -13882,7 +13882,7 @@
                         },
                         "uploaded_avatar_id": {
                           "type": [
-                            "string",
+                            "integer",
                             "null"
                           ]
                         },
@@ -15138,7 +15138,7 @@
                     },
                     "primary_group_id": {
                       "type": [
-                        "string",
+                        "integer",
                         "null"
                       ]
                     },
@@ -15455,7 +15455,7 @@
                           },
                           "flair_group_id": {
                             "type": [
-                              "string",
+                              "integer",
                               "null"
                             ]
                           },
