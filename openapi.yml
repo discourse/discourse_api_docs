@@ -1529,7 +1529,7 @@ paths:
                                     type: integer
                                   primary_group_id:
                                     type:
-                                    - string
+                                    - integer
                                     - 'null'
                                 required:
                                 - extras
@@ -3176,7 +3176,7 @@ paths:
                           - 'null'
                         flair_group_id:
                           type:
-                          - string
+                          - integer
                           - 'null'
                         version:
                           type: integer
@@ -3233,7 +3233,7 @@ paths:
                           type: boolean
                         reviewable_id:
                           type:
-                          - string
+                          - integer
                           - 'null'
                         reviewable_score_count:
                           type: integer
@@ -3325,7 +3325,7 @@ paths:
                     - 'null'
                   flair_group_id:
                     type:
-                    - string
+                    - integer
                     - 'null'
                   version:
                     type: integer
@@ -3388,7 +3388,7 @@ paths:
                     type: boolean
                   reviewable_id:
                     type:
-                    - string
+                    - integer
                     - 'null'
                   reviewable_score_count:
                     type: integer
@@ -3512,7 +3512,7 @@ paths:
         required: true
       responses:
         '200':
-          description: single post
+          description: single reviewable post
           content:
             application/json:
               schema:
@@ -3578,7 +3578,7 @@ paths:
                     - 'null'
                   flair_group_id:
                     type:
-                    - string
+                    - integer
                     - 'null'
                   version:
                     type: integer
@@ -3647,7 +3647,7 @@ paths:
                     type: boolean
                   reviewable_id:
                     type:
-                    - string
+                    - integer
                     - 'null'
                   reviewable_score_count:
                     type: integer
@@ -3794,7 +3794,7 @@ paths:
                         - 'null'
                       flair_group_id:
                         type:
-                        - string
+                        - integer
                         - 'null'
                       version:
                         type: integer
@@ -3859,7 +3859,7 @@ paths:
                         type: boolean
                       reviewable_id:
                         type:
-                        - string
+                        - integer
                         - 'null'
                       reviewable_score_count:
                         type: integer
@@ -4060,7 +4060,7 @@ paths:
                       - 'null'
                     flair_group_id:
                       type:
-                      - string
+                      - integer
                       - 'null'
                     version:
                       type: integer
@@ -4134,7 +4134,7 @@ paths:
                       type: boolean
                     reviewable_id:
                       type:
-                      - string
+                      - integer
                       - 'null'
                     reviewable_score_count:
                       type: integer
@@ -4376,7 +4376,7 @@ paths:
                     type: object
                   reviewable_id:
                     type:
-                    - string
+                    - integer
                     - 'null'
                   reviewable_score_count:
                     type: integer
@@ -4538,7 +4538,7 @@ paths:
                                     type: integer
                                   primary_group_id:
                                     type:
-                                    - string
+                                    - integer
                                     - 'null'
                             participants:
                               type: array
@@ -4555,7 +4555,7 @@ paths:
                                     type: integer
                                   primary_group_id:
                                     type:
-                                    - string
+                                    - integer
                                     - 'null'
   "/topics/private-messages-sent/{username}.json":
     get:
@@ -4700,7 +4700,7 @@ paths:
                                     type: integer
                                   primary_group_id:
                                     type:
-                                    - string
+                                    - integer
                                     - 'null'
                             participants:
                               type: array
@@ -5890,7 +5890,7 @@ paths:
                                     type: integer
                                   primary_group_id:
                                     type:
-                                    - string
+                                    - integer
                                     - 'null'
   "/t/{id}/posts.json":
     get:
@@ -6676,7 +6676,7 @@ paths:
                               - 'null'
                             flair_group_id:
                               type:
-                              - string
+                              - integer
                               - 'null'
                             admin:
                               type: boolean
@@ -7178,7 +7178,7 @@ paths:
                                     type: integer
                                   primary_group_id:
                                     type:
-                                    - string
+                                    - integer
                                     - 'null'
   "/top.json":
     get:
@@ -7331,7 +7331,7 @@ paths:
                                     type: integer
                                   primary_group_id:
                                     type:
-                                    - string
+                                    - integer
                                     - 'null'
   "/t/{id}/notifications.json":
     post:
@@ -7470,7 +7470,7 @@ paths:
                     type: boolean
                   category_id:
                     type:
-                    - string
+                    - integer
                     - 'null'
       requestBody:
         content:
@@ -8326,7 +8326,7 @@ paths:
           type: string
       responses:
         '200':
-          description: user response
+          description: user with primary group response
           content:
             application/json:
               schema:
@@ -8412,7 +8412,7 @@ paths:
                         type: integer
                       primary_group_id:
                         type:
-                        - string
+                        - integer
                         - 'null'
                       primary_group_name:
                         type:
@@ -8420,7 +8420,7 @@ paths:
                         - 'null'
                       flair_group_id:
                         type:
-                        - string
+                        - integer
                         - 'null'
                       flair_name:
                         type:
@@ -8454,7 +8454,7 @@ paths:
                         type: boolean
                       uploaded_avatar_id:
                         type:
-                        - string
+                        - integer
                         - 'null'
                       has_title_badges:
                         type: boolean
@@ -9142,7 +9142,7 @@ paths:
                         type: integer
                       primary_group_id:
                         type:
-                        - string
+                        - integer
                         - 'null'
                       primary_group_name:
                         type:
@@ -9150,7 +9150,7 @@ paths:
                         - 'null'
                       flair_group_id:
                         type:
-                        - string
+                        - integer
                         - 'null'
                       flair_name:
                         type:
@@ -9184,7 +9184,7 @@ paths:
                         type: boolean
                       uploaded_avatar_id:
                         type:
-                        - string
+                        - integer
                         - 'null'
                       has_title_badges:
                         type: boolean
@@ -9833,7 +9833,7 @@ paths:
                         type: integer
                       primary_group_id:
                         type:
-                        - string
+                        - integer
                         - 'null'
                       primary_group_name:
                         type:
@@ -9841,7 +9841,7 @@ paths:
                         - 'null'
                       flair_group_id:
                         type:
-                        - string
+                        - integer
                         - 'null'
                       flair_name:
                         type:
@@ -9875,7 +9875,7 @@ paths:
                         type: boolean
                       uploaded_avatar_id:
                         type:
-                        - string
+                        - integer
                         - 'null'
                       has_title_badges:
                         type: boolean
@@ -10766,7 +10766,7 @@ paths:
                     - 'null'
                   primary_group_id:
                     type:
-                    - string
+                    - integer
                     - 'null'
                   badge_count:
                     type: integer
@@ -10991,7 +10991,7 @@ paths:
                           - 'null'
                         flair_group_id:
                           type:
-                          - string
+                          - integer
                           - 'null'
                         bio_raw:
                           type:
