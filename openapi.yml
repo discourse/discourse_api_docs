@@ -5115,6 +5115,10 @@ paths:
                           type: boolean
                         enabled:
                           type: boolean
+                        applies_to:
+                          type: array
+                        is_used:
+                          type: boolean
                       required:
                       - id
                       - name_key
@@ -5124,6 +5128,8 @@ paths:
                       - is_flag
                       - is_custom_flag
                       - enabled
+                      - applies_to
+                      - is_used
                   topic_flag_types:
                     type: array
                     items:
@@ -5150,6 +5156,10 @@ paths:
                           type: boolean
                         enabled:
                           type: boolean
+                        applies_to:
+                          type: array
+                        is_used:
+                          type: boolean
                       required:
                       - id
                       - name_key
@@ -5159,6 +5169,8 @@ paths:
                       - is_flag
                       - is_custom_flag
                       - enabled
+                      - applies_to
+                      - is_used
                   can_create_tag:
                     type: boolean
                   can_tag_topics:
@@ -5435,6 +5447,8 @@ paths:
                   whispers_allowed_groups_names:
                     type: array
                   denied_emojis:
+                    type: array
+                  valid_flag_applies_to_types:
                     type: array
                   navigation_menu_site_top_tags:
                     type: array
@@ -6592,8 +6606,6 @@ paths:
                     type:
                     - string
                     - 'null'
-                  summarizable:
-                    type: boolean
                   details:
                     type: object
                     additionalProperties: false
@@ -6801,7 +6813,6 @@ paths:
                 - show_read_indicator
                 - thumbnails
                 - slow_mode_enabled_until
-                - summarizable
                 - details
     delete:
       summary: Remove a topic

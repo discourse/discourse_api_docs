@@ -7186,6 +7186,12 @@
                           },
                           "enabled": {
                             "type": "boolean"
+                          },
+                          "applies_to": {
+                            "type": "array"
+                          },
+                          "is_used": {
+                            "type": "boolean"
                           }
                         },
                         "required": [
@@ -7196,7 +7202,9 @@
                           "short_description",
                           "is_flag",
                           "is_custom_flag",
-                          "enabled"
+                          "enabled",
+                          "applies_to",
+                          "is_used"
                         ]
                       }
                     },
@@ -7235,6 +7243,12 @@
                           },
                           "enabled": {
                             "type": "boolean"
+                          },
+                          "applies_to": {
+                            "type": "array"
+                          },
+                          "is_used": {
+                            "type": "boolean"
                           }
                         },
                         "required": [
@@ -7245,7 +7259,9 @@
                           "short_description",
                           "is_flag",
                           "is_custom_flag",
-                          "enabled"
+                          "enabled",
+                          "applies_to",
+                          "is_used"
                         ]
                       }
                     },
@@ -7636,6 +7652,9 @@
                       "type": "array"
                     },
                     "denied_emojis": {
+                      "type": "array"
+                    },
+                    "valid_flag_applies_to_types": {
                       "type": "array"
                     },
                     "navigation_menu_site_top_tags": {
@@ -9331,9 +9350,6 @@
                         "null"
                       ]
                     },
-                    "summarizable": {
-                      "type": "boolean"
-                    },
                     "details": {
                       "type": "object",
                       "additionalProperties": false,
@@ -9603,7 +9619,6 @@
                     "show_read_indicator",
                     "thumbnails",
                     "slow_mode_enabled_until",
-                    "summarizable",
                     "details"
                   ]
                 }
