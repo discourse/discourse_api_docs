@@ -3159,9 +3159,9 @@
                             "null"
                           ]
                         },
-                        "smtp_ssl": {
+                        "smtp_ssl_mode": {
                           "type": [
-                            "string",
+                            "integer",
                             "null"
                           ]
                         },
@@ -3328,7 +3328,7 @@
                         "automatic_membership_email_domains",
                         "smtp_server",
                         "smtp_port",
-                        "smtp_ssl",
+                        "smtp_ssl_mode",
                         "imap_server",
                         "imap_port",
                         "imap_ssl",
@@ -7181,7 +7181,7 @@
                           "is_flag": {
                             "type": "boolean"
                           },
-                          "is_custom_flag": {
+                          "require_message": {
                             "type": "boolean"
                           },
                           "enabled": {
@@ -7201,7 +7201,7 @@
                           "description",
                           "short_description",
                           "is_flag",
-                          "is_custom_flag",
+                          "require_message",
                           "enabled",
                           "applies_to",
                           "is_used"
@@ -7238,7 +7238,7 @@
                           "is_flag": {
                             "type": "boolean"
                           },
-                          "is_custom_flag": {
+                          "require_message": {
                             "type": "boolean"
                           },
                           "enabled": {
@@ -7258,7 +7258,7 @@
                           "description",
                           "short_description",
                           "is_flag",
-                          "is_custom_flag",
+                          "require_message",
                           "enabled",
                           "applies_to",
                           "is_used"

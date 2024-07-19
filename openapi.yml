@@ -2274,9 +2274,9 @@ paths:
                         type:
                         - string
                         - 'null'
-                      smtp_ssl:
+                      smtp_ssl_mode:
                         type:
-                        - string
+                        - integer
                         - 'null'
                       imap_enabled:
                         type: boolean
@@ -2402,7 +2402,7 @@ paths:
                     - automatic_membership_email_domains
                     - smtp_server
                     - smtp_port
-                    - smtp_ssl
+                    - smtp_ssl_mode
                     - imap_server
                     - imap_port
                     - imap_ssl
@@ -5111,7 +5111,7 @@ paths:
                           type: string
                         is_flag:
                           type: boolean
-                        is_custom_flag:
+                        require_message:
                           type: boolean
                         enabled:
                           type: boolean
@@ -5126,7 +5126,7 @@ paths:
                       - description
                       - short_description
                       - is_flag
-                      - is_custom_flag
+                      - require_message
                       - enabled
                       - applies_to
                       - is_used
@@ -5152,7 +5152,7 @@ paths:
                           type: string
                         is_flag:
                           type: boolean
-                        is_custom_flag:
+                        require_message:
                           type: boolean
                         enabled:
                           type: boolean
@@ -5167,7 +5167,7 @@ paths:
                       - description
                       - short_description
                       - is_flag
-                      - is_custom_flag
+                      - require_message
                       - enabled
                       - applies_to
                       - is_used
