@@ -251,6 +251,12 @@
                               "null"
                             ]
                           },
+                          "image_upload_id": {
+                            "type": [
+                              "integer",
+                              "null"
+                            ]
+                          },
                           "badge_type_id": {
                             "type": "integer"
                           }
@@ -276,7 +282,8 @@
                           "target_posts",
                           "auto_revoke",
                           "show_posts",
-                          "badge_type_id"
+                          "badge_type_id",
+                          "image_upload_id"
                         ]
                       }
                     },
@@ -476,6 +483,12 @@
                             "null"
                           ]
                         },
+                        "image_upload_id": {
+                          "type": [
+                            "integer",
+                            "null"
+                          ]
+                        },
                         "listable": {
                           "type": "boolean"
                         },
@@ -543,7 +556,8 @@
                         "target_posts",
                         "auto_revoke",
                         "show_posts",
-                        "badge_type_id"
+                        "badge_type_id",
+                        "image_upload_id"
                       ]
                     }
                   },
@@ -660,6 +674,12 @@
                             "null"
                           ]
                         },
+                        "image_upload_id": {
+                          "type": [
+                            "integer",
+                            "null"
+                          ]
+                        },
                         "listable": {
                           "type": "boolean"
                         },
@@ -727,7 +747,8 @@
                         "target_posts",
                         "auto_revoke",
                         "show_posts",
-                        "badge_type_id"
+                        "badge_type_id",
+                        "image_upload_id"
                       ]
                     }
                   },
@@ -7192,6 +7213,9 @@
                           },
                           "is_used": {
                             "type": "boolean"
+                          },
+                          "position": {
+                            "type": "integer"
                           }
                         },
                         "required": [
@@ -7249,6 +7273,9 @@
                           },
                           "is_used": {
                             "type": "boolean"
+                          },
+                          "position": {
+                            "type": "integer"
                           }
                         },
                         "required": [
@@ -15203,6 +15230,9 @@
                       "type": "boolean"
                     },
                     "api_key_count": {
+                      "type": "integer"
+                    },
+                    "similar_users_count": {
                       "type": "integer"
                     },
                     "single_sign_on_record": {

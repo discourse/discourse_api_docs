@@ -227,6 +227,10 @@ paths:
                           type:
                           - string
                           - 'null'
+                        image_upload_id:
+                          type:
+                          - integer
+                          - 'null'
                         badge_type_id:
                           type: integer
                       required:
@@ -251,6 +255,7 @@ paths:
                       - auto_revoke
                       - show_posts
                       - badge_type_id
+                      - image_upload_id
                   badge_types:
                     type: array
                     items:
@@ -390,6 +395,10 @@ paths:
                         type:
                         - string
                         - 'null'
+                      image_upload_id:
+                        type:
+                        - integer
+                        - 'null'
                       listable:
                         type: boolean
                       enabled:
@@ -442,6 +451,7 @@ paths:
                     - auto_revoke
                     - show_posts
                     - badge_type_id
+                    - image_upload_id
                 required:
                 - badge_types
                 - badge
@@ -519,6 +529,10 @@ paths:
                         type:
                         - string
                         - 'null'
+                      image_upload_id:
+                        type:
+                        - integer
+                        - 'null'
                       listable:
                         type: boolean
                       enabled:
@@ -571,6 +585,7 @@ paths:
                     - auto_revoke
                     - show_posts
                     - badge_type_id
+                    - image_upload_id
                 required:
                 - badge_types
                 - badge
@@ -5119,6 +5134,8 @@ paths:
                           type: array
                         is_used:
                           type: boolean
+                        position:
+                          type: integer
                       required:
                       - id
                       - name_key
@@ -5160,6 +5177,8 @@ paths:
                           type: array
                         is_used:
                           type: boolean
+                        position:
+                          type: integer
                       required:
                       - id
                       - name_key
@@ -10810,6 +10829,8 @@ paths:
                   can_delete_sso_record:
                     type: boolean
                   api_key_count:
+                    type: integer
+                  similar_users_count:
                     type: integer
                   single_sign_on_record:
                     type:
