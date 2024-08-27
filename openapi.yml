@@ -748,9 +748,9 @@ paths:
                           - min_count
                       category_setting:
                         auto_bump_cooldown_days: 1
-                        num_auto_bump_daily: 
-                        require_reply_approval: 
-                        require_topic_approval: 
+                        num_auto_bump_daily:
+                        require_reply_approval:
+                        require_topic_approval:
                       read_only_banner:
                         type:
                         - string
@@ -1236,9 +1236,9 @@ paths:
                           - min_count
                       category_setting:
                         auto_bump_cooldown_days: 1
-                        num_auto_bump_daily: 
-                        require_reply_approval: 
-                        require_topic_approval: 
+                        num_auto_bump_daily:
+                        require_reply_approval:
+                        require_topic_approval:
                       read_only_banner:
                         type:
                         - string
@@ -1722,9 +1722,9 @@ paths:
                           - min_count
                       category_setting:
                         auto_bump_cooldown_days: 1
-                        num_auto_bump_daily: 
-                        require_reply_approval: 
-                        require_topic_approval: 
+                        num_auto_bump_daily:
+                        require_reply_approval:
+                        require_topic_approval:
                       read_only_banner:
                         type:
                         - string
@@ -11408,6 +11408,9 @@ paths:
                 post_action:
                   type: string
                   example: delete
+              required:
+              - silenced_till
+              - reason
   "/admin/users/{id}/anonymize.json":
     put:
       summary: Anonymize a user
@@ -11895,3 +11898,4 @@ servers:
       default: discourse.example.com
 components:
   schemas: {}
+...
