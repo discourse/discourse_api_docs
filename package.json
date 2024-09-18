@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/discourse/discourse_api_docs#readme",
   "dependencies": {
-    "express": "^4.19.2",
+    "express": "^4.21.0",
     "json-schema-generator": "^2.0.6",
     "json-schema-ref-parser": "^6.0.1",
     "yamljs": "^0.3.0"
