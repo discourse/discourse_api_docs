@@ -7219,6 +7219,9 @@
                           },
                           "position": {
                             "type": "integer"
+                          },
+                          "auto_action_type": {
+                            "type": "boolean"
                           }
                         },
                         "required": [
@@ -7231,7 +7234,8 @@
                           "require_message",
                           "enabled",
                           "applies_to",
-                          "is_used"
+                          "is_used",
+                          "auto_action_type"
                         ]
                       }
                     },
@@ -7279,6 +7283,9 @@
                           },
                           "position": {
                             "type": "integer"
+                          },
+                          "auto_action_type": {
+                            "type": "boolean"
                           }
                         },
                         "required": [
@@ -7291,7 +7298,8 @@
                           "require_message",
                           "enabled",
                           "applies_to",
-                          "is_used"
+                          "is_used",
+                          "auto_action_type"
                         ]
                       }
                     },
@@ -10814,6 +10822,36 @@
                         "string",
                         "null"
                       ]
+                    },
+                    "thumbnail": {
+                      "type": [
+                        "object",
+                        "null"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "upload_id": {
+                          "type": "integer"
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "extension": {
+                          "type": "string"
+                        },
+                        "width": {
+                          "type": "integer"
+                        },
+                        "height": {
+                          "type": "integer"
+                        },
+                        "filesize": {
+                          "type": "integer"
+                        }
+                      }
                     }
                   },
                   "required": [
@@ -11031,6 +11069,36 @@
                         "string",
                         "null"
                       ]
+                    },
+                    "thumbnail": {
+                      "type": [
+                        "object",
+                        "null"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "upload_id": {
+                          "type": "integer"
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "extension": {
+                          "type": "string"
+                        },
+                        "width": {
+                          "type": "integer"
+                        },
+                        "height": {
+                          "type": "integer"
+                        },
+                        "filesize": {
+                          "type": "integer"
+                        }
+                      }
                     }
                   },
                   "required": [
@@ -11358,6 +11426,36 @@
                         "string",
                         "null"
                       ]
+                    },
+                    "thumbnail": {
+                      "type": [
+                        "object",
+                        "null"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "upload_id": {
+                          "type": "integer"
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "extension": {
+                          "type": "string"
+                        },
+                        "width": {
+                          "type": "integer"
+                        },
+                        "height": {
+                          "type": "integer"
+                        },
+                        "filesize": {
+                          "type": "integer"
+                        }
+                      }
                     }
                   },
                   "required": [
@@ -12461,6 +12559,9 @@
                             "enable_quoting": {
                               "type": "boolean"
                             },
+                            "enable_smart_lists": {
+                              "type": "boolean"
+                            },
                             "enable_defer": {
                               "type": "boolean"
                             },
@@ -12574,6 +12675,7 @@
                             "dark_scheme_id",
                             "dynamic_favicon",
                             "enable_quoting",
+                            "enable_smart_lists",
                             "enable_defer",
                             "digest_after_minutes",
                             "automatically_unpin_topics",
@@ -13484,6 +13586,9 @@
                             "enable_quoting": {
                               "type": "boolean"
                             },
+                            "enable_smart_lists": {
+                              "type": "boolean"
+                            },
                             "enable_defer": {
                               "type": "boolean"
                             },
@@ -13597,6 +13702,7 @@
                             "dark_scheme_id",
                             "dynamic_favicon",
                             "enable_quoting",
+                            "enable_smart_lists",
                             "enable_defer",
                             "digest_after_minutes",
                             "automatically_unpin_topics",
@@ -14442,6 +14548,9 @@
                             "enable_quoting": {
                               "type": "boolean"
                             },
+                            "enable_smart_lists": {
+                              "type": "boolean"
+                            },
                             "enable_defer": {
                               "type": "boolean"
                             },
@@ -14555,6 +14664,7 @@
                             "dark_scheme_id",
                             "dynamic_favicon",
                             "enable_quoting",
+                            "enable_smart_lists",
                             "enable_defer",
                             "digest_after_minutes",
                             "automatically_unpin_topics",
