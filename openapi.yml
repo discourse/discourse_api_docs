@@ -5138,6 +5138,8 @@ paths:
                           type: boolean
                         position:
                           type: integer
+                        auto_action_type:
+                          type: boolean
                       required:
                       - id
                       - name_key
@@ -5149,6 +5151,7 @@ paths:
                       - enabled
                       - applies_to
                       - is_used
+                      - auto_action_type
                   topic_flag_types:
                     type: array
                     items:
@@ -5181,6 +5184,8 @@ paths:
                           type: boolean
                         position:
                           type: integer
+                        auto_action_type:
+                          type: boolean
                       required:
                       - id
                       - name_key
@@ -5192,6 +5197,7 @@ paths:
                       - enabled
                       - applies_to
                       - is_used
+                      - auto_action_type
                   can_create_tag:
                     type: boolean
                   can_tag_topics:
@@ -7581,6 +7587,26 @@ paths:
                     type:
                     - string
                     - 'null'
+                  thumbnail:
+                    type:
+                    - object
+                    - 'null'
+                    additionalProperties: false
+                    properties:
+                      id:
+                        type: integer
+                      upload_id:
+                        type: integer
+                      url:
+                        type: string
+                      extension:
+                        type: string
+                      width:
+                        type: integer
+                      height:
+                        type: integer
+                      filesize:
+                        type: integer
                 required:
                 - id
                 - url
@@ -7777,6 +7803,26 @@ paths:
                     type:
                     - string
                     - 'null'
+                  thumbnail:
+                    type:
+                    - object
+                    - 'null'
+                    additionalProperties: false
+                    properties:
+                      id:
+                        type: integer
+                      upload_id:
+                        type: integer
+                      url:
+                        type: string
+                      extension:
+                        type: string
+                      width:
+                        type: integer
+                      height:
+                        type: integer
+                      filesize:
+                        type: integer
                 required:
                 - id
                 - url
@@ -8075,6 +8121,26 @@ paths:
                     type:
                     - string
                     - 'null'
+                  thumbnail:
+                    type:
+                    - object
+                    - 'null'
+                    additionalProperties: false
+                    properties:
+                      id:
+                        type: integer
+                      upload_id:
+                        type: integer
+                      url:
+                        type: string
+                      extension:
+                        type: string
+                      width:
+                        type: integer
+                      height:
+                        type: integer
+                      filesize:
+                        type: integer
                 required:
                 - id
                 - url
@@ -8844,6 +8910,8 @@ paths:
                             type: boolean
                           enable_quoting:
                             type: boolean
+                          enable_smart_lists:
+                            type: boolean
                           enable_defer:
                             type: boolean
                           digest_after_minutes:
@@ -8923,6 +8991,7 @@ paths:
                         - dark_scheme_id
                         - dynamic_favicon
                         - enable_quoting
+                        - enable_smart_lists
                         - enable_defer
                         - digest_after_minutes
                         - automatically_unpin_topics
@@ -9578,6 +9647,8 @@ paths:
                             type: boolean
                           enable_quoting:
                             type: boolean
+                          enable_smart_lists:
+                            type: boolean
                           enable_defer:
                             type: boolean
                           digest_after_minutes:
@@ -9657,6 +9728,7 @@ paths:
                         - dark_scheme_id
                         - dynamic_favicon
                         - enable_quoting
+                        - enable_smart_lists
                         - enable_defer
                         - digest_after_minutes
                         - automatically_unpin_topics
@@ -10273,6 +10345,8 @@ paths:
                             type: boolean
                           enable_quoting:
                             type: boolean
+                          enable_smart_lists:
+                            type: boolean
                           enable_defer:
                             type: boolean
                           digest_after_minutes:
@@ -10352,6 +10426,7 @@ paths:
                         - dark_scheme_id
                         - dynamic_favicon
                         - enable_quoting
+                        - enable_smart_lists
                         - enable_defer
                         - digest_after_minutes
                         - automatically_unpin_topics
