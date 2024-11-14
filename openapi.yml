@@ -8947,6 +8947,10 @@ paths:
                             - 'null'
                           hide_profile_and_presence:
                             type: boolean
+                          hide_profile:
+                            type: boolean
+                          hide_presence:
+                            type: boolean
                           text_size:
                             type: string
                           text_size_seq:
@@ -9008,6 +9012,8 @@ paths:
                         - enable_allowed_pm_users
                         - homepage_id
                         - hide_profile_and_presence
+                        - hide_profile
+                        - hide_presence
                         - text_size
                         - text_size_seq
                         - title_count_mode
@@ -9684,6 +9690,10 @@ paths:
                             - 'null'
                           hide_profile_and_presence:
                             type: boolean
+                          hide_profile:
+                            type: boolean
+                          hide_presence:
+                            type: boolean
                           text_size:
                             type: string
                           text_size_seq:
@@ -9745,6 +9755,8 @@ paths:
                         - enable_allowed_pm_users
                         - homepage_id
                         - hide_profile_and_presence
+                        - hide_profile
+                        - hide_presence
                         - text_size
                         - text_size_seq
                         - title_count_mode
@@ -10382,6 +10394,10 @@ paths:
                             - 'null'
                           hide_profile_and_presence:
                             type: boolean
+                          hide_profile:
+                            type: boolean
+                          hide_presence:
+                            type: boolean
                           text_size:
                             type: string
                           text_size_seq:
@@ -10443,6 +10459,8 @@ paths:
                         - enable_allowed_pm_users
                         - homepage_id
                         - hide_profile_and_presence
+                        - hide_profile
+                        - hide_presence
                         - text_size
                         - text_size_seq
                         - title_count_mode
