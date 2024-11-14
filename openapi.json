@@ -9879,6 +9879,86 @@
         }
       }
     },
+    "/t/{id}/invite-group.json": {
+      "post": {
+        "summary": "Invite group to topic",
+        "tags": [
+          "Topics",
+          "Invites"
+        ],
+        "operationId": "inviteGroupToTopic",
+        "parameters": [
+          {
+            "name": "Api-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Api-Username",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "invites to a PM",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "group": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "name": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "group": {
+                    "type": "string",
+                    "description": "The name of the group to invite"
+                  },
+                  "should_notify": {
+                    "type": "boolean",
+                    "description": "Whether to notify the group, it defaults to true"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/t/{id}/bookmark.json": {
       "put": {
         "summary": "Bookmark topic",
