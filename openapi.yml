@@ -233,6 +233,8 @@ paths:
                           - 'null'
                         badge_type_id:
                           type: integer
+                        show_in_post_header:
+                          type: boolean
                       required:
                       - id
                       - name
@@ -256,6 +258,7 @@ paths:
                       - show_posts
                       - badge_type_id
                       - image_upload_id
+                      - show_in_post_header
                   badge_types:
                     type: array
                     items:
@@ -429,6 +432,8 @@ paths:
                         type: boolean
                       badge_type_id:
                         type: integer
+                      show_in_post_header:
+                        type: boolean
                     required:
                     - id
                     - name
@@ -452,6 +457,7 @@ paths:
                     - show_posts
                     - badge_type_id
                     - image_upload_id
+                    - show_in_post_header
                 required:
                 - badge_types
                 - badge
@@ -563,6 +569,8 @@ paths:
                         type: boolean
                       badge_type_id:
                         type: integer
+                      show_in_post_header:
+                        type: boolean
                     required:
                     - id
                     - name
@@ -586,6 +594,7 @@ paths:
                     - show_posts
                     - badge_type_id
                     - image_upload_id
+                    - show_in_post_header
                 required:
                 - badge_types
                 - badge
@@ -3342,6 +3351,9 @@ paths:
                     type:
                     - integer
                     - 'null'
+                  badges_granted:
+                    type: array
+                    items: {}
                   version:
                     type: integer
                   can_edit:
@@ -3811,6 +3823,9 @@ paths:
                         type:
                         - integer
                         - 'null'
+                      badges_granted:
+                        type: array
+                        items: {}
                       version:
                         type: integer
                       can_edit:
