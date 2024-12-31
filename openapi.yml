@@ -5494,6 +5494,10 @@ paths:
                     type: array
                   navigation_menu_site_top_tags:
                     type: array
+                  full_name_required_for_signup:
+                    type: boolean
+                  full_name_visible_in_signup:
+                    type: boolean
                 required:
                 - default_archetype
                 - notification_types
@@ -5525,6 +5529,8 @@ paths:
                 - archetypes
                 - user_fields
                 - auth_providers
+                - full_name_required_for_signup
+                - full_name_visible_in_signup
   "/site/basic-info.json":
     get:
       summary: Get site basic info
