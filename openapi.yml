@@ -7160,6 +7160,11 @@ paths:
         description: Defaults to `desc`, add `ascending=true` to sort asc
         schema:
           type: string
+      - name: per_page
+        in: query
+        description: Maximum number of topics returned, between 1-100
+        schema:
+          type: integer
       responses:
         '200':
           description: topic updated
@@ -7311,6 +7316,11 @@ paths:
         description: 'Enum: `all`, `yearly`, `quarterly`, `monthly`, `weekly`, `daily`'
         schema:
           type: string
+      - name: per_page
+        in: query
+        description: Maximum number of topics returned, between 1-100
+        schema:
+          type: integer
       responses:
         '200':
           description: response
@@ -11315,11 +11325,9 @@ paths:
                 - flags_received_count
                 - private_topics_count
                 - can_delete_all_posts
-                - can_be_deleted
                 - can_be_anonymized
                 - can_be_merged
                 - full_suspend_reason
-                - silence_reason
                 - primary_group_id
                 - badge_count
                 - warnings_received_count
