@@ -3604,13 +3604,17 @@
       "preview": null
     },
     {
-      "setting": "min_first_post_typing_time",
-      "description": "Minimum amount of time in milliseconds a user must type during first post, if threshold is not met post will automatically enter the needs approval queue. Set to 0 to disable (not recommended)",
-      "default": "3000",
-      "type": "fixnum",
-      "value": "3000",
-      "category": "spam",
-      "preview": null
+      "setting": "fast_typing_threshold",
+      "description": "Minimum amount of time in milliseconds a user must type during the first post, if the threshold is not met, the post will automatically enter the needs approval queue. Low is 1 second, standard is 3 seconds, high is 5 seconds.",
+      "default": "standard",
+      "type": "list",
+      "value": "standard",
+      "choices": [
+        "disabled",
+        "low",
+        "standard",
+        "high"
+      ]
     },
     {
       "setting": "auto_block_fast_typers_on_first_post",
