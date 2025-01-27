@@ -4626,6 +4626,9 @@
                     "post_type": {
                       "type": "integer"
                     },
+                    "posts_count": {
+                      "type": "integer"
+                    },
                     "updated_at": {
                       "type": "string"
                     },
@@ -4808,6 +4811,9 @@
                     "reviewable_score_pending_count": {
                       "type": "integer"
                     },
+                    "post_url": {
+                      "type": "string"
+                    },
                     "mentioned_users": {
                       "type": "array",
                       "items": {}
@@ -4822,6 +4828,7 @@
                     "cooked",
                     "post_number",
                     "post_type",
+                    "posts_count",
                     "updated_at",
                     "reply_count",
                     "reply_to_post_number",
@@ -4861,7 +4868,8 @@
                     "wiki",
                     "reviewable_id",
                     "reviewable_score_count",
-                    "reviewable_score_pending_count"
+                    "reviewable_score_pending_count",
+                    "post_url"
                   ]
                 }
               }
@@ -4974,6 +4982,9 @@
                       "type": "integer"
                     },
                     "post_type": {
+                      "type": "integer"
+                    },
+                    "posts_count": {
                       "type": "integer"
                     },
                     "updated_at": {
@@ -5157,6 +5168,9 @@
                     "reviewable_score_pending_count": {
                       "type": "integer"
                     },
+                    "post_url": {
+                      "type": "string"
+                    },
                     "mentioned_users": {
                       "type": "array",
                       "items": {}
@@ -5182,6 +5196,7 @@
                     "cooked",
                     "post_number",
                     "post_type",
+                    "posts_count",
                     "updated_at",
                     "reply_count",
                     "reply_to_post_number",
@@ -5220,7 +5235,8 @@
                     "wiki",
                     "reviewable_id",
                     "reviewable_score_count",
-                    "reviewable_score_pending_count"
+                    "reviewable_score_pending_count",
+                    "post_url"
                   ]
                 }
               }
@@ -5275,6 +5291,9 @@
                           "type": "integer"
                         },
                         "post_type": {
+                          "type": "integer"
+                        },
+                        "posts_count": {
                           "type": "integer"
                         },
                         "updated_at": {
@@ -5456,6 +5475,9 @@
                         "reviewable_score_pending_count": {
                           "type": "integer"
                         },
+                        "post_url": {
+                          "type": "string"
+                        },
                         "mentioned_users": {
                           "type": "array",
                           "items": {}
@@ -5481,6 +5503,7 @@
                         "cooked",
                         "post_number",
                         "post_type",
+                        "posts_count",
                         "updated_at",
                         "reply_count",
                         "reply_to_post_number",
@@ -5520,7 +5543,8 @@
                         "wiki",
                         "reviewable_id",
                         "reviewable_score_count",
-                        "reviewable_score_pending_count"
+                        "reviewable_score_pending_count",
+                        "post_url"
                       ]
                     }
                   },
@@ -5652,6 +5676,9 @@
                         "type": "integer"
                       },
                       "post_type": {
+                        "type": "integer"
+                      },
+                      "posts_count": {
                         "type": "integer"
                       },
                       "updated_at": {
@@ -5844,6 +5871,9 @@
                       },
                       "reviewable_score_pending_count": {
                         "type": "integer"
+                      },
+                      "post_url": {
+                        "type": "string"
                       }
                     },
                     "required": [
@@ -5855,6 +5885,7 @@
                       "cooked",
                       "post_number",
                       "post_type",
+                      "posts_count",
                       "updated_at",
                       "reply_count",
                       "reply_to_post_number",
@@ -5895,7 +5926,8 @@
                       "wiki",
                       "reviewable_id",
                       "reviewable_score_count",
-                      "reviewable_score_pending_count"
+                      "reviewable_score_pending_count",
+                      "post_url"
                     ]
                   }
                 }
@@ -6182,6 +6214,12 @@
                     },
                     "notice": {
                       "type": "object"
+                    },
+                    "notice_created_by_user": {
+                      "type": [
+                        "object",
+                        "null"
+                      ]
                     },
                     "reviewable_id": {
                       "type": [
@@ -15448,6 +15486,12 @@
                     "full_suspend_reason": {
                       "type": [
                         "string",
+                        "null"
+                      ]
+                    },
+                    "latest_export": {
+                      "type": [
+                        "object",
                         "null"
                       ]
                     },

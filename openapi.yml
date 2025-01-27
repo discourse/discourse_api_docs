@@ -3299,6 +3299,8 @@ paths:
                     type: integer
                   post_type:
                     type: integer
+                  posts_count:
+                    type: integer
                   updated_at:
                     type: string
                   reply_count:
@@ -3421,6 +3423,8 @@ paths:
                     type: integer
                   reviewable_score_pending_count:
                     type: integer
+                  post_url:
+                    type: string
                   mentioned_users:
                     type: array
                     items: {}
@@ -3433,6 +3437,7 @@ paths:
                 - cooked
                 - post_number
                 - post_type
+                - posts_count
                 - updated_at
                 - reply_count
                 - reply_to_post_number
@@ -3473,6 +3478,7 @@ paths:
                 - reviewable_id
                 - reviewable_score_count
                 - reviewable_score_pending_count
+                - post_url
       requestBody:
         content:
           application/json:
@@ -3558,6 +3564,8 @@ paths:
                   post_number:
                     type: integer
                   post_type:
+                    type: integer
+                  posts_count:
                     type: integer
                   updated_at:
                     type: string
@@ -3680,6 +3688,8 @@ paths:
                     type: integer
                   reviewable_score_pending_count:
                     type: integer
+                  post_url:
+                    type: string
                   mentioned_users:
                     type: array
                     items: {}
@@ -3699,6 +3709,7 @@ paths:
                 - cooked
                 - post_number
                 - post_type
+                - posts_count
                 - updated_at
                 - reply_count
                 - reply_to_post_number
@@ -3738,6 +3749,7 @@ paths:
                 - reviewable_id
                 - reviewable_score_count
                 - reviewable_score_pending_count
+                - post_url
     put:
       summary: Update a single post
       tags:
@@ -3774,6 +3786,8 @@ paths:
                       post_number:
                         type: integer
                       post_type:
+                        type: integer
+                      posts_count:
                         type: integer
                       updated_at:
                         type: string
@@ -3895,6 +3909,8 @@ paths:
                         type: integer
                       reviewable_score_pending_count:
                         type: integer
+                      post_url:
+                        type: string
                       mentioned_users:
                         type: array
                         items: {}
@@ -3914,6 +3930,7 @@ paths:
                     - cooked
                     - post_number
                     - post_type
+                    - posts_count
                     - updated_at
                     - reply_count
                     - reply_to_post_number
@@ -3954,6 +3971,7 @@ paths:
                     - reviewable_id
                     - reviewable_score_count
                     - reviewable_score_pending_count
+                    - post_url
                 required:
                 - post
       requestBody:
@@ -4041,6 +4059,8 @@ paths:
                     post_number:
                       type: integer
                     post_type:
+                      type: integer
+                    posts_count:
                       type: integer
                     updated_at:
                       type: string
@@ -4170,6 +4190,8 @@ paths:
                       type: integer
                     reviewable_score_pending_count:
                       type: integer
+                    post_url:
+                      type: string
                   required:
                   - id
                   - name
@@ -4179,6 +4201,7 @@ paths:
                   - cooked
                   - post_number
                   - post_type
+                  - posts_count
                   - updated_at
                   - reply_count
                   - reply_to_post_number
@@ -4220,6 +4243,7 @@ paths:
                   - reviewable_id
                   - reviewable_score_count
                   - reviewable_score_pending_count
+                  - post_url
   "/posts/{id}/locked.json":
     put:
       summary: Lock a post from being edited
@@ -4404,6 +4428,10 @@ paths:
                     type: boolean
                   notice:
                     type: object
+                  notice_created_by_user:
+                    type:
+                    - object
+                    - 'null'
                   reviewable_id:
                     type:
                     - integer
@@ -10977,6 +11005,10 @@ paths:
                   full_suspend_reason:
                     type:
                     - string
+                    - 'null'
+                  latest_export:
+                    type:
+                    - object
                     - 'null'
                   silence_reason:
                     type:
