@@ -3572,6 +3572,10 @@ paths:
                   type: string
                   description: Provide an external_id from a remote system to associate
                     a forum topic with that id.
+                auto_track:
+                  type: boolean
+                  description: If false, the user will not track the topic. By default,
+                    the user will track the topic.
               required:
               - raw
   "/posts/{id}.json":
