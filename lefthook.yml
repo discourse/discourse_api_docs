@@ -2,4 +2,4 @@ pre-commit:
   parallel: true
   commands:
     openapi-lint:
-      run: node tojson.js && npx @redocly/openapi-cli validate openapi.json
+      run: npm run tojson && npx @redocly/openapi-cli validate openapi.json
