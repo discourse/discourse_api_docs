@@ -76,7 +76,9 @@ jobs:
 
       - name: Convert to json
         working-directory: discourse_api_docs
-        run: yarn install && yarn node tojson.js
+        run: |
+          corepack enable
+          yarn install && yarn node tojson.js
 
       - name: Create PR
         uses: peter-evans/create-pull-request@v4.0.4
