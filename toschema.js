@@ -1,4 +1,3 @@
-var gen = require('json-schema-generator');
 var yaml = require('yamljs');
 var fs = require('fs');
 var inputFile = '';
@@ -10,6 +9,47 @@ if (process.argv.length > 3) {
 } else {
   console.log('Please specify input and output files!');
   console.log('node schema.js input.json output.yml');
+}
+
+// Simple JSON schema generator replacement
+function generateSchema(obj) {
+  if (obj === null) {
+    return { type: "null" };
+  }
+
+  if (Array.isArray(obj)) {
+    if (obj.length === 0) {
+      return { type: "array", items: {} };
+    }
+    return {
+      type: "array",
+      items: generateSchema(obj[0])
+    };
+  }
+
+  if (typeof obj === "object") {
+    var schema = { type: "object", properties: {} };
+    for (var key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        schema.properties[key] = generateSchema(obj[key]);
+      }
+    }
+    return schema;
+  }
+
+  if (typeof obj === "string") {
+    return { type: "string" };
+  }
+
+  if (typeof obj === "number") {
+    return { type: "number" };
+  }
+
+  if (typeof obj === "boolean") {
+    return { type: "boolean" };
+  }
+
+  return { type: "string" }; // fallback
 }
 
 var addTypeIfEmptyObject = function(obj) {
@@ -28,7 +68,7 @@ var addTypeIfEmptyObject = function(obj) {
 fs.readFile(inputFile, 'utf8', function(err, data) {
   if (err) throw err;
   var json = JSON.parse(data);
-  var schema = gen(json);
+  var schema = generateSchema(json);
   delete schema.required;
 
 
