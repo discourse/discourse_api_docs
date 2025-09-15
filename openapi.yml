@@ -655,6 +655,16 @@ paths:
                         type: string
                       text_color:
                         type: string
+                      style_type:
+                        type: string
+                      emoji:
+                        type:
+                        - string
+                        - 'null'
+                      icon:
+                        type:
+                        - string
+                        - 'null'
                       slug:
                         type: string
                       topic_count:
@@ -832,6 +842,9 @@ paths:
                     - name
                     - color
                     - text_color
+                    - style_type
+                    - emoji
+                    - icon
                     - slug
                     - topic_count
                     - post_count
@@ -894,6 +907,12 @@ paths:
                 text_color:
                   type: string
                   example: f0fcfd
+                style_type:
+                  type: string
+                emoji:
+                  type: string
+                icon:
+                  type: string
                 parent_category_id:
                   type: integer
                 allow_badges:
@@ -983,6 +1002,16 @@ paths:
                               type: string
                             text_color:
                               type: string
+                            style_type:
+                              type: string
+                            emoji:
+                              type:
+                              - string
+                              - 'null'
+                            icon:
+                              type:
+                              - string
+                              - 'null'
                             slug:
                               type: string
                             topic_count:
@@ -1092,6 +1121,9 @@ paths:
                           - name
                           - color
                           - text_color
+                          - style_type
+                          - emoji
+                          - icon
                           - slug
                           - topic_count
                           - post_count
@@ -1167,6 +1199,16 @@ paths:
                         type: string
                       text_color:
                         type: string
+                      style_type:
+                        type: string
+                      emoji:
+                        type:
+                        - string
+                        - 'null'
+                      icon:
+                        type:
+                        - string
+                        - 'null'
                       slug:
                         type: string
                       topic_count:
@@ -1408,6 +1450,12 @@ paths:
                 text_color:
                   type: string
                   example: f0fcfd
+                style_type:
+                  type: string
+                emoji:
+                  type: string
+                icon:
+                  type: string
                 parent_category_id:
                   type: integer
                 allow_badges:
@@ -1677,6 +1725,16 @@ paths:
                         type: string
                       text_color:
                         type: string
+                      style_type:
+                        type: string
+                      emoji:
+                        type:
+                        - string
+                        - 'null'
+                      icon:
+                        type:
+                        - string
+                        - 'null'
                       slug:
                         type: string
                       topic_count:
@@ -1854,6 +1912,9 @@ paths:
                     - name
                     - color
                     - text_color
+                    - style_type
+                    - emoji
+                    - icon
                     - slug
                     - topic_count
                     - post_count
@@ -2123,102 +2184,14 @@ paths:
                     example: OK
                 required:
                 - success
-  "/groups/{id}.json":
-    put:
-      summary: Update a group
-      tags:
-      - Groups
-      operationId: updateGroup
-      parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          type: integer
-      responses:
-        '200':
-          description: success response
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  success:
-                    type: string
-                    example: OK
-      requestBody:
-        content:
-          application/json:
-            schema:
-              additionalProperties: false
-              properties:
-                group:
-                  type: object
-                  additionalProperties: false
-                  properties:
-                    name:
-                      type: string
-                    full_name:
-                      type: string
-                    bio_raw:
-                      type: string
-                      description: About Group
-                    usernames:
-                      type: string
-                      description: comma,separated
-                    owner_usernames:
-                      type: string
-                      description: comma,separated
-                    automatic_membership_email_domains:
-                      type: string
-                      description: pipe|separated
-                    visibility_level:
-                      type: integer
-                    primary_group:
-                      type: boolean
-                    flair_icon:
-                      type: string
-                    flair_upload_id:
-                      type: integer
-                    flair_bg_color:
-                      type: string
-                    public_admission:
-                      type: boolean
-                    public_exit:
-                      type: boolean
-                    default_notification_level:
-                      type: integer
-                    muted_category_ids:
-                      type: array
-                      items:
-                        type: integer
-                    regular_category_ids:
-                      type: array
-                      items:
-                        type: integer
-                    watching_category_ids:
-                      type: array
-                      items:
-                        type: integer
-                    tracking_category_ids:
-                      type: array
-                      items:
-                        type: integer
-                    watching_first_post_category_ids:
-                      type: array
-                      items:
-                        type: integer
-                  required:
-                  - name
-              required:
-              - group
+  "/groups/{name}.json":
     get:
       summary: Get a group
       tags:
       - Groups
       operationId: getGroup
       parameters:
-      - name: id
+      - name: name
         in: path
         example: name
         description: Use group name instead of id
@@ -2505,14 +2478,397 @@ paths:
                 required:
                 - group
                 - extras
-  "/groups/{id}/members.json":
+  "/groups/{id}.json":
+    put:
+      summary: Update a group
+      tags:
+      - Groups
+      operationId: updateGroup
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: success response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: string
+                    example: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              additionalProperties: false
+              properties:
+                group:
+                  type: object
+                  additionalProperties: false
+                  properties:
+                    name:
+                      type: string
+                    full_name:
+                      type: string
+                    bio_raw:
+                      type: string
+                      description: About Group
+                    usernames:
+                      type: string
+                      description: comma,separated
+                    owner_usernames:
+                      type: string
+                      description: comma,separated
+                    automatic_membership_email_domains:
+                      type: string
+                      description: pipe|separated
+                    visibility_level:
+                      type: integer
+                    primary_group:
+                      type: boolean
+                    flair_icon:
+                      type: string
+                    flair_upload_id:
+                      type: integer
+                    flair_bg_color:
+                      type: string
+                    public_admission:
+                      type: boolean
+                    public_exit:
+                      type: boolean
+                    default_notification_level:
+                      type: integer
+                    muted_category_ids:
+                      type: array
+                      items:
+                        type: integer
+                    regular_category_ids:
+                      type: array
+                      items:
+                        type: integer
+                    watching_category_ids:
+                      type: array
+                      items:
+                        type: integer
+                    tracking_category_ids:
+                      type: array
+                      items:
+                        type: integer
+                    watching_first_post_category_ids:
+                      type: array
+                      items:
+                        type: integer
+                  required:
+                  - name
+              required:
+              - group
+  "/groups/by-id/{id}.json":
+    get:
+      summary: Get a group by id
+      tags:
+      - Groups
+      operationId: getGroup
+      parameters:
+      - name: id
+        in: path
+        example: name
+        description: Use group name instead of id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: success response (by id)
+          content:
+            application/json:
+              schema:
+                additionalProperties: false
+                properties:
+                  group:
+                    type: object
+                    additionalProperties: false
+                    properties:
+                      id:
+                        type: integer
+                      automatic:
+                        type: boolean
+                      name:
+                        type: string
+                      user_count:
+                        type: integer
+                      mentionable_level:
+                        type: integer
+                      messageable_level:
+                        type: integer
+                      visibility_level:
+                        type: integer
+                      primary_group:
+                        type: boolean
+                      title:
+                        type:
+                        - string
+                        - 'null'
+                      grant_trust_level:
+                        type:
+                        - string
+                        - 'null'
+                      incoming_email:
+                        type:
+                        - string
+                        - 'null'
+                      has_messages:
+                        type: boolean
+                      flair_url:
+                        type:
+                        - string
+                        - 'null'
+                      flair_bg_color:
+                        type:
+                        - string
+                        - 'null'
+                      flair_color:
+                        type:
+                        - string
+                        - 'null'
+                      bio_raw:
+                        type:
+                        - string
+                        - 'null'
+                      bio_cooked:
+                        type:
+                        - string
+                        - 'null'
+                      bio_excerpt:
+                        type:
+                        - string
+                        - 'null'
+                      public_admission:
+                        type: boolean
+                      public_exit:
+                        type: boolean
+                      allow_membership_requests:
+                        type: boolean
+                      full_name:
+                        type:
+                        - string
+                        - 'null'
+                      default_notification_level:
+                        type: integer
+                      membership_request_template:
+                        type:
+                        - string
+                        - 'null'
+                      is_group_user:
+                        type: boolean
+                      members_visibility_level:
+                        type: integer
+                      can_see_members:
+                        type: boolean
+                      can_admin_group:
+                        type: boolean
+                      can_edit_group:
+                        type: boolean
+                      publish_read_state:
+                        type: boolean
+                      is_group_owner_display:
+                        type: boolean
+                      mentionable:
+                        type: boolean
+                      messageable:
+                        type: boolean
+                      automatic_membership_email_domains:
+                        type:
+                        - string
+                        - 'null'
+                      smtp_updated_at:
+                        type:
+                        - string
+                        - 'null'
+                      smtp_updated_by:
+                        type:
+                        - object
+                        - 'null'
+                      smtp_enabled:
+                        type: boolean
+                      smtp_server:
+                        type:
+                        - string
+                        - 'null'
+                      smtp_port:
+                        type:
+                        - string
+                        - 'null'
+                      smtp_ssl_mode:
+                        type:
+                        - integer
+                        - 'null'
+                      imap_enabled:
+                        type: boolean
+                      imap_updated_at:
+                        type:
+                        - string
+                        - 'null'
+                      imap_updated_by:
+                        type:
+                        - object
+                        - 'null'
+                      imap_server:
+                        type:
+                        - string
+                        - 'null'
+                      imap_port:
+                        type:
+                        - string
+                        - 'null'
+                      imap_ssl:
+                        type:
+                        - string
+                        - 'null'
+                      imap_mailbox_name:
+                        type: string
+                      imap_mailboxes:
+                        type: array
+                        items: {}
+                      email_username:
+                        type:
+                        - string
+                        - 'null'
+                      email_from_alias:
+                        type:
+                        - string
+                        - 'null'
+                      email_password:
+                        type:
+                        - string
+                        - 'null'
+                      imap_last_error:
+                        type:
+                        - string
+                        - 'null'
+                      imap_old_emails:
+                        type:
+                        - string
+                        - 'null'
+                      imap_new_emails:
+                        type:
+                        - string
+                        - 'null'
+                      message_count:
+                        type: integer
+                      allow_unknown_sender_topic_replies:
+                        type: boolean
+                      associated_group_ids:
+                        type: array
+                        items: {}
+                      watching_category_ids:
+                        type: array
+                        items: {}
+                      tracking_category_ids:
+                        type: array
+                        items: {}
+                      watching_first_post_category_ids:
+                        type: array
+                        items: {}
+                      regular_category_ids:
+                        type: array
+                        items: {}
+                      muted_category_ids:
+                        type: array
+                        items: {}
+                      watching_tags:
+                        type: array
+                        items: {}
+                      watching_first_post_tags:
+                        type: array
+                        items: {}
+                      tracking_tags:
+                        type: array
+                        items: {}
+                      regular_tags:
+                        type: array
+                        items: {}
+                      muted_tags:
+                        type: array
+                        items: {}
+                    required:
+                    - id
+                    - automatic
+                    - name
+                    - user_count
+                    - mentionable_level
+                    - messageable_level
+                    - visibility_level
+                    - primary_group
+                    - title
+                    - grant_trust_level
+                    - incoming_email
+                    - has_messages
+                    - flair_url
+                    - flair_bg_color
+                    - flair_color
+                    - bio_raw
+                    - bio_cooked
+                    - bio_excerpt
+                    - public_admission
+                    - public_exit
+                    - allow_membership_requests
+                    - full_name
+                    - default_notification_level
+                    - membership_request_template
+                    - is_group_user
+                    - members_visibility_level
+                    - can_see_members
+                    - can_admin_group
+                    - publish_read_state
+                    - is_group_owner_display
+                    - mentionable
+                    - messageable
+                    - automatic_membership_email_domains
+                    - smtp_server
+                    - smtp_port
+                    - smtp_ssl_mode
+                    - imap_server
+                    - imap_port
+                    - imap_ssl
+                    - imap_mailbox_name
+                    - imap_mailboxes
+                    - email_username
+                    - email_password
+                    - imap_last_error
+                    - imap_old_emails
+                    - imap_new_emails
+                    - message_count
+                    - allow_unknown_sender_topic_replies
+                    - watching_category_ids
+                    - tracking_category_ids
+                    - watching_first_post_category_ids
+                    - regular_category_ids
+                    - muted_category_ids
+                  extras:
+                    type: object
+                    additionalProperties: false
+                    properties:
+                      visible_group_names:
+                        type: array
+                        items: {}
+                    required:
+                    - visible_group_names
+                required:
+                - group
+                - extras
+  "/groups/{name}/members.json":
     get:
       summary: List group members
       tags:
       - Groups
       operationId: listGroupMembers
       parameters:
-      - name: id
+      - name: name
         in: path
         example: name
         description: Use group name instead of id
@@ -2621,6 +2977,7 @@ paths:
                 - members
                 - owners
                 - meta
+  "/groups/{id}/members.json":
     put:
       summary: Add group members
       tags:
@@ -3150,39 +3507,32 @@ paths:
       - Posts
       operationId: listPosts
       parameters:
-      - name: Api-Key
-        in: header
-        required: true
-        schema:
-          type: string
-      - name: Api-Username
-        in: header
-        required: true
-        schema:
-          type: string
       - name: before
         in: query
-        description: Load posts with an id lower than this value. Useful for pagination.
         required: false
+        description: Load posts with an id lower than this value. Useful for pagination.
         schema:
-          type: string
+          type: integer
       responses:
         '200':
           description: latest posts
           content:
             application/json:
               schema:
-                type: object
+                additionalProperties: false
                 properties:
                   latest_posts:
                     type: array
                     items:
-                      type: object
+                    - type: object
+                      additionalProperties: false
                       properties:
                         id:
                           type: integer
                         name:
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                         username:
                           type: string
                         avatar_template:
@@ -3194,6 +3544,8 @@ paths:
                         post_number:
                           type: integer
                         post_type:
+                          type: integer
+                        posts_count:
                           type: integer
                         updated_at:
                           type: string
@@ -3226,7 +3578,9 @@ paths:
                         category_id:
                           type: integer
                         display_username:
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                         primary_group_name:
                           type:
                           - string
@@ -3249,8 +3603,11 @@ paths:
                           - 'null'
                         flair_group_id:
                           type:
-                          - integer
+                          - string
                           - 'null'
+                        badges_granted:
+                          type: array
+                          items: []
                         version:
                           type: integer
                         can_edit:
@@ -3267,17 +3624,23 @@ paths:
                           type:
                           - string
                           - 'null'
+                        bookmarked:
+                          type: boolean
                         raw:
                           type: string
                         actions_summary:
                           type: array
                           items:
-                            type: object
+                          - type: object
+                            additionalProperties: false
                             properties:
                               id:
                                 type: integer
                               can_act:
                                 type: boolean
+                            required:
+                            - id
+                            - can_act
                         moderator:
                           type: boolean
                         admin:
@@ -3304,14 +3667,95 @@ paths:
                           type: boolean
                         wiki:
                           type: boolean
+                        excerpt:
+                          type: string
+                        truncated:
+                          type: boolean
                         reviewable_id:
                           type:
-                          - integer
+                          - string
                           - 'null'
                         reviewable_score_count:
                           type: integer
                         reviewable_score_pending_count:
                           type: integer
+                        post_url:
+                          type: string
+                        can_accept_answer:
+                          type: boolean
+                        can_unaccept_answer:
+                          type: boolean
+                        accepted_answer:
+                          type: boolean
+                        topic_accepted_answer:
+                          type:
+                          - string
+                          - 'null'
+                      required:
+                      - id
+                      - name
+                      - username
+                      - avatar_template
+                      - created_at
+                      - cooked
+                      - post_number
+                      - post_type
+                      - posts_count
+                      - updated_at
+                      - reply_count
+                      - reply_to_post_number
+                      - quote_count
+                      - incoming_link_count
+                      - reads
+                      - readers_count
+                      - score
+                      - yours
+                      - topic_id
+                      - topic_slug
+                      - topic_title
+                      - topic_html_title
+                      - category_id
+                      - display_username
+                      - primary_group_name
+                      - flair_name
+                      - flair_url
+                      - flair_bg_color
+                      - flair_color
+                      - flair_group_id
+                      - badges_granted
+                      - version
+                      - can_edit
+                      - can_delete
+                      - can_recover
+                      - can_see_hidden_post
+                      - can_wiki
+                      - user_title
+                      - bookmarked
+                      - raw
+                      - actions_summary
+                      - moderator
+                      - admin
+                      - staff
+                      - user_id
+                      - hidden
+                      - trust_level
+                      - deleted_at
+                      - user_deleted
+                      - edit_reason
+                      - can_view_edit_history
+                      - wiki
+                      - excerpt
+                      - truncated
+                      - reviewable_id
+                      - reviewable_score_count
+                      - reviewable_score_pending_count
+                      - post_url
+                      - can_accept_answer
+                      - can_unaccept_answer
+                      - accepted_answer
+                      - topic_accepted_answer
+                required:
+                - latest_posts
     post:
       summary: Creates a new topic, a new post, or a private message
       tags:
@@ -3474,6 +3918,9 @@ paths:
                     type: integer
                   post_url:
                     type: string
+                  post_localizations:
+                    type: array
+                    items: {}
                   mentioned_users:
                     type: array
                     items: {}
@@ -3960,6 +4407,9 @@ paths:
                         type: integer
                       post_url:
                         type: string
+                      post_localizations:
+                        type: array
+                        items: {}
                       mentioned_users:
                         type: array
                         items: {}
@@ -4181,6 +4631,8 @@ paths:
                       type: object
                       additionalProperties: false
                       properties:
+                        id:
+                          type: integer
                         username:
                           type: string
                         name:
@@ -5176,12 +5628,16 @@ paths:
                           type:
                           - string
                           - 'null'
+                        automatic:
+                          type:
+                          - boolean
                       required:
                       - id
                       - name
                       - flair_url
                       - flair_bg_color
                       - flair_color
+                      - automatic
                   filters:
                     type: array
                     items: {}
@@ -5232,6 +5688,8 @@ paths:
                           type: integer
                         auto_action_type:
                           type: boolean
+                        system:
+                          type: boolean
                       required:
                       - id
                       - name_key
@@ -5277,6 +5735,8 @@ paths:
                         position:
                           type: integer
                         auto_action_type:
+                          type: boolean
+                        system:
                           type: boolean
                       required:
                       - id
@@ -5324,6 +5784,10 @@ paths:
                           type:
                           - integer
                           - 'null'
+                        dark_color_scheme_id:
+                          type:
+                          - integer
+                          - 'null'
                       required:
                       - theme_id
                       - name
@@ -5341,10 +5805,21 @@ paths:
                           type: string
                         is_dark:
                           type: boolean
+                        theme_id:
+                          type:
+                          - integer
+                          - 'null'
+                        colors:
+                          type: array
                       required:
                       - id
                       - name
                       - is_dark
+                      - colors
+                  default_light_color_scheme:
+                    type:
+                    - object
+                    - 'null'
                   default_dark_color_scheme:
                     type:
                     - object
@@ -5387,6 +5862,16 @@ paths:
                           type: string
                         text_color:
                           type: string
+                        style_type:
+                          type: string
+                        emoji:
+                          type:
+                          - string
+                          - 'null'
+                        icon:
+                          type:
+                          - string
+                          - 'null'
                         slug:
                           type: string
                         topic_count:
@@ -5597,6 +6082,7 @@ paths:
                 - topic_featured_link_allowed_category_ids
                 - user_themes
                 - user_color_schemes
+                - default_light_color_scheme
                 - default_dark_color_scheme
                 - censored_regexp
                 - custom_emoji_translation
@@ -8545,8 +9031,8 @@ paths:
                   type: string
                 active:
                   type: boolean
-                  description: This param requires an api key in the request header
-                    or it will be ignored
+                  description: This param requires an admin api key in the request
+                    header or it will be ignored
                 approved:
                   type: boolean
                 user_fields:
@@ -9074,6 +9560,8 @@ paths:
                             type: boolean
                           enable_smart_lists:
                             type: boolean
+                          enable_markdown_monospace_font:
+                            type: boolean
                           enable_defer:
                             type: boolean
                           digest_after_minutes:
@@ -9145,6 +9633,10 @@ paths:
                             - 'null'
                           topics_unread_when_closed:
                             type: boolean
+                          composition_mode:
+                            type: integer
+                          interface_color_mode:
+                            type: integer
                         required:
                         - user_id
                         - mailing_list_mode
@@ -9158,6 +9650,7 @@ paths:
                         - dynamic_favicon
                         - enable_quoting
                         - enable_smart_lists
+                        - enable_markdown_monospace_font
                         - enable_defer
                         - digest_after_minutes
                         - automatically_unpin_topics
@@ -9182,6 +9675,7 @@ paths:
                         - timezone
                         - skip_new_user_tips
                         - topics_unread_when_closed
+                        - interface_color_mode
                     required:
                     - id
                     - username
@@ -9817,6 +10311,8 @@ paths:
                             type: boolean
                           enable_smart_lists:
                             type: boolean
+                          enable_markdown_monospace_font:
+                            type: boolean
                           enable_defer:
                             type: boolean
                           digest_after_minutes:
@@ -9888,6 +10384,10 @@ paths:
                             - 'null'
                           topics_unread_when_closed:
                             type: boolean
+                          composition_mode:
+                            type: integer
+                          interface_color_mode:
+                            type: integer
                         required:
                         - user_id
                         - mailing_list_mode
@@ -9901,6 +10401,7 @@ paths:
                         - dynamic_favicon
                         - enable_quoting
                         - enable_smart_lists
+                        - enable_markdown_monospace_font
                         - enable_defer
                         - digest_after_minutes
                         - automatically_unpin_topics
@@ -9925,6 +10426,7 @@ paths:
                         - timezone
                         - skip_new_user_tips
                         - topics_unread_when_closed
+                        - interface_color_mode
                     required:
                     - id
                     - username
@@ -10521,6 +11023,8 @@ paths:
                             type: boolean
                           enable_smart_lists:
                             type: boolean
+                          enable_markdown_monospace_font:
+                            type: boolean
                           enable_defer:
                             type: boolean
                           digest_after_minutes:
@@ -10592,6 +11096,10 @@ paths:
                             - 'null'
                           topics_unread_when_closed:
                             type: boolean
+                          composition_mode:
+                            type: integer
+                          interface_color_mode:
+                            type: integer
                         required:
                         - user_id
                         - mailing_list_mode
@@ -10605,6 +11113,7 @@ paths:
                         - dynamic_favicon
                         - enable_quoting
                         - enable_smart_lists
+                        - enable_markdown_monospace_font
                         - enable_defer
                         - digest_after_minutes
                         - automatically_unpin_topics
@@ -10629,6 +11138,7 @@ paths:
                         - timezone
                         - skip_new_user_tips
                         - topics_unread_when_closed
+                        - interface_color_mode
                     required:
                     - id
                     - username
@@ -11366,6 +11876,8 @@ paths:
                       - publish_read_state
                   external_ids:
                     type: object
+                  include_ip:
+                    type: boolean
                 required:
                 - id
                 - username
@@ -11424,6 +11936,7 @@ paths:
                 - silenced_by
                 - groups
                 - external_ids
+                - include_ip
     delete:
       summary: Delete a user
       tags:
@@ -11756,13 +12269,168 @@ paths:
                 required:
                 - gravatar_upload_id
                 - gravatar_avatar_template
-  "/admin/users/list/{flag}.json":
+  "/admin/users.json":
     get:
-      summary: Get a list of users
+      summary: List users
       tags:
       - Users
       - Admin
       operationId: adminListUsers
+      parameters:
+      - name: order
+        in: query
+        schema:
+          type: string
+          enum:
+          - created
+          - last_emailed
+          - seen
+          - username
+          - email
+          - trust_level
+          - days_visited
+          - posts_read
+          - topics_viewed
+          - posts
+          - read_time
+      - name: asc
+        in: query
+        schema:
+          type: string
+          enum:
+          - 'true'
+      - name: page
+        in: query
+        schema:
+          type: integer
+      - name: show_emails
+        in: query
+        description: Include user email addresses in response. These requests will
+          be logged in the staff action logs.
+        schema:
+          type: boolean
+      - name: stats
+        in: query
+        description: Include user stats information
+        schema:
+          type: boolean
+      - name: email
+        in: query
+        description: Filter to the user with this email address
+        schema:
+          type: string
+      - name: ip
+        in: query
+        description: Filter to users with this IP address
+        schema:
+          type: string
+      responses:
+        '200':
+          description: users response
+          content:
+            application/json:
+              schema:
+                type: array
+                minItems: 1
+                uniqueItems: true
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    username:
+                      type: string
+                    name:
+                      type:
+                      - string
+                      - 'null'
+                    avatar_template:
+                      type: string
+                    email:
+                      type: string
+                    secondary_emails:
+                      type: array
+                      items: {}
+                    active:
+                      type: boolean
+                    admin:
+                      type: boolean
+                    moderator:
+                      type: boolean
+                    last_seen_at:
+                      type:
+                      - string
+                      - 'null'
+                    last_emailed_at:
+                      type:
+                      - string
+                      - 'null'
+                    created_at:
+                      type: string
+                    last_seen_age:
+                      type:
+                      - number
+                      - 'null'
+                    last_emailed_age:
+                      type:
+                      - number
+                      - 'null'
+                    created_at_age:
+                      type:
+                      - number
+                      - 'null'
+                    trust_level:
+                      type: integer
+                    manual_locked_trust_level:
+                      type:
+                      - string
+                      - 'null'
+                    title:
+                      type:
+                      - string
+                      - 'null'
+                    time_read:
+                      type: integer
+                    staged:
+                      type: boolean
+                    days_visited:
+                      type: integer
+                    posts_read_count:
+                      type: integer
+                    topics_entered:
+                      type: integer
+                    post_count:
+                      type: integer
+                  required:
+                  - id
+                  - username
+                  - name
+                  - avatar_template
+                  - active
+                  - admin
+                  - moderator
+                  - last_seen_at
+                  - last_emailed_at
+                  - created_at
+                  - last_seen_age
+                  - last_emailed_age
+                  - created_at_age
+                  - trust_level
+                  - manual_locked_trust_level
+                  - title
+                  - time_read
+                  - staged
+                  - days_visited
+                  - posts_read_count
+                  - topics_entered
+                  - post_count
+  "/admin/users/list/{flag}.json":
+    get:
+      summary: List users by flag
+      tags:
+      - Users
+      - Admin
+      operationId: adminListUsersFlag
       parameters:
       - name: flag
         in: path
