@@ -3441,13 +3441,16 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
+                  "additionalProperties": false,
                   "properties": {
                     "success": {
                       "type": "string",
                       "example": "OK"
                     }
-                  }
+                  },
+                  "required": [
+                    "success"
+                  ]
                 }
               }
             }
