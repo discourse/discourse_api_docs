@@ -80,7 +80,7 @@ jobs:
           npm install && npm run tojson
 
       - name: Create PR
-        uses: peter-evans/create-pull-request@v4.0.4
+        uses: peter-evans/create-pull-request@v5
         with:
           path: discourse_api_docs
           add-paths: "openapi.yml,openapi.json"
