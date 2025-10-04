@@ -11559,6 +11559,8 @@ paths:
                     type: boolean
                   can_deactivate:
                     type: boolean
+                  can_change_trust_level:
+                    type: boolean
                   ip_address:
                     type: string
                   registration_ip_address:
