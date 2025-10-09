@@ -3,7 +3,7 @@ name: Update Docs
 on:
   workflow_dispatch:
   schedule:
-    - cron:  '0 0 * * *'
+    - cron: "0 0 * * *"
 
 jobs:
   update-docs:
@@ -79,11 +79,18 @@ jobs:
         run: |
           npm install && npm run tojson
 
+      - name: Generate Bruno collection
+        working-directory: discourse_api_docs
+        run: |
+          if [[ -n $(git status --porcelain) ]]; then
+              npm install && npm run tobruno
+          fi
+
       - name: Create PR
         uses: peter-evans/create-pull-request@v5
         with:
           path: discourse_api_docs
-          add-paths: "openapi.yml,openapi.json"
+          add-paths: "openapi.yml,openapi.json,bruno-collection.json"
           branch: update-documentation
           commit-message: "Update Documentation with core changes"
           title: "Update documentation"
