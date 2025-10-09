@@ -1,0 +1,4249 @@
+{
+  "name": "Discourse API Documentation",
+  "uid": "YVIIyCskzxLJ3rCktME3d",
+  "version": "1",
+  "items": [
+    {
+      "uid": "Ek3k6vQnl7X3DUjHPWewH",
+      "name": "Backups",
+      "type": "folder",
+      "root": {
+        "request": {
+          "auth": {
+            "mode": "inherit",
+            "basic": null,
+            "bearer": null,
+            "digest": null,
+            "apikey": null,
+            "oauth2": null
+          }
+        },
+        "meta": {
+          "name": "Backups"
+        }
+      },
+      "items": [
+        {
+          "uid": "Q38ec68iqz8oV9a7mXaAv",
+          "name": "List backups",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/admin/backups.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 1
+        },
+        {
+          "uid": "u8x2iFNFa5bTYowpKFU5r",
+          "name": "Create backup",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/admin/backups.json",
+            "method": "POST",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 2
+        },
+        {
+          "uid": "kLV6G2AR5QAfd8ZNl38Jp",
+          "name": "Send download backup email",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/admin/backups/:filename",
+            "method": "PUT",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "NvOxrOxiAWtAp2cTCqm8Y",
+                "name": "filename",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 3
+        },
+        {
+          "uid": "rbPVKy2papGnFag7pYJTX",
+          "name": "Download backup",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/admin/backups/:filename",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "8QA5pW3KXFgBhSIJVZzfT",
+                "name": "filename",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              },
+              {
+                "uid": "M9ttXsVl2ZtPyB4bKMBtK",
+                "name": "token",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "query"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 4
+        }
+      ]
+    },
+    {
+      "uid": "isotZPGh9k60Uhx8RzBrZ",
+      "name": "Badges",
+      "type": "folder",
+      "root": {
+        "request": {
+          "auth": {
+            "mode": "inherit",
+            "basic": null,
+            "bearer": null,
+            "digest": null,
+            "apikey": null,
+            "oauth2": null
+          }
+        },
+        "meta": {
+          "name": "Badges"
+        }
+      },
+      "items": [
+        {
+          "uid": "PMNxDjFF9nktpFD53uDTC",
+          "name": "List badges",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/admin/badges.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 1
+        },
+        {
+          "uid": "cThZpu3TXmIkmNcjXfJGY",
+          "name": "Create badge",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/admin/badges.json",
+            "method": "POST",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 2
+        },
+        {
+          "uid": "w96aHS2l7XWpnyglMQgN6",
+          "name": "Update badge",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/admin/badges/:id.json",
+            "method": "PUT",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "nLu1coziMDeCyJNMbWZrp",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 3
+        },
+        {
+          "uid": "L3iGgRu3E4HwJyBgsa9Gw",
+          "name": "Delete badge",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/admin/badges/:id.json",
+            "method": "DELETE",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "J0WfOETbgxE7Mu2kb001a",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 4
+        },
+        {
+          "uid": "ZwHh36uXwisifTDePDSYG",
+          "name": "List badges for a user",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/user-badges/:username.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "T5T5X50u2yts9lWPiCi5m",
+                "name": "username",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 5
+        }
+      ]
+    },
+    {
+      "uid": "9pXEvVZVGetGKE1jBDefz",
+      "name": "Categories",
+      "type": "folder",
+      "root": {
+        "request": {
+          "auth": {
+            "mode": "inherit",
+            "basic": null,
+            "bearer": null,
+            "digest": null,
+            "apikey": null,
+            "oauth2": null
+          }
+        },
+        "meta": {
+          "name": "Categories"
+        }
+      },
+      "items": [
+        {
+          "uid": "DPlHDg1Zwz0MYH1d48MAa",
+          "name": "Creates a category",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/categories.json",
+            "method": "POST",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 1
+        },
+        {
+          "uid": "sCAT0ZacYuwqOWPs2cije",
+          "name": "Retrieves a list of categories",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/categories.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "ak3a3A6ww0gMWPfjTkr5d",
+                "name": "include_subcategories",
+                "value": "",
+                "description": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 2
+        },
+        {
+          "uid": "1kCLV10MynTZCKuWiykaz",
+          "name": "Updates a category",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/categories/:id.json",
+            "method": "PUT",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "1cWKCP9vRFxI5TwsbEUbA",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 3
+        },
+        {
+          "uid": "lsz5HC5KCcGcVjr5zGoXV",
+          "name": "List topics",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/c/:slug/:id.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "hwKfO2WVnp9D0tvb0GMNH",
+                "name": "slug",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              },
+              {
+                "uid": "0qbrXIxPzT9Ee4Eafq5rs",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 4
+        },
+        {
+          "uid": "M9KxjQSK8ZaVXDvXKYuRb",
+          "name": "Show category",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/c/:id/show.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "EUYGUv1UhApQ8l48KZu3p",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 5
+        }
+      ]
+    },
+    {
+      "uid": "C6QeAUlL4oBlYezBpgDqp",
+      "name": "Groups",
+      "type": "folder",
+      "root": {
+        "request": {
+          "auth": {
+            "mode": "inherit",
+            "basic": null,
+            "bearer": null,
+            "digest": null,
+            "apikey": null,
+            "oauth2": null
+          }
+        },
+        "meta": {
+          "name": "Groups"
+        }
+      },
+      "items": [
+        {
+          "uid": "bLhYlpUrTWePFeRR5skv6",
+          "name": "Create a group",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/admin/groups.json",
+            "method": "POST",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 1
+        },
+        {
+          "uid": "FZWGWPYrf20Z3h6Zw6evf",
+          "name": "Delete a group",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/admin/groups/:id.json",
+            "method": "DELETE",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "Z4pW9vmWQiNQz97xCEndh",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 2
+        },
+        {
+          "uid": "LwDxeaQhYG0hcO1cqwJtz",
+          "name": "Get a group",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/groups/:name.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "DUkc2PmQhSlu8veSc2Wwc",
+                "name": "name",
+                "value": "",
+                "description": "Use group name instead of id",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 3
+        },
+        {
+          "uid": "PmOYUGO7ChARECEis5IlO",
+          "name": "Update a group",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/groups/:id.json",
+            "method": "PUT",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "aIswtKBpg72TmKAY3J1zQ",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 4
+        },
+        {
+          "uid": "ufhkCATmxeBOPVLyPxmYQ",
+          "name": "Get a group by id",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/groups/by-id/:id.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "y109Irzq6Ylzu5G6Lydby",
+                "name": "id",
+                "value": "",
+                "description": "Use group name instead of id",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 5
+        },
+        {
+          "uid": "ENsMIIvGRLj3bPlMgOoK5",
+          "name": "List group members",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/groups/:name/members.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "MA9LMxuuHWgZpF9bMs5Sl",
+                "name": "name",
+                "value": "",
+                "description": "Use group name instead of id",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 6
+        },
+        {
+          "uid": "j0TSeW9FEdjuDCg7PcYi8",
+          "name": "Add group members",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/groups/:id/members.json",
+            "method": "PUT",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "r4aG6IKCktzuJHC9jdLp2",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 7
+        },
+        {
+          "uid": "h2ddI0KZJsxWnIMde2LFC",
+          "name": "Remove group members",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/groups/:id/members.json",
+            "method": "DELETE",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "WscOoRQMGBJIZpCKamIRf",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 8
+        },
+        {
+          "uid": "dLexMlGqum9LnBlYTpXsf",
+          "name": "List groups",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/groups.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 9
+        }
+      ]
+    },
+    {
+      "uid": "0QPBRMs0qPvYCe7RZbHw7",
+      "name": "Invites",
+      "type": "folder",
+      "root": {
+        "request": {
+          "auth": {
+            "mode": "inherit",
+            "basic": null,
+            "bearer": null,
+            "digest": null,
+            "apikey": null,
+            "oauth2": null
+          }
+        },
+        "meta": {
+          "name": "Invites"
+        }
+      },
+      "items": [
+        {
+          "uid": "973fa2Gdyr0ORhRqjZpcT",
+          "name": "Create an invite",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/invites.json",
+            "method": "POST",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [
+              {
+                "uid": "G0lxViYevADDrwztEq5vJ",
+                "name": "Api-Key",
+                "value": "",
+                "description": "",
+                "enabled": true
+              },
+              {
+                "uid": "ocHsS0Ur8b45YifbSqc41",
+                "name": "Api-Username",
+                "value": "",
+                "description": "",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"email\": \"\",\n  \"skip_email\": false,\n  \"custom_message\": \"\",\n  \"max_redemptions_allowed\": 0,\n  \"topic_id\": 0,\n  \"group_ids\": \"\",\n  \"group_names\": \"\",\n  \"expires_at\": \"\"\n}",
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 1
+        },
+        {
+          "uid": "OsMRT5B1sl30wOQDWnzZp",
+          "name": "Create multiple invites",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/invites/create-multiple.json",
+            "method": "POST",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [
+              {
+                "uid": "0Yd4Mh25pFNC1DC2ZsaQp",
+                "name": "Api-Key",
+                "value": "",
+                "description": "",
+                "enabled": true
+              },
+              {
+                "uid": "E4dj0T7IqGXRGtrz8ZR5W",
+                "name": "Api-Username",
+                "value": "",
+                "description": "",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"email\": \"\",\n  \"skip_email\": false,\n  \"custom_message\": \"\",\n  \"max_redemptions_allowed\": 0,\n  \"topic_id\": 0,\n  \"group_ids\": \"\",\n  \"group_names\": \"\",\n  \"expires_at\": \"\"\n}",
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 2
+        }
+      ]
+    },
+    {
+      "uid": "KVCKefFiq9D7z51SbyxNq",
+      "name": "Notifications",
+      "type": "folder",
+      "root": {
+        "request": {
+          "auth": {
+            "mode": "inherit",
+            "basic": null,
+            "bearer": null,
+            "digest": null,
+            "apikey": null,
+            "oauth2": null
+          }
+        },
+        "meta": {
+          "name": "Notifications"
+        }
+      },
+      "items": [
+        {
+          "uid": "tXEkETFxiA5WaZUJO5HaT",
+          "name": "Get the notifications that belong to the current user",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/notifications.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 1
+        },
+        {
+          "uid": "zc90qAqrc1Xdzewv5ELgG",
+          "name": "Mark notifications as read",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/notifications/mark-read.json",
+            "method": "PUT",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"id\": 0\n}",
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 2
+        }
+      ]
+    },
+    {
+      "uid": "uoSRCknjcvfTt9MvbGC6f",
+      "name": "Posts",
+      "type": "folder",
+      "root": {
+        "request": {
+          "auth": {
+            "mode": "inherit",
+            "basic": null,
+            "bearer": null,
+            "digest": null,
+            "apikey": null,
+            "oauth2": null
+          }
+        },
+        "meta": {
+          "name": "Posts"
+        }
+      },
+      "items": [
+        {
+          "uid": "TIQ0DbFWMeWfAXx7gsJbl",
+          "name": "List latest posts across topics",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/posts.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "KQInvth404aeoAbvTT9F7",
+                "name": "before",
+                "value": "",
+                "description": "Load posts with an id lower than this value. Useful for pagination.",
+                "enabled": false,
+                "type": "query"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 1
+        },
+        {
+          "uid": "czRLVpvg6pHE7fjLsr3g7",
+          "name": "Creates a new topic, a new post, or a private message",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/posts.json",
+            "method": "POST",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 2
+        },
+        {
+          "uid": "VEYosIyPaqFANY5iew2Rl",
+          "name": "Retrieve a single post",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/posts/:id.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "JsSHTCBzN0wgNQrVfizlp",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 3
+        },
+        {
+          "uid": "extZ3HSFL6tDYr8LlaOh2",
+          "name": "Update a single post",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/posts/:id.json",
+            "method": "PUT",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "bhUd5rx0cco2EKtULaB7o",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 4
+        },
+        {
+          "uid": "Rw9qUSt8WXHE6BhVSQS4O",
+          "name": "delete a single post",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/posts/:id.json",
+            "method": "DELETE",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "qj4SiTQppEXtaFxY2Z5JK",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 5
+        },
+        {
+          "uid": "wvgKySDBhMlcW9CJhLOmP",
+          "name": "List replies to a post",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/posts/:id/replies.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "IqY6ihl797zJs2CKupfUd",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 6
+        },
+        {
+          "uid": "BV0M75QUJHvbIc8gwDHRI",
+          "name": "Lock a post from being edited",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/posts/:id/locked.json",
+            "method": "PUT",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [
+              {
+                "uid": "B0DCFzGcOlt5psLE7cBri",
+                "name": "Api-Key",
+                "value": "",
+                "description": "",
+                "enabled": true
+              },
+              {
+                "uid": "uipn7Tac2jKWToNrRCpZa",
+                "name": "Api-Username",
+                "value": "",
+                "description": "",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "uid": "IRSLpbOq5DojvX2XGyjKT",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"locked\": \"\"\n}",
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 7
+        },
+        {
+          "uid": "wNnVb1cICz28kbB2VuGEC",
+          "name": "Like a post and other actions",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/post_actions.json",
+            "method": "POST",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [
+              {
+                "uid": "OvcPmjVAT0jTV1G5YrV5U",
+                "name": "Api-Key",
+                "value": "",
+                "description": "",
+                "enabled": true
+              },
+              {
+                "uid": "QGK9tu1eC5PO8qVTxUrvQ",
+                "name": "Api-Username",
+                "value": "",
+                "description": "",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"id\": 0,\n  \"post_action_type_id\": 0,\n  \"flag_topic\": false\n}",
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 8
+        }
+      ]
+    },
+    {
+      "uid": "ql74PfPilZ8wvOlbRxLxS",
+      "name": "Private Messages",
+      "type": "folder",
+      "root": {
+        "request": {
+          "auth": {
+            "mode": "inherit",
+            "basic": null,
+            "bearer": null,
+            "digest": null,
+            "apikey": null,
+            "oauth2": null
+          }
+        },
+        "meta": {
+          "name": "Private Messages"
+        }
+      },
+      "items": [
+        {
+          "uid": "7di9tYg3wtN4qNDzdX4Zr",
+          "name": "Get a list of private messages for a user",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/topics/private-messages/:username.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "T0y5bRdmZtYC6uuJC4Rhr",
+                "name": "username",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 1
+        },
+        {
+          "uid": "3h3yayJWPMzqdChaJE29S",
+          "name": "Get a list of private messages sent for a user",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/topics/private-messages-sent/:username.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "iChLgcBranGgyYxs96HM5",
+                "name": "username",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 2
+        }
+      ]
+    },
+    {
+      "uid": "BvFTCmO9kcSMt710GNScU",
+      "name": "Search",
+      "type": "folder",
+      "root": {
+        "request": {
+          "auth": {
+            "mode": "inherit",
+            "basic": null,
+            "bearer": null,
+            "digest": null,
+            "apikey": null,
+            "oauth2": null
+          }
+        },
+        "meta": {
+          "name": "Search"
+        }
+      },
+      "items": [
+        {
+          "uid": "4dyy0FgBrvfCuAyhZbiCi",
+          "name": "Search for a term",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/search.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "R7LE1z6V1yZnk90czazck",
+                "name": "q",
+                "value": "",
+                "description": "The query string needs to be url encoded and is made up of the following options:\n- Search term. This is just a string. Usually it would be the first item in the query.\n- `@<username>`: Use the `@` followed by the username to specify posts by this user.\n- `#<category>`: Use the `#` followed by the category slug to search within this category.\n- `tags:`: `api,solved` or for posts that have all the specified tags `api+solved`.\n- `before:`: `yyyy-mm-dd`\n- `after:`: `yyyy-mm-dd`\n- `order:`: `latest`, `likes`, `views`, `latest_topic`\n- `assigned:`: username (without `@`)\n- `in:`: `title`, `likes`, `personal`, `messages`, `seen`, `unseen`, `posted`, `created`, `watching`, `tracking`, `bookmarks`, `assigned`, `unassigned`, `first`, `pinned`, `wiki`\n- `with:`: `images`\n- `status:`: `open`, `closed`, `public`, `archived`, `noreplies`, `single_user`, `solved`, `unsolved`\n- `group:`: group_name or group_id\n- `group_messages:`: group_name or group_id\n- `min_posts:`: 1\n- `max_posts:`: 10\n- `min_views:`: 1\n- `max_views:`: 10\n\nIf you are using cURL you can use the `-G` and the `--data-urlencode` flags to encode the query:\n\n```\ncurl -i -sS -X GET -G \"http://localhost:4200/search.json\" \\\n--data-urlencode 'q=wordpress @scossar #fun after:2020-01-01'\n```\n",
+                "type": "query"
+              },
+              {
+                "uid": "qun080eS4ZYgSkIhC6Z64",
+                "name": "page",
+                "value": "",
+                "description": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 1
+        }
+      ]
+    },
+    {
+      "uid": "JYlG05xbEtcSI3nTZyoA9",
+      "name": "Site",
+      "type": "folder",
+      "root": {
+        "request": {
+          "auth": {
+            "mode": "inherit",
+            "basic": null,
+            "bearer": null,
+            "digest": null,
+            "apikey": null,
+            "oauth2": null
+          }
+        },
+        "meta": {
+          "name": "Site"
+        }
+      },
+      "items": [
+        {
+          "uid": "ef7yJ6RtHlKsCB1fMXdgd",
+          "name": "Get site info",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/site.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 1
+        },
+        {
+          "uid": "JCYKffTUrIt74NulXKRVK",
+          "name": "Get site basic info",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/site/basic-info.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 2
+        }
+      ]
+    },
+    {
+      "uid": "lYfbLh1tC8kPcmjhMQ6dV",
+      "name": "Tags",
+      "type": "folder",
+      "root": {
+        "request": {
+          "auth": {
+            "mode": "inherit",
+            "basic": null,
+            "bearer": null,
+            "digest": null,
+            "apikey": null,
+            "oauth2": null
+          }
+        },
+        "meta": {
+          "name": "Tags"
+        }
+      },
+      "items": [
+        {
+          "uid": "ZOcfSZIjWRFA2L1ngTkIH",
+          "name": "Get a list of tag groups",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/tag_groups.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 1
+        },
+        {
+          "uid": "y6L2fF2H6mc1kjJny7wPa",
+          "name": "Creates a tag group",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/tag_groups.json",
+            "method": "POST",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"name\": \"\"\n}",
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 2
+        },
+        {
+          "uid": "9vyV3fQdyExp3ArPfmgml",
+          "name": "Get a single tag group",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/tag_groups/:id.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "e9BPD5PPj7ZcUDHoMsoEJ",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 3
+        },
+        {
+          "uid": "fa2JWE30S8JVsmI3HiIgp",
+          "name": "Update tag group",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/tag_groups/:id.json",
+            "method": "PUT",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "jc6qNw2V8Y1GHK1vZIytI",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"name\": \"\"\n}",
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 4
+        },
+        {
+          "uid": "AVg7hYFNZ8Wy8cEBJpZYV",
+          "name": "Get a list of tags",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/tags.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 5
+        },
+        {
+          "uid": "64pA8BtmCgYDqvUupvJzR",
+          "name": "Get a specific tag",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/tag/:name.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "TGLImMAjxl16jY3jXby3i",
+                "name": "name",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 6
+        }
+      ]
+    },
+    {
+      "uid": "RkDgCzGrpjbYFSdBo7oOp",
+      "name": "Topics",
+      "type": "folder",
+      "root": {
+        "request": {
+          "auth": {
+            "mode": "inherit",
+            "basic": null,
+            "bearer": null,
+            "digest": null,
+            "apikey": null,
+            "oauth2": null
+          }
+        },
+        "meta": {
+          "name": "Topics"
+        }
+      },
+      "items": [
+        {
+          "uid": "0fuTm5j8cuyd4VL9f8sOC",
+          "name": "Get specific posts from a topic",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/t/:id/posts.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [
+              {
+                "uid": "hhzZkXFlzZUKM9WcsxKRT",
+                "name": "Api-Key",
+                "value": "",
+                "description": "",
+                "enabled": true
+              },
+              {
+                "uid": "B6woQYsb6StdgnRnZGgwE",
+                "name": "Api-Username",
+                "value": "",
+                "description": "",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "uid": "w05T6BMttODObAieNZ7Gs",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"post_ids[]\": 0\n}",
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 1
+        },
+        {
+          "uid": "dMEjeDgyHMrBo6RE1ivch",
+          "name": "Get a single topic",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/t/:id.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [
+              {
+                "uid": "1DV3JbSunQYGlZr3Zh3Z5",
+                "name": "Api-Key",
+                "value": "",
+                "description": "",
+                "enabled": true
+              },
+              {
+                "uid": "9BL03miEoIgKxAu4asxLV",
+                "name": "Api-Username",
+                "value": "",
+                "description": "",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "uid": "kEqhZsSSHgYdaIZhOyWck",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 2
+        },
+        {
+          "uid": "MPgFjGMqYt5lfM0U4A1AL",
+          "name": "Remove a topic",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/t/:id.json",
+            "method": "DELETE",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [
+              {
+                "uid": "G6OArsdwmP0y7STLIbRAa",
+                "name": "Api-Key",
+                "value": "",
+                "description": "",
+                "enabled": true
+              },
+              {
+                "uid": "yeqdspODjBrVif9YH8EnS",
+                "name": "Api-Username",
+                "value": "",
+                "description": "",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "uid": "FbeeNIwJ4tFs9l5dpKG5T",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 3
+        },
+        {
+          "uid": "p7G6c6MAtW1arAjFt531v",
+          "name": "Update a topic",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/t/-/:id.json",
+            "method": "PUT",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [
+              {
+                "uid": "I7JaQWzKtwFJnfQWaM2VK",
+                "name": "Api-Key",
+                "value": "",
+                "description": "",
+                "enabled": true
+              },
+              {
+                "uid": "YH0udxdqLWzk5LY85NhOi",
+                "name": "Api-Username",
+                "value": "",
+                "description": "",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "uid": "RZOSM4Pqa8eNsE9DxbGHN",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"topic\": {\n    \"title\": \"\",\n    \"category_id\": 0\n  }\n}",
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 4
+        },
+        {
+          "uid": "AP1KrVYAfAXJU8BeyqEr3",
+          "name": "Invite to topic",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/t/:id/invite.json",
+            "method": "POST",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [
+              {
+                "uid": "taphiJpRjLfAqjMwwR9JC",
+                "name": "Api-Key",
+                "value": "",
+                "description": "",
+                "enabled": true
+              },
+              {
+                "uid": "S9O0qT0xF6Il7kdiUaWej",
+                "name": "Api-Username",
+                "value": "",
+                "description": "",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "uid": "FlggTjxOyhWp6I4quvtP6",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"user\": \"\",\n  \"email\": \"\"\n}",
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 5
+        },
+        {
+          "uid": "boP47pJbJiDIoD2d8ve6D",
+          "name": "Invite group to topic",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/t/:id/invite-group.json",
+            "method": "POST",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [
+              {
+                "uid": "ZcORz4cLJMZGZPCMuVLBH",
+                "name": "Api-Key",
+                "value": "",
+                "description": "",
+                "enabled": true
+              },
+              {
+                "uid": "cNsRm6tiZGFz2T0Qcaqec",
+                "name": "Api-Username",
+                "value": "",
+                "description": "",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "uid": "YzTQcQXmnMsFBcbw6cVGO",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"group\": \"\",\n  \"should_notify\": false\n}",
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 6
+        },
+        {
+          "uid": "ZECo6AggD9eezNFqYozlF",
+          "name": "Bookmark topic",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/t/:id/bookmark.json",
+            "method": "PUT",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [
+              {
+                "uid": "vvOovySvp5MUiRs6UTNmw",
+                "name": "Api-Key",
+                "value": "",
+                "description": "",
+                "enabled": true
+              },
+              {
+                "uid": "HhJAMvv63I6oSCof7aOt1",
+                "name": "Api-Username",
+                "value": "",
+                "description": "",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "uid": "ySlElNbzMjFtd0jo3Ob8Z",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 7
+        },
+        {
+          "uid": "1gEVugi8lNgQrqJvAGuG8",
+          "name": "Update the status of a topic",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/t/:id/status.json",
+            "method": "PUT",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [
+              {
+                "uid": "rTZ5wNoMJx8GsPtSiiyqM",
+                "name": "Api-Key",
+                "value": "",
+                "description": "",
+                "enabled": true
+              },
+              {
+                "uid": "XGnbg0UOBYGHKrqvHyWi6",
+                "name": "Api-Username",
+                "value": "",
+                "description": "",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "uid": "L7HPZy423jBGhognRYMi8",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"status\": \"\",\n  \"enabled\": \"\",\n  \"until\": \"\"\n}",
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 8
+        },
+        {
+          "uid": "0U81aSgDyan6RXuYG5Is0",
+          "name": "Get the latest topics",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/latest.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [
+              {
+                "uid": "J1fP88nOId3EcYkrt5YF8",
+                "name": "Api-Key",
+                "value": "",
+                "description": "",
+                "enabled": true
+              },
+              {
+                "uid": "BgT6dtwzyxGY8Zri34pT6",
+                "name": "Api-Username",
+                "value": "",
+                "description": "",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "uid": "IpiM36c2yB01QCU8sPsg9",
+                "name": "order",
+                "value": "",
+                "description": "Enum: `default`, `created`, `activity`, `views`, `posts`, `category`,\n`likes`, `op_likes`, `posters`",
+                "type": "query"
+              },
+              {
+                "uid": "O3vZc5y7cC7cHwxokGn8W",
+                "name": "ascending",
+                "value": "",
+                "description": "Defaults to `desc`, add `ascending=true` to sort asc",
+                "type": "query"
+              },
+              {
+                "uid": "ti3s5zm9GFijuuWE6hJBZ",
+                "name": "per_page",
+                "value": "",
+                "description": "Maximum number of topics returned, between 1-100",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 9
+        },
+        {
+          "uid": "d83YmTfSLOyfbDXEpN7qf",
+          "name": "Get the top topics filtered by period",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/top.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [
+              {
+                "uid": "pakcfGoTVMyNZliFHKqR5",
+                "name": "Api-Key",
+                "value": "",
+                "description": "",
+                "enabled": true
+              },
+              {
+                "uid": "jzOwXlHUwBCN1JWVxE1jW",
+                "name": "Api-Username",
+                "value": "",
+                "description": "",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "uid": "T017YE9HUk1IHB0vNogPj",
+                "name": "period",
+                "value": "",
+                "description": "Enum: `all`, `yearly`, `quarterly`, `monthly`, `weekly`, `daily`",
+                "type": "query"
+              },
+              {
+                "uid": "Z9Pfu1bBYLhzDvT0zRtXR",
+                "name": "per_page",
+                "value": "",
+                "description": "Maximum number of topics returned, between 1-100",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 10
+        },
+        {
+          "uid": "4mRAUb2mZS6Uz2KO1IPws",
+          "name": "Set notification level",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/t/:id/notifications.json",
+            "method": "POST",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [
+              {
+                "uid": "KZeLpLaM38sdD8NFYI2t5",
+                "name": "Api-Key",
+                "value": "",
+                "description": "",
+                "enabled": true
+              },
+              {
+                "uid": "9QHLuoCf9fK2U6ZVzJjVM",
+                "name": "Api-Username",
+                "value": "",
+                "description": "",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "uid": "6pxgfYBVsoFS1rod6I6LZ",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"notification_level\": \"\"\n}",
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 11
+        },
+        {
+          "uid": "Ozpda4ijE25sU62P0vDCF",
+          "name": "Update topic timestamp",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/t/:id/change-timestamp.json",
+            "method": "PUT",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [
+              {
+                "uid": "WtbIzFD1NFOd0AKkGTcHH",
+                "name": "Api-Key",
+                "value": "",
+                "description": "",
+                "enabled": true
+              },
+              {
+                "uid": "DKlHqCZcry4nwV46LTWI1",
+                "name": "Api-Username",
+                "value": "",
+                "description": "",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "uid": "orVMXQYiyfwZxgiITNYhW",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"timestamp\": \"\"\n}",
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 12
+        },
+        {
+          "uid": "JhQPteY5yItGGeOePsf0P",
+          "name": "Create topic timer",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/t/:id/timer.json",
+            "method": "POST",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [
+              {
+                "uid": "5y2SzJahCouA51Poencdn",
+                "name": "Api-Key",
+                "value": "",
+                "description": "",
+                "enabled": true
+              },
+              {
+                "uid": "AYse5g19L6c82MxtVZxvB",
+                "name": "Api-Username",
+                "value": "",
+                "description": "",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "uid": "SCgi741pjY0XFomxKTSRy",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"time\": \"\",\n  \"status_type\": \"\",\n  \"based_on_last_post\": false,\n  \"category_id\": 0\n}",
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 13
+        },
+        {
+          "uid": "3o9AXfF04WYJrJ4HXRcnD",
+          "name": "Get topic by external_id",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/t/external_id/:external_id.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "KkH9ieI5IPajQ3BOy1NGJ",
+                "name": "external_id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 14
+        }
+      ]
+    },
+    {
+      "uid": "HC3fkmQMr1mTmITH0xVw9",
+      "name": "Uploads",
+      "type": "folder",
+      "root": {
+        "request": {
+          "auth": {
+            "mode": "inherit",
+            "basic": null,
+            "bearer": null,
+            "digest": null,
+            "apikey": null,
+            "oauth2": null
+          }
+        },
+        "meta": {
+          "name": "Uploads"
+        }
+      },
+      "items": [
+        {
+          "uid": "7eC3ERcxRcKSHouWi7GTp",
+          "name": "Creates an upload",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/uploads.json",
+            "method": "POST",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "multipartForm",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 1
+        },
+        {
+          "uid": "ThH8tNNoCxmozZb9V1V9r",
+          "name": "Initiates a direct external upload",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/uploads/generate-presigned-put.json",
+            "method": "POST",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 2
+        },
+        {
+          "uid": "eQTrddodoU20tJL1K0g3F",
+          "name": "Completes a direct external upload",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/uploads/complete-external-upload.json",
+            "method": "POST",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 3
+        },
+        {
+          "uid": "1XEb3Mj5bOn0djXfVRDIc",
+          "name": "Creates a multipart external upload",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/uploads/create-multipart.json",
+            "method": "POST",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 4
+        },
+        {
+          "uid": "MFKdBD6zJ6KVFw9Cex9Iy",
+          "name": "Generates batches of presigned URLs for multipart parts",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/uploads/batch-presign-multipart-parts.json",
+            "method": "POST",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 5
+        },
+        {
+          "uid": "bO7jbIRyqqHi5wNv5rQlY",
+          "name": "Abort multipart upload",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/uploads/abort-multipart.json",
+            "method": "POST",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 6
+        },
+        {
+          "uid": "s1VVSTfimK0eHPOVrme3f",
+          "name": "Complete multipart upload",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/uploads/complete-multipart.json",
+            "method": "POST",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 7
+        }
+      ]
+    },
+    {
+      "uid": "TshH2XoHnKThsRlalLj3m",
+      "name": "Users",
+      "type": "folder",
+      "root": {
+        "request": {
+          "auth": {
+            "mode": "inherit",
+            "basic": null,
+            "bearer": null,
+            "digest": null,
+            "apikey": null,
+            "oauth2": null
+          }
+        },
+        "meta": {
+          "name": "Users"
+        }
+      },
+      "items": [
+        {
+          "uid": "7PBX4sgG3gTe1Yyrw1drI",
+          "name": "Creates a user",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/users.json",
+            "method": "POST",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [
+              {
+                "uid": "vDWvFDb4nI8eawIEhDIvD",
+                "name": "Api-Key",
+                "value": "",
+                "description": "",
+                "enabled": true
+              },
+              {
+                "uid": "Lzl6ZHr2fWpcbXNEPFVA2",
+                "name": "Api-Username",
+                "value": "",
+                "description": "",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 1
+        },
+        {
+          "uid": "1O0I0iImio4y5J1xBOegR",
+          "name": "Get a single user by username",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/u/:username.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [
+              {
+                "uid": "MiQBt33X1oYBxgMwMfLBi",
+                "name": "Api-Key",
+                "value": "",
+                "description": "",
+                "enabled": true
+              },
+              {
+                "uid": "c8DVzplHVPEPnmxi1Pbc7",
+                "name": "Api-Username",
+                "value": "",
+                "description": "",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "uid": "L8LKNjZ3gSgMVIzAzM2VY",
+                "name": "username",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 2
+        },
+        {
+          "uid": "j5poOaDNCpVlo0mXHNYUU",
+          "name": "Update a user",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/u/:username.json",
+            "method": "PUT",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [
+              {
+                "uid": "mLt99Icb4Nvx9kLqDK27R",
+                "name": "Api-Key",
+                "value": "",
+                "description": "",
+                "enabled": true
+              },
+              {
+                "uid": "MklCFUODqUNyu6uqT6E08",
+                "name": "Api-Username",
+                "value": "",
+                "description": "",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "uid": "lyBgHUX2kdg6tTmSIgdOY",
+                "name": "username",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 3
+        },
+        {
+          "uid": "9BLi6VrUfJwCWdrakm321",
+          "name": "Get a user by external_id",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/u/by-external/:external_id.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [
+              {
+                "uid": "X5qmt8I5lkgf3FQrSsftx",
+                "name": "Api-Key",
+                "value": "",
+                "description": "",
+                "enabled": true
+              },
+              {
+                "uid": "Ixd5R4NjmmSG8lJ4hONlD",
+                "name": "Api-Username",
+                "value": "",
+                "description": "",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "uid": "IKCzqfXKhsMwTOeDqYFhw",
+                "name": "external_id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 4
+        },
+        {
+          "uid": "2tKp8ui4HOa6UCwfOjgNd",
+          "name": "Get a user by identity provider external ID",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/u/by-external/:provider/:external_id.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [
+              {
+                "uid": "mLa2So8FEK0kqfaF6jW8V",
+                "name": "Api-Key",
+                "value": "",
+                "description": "",
+                "enabled": true
+              },
+              {
+                "uid": "HubWKubSHLiqCNbPlkYII",
+                "name": "Api-Username",
+                "value": "",
+                "description": "",
+                "enabled": true
+              }
+            ],
+            "params": [
+              {
+                "uid": "be5WtiSj2cchVEMKA5Djp",
+                "name": "provider",
+                "value": "",
+                "description": "Authentication provider name. Can be found in the provider callback\nURL: `/auth/{provider}/callback`",
+                "enabled": true,
+                "type": "path"
+              },
+              {
+                "uid": "BTOrB33vu7r6A8447q8Ji",
+                "name": "external_id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 5
+        },
+        {
+          "uid": "3kvLFhrmOerMHOSn46hyh",
+          "name": "Update avatar",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/u/:username/preferences/avatar/pick.json",
+            "method": "PUT",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "MZ3Zl0p3RvKW2wO82B3QD",
+                "name": "username",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 6
+        },
+        {
+          "uid": "wPmd4O7FsVlRsKqzip6wt",
+          "name": "Update email",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/u/:username/preferences/email.json",
+            "method": "PUT",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "MkozHYXEKS1EZSdUqSFmV",
+                "name": "username",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 7
+        },
+        {
+          "uid": "uAl8ngZkv8whAxA9udXEh",
+          "name": "Update username",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/u/:username/preferences/username.json",
+            "method": "PUT",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "OeixnP6YJzvfMEy1WM7yg",
+                "name": "username",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 8
+        },
+        {
+          "uid": "56WTOu745Ku9F5oMmhGOq",
+          "name": "Get a public list of users",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/directory_items.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "QtmMRUCNdJR3nwKNKTVSc",
+                "name": "period",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "query"
+              },
+              {
+                "uid": "M3mcjTJ87nXUNgBFg4P52",
+                "name": "order",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "query"
+              },
+              {
+                "uid": "qQuWNttTekxYMrbW4rswb",
+                "name": "asc",
+                "value": "",
+                "description": "",
+                "type": "query"
+              },
+              {
+                "uid": "cKcY9ut9VmRp4J0z23t9r",
+                "name": "page",
+                "value": "",
+                "description": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 9
+        },
+        {
+          "uid": "7eBa7OFRusbSYJwKCyhHQ",
+          "name": "Get a user by id",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/admin/users/:id.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "FyZkeRVRmE08xDWSJNQfH",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 10
+        },
+        {
+          "uid": "zNuI4PawT82WLwRTnrCnp",
+          "name": "Delete a user",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/admin/users/:id.json",
+            "method": "DELETE",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "NANfrUqKEjUpvxk9Mrnkv",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 11
+        },
+        {
+          "uid": "OklSO9E1yVTO95S8GcwOO",
+          "name": "Activate a user",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/admin/users/:id/activate.json",
+            "method": "PUT",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "KTOdvj0ih2AgqAvrECtQC",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 12
+        },
+        {
+          "uid": "Z0OSgOAvfsH4z9AmvkBpJ",
+          "name": "Deactivate a user",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/admin/users/:id/deactivate.json",
+            "method": "PUT",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "4SZtirMvYPJa2BjJCFILH",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 13
+        },
+        {
+          "uid": "bQ6MM2kmaI411FSXQG90v",
+          "name": "Suspend a user",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/admin/users/:id/suspend.json",
+            "method": "PUT",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "kQxuKbtuNP3GPxLNKwjx3",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 14
+        },
+        {
+          "uid": "K3aFb6oqSicF2QJ6CaevZ",
+          "name": "Silence a user",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/admin/users/:id/silence.json",
+            "method": "PUT",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "PZxHI1rHPHRLqY34mw5EF",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 15
+        },
+        {
+          "uid": "FBdn2FWtZIsZWzc4SvmIn",
+          "name": "Anonymize a user",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/admin/users/:id/anonymize.json",
+            "method": "PUT",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "amXylcspHulBvfbHWNz55",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 16
+        },
+        {
+          "uid": "RMsXcaBjh1EdQwAqy6N1B",
+          "name": "Log a user out",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/admin/users/:id/log_out.json",
+            "method": "POST",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "c5qbqpHVVqVmwekeFnARw",
+                "name": "id",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 17
+        },
+        {
+          "uid": "HcOvSHlg4qYwmpToqVJZq",
+          "name": "Refresh gravatar",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/user_avatar/:username/refresh_gravatar.json",
+            "method": "POST",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "di0rC0ZRaGJYiAidJN2kB",
+                "name": "username",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 18
+        },
+        {
+          "uid": "E6mmMmG0gRtKXKCrxSVtd",
+          "name": "List users",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/admin/users.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "8JBcqgqBTIiqjQ3vs7H5o",
+                "name": "order",
+                "value": "",
+                "description": "",
+                "type": "query"
+              },
+              {
+                "uid": "mcdGcbESCF1Mhnlds10oa",
+                "name": "asc",
+                "value": "",
+                "description": "",
+                "type": "query"
+              },
+              {
+                "uid": "84SBOM1T2Rxxd90t959Y6",
+                "name": "page",
+                "value": "",
+                "description": "",
+                "type": "query"
+              },
+              {
+                "uid": "4MTiyboWZhWG8vJUjdLT9",
+                "name": "show_emails",
+                "value": "",
+                "description": "Include user email addresses in response. These requests will\nbe logged in the staff action logs.",
+                "type": "query"
+              },
+              {
+                "uid": "WLn6dvP4pO2eVfEkdNpyT",
+                "name": "stats",
+                "value": "",
+                "description": "Include user stats information",
+                "type": "query"
+              },
+              {
+                "uid": "1u0XCmHS2QB4VEbINdqqC",
+                "name": "email",
+                "value": "",
+                "description": "Filter to the user with this email address",
+                "type": "query"
+              },
+              {
+                "uid": "nfCZHikK00FZQkVqkpzvC",
+                "name": "ip",
+                "value": "",
+                "description": "Filter to users with this IP address",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 19
+        },
+        {
+          "uid": "6ZG4csdleiRytSbTOBnA0",
+          "name": "List users by flag",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/admin/users/list/:flag.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "6t5qD3VK8UtLW0Ge8vtpd",
+                "name": "flag",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              },
+              {
+                "uid": "MFu38kQS3nVPUXWc10XAs",
+                "name": "order",
+                "value": "",
+                "description": "",
+                "type": "query"
+              },
+              {
+                "uid": "YKI7PUrjPDsnDZPeXAZBe",
+                "name": "asc",
+                "value": "",
+                "description": "",
+                "type": "query"
+              },
+              {
+                "uid": "sCYDaJIvqTJFStUqgwcHI",
+                "name": "page",
+                "value": "",
+                "description": "",
+                "type": "query"
+              },
+              {
+                "uid": "R3fp6Xt6LU3znrEMAywGu",
+                "name": "show_emails",
+                "value": "",
+                "description": "Include user email addresses in response. These requests will\nbe logged in the staff action logs.",
+                "type": "query"
+              },
+              {
+                "uid": "9hIQCsNOVeQiIJIcLnCNk",
+                "name": "stats",
+                "value": "",
+                "description": "Include user stats information",
+                "type": "query"
+              },
+              {
+                "uid": "16ePnNX91VPNfFBtW895r",
+                "name": "email",
+                "value": "",
+                "description": "Filter to the user with this email address",
+                "type": "query"
+              },
+              {
+                "uid": "KrWaPR2G8QXhDZuYjSOpf",
+                "name": "ip",
+                "value": "",
+                "description": "Filter to users with this IP address",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 20
+        },
+        {
+          "uid": "b57hMqBly25Ziwx1T8JYq",
+          "name": "Get a list of user actions",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/user_actions.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "anx9FW18WHN024dzleCxG",
+                "name": "offset",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "query"
+              },
+              {
+                "uid": "8GQKS55DQgrxoFq4XltZo",
+                "name": "username",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "query"
+              },
+              {
+                "uid": "rY6TyTaqHbPAjqcm3NQPz",
+                "name": "filter",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "query"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 21
+        },
+        {
+          "uid": "ZtRWAac68ymOqnZSG4QEl",
+          "name": "Send password reset email",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/session/forgot_password.json",
+            "method": "POST",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 22
+        },
+        {
+          "uid": "Mve2USNupkiY3w7bDm4c2",
+          "name": "Change password",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/users/password-reset/:token.json",
+            "method": "PUT",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "kRWm1XJdedirGTJCYkbkG",
+                "name": "token",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 23
+        },
+        {
+          "uid": "BJgHAj4Ash83PwI7y2HFw",
+          "name": "Get email addresses belonging to a user",
+          "type": "http-request",
+          "request": {
+            "url": "{{baseUrl}}/u/:username/emails.json",
+            "method": "GET",
+            "auth": {
+              "mode": "inherit",
+              "basic": null,
+              "bearer": null,
+              "digest": null,
+              "apikey": null,
+              "oauth2": null
+            },
+            "headers": [],
+            "params": [
+              {
+                "uid": "oewQHXVqm6FG9ZcoamKLH",
+                "name": "username",
+                "value": "",
+                "description": "",
+                "enabled": true,
+                "type": "path"
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "json": null,
+              "text": null,
+              "xml": null,
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {
+              "res": null
+            }
+          },
+          "seq": 24
+        }
+      ]
+    }
+  ],
+  "environments": [
+    {
+      "uid": "efvipv06xWgVpBrHOhf8j",
+      "name": "Environment 1",
+      "variables": [
+        {
+          "uid": "sVNQLGz6wXe1SpllERyfM",
+          "name": "baseUrl",
+          "value": "https://discourse.example.com",
+          "type": "text",
+          "enabled": true,
+          "secret": false
+        }
+      ]
+    }
+  ],
+  "root": {
+    "request": {
+      "auth": {
+        "mode": "none",
+        "basic": null,
+        "bearer": null,
+        "digest": null,
+        "apikey": null,
+        "oauth2": null
+      }
+    },
+    "meta": {
+      "name": "Discourse API Documentation"
+    }
+  }
+}

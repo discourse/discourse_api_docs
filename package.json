@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "tojson": "node tojson.js"
+    "tojson": "node tojson.js",
+    "tobruno": "node tobruno.js"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,8 @@
   "dependencies": {
     "express": "^4.21.2",
     "json-schema-ref-parser": "^6.0.1",
-    "yamljs": "^0.3.0"
+    "yamljs": "^0.3.0",
+    "@usebruno/converters": "^0.12.0"
   },
   "devDependencies": {
     "@arkweid/lefthook": "^0.7.6"

@@ -3,7 +3,7 @@ name: Update Docs
 on:
   workflow_dispatch:
   schedule:
-    - cron:  '0 0 * * *'
+    - cron: "0 0 * * *"
 
 jobs:
   update-docs:
@@ -78,6 +78,11 @@ jobs:
         working-directory: discourse_api_docs
         run: |
           npm install && npm run tojson
+
+      - name: Generate Bruno collection
+        working-directory: discourse_api_docs
+        run: |
+          npm install && npm run tobruno
 
       - name: Create PR
         uses: peter-evans/create-pull-request@v5
