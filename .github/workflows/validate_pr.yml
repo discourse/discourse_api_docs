@@ -1,0 +1,41 @@
+name: Validate PR Documentation
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'openapi.json'
+
+jobs:
+  validate-openapi:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout PR
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Start Swagger Validator
+        run: |
+          # Pull the Swagger validator image
+          docker pull swaggerapi/swagger-validator-v2
+          # Start the validator container
+          docker run --detach --name swagger-validator --publish 8080:8080 swaggerapi/swagger-validator-v2
+          # Wait for the validator to be ready
+          sleep 10
+
+      - name: Validate OpenAPI JSON
+        run: |
+          echo "Validating openapi.json..."
+          curl --fail --request POST http://localhost:8080/validator/debug \
+               --header "Content-Type: application/json" \
+               --data-binary @openapi.json
+          echo "✅ openapi.json validation passed"
+
+      - name: Cleanup
+        if: always()
+        run: |
+          docker stop swagger-validator || true
+          docker rm swagger-validator || true
