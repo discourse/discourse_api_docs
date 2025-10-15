@@ -29,10 +29,20 @@ jobs:
       - name: Validate OpenAPI JSON
         run: |
           echo "Validating openapi.json..."
-          curl --fail --request POST http://localhost:8080/validator/debug \
+          response=$(curl --silent --request POST http://localhost:8080/validator/debug \
                --header "Content-Type: application/json" \
-               --data-binary @openapi.json
-          echo "✅ openapi.json validation passed"
+               --data-binary @openapi.json)
+          
+          echo "Validation response: $response"
+          
+          # Check if response contains validation errors
+          if echo "$response" | grep -q '"messages"'; then
+            echo "❌ OpenAPI validation failed with errors:"
+            echo "$response" | python3 -m json.tool
+            exit 1
+          else
+            echo "✅ openapi.json validation passed"
+          fi
 
       - name: Cleanup
         if: always()
