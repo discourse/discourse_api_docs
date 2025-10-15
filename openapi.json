@@ -59,7 +59,7 @@
         "tags": [
           "Backups"
         ],
-        "operationId": "getBackups",
+        "operationId": "createBackup",
         "parameters": [],
         "responses": {
           "200": {
