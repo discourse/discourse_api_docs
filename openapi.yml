@@ -766,26 +766,11 @@ paths:
                           - name
                           - min_count
                       category_setting:
-                        type: object
-                        additionalProperties: false
-                        properties:
-                          auto_bump_cooldown_days:
-                            type: integer
-                          num_auto_bump_daily:
-                            type:
-                            - integer
-                            - 'null'
-                          require_reply_approval:
-                            type:
-                            - boolean
-                            - 'null'
-                          require_topic_approval:
-                            type:
-                            - boolean
-                            - 'null'
-                      category_localizations:
-                        type: array
-                        items: {}
+                        auto_bump_cooldown_days: 1
+                        num_auto_bump_daily:
+                        require_reply_approval:
+                        require_topic_approval:
+                      category_localizations: []
                       read_only_banner:
                         type:
                         - string
@@ -1325,26 +1310,11 @@ paths:
                           - name
                           - min_count
                       category_setting:
-                        type: object
-                        additionalProperties: false
-                        properties:
-                          auto_bump_cooldown_days:
-                            type: integer
-                          num_auto_bump_daily:
-                            type:
-                            - integer
-                            - 'null'
-                          require_reply_approval:
-                            type:
-                            - boolean
-                            - 'null'
-                          require_topic_approval:
-                            type:
-                            - boolean
-                            - 'null'
-                      category_localizations:
-                        type: array
-                        items: {}
+                        auto_bump_cooldown_days: 1
+                        num_auto_bump_daily:
+                        require_reply_approval:
+                        require_topic_approval:
+                      category_localizations: []
                       read_only_banner:
                         type:
                         - string
@@ -1866,26 +1836,11 @@ paths:
                           - name
                           - min_count
                       category_setting:
-                        type: object
-                        additionalProperties: false
-                        properties:
-                          auto_bump_cooldown_days:
-                            type: integer
-                          num_auto_bump_daily:
-                            type:
-                            - integer
-                            - 'null'
-                          require_reply_approval:
-                            type:
-                            - boolean
-                            - 'null'
-                          require_topic_approval:
-                            type:
-                            - boolean
-                            - 'null'
-                      category_localizations:
-                        type: array
-                        items: {}
+                        auto_bump_cooldown_days: 1
+                        num_auto_bump_daily:
+                        require_reply_approval:
+                        require_topic_approval:
+                      category_localizations: []
                       read_only_banner:
                         type:
                         - string
@@ -2619,7 +2574,7 @@ paths:
       summary: Get a group by id
       tags:
       - Groups
-      operationId: getGroupById
+      operationId: getGroup
       parameters:
       - name: id
         in: path
@@ -3603,7 +3558,7 @@ paths:
                   latest_posts:
                     type: array
                     items:
-                      type: object
+                    - type: object
                       additionalProperties: false
                       properties:
                         id:
@@ -3686,7 +3641,7 @@ paths:
                           - 'null'
                         badges_granted:
                           type: array
-                          items: {}
+                          items: []
                         version:
                           type: integer
                         can_edit:
@@ -3710,7 +3665,7 @@ paths:
                         actions_summary:
                           type: array
                           items:
-                            type: object
+                          - type: object
                             additionalProperties: false
                             properties:
                               id:
@@ -3760,6 +3715,16 @@ paths:
                           type: integer
                         post_url:
                           type: string
+                        can_accept_answer:
+                          type: boolean
+                        can_unaccept_answer:
+                          type: boolean
+                        accepted_answer:
+                          type: boolean
+                        topic_accepted_answer:
+                          type:
+                          - string
+                          - 'null'
                       required:
                       - id
                       - name
@@ -3819,6 +3784,10 @@ paths:
                       - reviewable_score_count
                       - reviewable_score_pending_count
                       - post_url
+                      - can_accept_answer
+                      - can_unaccept_answer
+                      - accepted_answer
+                      - topic_accepted_answer
                 required:
                 - latest_posts
     post:
@@ -4601,6 +4570,7 @@ paths:
             application/json:
               schema:
                 type: array
+                minItems: 1
                 uniqueItems: true
                 items:
                   type: object
@@ -9646,8 +9616,6 @@ paths:
                             type: boolean
                           like_notification_frequency:
                             type: integer
-                          notify_on_linked_posts:
-                            type: boolean
                           include_tl0_in_digests:
                             type: boolean
                           theme_ids:
@@ -9728,7 +9696,6 @@ paths:
                         - email_previous_replies
                         - email_in_reply_to
                         - like_notification_frequency
-                        - notify_on_linked_posts
                         - include_tl0_in_digests
                         - theme_ids
                         - theme_key_seq
@@ -10400,8 +10367,6 @@ paths:
                             type: boolean
                           like_notification_frequency:
                             type: integer
-                          notify_on_linked_posts:
-                            type: boolean
                           include_tl0_in_digests:
                             type: boolean
                           theme_ids:
@@ -10482,7 +10447,6 @@ paths:
                         - email_previous_replies
                         - email_in_reply_to
                         - like_notification_frequency
-                        - notify_on_linked_posts
                         - include_tl0_in_digests
                         - theme_ids
                         - theme_key_seq
@@ -11115,8 +11079,6 @@ paths:
                             type: boolean
                           like_notification_frequency:
                             type: integer
-                          notify_on_linked_posts:
-                            type: boolean
                           include_tl0_in_digests:
                             type: boolean
                           theme_ids:
@@ -11197,7 +11159,6 @@ paths:
                         - email_previous_replies
                         - email_in_reply_to
                         - like_notification_frequency
-                        - notify_on_linked_posts
                         - include_tl0_in_digests
                         - theme_ids
                         - theme_key_seq
