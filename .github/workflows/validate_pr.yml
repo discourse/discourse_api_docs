@@ -24,7 +24,7 @@ jobs:
           # Start the validator container
           docker run --detach --name swagger-validator --publish 8080:8080 swaggerapi/swagger-validator-v2
           # Wait for the validator to be ready
-          timeout 30 bash -c 'until curl -f http://localhost:8080/health; do sleep 1; done'
+          timeout 30 bash -c 'until curl -s http://localhost:8080/ >/dev/null 2>&1; do sleep 1; done'
 
       - name: Validate OpenAPI JSON
         run: |
