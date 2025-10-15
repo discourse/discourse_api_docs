@@ -5,6 +5,10 @@ on:
     types: [opened, synchronize, reopened]
     paths:
       - 'openapi.json'
+  workflow_run:
+    workflows: ["Update Docs"]
+    types: [completed]
+    branches: [main]
 
 jobs:
   validate-openapi:
@@ -13,8 +17,16 @@ jobs:
 
     steps:
       - name: Checkout PR
+        if: github.event_name == 'pull_request'
         uses: actions/checkout@v4
         with:
+          fetch-depth: 0
+
+      - name: Checkout workflow run
+        if: github.event_name == 'workflow_run'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_branch }}
           fetch-depth: 0
 
       - name: Start Swagger Validator
