@@ -1,5 +1,0 @@
-pre-commit:
-  parallel: true
-  commands:
-    openapi-lint:
-      run: npm run tojson && npx @redocly/openapi-cli validate openapi.json
