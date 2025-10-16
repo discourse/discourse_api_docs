@@ -13,6 +13,536 @@
     }
   },
   "paths": {
+    "/discourse-post-event/events.json": {
+      "get": {
+        "summary": "List calendar events",
+        "tags": [
+          "Discourse Calendar - Events"
+        ],
+        "operationId": "listEvents",
+        "parameters": [
+          {
+            "name": "include_details",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true",
+                "false"
+              ]
+            },
+            "description": "Include detailed event information (creator, invitees, stats,\netc.)"
+          },
+          {
+            "name": "category_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Filter events by category ID"
+          },
+          {
+            "name": "include_subcategories",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true",
+                "false"
+              ]
+            },
+            "description": "Include events from subcategories when filtering by category"
+          },
+          {
+            "name": "post_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Filter to events associated with a specific post ID"
+          },
+          {
+            "name": "attending_user",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter to events where the specified user (username) has RSVP'd\nas going"
+          },
+          {
+            "name": "before",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "description": "Return events starting before this date/time (ISO 8601 format)"
+          },
+          {
+            "name": "after",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "description": "Return events starting after this date/time (ISO 8601 format)"
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "asc",
+                "desc"
+              ]
+            },
+            "description": "Sort order for events by start date (default: asc)"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 200
+            },
+            "description": "Maximum number of events to return (default: 200)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success response (detailed)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "events": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "id": {
+                            "type": "integer"
+                          },
+                          "category_id": {
+                            "type": [
+                              "integer",
+                              "null"
+                            ]
+                          },
+                          "name": {
+                            "type": [
+                              "string",
+                              "null"
+                            ]
+                          },
+                          "recurrence": {
+                            "type": [
+                              "string",
+                              "null"
+                            ]
+                          },
+                          "recurrence_until": {
+                            "type": [
+                              "string",
+                              "null"
+                            ],
+                            "format": "date-time"
+                          },
+                          "starts_at": {
+                            "type": [
+                              "string",
+                              "null"
+                            ],
+                            "format": "date-time"
+                          },
+                          "ends_at": {
+                            "type": [
+                              "string",
+                              "null"
+                            ],
+                            "format": "date-time"
+                          },
+                          "rrule": {
+                            "type": "string"
+                          },
+                          "show_local_time": {
+                            "type": "boolean"
+                          },
+                          "timezone": {
+                            "type": [
+                              "string",
+                              "null"
+                            ]
+                          },
+                          "duration": {
+                            "type": "string",
+                            "pattern": "^\\d{2}:\\d{2}:\\d{2}$"
+                          },
+                          "post": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                              "id": {
+                                "type": "integer"
+                              },
+                              "post_number": {
+                                "type": "integer"
+                              },
+                              "url": {
+                                "type": "string"
+                              },
+                              "category_slug": {
+                                "type": "string"
+                              },
+                              "topic": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                  "id": {
+                                    "type": "integer"
+                                  },
+                                  "title": {
+                                    "type": "string"
+                                  },
+                                  "tags": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "tags_descriptions": {
+                                    "type": "object"
+                                  }
+                                },
+                                "required": [
+                                  "id",
+                                  "title",
+                                  "tags",
+                                  "tags_descriptions"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "post_number",
+                              "url",
+                              "category_slug",
+                              "topic"
+                            ]
+                          },
+                          "can_act_on_discourse_post_event": {
+                            "type": [
+                              "boolean",
+                              "null"
+                            ]
+                          },
+                          "can_update_attendance": {
+                            "type": [
+                              "boolean",
+                              "null"
+                            ]
+                          },
+                          "creator": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                              "id": {
+                                "type": "integer"
+                              },
+                              "username": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
+                              },
+                              "avatar_template": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "username",
+                              "avatar_template"
+                            ]
+                          },
+                          "custom_fields": {
+                            "type": [
+                              "object",
+                              "null"
+                            ]
+                          },
+                          "is_closed": {
+                            "type": "boolean"
+                          },
+                          "is_expired": {
+                            "type": "boolean"
+                          },
+                          "is_ongoing": {
+                            "type": "boolean"
+                          },
+                          "is_private": {
+                            "type": "boolean"
+                          },
+                          "is_public": {
+                            "type": "boolean"
+                          },
+                          "is_standalone": {
+                            "type": "boolean"
+                          },
+                          "minimal": {
+                            "type": [
+                              "boolean",
+                              "null"
+                            ]
+                          },
+                          "raw_invitees": {
+                            "type": [
+                              "array",
+                              "null"
+                            ],
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "reminders": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "value": {
+                                  "type": "integer"
+                                },
+                                "unit": {
+                                  "type": "string"
+                                },
+                                "period": {
+                                  "type": "string",
+                                  "enum": [
+                                    "before",
+                                    "after"
+                                  ]
+                                },
+                                "type": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "value",
+                                "unit",
+                                "period",
+                                "type"
+                              ]
+                            }
+                          },
+                          "sample_invitees": {
+                            "type": "array",
+                            "items": {
+                              "type": "object"
+                            }
+                          },
+                          "should_display_invitees": {
+                            "type": "boolean"
+                          },
+                          "stats": {
+                            "type": "object"
+                          },
+                          "status": {
+                            "type": "string",
+                            "enum": [
+                              "public",
+                              "private",
+                              "standalone"
+                            ]
+                          },
+                          "url": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": [
+                              "string",
+                              "null"
+                            ]
+                          },
+                          "location": {
+                            "type": [
+                              "string",
+                              "null"
+                            ]
+                          },
+                          "watching_invitee": {
+                            "type": [
+                              "object",
+                              "null"
+                            ]
+                          },
+                          "chat_enabled": {
+                            "type": [
+                              "boolean",
+                              "null"
+                            ]
+                          },
+                          "channel": {
+                            "type": "object"
+                          },
+                          "max_attendees": {
+                            "type": [
+                              "integer",
+                              "null"
+                            ]
+                          },
+                          "at_capacity": {
+                            "type": "boolean"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "category_id",
+                          "starts_at",
+                          "ends_at",
+                          "show_local_time",
+                          "timezone",
+                          "can_act_on_discourse_post_event",
+                          "can_update_attendance",
+                          "is_closed",
+                          "is_expired",
+                          "is_ongoing",
+                          "is_private",
+                          "is_public",
+                          "is_standalone",
+                          "should_display_invitees",
+                          "status",
+                          "at_capacity",
+                          "post"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "events"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/discourse-post-event/events.ics": {
+      "get": {
+        "summary": "Export calendar events in iCalendar format",
+        "tags": [
+          "Discourse Calendar - Events"
+        ],
+        "operationId": "exportEventsICS",
+        "parameters": [
+          {
+            "name": "category_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Filter events by category ID"
+          },
+          {
+            "name": "include_subcategories",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true",
+                "false"
+              ]
+            },
+            "description": "Include events from subcategories when filtering by category"
+          },
+          {
+            "name": "attending_user",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter to events where the specified user (username) has RSVP'd\nas going"
+          },
+          {
+            "name": "before",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "description": "Return events starting before this date/time (ISO 8601 format)"
+          },
+          {
+            "name": "after",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "description": "Return events starting after this date/time (ISO 8601 format)"
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "asc",
+                "desc"
+              ]
+            },
+            "description": "Sort order for events by start date (default: asc)"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 200
+            },
+            "description": "Maximum number of events to return (default: 200)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "iCalendar file",
+            "content": {
+              "text/calendar": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/admin/backups.json": {
       "get": {
         "summary": "List backups",
@@ -6801,203 +7331,330 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
+                  "additionalProperties": true,
                   "properties": {
                     "id": {
-                      "type": "integer"
+                      "type": "integer",
+                      "description": "The ID of the post"
                     },
                     "name": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The name of the post author"
                     },
                     "username": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The username of the post author"
                     },
                     "avatar_template": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "Template for the author's avatar URL"
                     },
                     "created_at": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "When the post was created"
                     },
                     "cooked": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The HTML content of the post"
                     },
                     "post_number": {
-                      "type": "integer"
+                      "type": "integer",
+                      "description": "The post number within the topic"
                     },
                     "post_type": {
-                      "type": "integer"
+                      "type": "integer",
+                      "description": "The type of post"
+                    },
+                    "posts_count": {
+                      "type": "integer",
+                      "description": "Total posts count for the user"
                     },
                     "updated_at": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "When the post was last updated"
                     },
                     "reply_count": {
-                      "type": "integer"
+                      "type": "integer",
+                      "description": "Number of replies to this post"
                     },
                     "reply_to_post_number": {
                       "type": [
                         "string",
                         "null"
-                      ]
+                      ],
+                      "description": "Post number this post is replying to"
                     },
                     "quote_count": {
-                      "type": "integer"
+                      "type": "integer",
+                      "description": "Number of times this post has been quoted"
                     },
                     "incoming_link_count": {
-                      "type": "integer"
+                      "type": "integer",
+                      "description": "Number of incoming links to this post"
                     },
                     "reads": {
-                      "type": "integer"
+                      "type": "integer",
+                      "description": "Number of reads"
                     },
                     "readers_count": {
-                      "type": "integer"
+                      "type": "integer",
+                      "description": "Number of readers"
                     },
                     "score": {
-                      "type": "number"
+                      "type": "number",
+                      "description": "Post score"
                     },
                     "yours": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "description": "Whether this post belongs to the current user"
                     },
                     "topic_id": {
-                      "type": "integer"
+                      "type": "integer",
+                      "description": "ID of the topic this post belongs to"
                     },
                     "topic_slug": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "Slug of the topic this post belongs to"
                     },
                     "display_username": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "Display username of the post author"
                     },
                     "primary_group_name": {
                       "type": [
                         "string",
                         "null"
-                      ]
+                      ],
+                      "description": "Primary group name of the author"
                     },
                     "flair_name": {
                       "type": [
                         "string",
                         "null"
-                      ]
+                      ],
+                      "description": "Flair name of the author"
                     },
                     "flair_url": {
                       "type": [
                         "string",
                         "null"
-                      ]
+                      ],
+                      "description": "Flair URL of the author"
                     },
                     "flair_bg_color": {
                       "type": [
                         "string",
                         "null"
-                      ]
+                      ],
+                      "description": "Flair background color of the author"
                     },
                     "flair_color": {
                       "type": [
                         "string",
                         "null"
-                      ]
+                      ],
+                      "description": "Flair color of the author"
+                    },
+                    "flair_group_id": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "description": "Flair group ID of the author"
+                    },
+                    "badges_granted": {
+                      "type": "array",
+                      "description": "Badges granted to the user"
                     },
                     "version": {
-                      "type": "integer"
+                      "type": "integer",
+                      "description": "Version number of the post"
                     },
                     "can_edit": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "description": "Whether the current user can edit this post"
                     },
                     "can_delete": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "description": "Whether the current user can delete this post"
                     },
                     "can_recover": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "description": "Whether the current user can recover this post"
+                    },
+                    "can_see_hidden_post": {
+                      "type": "boolean",
+                      "description": "Whether the current user can see hidden posts"
                     },
                     "can_wiki": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "description": "Whether the current user can wiki this post"
                     },
                     "user_title": {
                       "type": [
                         "string",
                         "null"
-                      ]
+                      ],
+                      "description": "Title of the post author"
+                    },
+                    "bookmarked": {
+                      "type": "boolean",
+                      "description": "Whether the post is bookmarked by the current user"
                     },
                     "actions_summary": {
                       "type": "array",
+                      "description": "Summary of actions performed on this post",
                       "items": {
                         "type": "object",
+                        "additionalProperties": true,
                         "properties": {
                           "id": {
-                            "type": "integer"
+                            "type": "integer",
+                            "description": "ID of the action type (e.g., 2 for like)"
                           },
                           "count": {
-                            "type": "integer"
+                            "type": "integer",
+                            "description": "Number of times this action has been performed"
                           },
                           "acted": {
-                            "type": "boolean"
+                            "type": "boolean",
+                            "description": "Whether the current user has performed this\naction"
                           },
                           "can_undo": {
-                            "type": "boolean"
+                            "type": "boolean",
+                            "description": "Whether the current user can undo this action"
+                          },
+                          "can_act": {
+                            "type": "boolean",
+                            "description": "Whether the current user can perform this action"
                           }
                         }
                       }
                     },
                     "moderator": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "description": "Whether the post author is a moderator"
                     },
                     "admin": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "description": "Whether the post author is an admin"
                     },
                     "staff": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "description": "Whether the post author is staff"
                     },
                     "user_id": {
-                      "type": "integer"
+                      "type": "integer",
+                      "description": "ID of the post author"
                     },
                     "hidden": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "description": "Whether the post is hidden"
                     },
                     "trust_level": {
-                      "type": "integer"
+                      "type": "integer",
+                      "description": "Trust level of the post author"
                     },
                     "deleted_at": {
                       "type": [
                         "string",
                         "null"
-                      ]
+                      ],
+                      "description": "When the post was deleted"
                     },
                     "user_deleted": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "description": "Whether the post was deleted by the user"
                     },
                     "edit_reason": {
                       "type": [
                         "string",
                         "null"
-                      ]
+                      ],
+                      "description": "Reason for the last edit"
                     },
                     "can_view_edit_history": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "description": "Whether the current user can view edit history"
                     },
                     "wiki": {
-                      "type": "boolean"
-                    },
-                    "notice": {
-                      "type": "object"
-                    },
-                    "notice_created_by_user": {
-                      "type": [
-                        "object",
-                        "null"
-                      ]
+                      "type": "boolean",
+                      "description": "Whether this is a wiki post"
                     },
                     "reviewable_id": {
                       "type": [
                         "integer",
                         "null"
-                      ]
+                      ],
+                      "description": "ID of the reviewable if this post is under review"
                     },
                     "reviewable_score_count": {
-                      "type": "integer"
+                      "type": "integer",
+                      "description": "Number of reviewable scores"
                     },
                     "reviewable_score_pending_count": {
-                      "type": "integer"
+                      "type": "integer",
+                      "description": "Number of pending reviewable scores"
+                    },
+                    "post_url": {
+                      "type": "string",
+                      "description": "URL of the post"
                     }
-                  }
+                  },
+                  "required": [
+                    "id",
+                    "name",
+                    "username",
+                    "avatar_template",
+                    "created_at",
+                    "cooked",
+                    "post_number",
+                    "post_type",
+                    "posts_count",
+                    "updated_at",
+                    "reply_count",
+                    "reply_to_post_number",
+                    "quote_count",
+                    "incoming_link_count",
+                    "reads",
+                    "readers_count",
+                    "score",
+                    "yours",
+                    "topic_id",
+                    "topic_slug",
+                    "display_username",
+                    "primary_group_name",
+                    "flair_name",
+                    "flair_url",
+                    "flair_bg_color",
+                    "flair_color",
+                    "flair_group_id",
+                    "badges_granted",
+                    "version",
+                    "can_edit",
+                    "can_delete",
+                    "can_recover",
+                    "can_see_hidden_post",
+                    "can_wiki",
+                    "user_title",
+                    "bookmarked",
+                    "actions_summary",
+                    "moderator",
+                    "admin",
+                    "staff",
+                    "user_id",
+                    "hidden",
+                    "trust_level",
+                    "deleted_at",
+                    "user_deleted",
+                    "edit_reason",
+                    "can_view_edit_history",
+                    "wiki",
+                    "reviewable_id",
+                    "reviewable_score_count",
+                    "reviewable_score_pending_count",
+                    "post_url"
+                  ]
                 }
               }
             }
@@ -7007,16 +7664,19 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
+                "additionalProperties": false,
                 "properties": {
                   "id": {
-                    "type": "integer"
+                    "type": "integer",
+                    "description": "The ID of the post to perform the action on"
                   },
                   "post_action_type_id": {
-                    "type": "integer"
+                    "type": "integer",
+                    "description": "The ID of the post action type (e.g., 2 for like)"
                   },
                   "flag_topic": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Whether to flag the entire topic"
                   }
                 },
                 "required": [
