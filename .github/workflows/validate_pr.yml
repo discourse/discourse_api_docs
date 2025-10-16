@@ -3,8 +3,6 @@ name: Validate PR Documentation
 on:
   pull_request_target:
     types: [opened, synchronize, reopened]
-    paths:
-      - 'openapi.json'
 
 jobs:
   validate-openapi:
