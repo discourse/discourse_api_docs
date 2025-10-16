@@ -1,12 +1,10 @@
 name: Validate PR Documentation
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, synchronize, reopened]
     paths:
       - 'openapi.json'
-  repository_dispatch:
-    types: [docs-updated]
 
 jobs:
   validate-openapi:
@@ -14,17 +12,14 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - name: Checkout PR
-        if: github.event_name == 'pull_request'
+      - name: Checkout PR Code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
-
-      - name: Checkout docs-updated branch
-        if: github.event_name == 'repository_dispatch'
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.client_payload.branch }}
+          # This is critical for pull_request_target. It ensures we checkout
+          # the code from the PR, not the base branch.
+          ref: ${{ github.event.pull_request.head.sha }}
+          # fetch-depth: 0 is not strictly needed for validation, but kept it
+          # in case your validation scripts need the full git history.
           fetch-depth: 0
 
       - name: Start Swagger Validator
