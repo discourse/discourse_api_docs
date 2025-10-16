@@ -5211,6 +5211,9 @@ paths:
                 properties:
                   locked:
                     type: boolean
+                    description: Whether the post is locked
+                required:
+                - locked
       requestBody:
         content:
           application/json:
@@ -5219,6 +5222,7 @@ paths:
               properties:
                 locked:
                   type: string
+                  description: Whether to lock the post (true/false)
               required:
               - locked
   "/post_actions.json":
