@@ -82,8 +82,8 @@ jobs:
       - name: Generate Bruno collection
         working-directory: discourse_api_docs
         run: |
-          if [[ -n $(git status --porcelain) ]]; then
-              npm install && npm run tobruno
+          if git status --porcelain | grep .; then
+            npm run tobruno
           fi
 
       - name: Create PR
@@ -99,4 +99,3 @@ jobs:
           author: discoursebuild <build@discourse.org>
           body: |
             Updates Documentation with changes from Discourse core
-
