@@ -90,6 +90,7 @@ jobs:
         id: create-pr
         uses: peter-evans/create-pull-request@v5
         with:
+          token: ${{ secrets.ACTIONS_BOT_TOKEN }}
           path: discourse_api_docs
           add-paths: "openapi.yml,openapi.json,bruno-collection.json"
           branch: update-documentation
