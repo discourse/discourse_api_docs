@@ -7273,9 +7273,13 @@
                   "type": "object",
                   "properties": {
                     "locked": {
-                      "type": "boolean"
+                      "type": "boolean",
+                      "description": "Whether the post is locked"
                     }
-                  }
+                  },
+                  "required": [
+                    "locked"
+                  ]
                 }
               }
             }
@@ -7288,7 +7292,8 @@
                 "type": "object",
                 "properties": {
                   "locked": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Whether to lock the post (true/false)"
                   }
                 },
                 "required": [
