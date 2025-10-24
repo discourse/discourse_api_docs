@@ -9373,12 +9373,13 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
+                  "additionalProperties": false,
                   "properties": {
                     "tag_groups": {
                       "type": "array",
                       "items": {
                         "type": "object",
+                        "additionalProperties": false,
                         "properties": {
                           "id": {
                             "type": "integer"
@@ -9388,27 +9389,40 @@
                           },
                           "tag_names": {
                             "type": "array",
-                            "items": {}
+                            "items": {
+                              "type": "string"
+                            }
                           },
                           "parent_tag_name": {
                             "type": "array",
-                            "items": {}
+                            "items": {
+                              "type": "string"
+                            }
                           },
                           "one_per_topic": {
                             "type": "boolean"
                           },
                           "permissions": {
                             "type": "object",
-                            "properties": {
-                              "staff": {
-                                "type": "integer"
-                              }
+                            "additionalProperties": {
+                              "type": "integer"
                             }
                           }
-                        }
+                        },
+                        "required": [
+                          "id",
+                          "name",
+                          "tag_names",
+                          "parent_tag_name",
+                          "one_per_topic",
+                          "permissions"
+                        ]
                       }
                     }
-                  }
+                  },
+                  "required": [
+                    "tag_groups"
+                  ]
                 }
               }
             }
