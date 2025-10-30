@@ -14325,8 +14325,7 @@
                             },
                             "watched_precedence_over_muted": {
                               "type": [
-                                "boolean",
-                                "null"
+                                "boolean"
                               ]
                             },
                             "seen_popups": {
@@ -15375,8 +15374,7 @@
                             },
                             "watched_precedence_over_muted": {
                               "type": [
-                                "boolean",
-                                "null"
+                                "boolean"
                               ]
                             },
                             "seen_popups": {
@@ -16360,8 +16358,7 @@
                             },
                             "watched_precedence_over_muted": {
                               "type": [
-                                "boolean",
-                                "null"
+                                "boolean"
                               ]
                             },
                             "seen_popups": {
