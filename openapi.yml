@@ -10204,7 +10204,6 @@ paths:
                           watched_precedence_over_muted:
                             type:
                             - boolean
-                            - 'null'
                           seen_popups:
                             type:
                             - array
@@ -10958,7 +10957,6 @@ paths:
                           watched_precedence_over_muted:
                             type:
                             - boolean
-                            - 'null'
                           seen_popups:
                             type:
                             - array
@@ -11673,7 +11671,6 @@ paths:
                           watched_precedence_over_muted:
                             type:
                             - boolean
-                            - 'null'
                           seen_popups:
                             type:
                             - array
