@@ -234,6 +234,23 @@ paths:
                           - url
                           - category_slug
                           - topic
+                        occurrences:
+                          type: array
+                          items:
+                            type: object
+                            additionalProperties: false
+                            properties:
+                              starts_at:
+                                type:
+                                - string
+                                - 'null'
+                              ends_at:
+                                type:
+                                - string
+                                - 'null'
+                            required:
+                            - starts_at
+                            - ends_at
                         can_act_on_discourse_post_event:
                           type:
                           - boolean
@@ -366,6 +383,7 @@ paths:
                       - status
                       - at_capacity
                       - post
+                      - occurrences
                 required:
                 - events
   "/discourse-post-event/events.ics":
@@ -4454,6 +4472,10 @@ paths:
                   type: string
                   description: Provide an external_id from a remote system to associate
                     a forum topic with that id.
+                auto_track:
+                  type: boolean
+                  description: If false, the user will not track the topic. By default,
+                    the user will track the topic.
               required:
               - raw
   "/posts/{id}.json":

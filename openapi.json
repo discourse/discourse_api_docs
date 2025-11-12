@@ -244,6 +244,31 @@
                               "topic"
                             ]
                           },
+                          "occurrences": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "properties": {
+                                "starts_at": {
+                                  "type": [
+                                    "string",
+                                    "null"
+                                  ]
+                                },
+                                "ends_at": {
+                                  "type": [
+                                    "string",
+                                    "null"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "starts_at",
+                                "ends_at"
+                              ]
+                            }
+                          },
                           "can_act_on_discourse_post_event": {
                             "type": [
                               "boolean",
@@ -429,7 +454,8 @@
                           "should_display_invitees",
                           "status",
                           "at_capacity",
-                          "post"
+                          "post",
+                          "occurrences"
                         ]
                       }
                     }
@@ -6214,6 +6240,10 @@
                   "external_id": {
                     "type": "string",
                     "description": "Provide an external_id from a remote system to associate\na forum topic with that id."
+                  },
+                  "auto_track": {
+                    "type": "boolean",
+                    "description": "If false, the user will not track the topic. By default,\nthe user will track the topic."
                   }
                 },
                 "required": [
