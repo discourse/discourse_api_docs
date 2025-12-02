@@ -8849,6 +8849,26 @@ paths:
                         type: integer
                       filesize:
                         type: integer
+                  optimized_video:
+                    type:
+                    - object
+                    - 'null'
+                    additionalProperties: false
+                    properties:
+                      id:
+                        type: integer
+                      upload_id:
+                        type: integer
+                      url:
+                        type: string
+                      extension:
+                        type: string
+                      filesize:
+                        type: integer
+                      sha1:
+                        type: string
+                      original_filename:
+                        type: string
                 required:
                 - id
                 - url
@@ -9065,6 +9085,26 @@ paths:
                         type: integer
                       filesize:
                         type: integer
+                  optimized_video:
+                    type:
+                    - object
+                    - 'null'
+                    additionalProperties: false
+                    properties:
+                      id:
+                        type: integer
+                      upload_id:
+                        type: integer
+                      url:
+                        type: string
+                      extension:
+                        type: string
+                      filesize:
+                        type: integer
+                      sha1:
+                        type: string
+                      original_filename:
+                        type: string
                 required:
                 - id
                 - url
@@ -9383,6 +9423,26 @@ paths:
                         type: integer
                       filesize:
                         type: integer
+                  optimized_video:
+                    type:
+                    - object
+                    - 'null'
+                    additionalProperties: false
+                    properties:
+                      id:
+                        type: integer
+                      upload_id:
+                        type: integer
+                      url:
+                        type: string
+                      extension:
+                        type: string
+                      filesize:
+                        type: integer
+                      sha1:
+                        type: string
+                      original_filename:
+                        type: string
                 required:
                 - id
                 - url
