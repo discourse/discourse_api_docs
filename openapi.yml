@@ -1203,9 +1203,12 @@ paths:
                               type: integer
                             group_name:
                               type: string
+                            group_id:
+                              type: integer
                           required:
                           - permission_type
                           - group_name
+                          - group_id
                       email_in:
                         type:
                         - string
@@ -1762,9 +1765,12 @@ paths:
                               type: integer
                             group_name:
                               type: string
+                            group_id:
+                              type: integer
                           required:
                           - permission_type
                           - group_name
+                          - group_id
                       email_in:
                         type:
                         - string
@@ -2303,9 +2309,12 @@ paths:
                               type: integer
                             group_name:
                               type: string
+                            group_id:
+                              type: integer
                           required:
                           - permission_type
                           - group_name
+                          - group_id
                       email_in:
                         type:
                         - string

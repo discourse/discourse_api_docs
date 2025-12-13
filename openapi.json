@@ -1640,11 +1640,15 @@
                               },
                               "group_name": {
                                 "type": "string"
+                              },
+                              "group_id": {
+                                "type": "integer"
                               }
                             },
                             "required": [
                               "permission_type",
-                              "group_name"
+                              "group_name",
+                              "group_id"
                             ]
                           }
                         },
@@ -2425,11 +2429,15 @@
                               },
                               "group_name": {
                                 "type": "string"
+                              },
+                              "group_id": {
+                                "type": "integer"
                               }
                             },
                             "required": [
                               "permission_type",
-                              "group_name"
+                              "group_name",
+                              "group_id"
                             ]
                           }
                         },
@@ -3187,11 +3195,15 @@
                               },
                               "group_name": {
                                 "type": "string"
+                              },
+                              "group_id": {
+                                "type": "integer"
                               }
                             },
                             "required": [
                               "permission_type",
-                              "group_name"
+                              "group_name",
+                              "group_id"
                             ]
                           }
                         },
