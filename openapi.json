@@ -6778,6 +6778,10 @@
                     "required": [
                       "raw"
                     ]
+                  },
+                  "bypass_bump": {
+                    "type": "boolean",
+                    "description": "Skip bumping the topic when updating the post. Requires\nstaff or TL4 permissions."
                   }
                 }
               }

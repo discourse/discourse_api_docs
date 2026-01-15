@@ -4861,6 +4861,10 @@ paths:
                       type: string
                   required:
                   - raw
+                bypass_bump:
+                  type: boolean
+                  description: Skip bumping the topic when updating the post. Requires
+                    staff or TL4 permissions.
     delete:
       summary: delete a single post
       tags:
