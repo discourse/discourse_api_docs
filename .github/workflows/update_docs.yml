@@ -82,7 +82,7 @@ jobs:
       - name: Generate Bruno collection
         working-directory: discourse_api_docs
         run: |
-          if git status --porcelain | grep .; then
+          if ! git diff --quiet openapi.json 2>/dev/null; then
             npm run tobruno
           fi
 
