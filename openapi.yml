@@ -6006,6 +6006,10 @@ paths:
                         type: integer
                       chat_watched_thread:
                         type: integer
+                      upcoming_change_available:
+                        type: integer
+                      upcoming_change_automatically_promoted:
+                        type: integer
                       assigned:
                         type: integer
                       question_answer_user_commented:
