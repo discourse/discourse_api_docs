@@ -2729,7 +2729,25 @@
                         },
                         "top_tags": {
                           "type": "array",
-                          "items": {}
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "integer"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "slug": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "name",
+                              "slug"
+                            ]
+                          }
                         },
                         "topics": {
                           "type": "array",
@@ -8127,7 +8145,25 @@
                     },
                     "tags": {
                       "type": "array",
-                      "items": {}
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "integer"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "slug": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "name",
+                          "slug"
+                        ]
+                      }
                     },
                     "groups": {
                       "type": "array",
@@ -8736,7 +8772,25 @@
                     },
                     "top_tags": {
                       "type": "array",
-                      "items": {}
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "integer"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "slug": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "name",
+                          "slug"
+                        ]
+                      }
                     },
                     "wizard_required": {
                       "type": "boolean"
@@ -9307,16 +9361,50 @@
                           "name": {
                             "type": "string"
                           },
-                          "tag_names": {
+                          "tags": {
                             "type": "array",
                             "items": {
-                              "type": "string"
+                              "type": "object",
+                              "additionalProperties": false,
+                              "properties": {
+                                "id": {
+                                  "type": "integer"
+                                },
+                                "name": {
+                                  "type": "string"
+                                },
+                                "slug": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "id",
+                                "name",
+                                "slug"
+                              ]
                             }
                           },
-                          "parent_tag_name": {
+                          "parent_tag": {
                             "type": "array",
                             "items": {
-                              "type": "string"
+                              "type": "object",
+                              "additionalProperties": false,
+                              "properties": {
+                                "id": {
+                                  "type": "integer"
+                                },
+                                "name": {
+                                  "type": "string"
+                                },
+                                "slug": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "id",
+                                "name",
+                                "slug"
+                              ]
                             }
                           },
                           "one_per_topic": {
@@ -9332,8 +9420,8 @@
                         "required": [
                           "id",
                           "name",
-                          "tag_names",
-                          "parent_tag_name",
+                          "tags",
+                          "parent_tag",
                           "one_per_topic",
                           "permissions"
                         ]
@@ -9374,13 +9462,49 @@
                         "name": {
                           "type": "string"
                         },
-                        "tag_names": {
+                        "tags": {
                           "type": "array",
-                          "items": {}
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "integer"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "slug": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "name",
+                              "slug"
+                            ]
+                          }
                         },
-                        "parent_tag_name": {
+                        "parent_tag": {
                           "type": "array",
-                          "items": {}
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "integer"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "slug": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "name",
+                              "slug"
+                            ]
+                          }
                         },
                         "one_per_topic": {
                           "type": "boolean"
@@ -9392,8 +9516,8 @@
                       "required": [
                         "id",
                         "name",
-                        "tag_names",
-                        "parent_tag_name",
+                        "tags",
+                        "parent_tag",
                         "one_per_topic",
                         "permissions"
                       ]
@@ -10565,7 +10689,25 @@
                           },
                           "tags": {
                             "type": "array",
-                            "items": {}
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "integer"
+                                },
+                                "name": {
+                                  "type": "string"
+                                },
+                                "slug": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "id",
+                                "name",
+                                "slug"
+                              ]
+                            }
                           },
                           "tags_descriptions": {
                             "type": "object",
@@ -10667,7 +10809,25 @@
                     },
                     "tags": {
                       "type": "array",
-                      "items": {}
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "integer"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "slug": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "name",
+                          "slug"
+                        ]
+                      }
                     },
                     "tags_descriptions": {
                       "type": "object",

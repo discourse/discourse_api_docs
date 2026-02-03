@@ -1984,7 +1984,19 @@ paths:
                         type: integer
                       top_tags:
                         type: array
-                        items: {}
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            name:
+                              type: string
+                            slug:
+                              type: string
+                          required:
+                          - id
+                          - name
+                          - slug
                       topics:
                         type: array
                         items:
@@ -5831,7 +5843,19 @@ paths:
                     items: {}
                   tags:
                     type: array
-                    items: {}
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                        slug:
+                          type: string
+                      required:
+                      - id
+                      - name
+                      - slug
                   groups:
                     type: array
                     items: {}
@@ -6268,7 +6292,19 @@ paths:
                     type: string
                   top_tags:
                     type: array
-                    items: {}
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                        slug:
+                          type: string
+                      required:
+                      - id
+                      - name
+                      - slug
                   wizard_required:
                     type: boolean
                   can_associate_groups:
@@ -6680,14 +6716,38 @@ paths:
                           type: integer
                         name:
                           type: string
-                        tag_names:
+                        tags:
                           type: array
                           items:
-                            type: string
-                        parent_tag_name:
+                            type: object
+                            additionalProperties: false
+                            properties:
+                              id:
+                                type: integer
+                              name:
+                                type: string
+                              slug:
+                                type: string
+                            required:
+                            - id
+                            - name
+                            - slug
+                        parent_tag:
                           type: array
                           items:
-                            type: string
+                            type: object
+                            additionalProperties: false
+                            properties:
+                              id:
+                                type: integer
+                              name:
+                                type: string
+                              slug:
+                                type: string
+                            required:
+                            - id
+                            - name
+                            - slug
                         one_per_topic:
                           type: boolean
                         permissions:
@@ -6697,8 +6757,8 @@ paths:
                       required:
                       - id
                       - name
-                      - tag_names
-                      - parent_tag_name
+                      - tags
+                      - parent_tag
                       - one_per_topic
                       - permissions
                 required:
@@ -6725,12 +6785,36 @@ paths:
                         type: integer
                       name:
                         type: string
-                      tag_names:
+                      tags:
                         type: array
-                        items: {}
-                      parent_tag_name:
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            name:
+                              type: string
+                            slug:
+                              type: string
+                          required:
+                          - id
+                          - name
+                          - slug
+                      parent_tag:
                         type: array
-                        items: {}
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            name:
+                              type: string
+                            slug:
+                              type: string
+                          required:
+                          - id
+                          - name
+                          - slug
                       one_per_topic:
                         type: boolean
                       permissions:
@@ -6738,8 +6822,8 @@ paths:
                     required:
                     - id
                     - name
-                    - tag_names
-                    - parent_tag_name
+                    - tags
+                    - parent_tag
                     - one_per_topic
                     - permissions
                 required:
@@ -7523,7 +7607,19 @@ paths:
                           - 'null'
                         tags:
                           type: array
-                          items: {}
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                              name:
+                                type: string
+                              slug:
+                                type: string
+                            required:
+                            - id
+                            - name
+                            - slug
                         tags_descriptions:
                           type: object
                           additionalProperties: false
@@ -7601,7 +7697,19 @@ paths:
                       - posters
                   tags:
                     type: array
-                    items: {}
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                        slug:
+                          type: string
+                      required:
+                      - id
+                      - name
+                      - slug
                   tags_descriptions:
                     type: object
                     additionalProperties: false
