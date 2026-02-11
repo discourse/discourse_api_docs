@@ -4505,15 +4505,6 @@
       "preview": null
     },
     {
-      "setting": "bootstrap_mode_min_users",
-      "description": "Minimum number of users required to disable bootstrap mode (set to 0 to disable)",
-      "default": "50",
-      "type": "fixnum",
-      "value": "50",
-      "category": "uncategorized",
-      "preview": null
-    },
-    {
       "setting": "automatically_unpin_topics",
       "description": "Automatically unpin topics when the user reaches the bottom.",
       "default": "true",
