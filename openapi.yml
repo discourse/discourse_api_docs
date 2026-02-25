@@ -6309,6 +6309,8 @@ paths:
                     type: boolean
                   can_associate_groups:
                     type: boolean
+                  email_configured:
+                    type: boolean
                   topic_featured_link_allowed_category_ids:
                     type: array
                     items: {}
@@ -6640,6 +6642,7 @@ paths:
                 - auth_providers
                 - full_name_required_for_signup
                 - full_name_visible_in_signup
+                - email_configured
   "/site/basic-info.json":
     get:
       summary: Get site basic info
