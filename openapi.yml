@@ -1243,6 +1243,8 @@ paths:
                         type:
                         - string
                         - 'null'
+                      category_types:
+                        type: object
                     required:
                     - id
                     - name
@@ -1805,6 +1807,8 @@ paths:
                         type:
                         - string
                         - 'null'
+                      category_types:
+                        type: object
                     required:
                     - id
                     - name
@@ -2361,6 +2365,8 @@ paths:
                         type:
                         - string
                         - 'null'
+                      category_types:
+                        type: object
                     required:
                     - id
                     - name
@@ -12589,6 +12595,43 @@ paths:
                     type: object
                   include_ip:
                     type: boolean
+                  upcoming_changes_stats:
+                    type: array
+                    items:
+                      type: object
+                      additionalProperties: false
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                          - object
+                        properties:
+                          name:
+                            type: string
+                          humanized_name:
+                            type: string
+                          description:
+                            type: string
+                          enabled:
+                            type: boolean
+                          specific_groups:
+                            type: array
+                            items:
+                              type: string
+                          reason:
+                            type: string
+                            enum:
+                            - enabled_for_everyone
+                            - enabled_for_no_one
+                            - in_specific_groups
+                            - not_in_specific_groups
+                      required:
+                      - name
+                      - humanized_name
+                      - description
+                      - enabled
+                      - specific_groups
+                      - reason
                 required:
                 - id
                 - username
