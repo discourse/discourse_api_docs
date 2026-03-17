@@ -1480,6 +1480,12 @@
                             "null"
                           ]
                         },
+                        "topic_title_placeholder": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
                         "form_template_ids": {
                           "type": "array",
                           "items": {}
@@ -1728,6 +1734,7 @@
                         "notification_level",
                         "can_edit",
                         "topic_template",
+                        "topic_title_placeholder",
                         "has_children",
                         "subcategory_count",
                         "sort_order",
@@ -1990,6 +1997,12 @@
                                   "null"
                                 ]
                               },
+                              "topic_title_placeholder": {
+                                "type": [
+                                  "string",
+                                  "null"
+                                ]
+                              },
                               "has_children": {
                                 "type": "boolean"
                               },
@@ -2113,6 +2126,7 @@
                               "notification_level",
                               "can_edit",
                               "topic_template",
+                              "topic_title_placeholder",
                               "has_children",
                               "subcategory_count",
                               "sort_order",
@@ -2267,6 +2281,12 @@
                           "type": "boolean"
                         },
                         "topic_template": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
+                        "topic_title_placeholder": {
                           "type": [
                             "string",
                             "null"
@@ -2517,6 +2537,7 @@
                         "notification_level",
                         "can_edit",
                         "topic_template",
+                        "topic_title_placeholder",
                         "form_template_ids",
                         "has_children",
                         "subcategory_count",
@@ -3059,6 +3080,12 @@
                             "null"
                           ]
                         },
+                        "topic_title_placeholder": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
                         "form_template_ids": {
                           "type": "array",
                           "items": {}
@@ -3307,6 +3334,7 @@
                         "notification_level",
                         "can_edit",
                         "topic_template",
+                        "topic_title_placeholder",
                         "has_children",
                         "subcategory_count",
                         "sort_order",
@@ -9011,6 +9039,12 @@
                               "null"
                             ]
                           },
+                          "topic_title_placeholder": {
+                            "type": [
+                              "string",
+                              "null"
+                            ]
+                          },
                           "has_children": {
                             "type": "boolean"
                           },
@@ -9151,6 +9185,7 @@
                           "permission",
                           "notification_level",
                           "topic_template",
+                          "topic_title_placeholder",
                           "has_children",
                           "subcategory_count",
                           "sort_order",
@@ -11102,6 +11137,9 @@
                           "type": "boolean"
                         },
                         "can_pin_unpin_topic": {
+                          "type": "boolean"
+                        },
+                        "can_banner_topic": {
                           "type": "boolean"
                         },
                         "can_moderate_category": {

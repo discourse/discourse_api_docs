@@ -1091,6 +1091,10 @@ paths:
                         type:
                         - string
                         - 'null'
+                      topic_title_placeholder:
+                        type:
+                        - string
+                        - 'null'
                       form_template_ids:
                         type: array
                         items: {}
@@ -1266,6 +1270,7 @@ paths:
                     - notification_level
                     - can_edit
                     - topic_template
+                    - topic_title_placeholder
                     - has_children
                     - subcategory_count
                     - sort_order
@@ -1456,6 +1461,10 @@ paths:
                               type:
                               - string
                               - 'null'
+                            topic_title_placeholder:
+                              type:
+                              - string
+                              - 'null'
                             has_children:
                               type: boolean
                             subcategory_count:
@@ -1545,6 +1554,7 @@ paths:
                           - notification_level
                           - can_edit
                           - topic_template
+                          - topic_title_placeholder
                           - has_children
                           - subcategory_count
                           - sort_order
@@ -1652,6 +1662,10 @@ paths:
                       can_edit:
                         type: boolean
                       topic_template:
+                        type:
+                        - string
+                        - 'null'
+                      topic_title_placeholder:
                         type:
                         - string
                         - 'null'
@@ -1827,6 +1841,7 @@ paths:
                     - notification_level
                     - can_edit
                     - topic_template
+                    - topic_title_placeholder
                     - form_template_ids
                     - has_children
                     - subcategory_count
@@ -2213,6 +2228,10 @@ paths:
                         type:
                         - string
                         - 'null'
+                      topic_title_placeholder:
+                        type:
+                        - string
+                        - 'null'
                       form_template_ids:
                         type: array
                         items: {}
@@ -2388,6 +2407,7 @@ paths:
                     - notification_level
                     - can_edit
                     - topic_template
+                    - topic_title_placeholder
                     - has_children
                     - subcategory_count
                     - sort_order
@@ -6456,6 +6476,10 @@ paths:
                           type:
                           - string
                           - 'null'
+                        topic_title_placeholder:
+                          type:
+                          - string
+                          - 'null'
                         has_children:
                           type: boolean
                         subcategory_count:
@@ -6555,6 +6579,7 @@ paths:
                       - permission
                       - notification_level
                       - topic_template
+                      - topic_title_placeholder
                       - has_children
                       - subcategory_count
                       - sort_order
@@ -7896,6 +7921,8 @@ paths:
                       can_toggle_topic_visibility:
                         type: boolean
                       can_pin_unpin_topic:
+                        type: boolean
+                      can_banner_topic:
                         type: boolean
                       can_moderate_category:
                         type: boolean
