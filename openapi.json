@@ -1429,6 +1429,12 @@
                         "slug": {
                           "type": "string"
                         },
+                        "locale": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
                         "topic_count": {
                           "type": "integer"
                         },
@@ -2235,6 +2241,12 @@
                         "slug": {
                           "type": "string"
                         },
+                        "locale": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
                         "topic_count": {
                           "type": "integer"
                         },
@@ -3028,6 +3040,12 @@
                         },
                         "slug": {
                           "type": "string"
+                        },
+                        "locale": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
                         },
                         "topic_count": {
                           "type": "integer"
