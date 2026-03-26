@@ -1057,6 +1057,10 @@ paths:
                         - 'null'
                       slug:
                         type: string
+                      locale:
+                        type:
+                        - string
+                        - 'null'
                       topic_count:
                         type: integer
                       post_count:
@@ -1631,6 +1635,10 @@ paths:
                         - 'null'
                       slug:
                         type: string
+                      locale:
+                        type:
+                        - string
+                        - 'null'
                       topic_count:
                         type: integer
                       post_count:
@@ -2194,6 +2202,10 @@ paths:
                         - 'null'
                       slug:
                         type: string
+                      locale:
+                        type:
+                        - string
+                        - 'null'
                       topic_count:
                         type: integer
                       post_count:
