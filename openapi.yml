@@ -6374,6 +6374,8 @@ paths:
                           type:
                           - integer
                           - 'null'
+                        only_theme_color_schemes:
+                          type: boolean
                       required:
                       - theme_id
                       - name
