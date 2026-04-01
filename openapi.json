@@ -17734,40 +17734,32 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                          "type": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "humanized_name": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "enabled": {
+                            "type": "boolean"
+                          },
+                          "specific_groups": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "reason": {
                             "type": "string",
                             "enum": [
-                              "object"
+                              "enabled_for_everyone",
+                              "enabled_for_no_one",
+                              "in_specific_groups",
+                              "not_in_specific_groups"
                             ]
-                          },
-                          "properties": {
-                            "name": {
-                              "type": "string"
-                            },
-                            "humanized_name": {
-                              "type": "string"
-                            },
-                            "description": {
-                              "type": "string"
-                            },
-                            "enabled": {
-                              "type": "boolean"
-                            },
-                            "specific_groups": {
-                              "type": "array",
-                              "items": {
-                                "type": "string"
-                              }
-                            },
-                            "reason": {
-                              "type": "string",
-                              "enum": [
-                                "enabled_for_everyone",
-                                "enabled_for_no_one",
-                                "in_specific_groups",
-                                "not_in_specific_groups"
-                              ]
-                            }
                           }
                         },
                         "required": [
