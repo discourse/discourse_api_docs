@@ -8495,6 +8495,9 @@
                         },
                         "circles_activity": {
                           "type": "integer"
+                        },
+                        "boost": {
+                          "type": "integer"
                         }
                       },
                       "required": [
