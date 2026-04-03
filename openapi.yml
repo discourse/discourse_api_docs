@@ -6086,6 +6086,8 @@ paths:
                         type: integer
                       circles_activity:
                         type: integer
+                      boost:
+                        type: integer
                     required:
                     - mentioned
                     - replied
