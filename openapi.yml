@@ -366,6 +366,10 @@ paths:
                           - 'null'
                         at_capacity:
                           type: boolean
+                        image_upload:
+                          type:
+                          - object
+                          - 'null'
                       required:
                       - id
                       - category_id
