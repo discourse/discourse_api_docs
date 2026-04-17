@@ -1185,6 +1185,10 @@ paths:
                             type:
                             - boolean
                             - 'null'
+                          nested_replies_default:
+                            type:
+                            - boolean
+                            - 'null'
                           topic_posting_review_mode:
                             type: string
                           reply_posting_review_mode:
@@ -1777,6 +1781,10 @@ paths:
                             type:
                             - boolean
                             - 'null'
+                          nested_replies_default:
+                            type:
+                            - boolean
+                            - 'null'
                           topic_posting_review_mode:
                             type: string
                           reply_posting_review_mode:
@@ -2355,6 +2363,10 @@ paths:
                             - boolean
                             - 'null'
                           require_topic_approval:
+                            type:
+                            - boolean
+                            - 'null'
+                          nested_replies_default:
                             type:
                             - boolean
                             - 'null'
