@@ -8588,6 +8588,12 @@
                         },
                         "boost": {
                           "type": "integer"
+                        },
+                        "suggested_edit_created": {
+                          "type": "integer"
+                        },
+                        "suggested_edit_accepted": {
+                          "type": "integer"
                         }
                       },
                       "required": [
