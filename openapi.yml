@@ -1279,6 +1279,34 @@ paths:
                         - 'null'
                       category_types:
                         type: object
+                      available_category_types:
+                        type: array
+                        items:
+                          type: object
+                          additionalProperties: false
+                          properties:
+                            id:
+                              type: string
+                            name:
+                              type: string
+                            title:
+                              type: string
+                            description:
+                              type: string
+                            icon:
+                              type: string
+                            available:
+                              type: boolean
+                            configuration_schema:
+                              type: object
+                          required:
+                          - id
+                          - name
+                          - title
+                          - description
+                          - icon
+                          - available
+                          - configuration_schema
                     required:
                     - id
                     - name
@@ -1875,6 +1903,34 @@ paths:
                         - 'null'
                       category_types:
                         type: object
+                      available_category_types:
+                        type: array
+                        items:
+                          type: object
+                          additionalProperties: false
+                          properties:
+                            id:
+                              type: string
+                            name:
+                              type: string
+                            title:
+                              type: string
+                            description:
+                              type: string
+                            icon:
+                              type: string
+                            available:
+                              type: boolean
+                            configuration_schema:
+                              type: object
+                          required:
+                          - id
+                          - name
+                          - title
+                          - description
+                          - icon
+                          - available
+                          - configuration_schema
                     required:
                     - id
                     - name
@@ -2460,6 +2516,34 @@ paths:
                         - 'null'
                       category_types:
                         type: object
+                      available_category_types:
+                        type: array
+                        items:
+                          type: object
+                          additionalProperties: false
+                          properties:
+                            id:
+                              type: string
+                            name:
+                              type: string
+                            title:
+                              type: string
+                            description:
+                              type: string
+                            icon:
+                              type: string
+                            available:
+                              type: boolean
+                            configuration_schema:
+                              type: object
+                          required:
+                          - id
+                          - name
+                          - title
+                          - description
+                          - icon
+                          - available
+                          - configuration_schema
                     required:
                     - id
                     - name
@@ -9042,7 +9126,7 @@ paths:
             schema:
               additionalProperties: false
               properties:
-                type:
+                upload_type:
                   type: string
                   enum:
                   - avatar
@@ -9060,7 +9144,7 @@ paths:
                   type: string
                   format: binary
               required:
-              - type
+              - upload_type
   "/uploads/generate-presigned-put.json":
     post:
       summary: Initiates a direct external upload

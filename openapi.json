@@ -1756,6 +1756,45 @@
                         },
                         "category_types": {
                           "type": "object"
+                        },
+                        "available_category_types": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "icon": {
+                                "type": "string"
+                              },
+                              "available": {
+                                "type": "boolean"
+                              },
+                              "configuration_schema": {
+                                "type": "object"
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "name",
+                              "title",
+                              "description",
+                              "icon",
+                              "available",
+                              "configuration_schema"
+                            ]
+                          }
                         }
                       },
                       "required": [
@@ -2594,6 +2633,45 @@
                         },
                         "category_types": {
                           "type": "object"
+                        },
+                        "available_category_types": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "icon": {
+                                "type": "string"
+                              },
+                              "available": {
+                                "type": "boolean"
+                              },
+                              "configuration_schema": {
+                                "type": "object"
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "name",
+                              "title",
+                              "description",
+                              "icon",
+                              "available",
+                              "configuration_schema"
+                            ]
+                          }
                         }
                       },
                       "required": [
@@ -3420,6 +3498,45 @@
                         },
                         "category_types": {
                           "type": "object"
+                        },
+                        "available_category_types": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "icon": {
+                                "type": "string"
+                              },
+                              "available": {
+                                "type": "boolean"
+                              },
+                              "configuration_schema": {
+                                "type": "object"
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "name",
+                              "title",
+                              "description",
+                              "icon",
+                              "available",
+                              "configuration_schema"
+                            ]
+                          }
                         }
                       },
                       "required": [
@@ -12825,7 +12942,7 @@
               "schema": {
                 "additionalProperties": false,
                 "properties": {
-                  "type": {
+                  "upload_type": {
                     "type": "string",
                     "enum": [
                       "avatar",
@@ -12849,7 +12966,7 @@
                   }
                 },
                 "required": [
-                  "type"
+                  "upload_type"
                 ]
               }
             }
