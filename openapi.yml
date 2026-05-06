@@ -1297,6 +1297,8 @@ paths:
                               type: string
                             available:
                               type: boolean
+                            visible:
+                              type: boolean
                             configuration_schema:
                               type: object
                           required:
@@ -1306,6 +1308,7 @@ paths:
                           - description
                           - icon
                           - available
+                          - visible
                           - configuration_schema
                     required:
                     - id
@@ -1921,6 +1924,8 @@ paths:
                               type: string
                             available:
                               type: boolean
+                            visible:
+                              type: boolean
                             configuration_schema:
                               type: object
                           required:
@@ -1930,6 +1935,7 @@ paths:
                           - description
                           - icon
                           - available
+                          - visible
                           - configuration_schema
                     required:
                     - id
@@ -2534,6 +2540,8 @@ paths:
                               type: string
                             available:
                               type: boolean
+                            visible:
+                              type: boolean
                             configuration_schema:
                               type: object
                           required:
@@ -2543,6 +2551,7 @@ paths:
                           - description
                           - icon
                           - available
+                          - visible
                           - configuration_schema
                     required:
                     - id
