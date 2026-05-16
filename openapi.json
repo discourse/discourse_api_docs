@@ -1757,6 +1757,9 @@
                         "category_types": {
                           "type": "object"
                         },
+                        "category_type_settings": {
+                          "type": "object"
+                        },
                         "available_category_types": {
                           "type": "array",
                           "items": {
@@ -2638,6 +2641,9 @@
                         "category_types": {
                           "type": "object"
                         },
+                        "category_type_settings": {
+                          "type": "object"
+                        },
                         "available_category_types": {
                           "type": "array",
                           "items": {
@@ -3505,6 +3511,9 @@
                           ]
                         },
                         "category_types": {
+                          "type": "object"
+                        },
+                        "category_type_settings": {
                           "type": "object"
                         },
                         "available_category_types": {

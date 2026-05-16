@@ -1279,6 +1279,8 @@ paths:
                         - 'null'
                       category_types:
                         type: object
+                      category_type_settings:
+                        type: object
                       available_category_types:
                         type: array
                         items:
@@ -1906,6 +1908,8 @@ paths:
                         - 'null'
                       category_types:
                         type: object
+                      category_type_settings:
+                        type: object
                       available_category_types:
                         type: array
                         items:
@@ -2521,6 +2525,8 @@ paths:
                         - string
                         - 'null'
                       category_types:
+                        type: object
+                      category_type_settings:
                         type: object
                       available_category_types:
                         type: array
