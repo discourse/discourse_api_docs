@@ -10494,6 +10494,8 @@ paths:
                             type: integer
                           notify_on_linked_posts:
                             type: boolean
+                          enable_upcoming_change_available_notifications:
+                            type: boolean
                           include_tl0_in_digests:
                             type: boolean
                           theme_ids:
@@ -10576,6 +10578,7 @@ paths:
                         - email_in_reply_to
                         - like_notification_frequency
                         - notify_on_linked_posts
+                        - enable_upcoming_change_available_notifications
                         - include_tl0_in_digests
                         - theme_ids
                         - theme_key_seq
@@ -11253,6 +11256,8 @@ paths:
                             type: integer
                           notify_on_linked_posts:
                             type: boolean
+                          enable_upcoming_change_available_notifications:
+                            type: boolean
                           include_tl0_in_digests:
                             type: boolean
                           theme_ids:
@@ -11335,6 +11340,7 @@ paths:
                         - email_in_reply_to
                         - like_notification_frequency
                         - notify_on_linked_posts
+                        - enable_upcoming_change_available_notifications
                         - include_tl0_in_digests
                         - theme_ids
                         - theme_key_seq
@@ -11973,6 +11979,8 @@ paths:
                             type: integer
                           notify_on_linked_posts:
                             type: boolean
+                          enable_upcoming_change_available_notifications:
+                            type: boolean
                           include_tl0_in_digests:
                             type: boolean
                           theme_ids:
@@ -12055,6 +12063,7 @@ paths:
                         - email_in_reply_to
                         - like_notification_frequency
                         - notify_on_linked_posts
+                        - enable_upcoming_change_available_notifications
                         - include_tl0_in_digests
                         - theme_ids
                         - theme_key_seq
