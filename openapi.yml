@@ -6748,6 +6748,9 @@ paths:
                         form_template_ids:
                           type: array
                           items: {}
+                        category_types:
+                          type: object
+                          additionalProperties: true
                       required:
                       - id
                       - name
