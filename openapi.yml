@@ -364,6 +364,12 @@ paths:
                           - 'null'
                         channel:
                           type: object
+                        livestream:
+                          type: boolean
+                        livestream_onebox:
+                          type:
+                          - string
+                          - 'null'
                         max_attendees:
                           type:
                           - integer
