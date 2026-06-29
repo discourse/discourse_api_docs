@@ -6361,6 +6361,8 @@ paths:
                           type: integer
                         name:
                           type: string
+                        full_name:
+                          type: string
                         flair_url:
                           type:
                           - string
@@ -6835,6 +6837,15 @@ paths:
                     type: boolean
                   admin_config_login_routes:
                     type: array
+                  access_control:
+                    type: object
+                    additionalProperties: false
+                    properties:
+                      mandatory_acl:
+                        type: object
+                        additionalProperties: true
+                    required:
+                    - mandatory_acl
                 required:
                 - default_archetype
                 - notification_types
