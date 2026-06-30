@@ -9554,10 +9554,15 @@
                         "mandatory_acl": {
                           "type": "object",
                           "additionalProperties": true
+                        },
+                        "banned_acl": {
+                          "type": "object",
+                          "additionalProperties": true
                         }
                       },
                       "required": [
-                        "mandatory_acl"
+                        "mandatory_acl",
+                        "banned_acl"
                       ]
                     }
                   },
