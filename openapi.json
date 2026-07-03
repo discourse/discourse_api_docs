@@ -195,6 +195,12 @@
                           "all_day": {
                             "type": "boolean"
                           },
+                          "custom_fields": {
+                            "type": [
+                              "object",
+                              "null"
+                            ]
+                          },
                           "post": {
                             "type": "object",
                             "additionalProperties": false,
@@ -308,12 +314,6 @@
                               "id",
                               "username",
                               "avatar_template"
-                            ]
-                          },
-                          "custom_fields": {
-                            "type": [
-                              "object",
-                              "null"
                             ]
                           },
                           "is_closed": {

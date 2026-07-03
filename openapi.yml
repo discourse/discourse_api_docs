@@ -199,6 +199,10 @@ paths:
                           pattern: "^\\d{2}:\\d{2}:\\d{2}$"
                         all_day:
                           type: boolean
+                        custom_fields:
+                          type:
+                          - object
+                          - 'null'
                         post:
                           type: object
                           additionalProperties: false
@@ -279,10 +283,6 @@ paths:
                           - id
                           - username
                           - avatar_template
-                        custom_fields:
-                          type:
-                          - object
-                          - 'null'
                         is_closed:
                           type: boolean
                         is_expired:
