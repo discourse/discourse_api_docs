@@ -3038,7 +3038,6 @@ paths:
                     - id
                     - automatic
                     - name
-                    - user_count
                     - mentionable_level
                     - messageable_level
                     - visibility_level
@@ -3376,7 +3375,6 @@ paths:
                     - id
                     - automatic
                     - name
-                    - user_count
                     - mentionable_level
                     - messageable_level
                     - visibility_level
@@ -3740,7 +3738,6 @@ paths:
                       - automatic
                       - name
                       - display_name
-                      - user_count
                       - mentionable_level
                       - messageable_level
                       - visibility_level
