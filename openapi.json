@@ -8872,6 +8872,9 @@
                           "full_name": {
                             "type": "string"
                           },
+                          "display_name": {
+                            "type": "string"
+                          },
                           "flair_url": {
                             "type": [
                               "string",
@@ -9566,6 +9569,50 @@
                       "type": "array",
                       "items": {
                         "type": "string"
+                      }
+                    },
+                    "category_types": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "title": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "icon": {
+                            "type": "string"
+                          },
+                          "available": {
+                            "type": "boolean"
+                          },
+                          "visible": {
+                            "type": "boolean"
+                          },
+                          "configuration_schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "name",
+                          "title",
+                          "description",
+                          "icon",
+                          "available",
+                          "visible",
+                          "configuration_schema"
+                        ]
                       }
                     }
                   },
@@ -14812,6 +14859,9 @@
                             "notify_on_linked_posts": {
                               "type": "boolean"
                             },
+                            "push_notification_level": {
+                              "type": "string"
+                            },
                             "enable_upcoming_change_available_notifications": {
                               "type": "boolean"
                             },
@@ -14927,6 +14977,7 @@
                             "email_in_reply_to",
                             "like_notification_frequency",
                             "notify_on_linked_posts",
+                            "push_notification_level",
                             "enable_upcoming_change_available_notifications",
                             "include_tl0_in_digests",
                             "theme_ids",
@@ -15895,6 +15946,9 @@
                             "notify_on_linked_posts": {
                               "type": "boolean"
                             },
+                            "push_notification_level": {
+                              "type": "string"
+                            },
                             "enable_upcoming_change_available_notifications": {
                               "type": "boolean"
                             },
@@ -16010,6 +16064,7 @@
                             "email_in_reply_to",
                             "like_notification_frequency",
                             "notify_on_linked_posts",
+                            "push_notification_level",
                             "enable_upcoming_change_available_notifications",
                             "include_tl0_in_digests",
                             "theme_ids",
@@ -16913,6 +16968,9 @@
                             "notify_on_linked_posts": {
                               "type": "boolean"
                             },
+                            "push_notification_level": {
+                              "type": "string"
+                            },
                             "enable_upcoming_change_available_notifications": {
                               "type": "boolean"
                             },
@@ -17028,6 +17086,7 @@
                             "email_in_reply_to",
                             "like_notification_frequency",
                             "notify_on_linked_posts",
+                            "push_notification_level",
                             "enable_upcoming_change_available_notifications",
                             "include_tl0_in_digests",
                             "theme_ids",
