@@ -235,13 +235,17 @@
                                   },
                                   "tags_descriptions": {
                                     "type": "object"
+                                  },
+                                  "slug": {
+                                    "type": "string"
                                   }
                                 },
                                 "required": [
                                   "id",
                                   "title",
                                   "tags",
-                                  "tags_descriptions"
+                                  "tags_descriptions",
+                                  "slug"
                                 ]
                               }
                             },
@@ -443,6 +447,9 @@
                               "string",
                               "null"
                             ]
+                          },
+                          "is_zoom_livestream": {
+                            "type": "boolean"
                           },
                           "max_attendees": {
                             "type": [
@@ -5387,6 +5394,10 @@
                       "type": "boolean",
                       "example": false
                     },
+                    "grants_admin": {
+                      "type": "boolean",
+                      "example": false
+                    },
                     "topics": {
                       "type": "array",
                       "items": {
@@ -5416,6 +5427,7 @@
                     "updated_at",
                     "expires_at",
                     "expired",
+                    "grants_admin",
                     "topics",
                     "groups"
                   ]
