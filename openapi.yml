@@ -229,11 +229,14 @@ paths:
                                     type: string
                                 tags_descriptions:
                                   type: object
+                                slug:
+                                  type: string
                               required:
                               - id
                               - title
                               - tags
                               - tags_descriptions
+                              - slug
                           required:
                           - id
                           - post_number
@@ -370,6 +373,8 @@ paths:
                           type:
                           - string
                           - 'null'
+                        is_zoom_livestream:
+                          type: boolean
                         max_attendees:
                           type:
                           - integer
@@ -3847,6 +3852,9 @@ paths:
                   expired:
                     type: boolean
                     example: false
+                  grants_admin:
+                    type: boolean
+                    example: false
                   topics:
                     type: array
                     items:
@@ -3871,6 +3879,7 @@ paths:
                 - updated_at
                 - expires_at
                 - expired
+                - grants_admin
                 - topics
                 - groups
       requestBody:
