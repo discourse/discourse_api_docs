@@ -10639,6 +10639,12 @@ paths:
                             type: integer
                           interface_color_mode:
                             type: integer
+                          automatically_translate:
+                            type: boolean
+                          understood_languages:
+                            type: array
+                            items:
+                              type: string
                           show_original_content:
                             type: boolean
                           send_shortcut:
@@ -10687,6 +10693,8 @@ paths:
                         - interface_color_mode
                         - show_original_content
                         - send_shortcut
+                        - automatically_translate
+                        - understood_languages
                     required:
                     - id
                     - username
@@ -11423,6 +11431,12 @@ paths:
                             type: integer
                           interface_color_mode:
                             type: integer
+                          automatically_translate:
+                            type: boolean
+                          understood_languages:
+                            type: array
+                            items:
+                              type: string
                           show_original_content:
                             type: boolean
                           send_shortcut:
@@ -11471,6 +11485,8 @@ paths:
                         - interface_color_mode
                         - show_original_content
                         - send_shortcut
+                        - automatically_translate
+                        - understood_languages
                     required:
                     - id
                     - username
@@ -12168,6 +12184,12 @@ paths:
                             type: integer
                           interface_color_mode:
                             type: integer
+                          automatically_translate:
+                            type: boolean
+                          understood_languages:
+                            type: array
+                            items:
+                              type: string
                           show_original_content:
                             type: boolean
                           send_shortcut:
@@ -12216,6 +12238,8 @@ paths:
                         - interface_color_mode
                         - show_original_content
                         - send_shortcut
+                        - automatically_translate
+                        - understood_languages
                     required:
                     - id
                     - username
