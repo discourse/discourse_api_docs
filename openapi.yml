@@ -10559,8 +10559,6 @@ paths:
                             type: boolean
                           enable_markdown_monospace_font:
                             type: boolean
-                          enable_defer:
-                            type: boolean
                           digest_after_minutes:
                             type: integer
                           automatically_unpin_topics:
@@ -10663,7 +10661,6 @@ paths:
                         - enable_quoting
                         - enable_smart_lists
                         - enable_markdown_monospace_font
-                        - enable_defer
                         - digest_after_minutes
                         - automatically_unpin_topics
                         - auto_track_topics_after_msecs
@@ -11351,8 +11348,6 @@ paths:
                             type: boolean
                           enable_markdown_monospace_font:
                             type: boolean
-                          enable_defer:
-                            type: boolean
                           digest_after_minutes:
                             type: integer
                           automatically_unpin_topics:
@@ -11455,7 +11450,6 @@ paths:
                         - enable_quoting
                         - enable_smart_lists
                         - enable_markdown_monospace_font
-                        - enable_defer
                         - digest_after_minutes
                         - automatically_unpin_topics
                         - auto_track_topics_after_msecs
@@ -12104,8 +12098,6 @@ paths:
                             type: boolean
                           enable_markdown_monospace_font:
                             type: boolean
-                          enable_defer:
-                            type: boolean
                           digest_after_minutes:
                             type: integer
                           automatically_unpin_topics:
@@ -12208,7 +12200,6 @@ paths:
                         - enable_quoting
                         - enable_smart_lists
                         - enable_markdown_monospace_font
-                        - enable_defer
                         - digest_after_minutes
                         - automatically_unpin_topics
                         - auto_track_topics_after_msecs
