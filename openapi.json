@@ -17,7 +17,7 @@
       "get": {
         "summary": "List calendar events",
         "tags": [
-          "Discourse Calendar - Events"
+          "Events"
         ],
         "operationId": "listEvents",
         "parameters": [
@@ -505,7 +505,7 @@
       "get": {
         "summary": "Export calendar events in iCalendar format",
         "tags": [
-          "Discourse Calendar - Events"
+          "Events"
         ],
         "operationId": "exportEventsICS",
         "parameters": [

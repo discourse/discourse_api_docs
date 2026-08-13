@@ -70,7 +70,7 @@ paths:
     get:
       summary: List calendar events
       tags:
-      - Discourse Calendar - Events
+      - Events
       operationId: listEvents
       parameters:
       - name: include_details
@@ -411,7 +411,7 @@ paths:
     get:
       summary: Export calendar events in iCalendar format
       tags:
-      - Discourse Calendar - Events
+      - Events
       operationId: exportEventsICS
       parameters:
       - name: category_id
