@@ -8755,6 +8755,9 @@
                         },
                         "suggested_edit_accepted": {
                           "type": "integer"
+                        },
+                        "resenha_invitation": {
+                          "type": "integer"
                         }
                       },
                       "required": [
