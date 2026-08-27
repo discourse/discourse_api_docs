@@ -14959,9 +14959,6 @@
                                 "null"
                               ]
                             },
-                            "topics_unread_when_closed": {
-                              "type": "boolean"
-                            },
                             "composition_mode": {
                               "type": "integer"
                             },
@@ -15023,7 +15020,6 @@
                             "title_count_mode",
                             "timezone",
                             "skip_new_user_tips",
-                            "topics_unread_when_closed",
                             "interface_color_mode",
                             "show_original_content",
                             "send_shortcut",
@@ -16057,9 +16053,6 @@
                                 "null"
                               ]
                             },
-                            "topics_unread_when_closed": {
-                              "type": "boolean"
-                            },
                             "composition_mode": {
                               "type": "integer"
                             },
@@ -16121,7 +16114,6 @@
                             "title_count_mode",
                             "timezone",
                             "skip_new_user_tips",
-                            "topics_unread_when_closed",
                             "interface_color_mode",
                             "show_original_content",
                             "send_shortcut",
@@ -17090,9 +17082,6 @@
                                 "null"
                               ]
                             },
-                            "topics_unread_when_closed": {
-                              "type": "boolean"
-                            },
                             "composition_mode": {
                               "type": "integer"
                             },
@@ -17154,7 +17143,6 @@
                             "title_count_mode",
                             "timezone",
                             "skip_new_user_tips",
-                            "topics_unread_when_closed",
                             "interface_color_mode",
                             "show_original_content",
                             "send_shortcut",
