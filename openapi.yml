@@ -6412,6 +6412,21 @@ paths:
                   homepage_choices:
                     type: array
                     items: {}
+                  homepage_options:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        path:
+                          type: string
+                        server_side:
+                          type: boolean
+                      required:
+                      - id
+                      - path
+                      - server_side
                   periods:
                     type: array
                     items: {}
@@ -6908,6 +6923,7 @@ paths:
                 - filters
                 - anonymous_list_filters
                 - homepage_choices
+                - homepage_options
                 - periods
                 - top_menu_items
                 - anonymous_top_menu_items
