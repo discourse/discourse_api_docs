@@ -35,6 +35,19 @@
             "description": "Include detailed event information (creator, invitees, stats,\netc.)"
           },
           {
+            "name": "include_card",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true",
+                "false"
+              ]
+            },
+            "description": "Include card fields without detailed event HTML or statistics"
+          },
+          {
             "name": "category_id",
             "in": "query",
             "required": false,
@@ -117,6 +130,55 @@
               "maximum": 200
             },
             "description": "Maximum number of events to return (default: 200)"
+          },
+          {
+            "name": "tags",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "description": "Filter to events whose topic has every specified tag"
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Search event names, descriptions, and locations"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "public",
+                "private",
+                "standalone"
+              ]
+            },
+            "description": "Filter by event attendance status"
+          },
+          {
+            "name": "event_format",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "virtual",
+                "in_person",
+                "hybrid"
+              ]
+            },
+            "description": "Filter by whether the event has a URL, location, or both"
           }
         ],
         "responses": {
@@ -319,6 +381,41 @@
                               "username",
                               "avatar_template"
                             ]
+                          },
+                          "hosts": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "properties": {
+                                "id": {
+                                  "type": "integer"
+                                },
+                                "username": {
+                                  "type": "string"
+                                },
+                                "name": {
+                                  "type": [
+                                    "string",
+                                    "null"
+                                  ]
+                                },
+                                "avatar_template": {
+                                  "type": "string"
+                                },
+                                "title": {
+                                  "type": [
+                                    "string",
+                                    "null"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "id",
+                                "username",
+                                "avatar_template"
+                              ]
+                            }
                           },
                           "is_closed": {
                             "type": "boolean"
