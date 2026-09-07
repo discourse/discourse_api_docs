@@ -175,16 +175,6 @@ paths:
           - private
           - standalone
         description: Filter by event attendance status
-      - name: event_format
-        in: query
-        required: false
-        schema:
-          type: string
-          enum:
-          - virtual
-          - in_person
-          - hybrid
-        description: Filter by whether the event has a URL, location, or both
       responses:
         '200':
           description: success response (detailed)
