@@ -13879,6 +13879,74 @@
         }
       }
     },
+    "/user_badges.json": {
+      "post": {
+        "summary": "Grant a badge to a user",
+        "tags": [
+          "Badges",
+          "Users"
+        ],
+        "operationId": "grantUserBadge",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "badge granted"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "username": {
+                    "type": "string",
+                    "description": "The username of the user to grant the badge to."
+                  },
+                  "badge_id": {
+                    "type": "integer",
+                    "description": "The ID of the badge to grant. Either badge_id or badge_name\nis required."
+                  },
+                  "badge_name": {
+                    "type": "string",
+                    "description": "The name of the badge to grant. Either badge_id or\nbadge_name is required."
+                  },
+                  "reason": {
+                    "type": "string",
+                    "description": "Optional URL of a post or topic associated with the\ngrant. Cannot be used together with post_id."
+                  },
+                  "post_id": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "description": "Optional ID of a visible, non-deleted post associated\nwith the grant. Cannot be used together with reason."
+                  },
+                  "suppress_notification": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Suppress the notification for this grant only. Omit\nor set to false to preserve normal notification behavior, including\nexisting suppression rules. The badge is still granted and grant\nevents still occur."
+                  }
+                },
+                "required": [
+                  "username"
+                ],
+                "anyOf": [
+                  {
+                    "required": [
+                      "badge_id"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "badge_name"
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
     "/user-badges/{username}.json": {
       "get": {
         "summary": "List badges for a user",
@@ -15084,6 +15152,12 @@
                                 "type": "string"
                               }
                             },
+                            "hidden_composer_toolbar_buttons": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            },
                             "show_original_content": {
                               "type": "boolean"
                             },
@@ -15134,7 +15208,8 @@
                             "show_original_content",
                             "send_shortcut",
                             "automatically_translate",
-                            "understood_languages"
+                            "understood_languages",
+                            "hidden_composer_toolbar_buttons"
                           ]
                         }
                       },
@@ -16178,6 +16253,12 @@
                                 "type": "string"
                               }
                             },
+                            "hidden_composer_toolbar_buttons": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            },
                             "show_original_content": {
                               "type": "boolean"
                             },
@@ -16228,7 +16309,8 @@
                             "show_original_content",
                             "send_shortcut",
                             "automatically_translate",
-                            "understood_languages"
+                            "understood_languages",
+                            "hidden_composer_toolbar_buttons"
                           ]
                         }
                       },
@@ -17207,6 +17289,12 @@
                                 "type": "string"
                               }
                             },
+                            "hidden_composer_toolbar_buttons": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            },
                             "show_original_content": {
                               "type": "boolean"
                             },
@@ -17257,7 +17345,8 @@
                             "show_original_content",
                             "send_shortcut",
                             "automatically_translate",
-                            "understood_languages"
+                            "understood_languages",
+                            "hidden_composer_toolbar_buttons"
                           ]
                         }
                       },

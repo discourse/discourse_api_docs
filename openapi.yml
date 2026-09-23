@@ -9887,6 +9887,57 @@ paths:
               required:
               - unique_identifier
               - parts
+  "/user_badges.json":
+    post:
+      summary: Grant a badge to a user
+      tags:
+      - Badges
+      - Users
+      operationId: grantUserBadge
+      parameters: []
+      responses:
+        '200':
+          description: badge granted
+      requestBody:
+        content:
+          application/json:
+            schema:
+              additionalProperties: false
+              properties:
+                username:
+                  type: string
+                  description: The username of the user to grant the badge to.
+                badge_id:
+                  type: integer
+                  description: The ID of the badge to grant. Either badge_id or badge_name
+                    is required.
+                badge_name:
+                  type: string
+                  description: The name of the badge to grant. Either badge_id or
+                    badge_name is required.
+                reason:
+                  type: string
+                  description: Optional URL of a post or topic associated with the
+                    grant. Cannot be used together with post_id.
+                post_id:
+                  type: integer
+                  minimum: 1
+                  description: Optional ID of a visible, non-deleted post associated
+                    with the grant. Cannot be used together with reason.
+                suppress_notification:
+                  type: boolean
+                  default: false
+                  description: Suppress the notification for this grant only. Omit
+                    or set to false to preserve normal notification behavior, including
+                    existing suppression rules. The badge is still granted and grant
+                    events still occur.
+              required:
+              - username
+              anyOf:
+              - required:
+                - badge_id
+              - required:
+                - badge_name
   "/user-badges/{username}.json":
     get:
       summary: List badges for a user
@@ -10727,6 +10778,10 @@ paths:
                             type: array
                             items:
                               type: string
+                          hidden_composer_toolbar_buttons:
+                            type: array
+                            items:
+                              type: string
                           show_original_content:
                             type: boolean
                           send_shortcut:
@@ -10775,6 +10830,7 @@ paths:
                         - send_shortcut
                         - automatically_translate
                         - understood_languages
+                        - hidden_composer_toolbar_buttons
                     required:
                     - id
                     - username
@@ -11513,6 +11569,10 @@ paths:
                             type: array
                             items:
                               type: string
+                          hidden_composer_toolbar_buttons:
+                            type: array
+                            items:
+                              type: string
                           show_original_content:
                             type: boolean
                           send_shortcut:
@@ -11561,6 +11621,7 @@ paths:
                         - send_shortcut
                         - automatically_translate
                         - understood_languages
+                        - hidden_composer_toolbar_buttons
                     required:
                     - id
                     - username
@@ -12260,6 +12321,10 @@ paths:
                             type: array
                             items:
                               type: string
+                          hidden_composer_toolbar_buttons:
+                            type: array
+                            items:
+                              type: string
                           show_original_content:
                             type: boolean
                           send_shortcut:
@@ -12308,6 +12373,7 @@ paths:
                         - send_shortcut
                         - automatically_translate
                         - understood_languages
+                        - hidden_composer_toolbar_buttons
                     required:
                     - id
                     - username
