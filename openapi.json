@@ -18940,6 +18940,83 @@
         }
       }
     },
+    "/admin/users/{id}/merge.json": {
+      "post": {
+        "summary": "Merge a user",
+        "tags": [
+          "Users",
+          "Admin"
+        ],
+        "operationId": "mergeUser",
+        "description": "Merge a user into another user. Requires admin permissions. The\nsource user cannot be a staff member. The merge runs in the background and\ndeletes the source user when complete.",
+        "parameters": [
+          {
+            "name": "Api-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Api-Username",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of the user to merge",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "success": {
+                      "type": "string",
+                      "example": "OK"
+                    }
+                  },
+                  "required": [
+                    "success"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "target_username": {
+                    "type": "string",
+                    "description": "Username of the user to merge into"
+                  }
+                },
+                "required": [
+                  "target_username"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
     "/admin/users/{id}/log_out.json": {
       "post": {
         "summary": "Log a user out",
