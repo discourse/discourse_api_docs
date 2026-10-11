@@ -1,0 +1,21 @@
+name: API Schema Check
+
+on:
+  pull_request:
+    paths:
+      - 'openapi.json'
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: delimit-ai/delimit-action@afa76ce3d1caa90a8de6bfd038471af672f60e90 # v1.11.3
+        with:
+          spec: openapi.json
