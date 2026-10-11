@@ -27,5 +27,8 @@
   },
   "devDependencies": {
     "@arkweid/lefthook": "^0.7.6"
+  },
+  "overrides": {
+    "lodash": "4.18.0"
   }
 }
