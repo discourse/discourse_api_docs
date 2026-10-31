@@ -1280,6 +1280,19 @@ paths:
                         type:
                         - string
                         - 'null'
+                      permission_groups:
+                        type: array
+                        items:
+                          type: object
+                          additionalProperties: false
+                          properties:
+                            id:
+                              type: integer
+                            name:
+                              type: string
+                          required:
+                          - id
+                          - name
                       available_groups:
                         type: array
                         items: {}
@@ -1909,6 +1922,19 @@ paths:
                         type:
                         - string
                         - 'null'
+                      permission_groups:
+                        type: array
+                        items:
+                          type: object
+                          additionalProperties: false
+                          properties:
+                            id:
+                              type: integer
+                            name:
+                              type: string
+                          required:
+                          - id
+                          - name
                       available_groups:
                         type: array
                         items: {}
@@ -2529,6 +2555,19 @@ paths:
                         type:
                         - string
                         - 'null'
+                      permission_groups:
+                        type: array
+                        items:
+                          type: object
+                          additionalProperties: false
+                          properties:
+                            id:
+                              type: integer
+                            name:
+                              type: string
+                          required:
+                          - id
+                          - name
                       available_groups:
                         type: array
                         items: {}
