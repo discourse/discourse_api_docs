@@ -1386,6 +1386,10 @@ paths:
                               type: string
                             icon:
                               type: string
+                            svg_icon:
+                              type:
+                              - string
+                              - 'null'
                             available:
                               type: boolean
                             visible:
@@ -1398,6 +1402,7 @@ paths:
                           - title
                           - description
                           - icon
+                          - svg_icon
                           - available
                           - visible
                           - configuration_schema
@@ -2028,6 +2033,10 @@ paths:
                               type: string
                             icon:
                               type: string
+                            svg_icon:
+                              type:
+                              - string
+                              - 'null'
                             available:
                               type: boolean
                             visible:
@@ -2040,6 +2049,7 @@ paths:
                           - title
                           - description
                           - icon
+                          - svg_icon
                           - available
                           - visible
                           - configuration_schema
@@ -2661,6 +2671,10 @@ paths:
                               type: string
                             icon:
                               type: string
+                            svg_icon:
+                              type:
+                              - string
+                              - 'null'
                             available:
                               type: boolean
                             visible:
@@ -2673,6 +2687,7 @@ paths:
                           - title
                           - description
                           - icon
+                          - svg_icon
                           - available
                           - visible
                           - configuration_schema
@@ -7002,6 +7017,10 @@ paths:
                           type: string
                         icon:
                           type: string
+                        svg_icon:
+                          type:
+                          - string
+                          - 'null'
                         available:
                           type: boolean
                         visible:
@@ -7015,6 +7034,7 @@ paths:
                       - title
                       - description
                       - icon
+                      - svg_icon
                       - available
                       - visible
                       - configuration_schema
