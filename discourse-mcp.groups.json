@@ -1,0 +1,211 @@
+{
+ "On by default": {
+  "Site": [
+   "discourse_select_site",
+   "site_categories",
+   "site_tags",
+   "site_groups"
+  ],
+  "Search": [
+   "discourse_search",
+   "discourse_filter_topics",
+   "discourse_search_posts"
+  ],
+  "Topics": [
+   "discourse_read_topic",
+   "discourse_read_post",
+   "discourse_read_topic_posts",
+   "discourse_create_post",
+   "discourse_create_category",
+   "discourse_create_topic",
+   "discourse_update_topic",
+   "discourse_update_post"
+  ],
+  "Users": [
+   "discourse_get_user",
+   "discourse_list_user_posts",
+   "discourse_list_users",
+   "discourse_create_user",
+   "discourse_update_user"
+  ],
+  "Chat": [
+   "discourse_get_chat_messages",
+   "chat_channels",
+   "user_chat_channels"
+  ],
+  "Drafts": [
+   "discourse_get_draft",
+   "discourse_save_draft",
+   "discourse_delete_draft",
+   "user_drafts"
+  ],
+  "Uploads": [
+   "discourse_upload_file"
+  ],
+  "Data Explorer": [
+   "discourse_get_query",
+   "discourse_run_query",
+   "discourse_create_query",
+   "discourse_update_query",
+   "discourse_delete_query",
+   "explorer_schema",
+   "explorer_queries",
+   "explorer_schema_tables",
+   "explorer_queries_page",
+   "sql_query"
+  ],
+  "Private messages": [
+   "discourse_list_private_messages",
+   "discourse_read_private_message",
+   "discourse_create_private_message",
+   "discourse_reply_private_message",
+   "discourse_invite_to_private_message"
+  ]
+ },
+ "Community (opt-in)": {
+  "Activity": [
+   "discourse_get_post_replies",
+   "discourse_list_latest_posts",
+   "discourse_get_topic_view_stats",
+   "discourse_get_user_summary",
+   "discourse_list_user_actions",
+   "discourse_list_directory_items"
+  ],
+  "Groups": [
+   "discourse_list_groups",
+   "discourse_get_group",
+   "discourse_list_group_posts",
+   "discourse_list_group_members",
+   "discourse_list_group_membership_requests",
+   "discourse_create_group",
+   "discourse_update_group",
+   "discourse_delete_group",
+   "discourse_add_group_members_by_username",
+   "discourse_add_group_members_by_user_id",
+   "discourse_add_group_members_by_email",
+   "discourse_invite_group_members_by_email",
+   "discourse_remove_group_members_by_username",
+   "discourse_remove_group_members_by_user_id",
+   "discourse_remove_group_members_by_email",
+   "discourse_add_group_owners_by_username",
+   "discourse_add_group_owners_by_user_id",
+   "discourse_add_group_owners_by_email",
+   "discourse_remove_group_owners_by_username",
+   "discourse_remove_group_owners_by_user_id",
+   "discourse_remove_group_owners_by_email",
+   "discourse_handle_group_membership_request",
+   "discourse_request_group_membership",
+   "discourse_join_group",
+   "discourse_leave_group"
+  ],
+  "Tag groups": [
+   "discourse_search_tag_groups",
+   "discourse_list_tag_groups",
+   "discourse_get_tag_group",
+   "discourse_create_tag_group",
+   "discourse_update_tag_group",
+   "discourse_delete_tag_group"
+  ],
+  "Moderation": [
+   "discourse_get_review_queue_count",
+   "discourse_list_reviewables",
+   "discourse_list_reviewable_topics",
+   "discourse_get_reviewable",
+   "discourse_get_user_moderation_summary",
+   "discourse_get_post_revision",
+   "discourse_perform_reviewable_action"
+  ]
+ },
+ "AI (opt-in)": {
+  "AI agents": [
+   "discourse_ai_list_agents",
+   "discourse_ai_get_agent",
+   "discourse_ai_create_agent",
+   "discourse_ai_update_agent",
+   "discourse_ai_delete_agent",
+   "discourse_ai_create_agent_user",
+   "discourse_ai_export_agent",
+   "discourse_ai_import_agent"
+  ],
+  "AI custom tools": [
+   "discourse_ai_get_custom_tool_guide",
+   "discourse_ai_list_custom_tools",
+   "discourse_ai_get_custom_tool",
+   "discourse_ai_create_custom_tool",
+   "discourse_ai_update_custom_tool",
+   "discourse_ai_delete_custom_tool",
+   "discourse_ai_test_custom_tool",
+   "discourse_ai_export_custom_tool",
+   "discourse_ai_import_custom_tool",
+   "ai_custom_tools_authoring_guide"
+  ],
+  "AI features": [
+   "discourse_ai_list_features",
+   "discourse_ai_get_feature_config",
+   "discourse_ai_update_feature_config"
+  ],
+  "AI insights": [
+   "discourse_ai_get_topic_summary",
+   "discourse_ai_semantic_search",
+   "discourse_ai_list_sentiment_posts"
+  ]
+ },
+ "Administration (opt-in)": {
+  "Administration": [
+   "discourse_list_categories",
+   "discourse_list_site_settings",
+   "discourse_manage_user_activation"
+  ],
+  "Site settings": [
+   "discourse_update_site_setting"
+  ],
+  "Webhooks": [
+   "discourse_list_webhooks",
+   "discourse_get_webhook",
+   "discourse_create_webhook",
+   "discourse_update_webhook",
+   "discourse_delete_webhook",
+   "discourse_list_webhook_events",
+   "discourse_ping_webhook",
+   "discourse_redeliver_webhook_event"
+  ],
+  "Themes": [
+   "discourse_list_themes",
+   "discourse_get_theme",
+   "discourse_create_theme",
+   "discourse_install_theme",
+   "discourse_update_theme",
+   "discourse_update_theme_fields",
+   "discourse_update_theme_setting",
+   "discourse_update_theme_translations",
+   "discourse_sync_remote_theme",
+   "discourse_upload_theme_asset",
+   "discourse_delete_theme"
+  ],
+  "Analytics": [
+   "discourse_list_reports",
+   "discourse_get_report",
+   "discourse_get_support_dashboard"
+  ],
+  "Workflows": [
+   "discourse_list_workflows",
+   "discourse_get_workflow",
+   "discourse_list_workflow_node_types",
+   "discourse_resolve_workflow_entity",
+   "discourse_list_workflow_templates",
+   "discourse_list_workflow_executions",
+   "discourse_get_workflow_execution",
+   "discourse_list_workflow_versions",
+   "discourse_list_workflow_credentials",
+   "discourse_evaluate_workflow_expression",
+   "discourse_create_workflow",
+   "discourse_update_workflow",
+   "discourse_delete_workflow",
+   "discourse_discard_workflow_draft",
+   "discourse_restore_workflow_version",
+   "discourse_run_workflow",
+   "discourse_run_workflow_step",
+   "discourse_update_workflow_pin_data"
+  ]
+ }
+}

@@ -53,8 +53,36 @@ which will load the json file directly instead of live converting the yml file
 to json. Now browse to http://localhost:3001 and verify your changes still look
 okay.
 
-Then you can commit your changes and create a PR. This is because we are using
-github pages to host the static doc website.
+Then you can commit your changes and create a PR. Once it merges, the Publish
+Docs workflow builds docs.discourse.org from openapi.json and publishes it to
+GitHub Pages.
+
+### The published site
+
+docs.discourse.org is built with [sourcey](https://github.com/sourcey/sourcey)
+from openapi.json and the tools of the Discourse MCP server. To see it as it
+will be published:
+
+```
+npm install
+npm run docs
+```
+
+`sourcey.config.ts` sets it up. `discourse.overlay.yaml` groups the API's
+sections under three headings, and `discourse.anchors.json` keeps every link
+into the previous page (`#tag/Posts/operation/createTopicPostPM` and the rest)
+landing on its endpoint.
+
+The MCP Reference is a snapshot of the tools, resources and prompts the server
+lists (`discourse.mcp.json`), in the toolsets it declares
+(`discourse-mcp.groups.json`). Refresh it after a release of `@discourse/mcp`:
+
+```
+npm run mcp:snapshot
+```
+
+Anything new the snapshot brings is listed after the toolsets until
+`discourse-mcp.groups.json` names its section, and the build says which.
 
 ### Automatic openapi.yml generation
 
