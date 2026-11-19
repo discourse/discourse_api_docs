@@ -7,7 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "tojson": "node tojson.js",
-    "tobruno": "node tobruno.js"
+    "tobruno": "node tobruno.js",
+    "docs": "sourcey dev",
+    "docs:build": "sourcey build -o dist",
+    "mcp:snapshot": "npx -y mcp-parser@0.4.3 snapshot --stdio \"npx -y @discourse/mcp@latest --toolsets all --allow_writes\" -o discourse.mcp.json"
   },
   "repository": {
     "type": "git",
@@ -20,12 +23,13 @@
   },
   "homepage": "https://github.com/discourse/discourse_api_docs#readme",
   "dependencies": {
+    "@usebruno/converters": "^0.12.0",
     "express": "^4.22.2",
     "json-schema-ref-parser": "^9.0.9",
-    "yamljs": "^0.3.0",
-    "@usebruno/converters": "^0.12.0"
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
-    "@arkweid/lefthook": "^0.7.6"
+    "@arkweid/lefthook": "^0.7.6",
+    "sourcey": "^3.9.5"
   }
 }

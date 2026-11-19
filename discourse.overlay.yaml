@@ -1,0 +1,16 @@
+overlay: 1.0.0
+info:
+  title: Discourse API sections, grouped
+  version: 1.0.0
+actions:
+  # The document lists sixteen sections side by side; grouped by what they work on, a reader finds
+  # theirs among a few headings. Sections, operations and addresses are unchanged.
+  - target: $
+    update:
+      x-tagGroups:
+        - name: "Content"
+          tags: ["Topics", "Posts", "Private Messages", "Categories", "Tags", "Search", "Uploads", "Events"]
+        - name: "Community"
+          tags: ["Users", "Groups", "Invites", "Badges", "Notifications"]
+        - name: "Site and administration"
+          tags: ["Site", "Admin", "Backups"]
