@@ -18078,6 +18078,10 @@
                     "admin": {
                       "type": "boolean"
                     },
+                    "interactive_bot": {
+                      "type": "boolean",
+                      "description": "Whether the bot is interactive. Only present for\nbot users."
+                    },
                     "moderator": {
                       "type": "boolean"
                     },
